@@ -1,0 +1,4238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <title>Developers Nostalgia</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+
+    <style>
+        
+/*----------------------------------------------- GENERAL */
+        
+        .html 
+        {
+          scroll-behavior: smooth;
+        }
+
+        
+        .flex-center
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flex-column
+        {
+            flex-direction: column;
+        }
+        
+        .hidden
+        {
+            display: none !important;
+        }
+        
+        .opacity
+        {
+            opacity: 0 !important;
+            z-index: -100 !important;
+        }
+        
+        button
+        {
+            cursor: pointer;
+            outline: none;
+            border: none;
+            
+            border-radius: 5px;
+        }
+        
+        
+/*----------------------------------------------- MAIN CONTAINER */
+        .pdex-list-main-cont
+        {
+            position: relative;
+            padding-top: 80px;
+            width: 100vw;
+            min-height: 100vh;
+/*            background: #fafafa;*/
+            background-color: #333;
+        }
+        
+        
+        
+        
+        
+/*        POKEDEX LIST HEADER */
+        .pdl-header
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0 10%;
+            height: 80px;
+            width: 100%;
+            justify-content: space-between;
+            background: crimson;
+        }
+    
+        .pdex-list-search-btn
+        {
+            background-color: #000;
+            width: 60px;
+            border-radius: 5px;
+            padding: .1em;
+            cursor: pointer;
+        }
+        
+        
+        
+        
+/*        POKEDEX LIST CONTAINER */
+        .pdl-cont
+        {
+/*            text-align: center;*/
+            position: relative;
+            padding-top: 10px;
+/*            padding-top: 20px;*/
+            width: 80%;
+/*            background: lightgray;*/
+            min-height: 100vh;
+            padding-top: 2em;
+            padding-bottom: 5em;
+            display: grid;
+            justify-content: center;
+/*            grid-template-columns: repeat(auto-fit, minmax(19%, 1fr));*/
+            
+/*            grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));*/
+/*            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));*/
+            grid-template-columns: repeat(auto-fit, 260px);
+            gap: 20px;
+/*            grid-gap: 10px;*/
+/*            padding-inline-start: 0;*/
+            
+        }
+        
+        
+/*----------------------------------------------- POKEDEX CARDS WIDE */
+        .poke-card-wide
+        {
+            position: relative;
+            padding: .5em 1em;
+            padding-top: 10%;
+            height: 150px;
+            display: flex;
+            border-radius: 15px;
+            background-color: #FB6C6C;
+            overflow: hidden;
+            transition: .3s;
+            cursor: pointer;
+        }
+        
+        .poke-card-wide:hover
+        {
+            transform: scale(1.05);
+        }
+        
+        .poke-card-wide-click
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height; 100%;
+            z-index: 3200;
+        }
+        
+        .poke-card-wide-id
+        {
+            position: absolute;
+            right: 5%;
+/*            right: 3%;*/
+            top: 5%;
+            top: 3%;
+            color: #000;
+            color: rgba(55,55,55,.3);
+            margin-left: 5%;
+/*            letter-spacing: .03em;*/
+            font-size: 1em;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        .pdl-popup-category
+        {
+            font-size: .8em;
+            color: ;
+            min-width: 200px;
+            font-weight: 600;
+        }
+        
+        .poke-card-wide-headline
+        {
+/*             !important;*/
+            font-size: 1.2em;
+            font-size: 1.3em;
+            margin-bottom: .5em;
+            color: #fff;
+            letter-spacing: .01em;
+            margin-left: 5%;
+            
+        }
+        
+        #popup-pkmn-headline
+        {
+/*            font-size: 2.5em;*/
+            text-shadow: 0 0 .5px rgba(0,0,0.3);
+        }
+        
+        .poke-card-wide-type
+        {
+            width: 50%;
+            margin: .5em;
+            margin-left: 5%;
+            border-radius: 20px;
+            padding: .3em 2.6em;
+            padding: .3em 3em;
+            font-weight: 600;
+/*            text-transform: uppercase;*/
+            color: #fff;
+            font-size: small;
+            font-size: smaller;
+            letter-spacing: .2em;
+            background-color: rgba(255,255,255,.3);
+            text-shadow: 0 0 .5px rgba(0,0,0.3);
+        }
+        
+        .poke-card-wide-right
+        {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            right: -3%;
+            text-shadow: 0 0 .5px rgba(0,0,0.3);
+/*            border-radius: 50%;*/
+/*            background-color: rgba(255,255,255, .3);*/
+        }
+        
+        .poke-card-wide-img
+        {
+            position: absolute;
+            top: 20%;
+            top: 15%;
+            right: 3%;
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255, .3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .poke-circle,
+        .poke-inner-circle
+        {
+            position: relative;
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+        }
+        
+        .poke-inner-circle
+        {
+            background-color: rgba(255,255,255,.3);
+            background-color: #F5F5F6;
+        }
+        
+        .poke-card-wide-right img
+        {
+            position: absolute;
+            bottom: 0%;
+            height: 100%;
+            width: 100%;
+            transform: scale(.95) translate(-10%, -20%);
+            z-index: 15;
+/*            transform: scale(.9);*/
+/*            transform: translateY(5%);*/
+        }
+
+        
+        
+        
+        
+        
+        
+        
+/*----------------------------------------------- POKEDEX CARDS */
+        
+/*        POKEMON FILTETR TYPE BUTTONS */
+        .bttn
+        {
+            border: none;
+            cursor: pointer;
+        }
+        
+        
+        .poke-type-btn-cont
+        {
+/*            font-size: .95em;*/
+/*            font-size: .9em;*/
+/*            font-size: 1em;*/
+            width: 80%;
+            text-align: center;
+            margin: 1em 0;
+        }
+        
+        .poke-type-filter-btn
+        {
+            border-radius: 20px;
+            padding: .3em 1em;
+            margin: .3em .1em;
+            font-size: ;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+/*            text-transform: uppercase;*/
+        }
+        
+        
+        .pdex-card
+        {
+            position: relative;
+            padding: 10% 0;
+            padding-top: 10%;
+            justify-content: space-between;
+            background: #525252;
+            height: 250px;
+            height: 200px;
+            height: 12.5em;
+            border-radius: 10px;
+        }
+        
+        .pdex-card-bg-color
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 50%;
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            background-color: rgba(255,255,255,.5);
+/*            background-color: darkorange;*/
+/*            background: linear-gradient(to right, darkorange, lightblue);*/
+            opacity: .5;
+        }
+        
+        
+        .pdl-card-img
+        {
+            position: relative;
+            width: 50%;
+            height: 50%;
+            margin-bottom: 1em;
+            z-index: 10;
+        }
+        
+/*
+        .pdl-card-img:before
+        {
+            content: '';
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 150%;
+            border-radius: 50%;
+            background-color: #fafafa;
+            background-color: antiquewhite;
+            opacity: .8;
+            z-index: -1;
+        }
+*/
+        
+        .pdl-card-img img
+        {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+/*            transform: scale(1.1);*/
+        }
+        
+
+        
+        
+        .pdex-card-name
+        {
+            color: #fafafa;
+            color: goldenrod;
+            font-size: ;
+        }
+        
+        .pdex-card-types-cont
+        {
+/*            height: 20%;*/
+/*            width: 100%;*/
+/*            width: 80%;*/
+/*            background: khaki;*/
+        }
+        
+        .pdex-card-type
+        {
+            border-radius: 25px;
+            padding: 2px;
+/*            width: 30%;*/
+/*            height: 100%;*/
+            font-weight: bolder;
+            text-transform: uppercase;
+            font-size: .7em;
+            letter-spacing: .1em;
+            margin: 5px;
+            color: #fff;
+        }
+        
+        
+/*----------------------------------------------- POPUP CONTAINER */
+        .pdl-popup-cont
+        {
+            position: fixed;
+            left: 0%;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+/*            border-radius: 10px;*/
+            background-color: #333;
+            cursor: default;
+            z-index: 6000;
+        }
+        
+        .popup-close-btn
+        {
+            position: absolute;
+            top: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: .3s;
+            background-color: rgba(255,255,255,.5);
+            z-index: 30000;
+/*            left: */
+        }
+        
+        .popup-close-btn:hover
+        {
+            transform: translateX(-50%) scale(1.3);
+        }
+        
+        .popup-close-btn:hover .cross
+        {
+            background: #000;
+        }
+        
+        .cross
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 50%;
+            height: 1px;
+            background: #333;
+            background: #fff;
+/*            background: rgba(0,0,0,.3);*/
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,.5);
+            transition: .3s;
+        }
+        
+        .cross2
+        {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        
+        .pdl-popup-img
+        {
+            position: fixed;
+/*            top: 10%;*/
+/*            top: 15%;*/
+            top: 9%;
+/*            mobile x2 */
+/*            top: 15%;*/
+            left: 50%;
+            transform: translateX(-50%);
+            width: 13em;
+/*            width: 8em;*/
+/*            height: 12em;*/
+/*            background: url("charizard.png");*/
+            background-size: cover;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        .pdl-popup-id
+        {
+/*          put this one in a div flex-end / text align right  !!! */
+            margin-top: 3%;
+/*            margin-top: 3.5%;*/
+            margin-left: 12em;
+            margin-left: 80%;
+            margin-left: 70%;
+            font-size: 1.8em;
+            letter-spacing: .05em;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #F0FBF9;
+        }
+        
+        .popup-type
+        {
+/*            bigger font size less padding;  margin smaller between; more left dadurch!!! */
+            padding: .6em 2em;
+/*            padding: .6em 4em;*/
+            font-size: .8em; 
+            color: #F0FBF9;
+            font-weight: bold;
+            min-width: 6.9em;
+/*            2 versions !!! */
+/*            padding: .5em 1.5em;*/
+/*            font-size: 1.1em; */
+/*            font-size: .9em; */
+        }
+        
+        
+        .pdl-popup-pokemon-name
+        {
+            font-size: 3em;
+            font-weight: 600;
+            margin-bottom: 0em;
+            color: #F0FBF9;
+        }
+        
+        
+        .pdl-popup-pkmn-name:before
+        {
+            content: '';
+            position: absolute;
+        }
+        
+        .popup-pkmn-nr
+        {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: ;
+            height: ;
+            padding: .1em 1em;
+            background: gold;
+            background: goldenrod;
+            font-family: ;
+/*                 !   !   !                               */
+            border-radius: 10px 0 10px 0;
+            font-size: ;
+            font-weight: bold;
+            
+        }
+        
+        .pdl-popup-bg
+        {
+            width: 100%;
+            height: 25%;
+            padding: 2% 30%;
+            padding-top: 1.5em;
+            background: #FB6C6C;
+            align-items: flex-start;
+        }
+        
+        .popup-type-cont
+        {
+            width: 20%;
+            background: blue;
+        }
+        
+        
+        .pdl-popup-content
+        {
+            padding-top: 6%;
+            padding-top: 5em;
+            width: 60%;
+/*            background: lightgreen;*/
+        }
+        
+        
+        
+        /* POPUP TAB */
+        .pdl-popup-tabs
+        {
+            padding-left: 0;
+            list-style: none;
+            justify-content: space-between;
+            height: 30px;
+            width: 100%;
+/*            !!! */
+            padding: 0 1em;
+            z-index: 6000;
+        }
+        
+        .popup-tab
+        {
+            font-weight: bold;
+            color: #fff;
+            font-size: 1.2em;
+            transition: .3s;
+            cursor: pointer;
+            transition: .3s;
+            border-radius: 5px;
+            padding: .5em;
+        }
+        
+        .popup-tab.selected-tab,
+        .popup-tab:hover
+        {
+            color: #333;
+            background: #fafafa;
+        }
+        
+        .popup-tab.selected-tab
+        {
+            pointer-events: none;
+        }
+        
+        
+/*        POPUP CONTENT CONTAINER */
+        .popup-content-tab-cont
+        {
+            border-radius: 25px;
+            position: relative;
+            width: 100%;
+            min-height: 450px;
+/*            background: #525252;*/
+            background: #fafafa;
+            margin-top: 1em;
+            flex-wrap: wrap;
+        }
+        
+        .poke-data
+        {
+            
+        }
+        
+        
+        
+        
+        #about-tab-cont
+        {
+            padding: 2% 0;
+            padding-bottom: 4%;
+            flex-wrap: wrap;
+        }
+        
+        .about-to-txt-btn
+        {
+            position: absolute;
+            top: 8%;
+            right: 10%;
+            z-index: 1;
+        }
+        
+        .location-list-btn
+        {
+/*            padding-left: 15px;*/
+        }
+        
+        .location-list-btn,
+        .about-to-txt-btn
+        {
+            padding: .5em;
+            font-weight: bold;
+            font-size: .8em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: .3s;
+/*            padding-left: 15px;*/
+/*            padding-right: 15px;*/
+        }
+        
+        .about-to-txt-btn:hover,
+        .location-list-btn:hover
+        {
+            background: #000;
+            background: #333;
+            color: #fafafa;
+            transform: scale(1.05);
+        }
+        
+        .about-to-txt-btn .far
+        {
+            font-size: 1.1em;
+            margin-right: .3em;
+        }
+        
+        
+        
+        
+        
+/*        */
+        .about-pkmn-descr-txt-cont
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            min-height: 100%;
+            background-color: #00CDDA;
+            justify-content: space-around;
+            border-radius: 25px;
+            padding: 10% 10%;
+            z-index: 3;
+        }
+        
+        .about-sprites-cont
+        {
+            flex-wrap: wrap;
+            position: relative;
+            width: 100%;
+            margin-bottom: 3%;
+        }
+        
+        .about-sprites-headline
+        {
+            position: absolute;
+            top: -25%;
+            color: #fff;
+            color: #000;
+            color: #333;
+/*            color: #333;*/
+            font-weight: 800;
+            
+        }
+        
+        .about-sprites
+        {
+/*            width: 100%;*/
+            background: #333;
+            border-radius: 5px;
+            padding: .3em;
+            margin: 0 5%;
+        }
+        
+        .sprite
+        {
+            width: 100px;
+            height: 100px;
+            background-color: #fafafa;
+            border-radius: 5px;
+            margin: 5px;
+/*            background-image: url("lightningpkmn.png");*/
+/*            background-size: cover;*/
+        }
+        
+        .sprite:nth-child(2)
+        {
+            margin-right: 5px;
+        }
+        
+        .sprite img
+        {
+/*            object-fit: cover;*/
+            transform: scale(1.1);
+        }
+        
+        .about-descr-txt
+        {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #fff;
+            padding: 1em;
+            border-radius: 5px;
+            background-color: #333;
+            text-align: center;
+        }
+        
+        .about-descr-txt h3
+        {
+            border-bottom: solid;
+            padding-bottom: .5em;
+            margin-bottom: .5em;
+        }
+        
+/*        */
+        .location-list-cont
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 50px;
+            flex-wrap: wrap;
+            background: #333;
+            background: #1493E0;
+            background: #0C5709;
+/*            background: #0F8709;*/
+            background: #EBA921;
+            border-radius: 25px;
+            color: #fafafa;
+            color: #f3f3f3;
+            width: 100%;
+            padding: 5%;
+            padding-top: 3%;
+            min-height: 100%;
+            box-shadow: inset 0 0 5px rgba(255,255,255,.5);
+            cursor: default;
+            z-index: 2;
+        }
+        
+        .location-list-cont h3
+        {
+            width: 100%;
+            text-align: center;
+            margin-bottom: .5em;
+            font-size: 2.1em;
+            text-shadow: 2px 1px 5px rgba(0,0,0,.5);
+        }
+        
+        .location-list-cont p
+        {
+            font-size: 1.05em;
+            margin: 2px 5px;
+            font-weight: bold;
+            text-shadow: 2px 1px 5px rgba(0,0,0,.8);
+            background: rgba(0,0,0,.5);
+/*            background: rgba(255,255,255,.5);*/
+/*            background: #1493E0;*/
+/*            background: #EBA921;*/
+            border-radius: 5px;
+            padding: .1em .5em;
+        }
+        
+/*        bei responsive : colulmn margin : 15px 0;*/
+        
+/*----------------------------------------------- BREEDING CONTAINER TAB */
+        .general-data-cont,
+        .breed-data-cont
+        {
+            position: relative;
+            width: 50%;
+            padding: 0 5%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        
+        .general-data-cont
+        {
+            
+        }
+        
+        
+        .breed-data-cont
+        {
+            
+        }
+        
+        .fa-mars
+        {
+            color: dodgerblue;
+            margin-right: 3px;
+        }
+        
+        .fa-venus
+        {
+            color: deeppink;
+        }
+        
+        .gender-gap
+        {
+            margin-right: 1em;
+        }
+        
+        
+        
+        
+/*
+        .gender-data-div
+        {
+            flex-wrap: wrap;
+            display: flex;
+        }
+        
+*/
+        .poke-data-attr
+        {
+            font-weight: bold;
+/*            width: 5.5em;*/
+            width: 40%;
+            margin-right: 5em;
+            color: rgba(0,0,0,.6);
+        }
+        
+        .poke-data-attr-val
+        {
+            width: 60%;
+            font-weight: bold;
+            color: #333;
+        }
+        
+/*        BREED HEADLINE */
+        .breed-data-headline
+        {
+            font-size: 1.3em;
+            font-weight: bolder;
+            letter-spacing: .05em;
+            margin: 1em 0;
+            padding-bottom: .5em;
+            box-shadow: 0 2px 0px rgba(0,0,0,.5)
+        }
+        
+        
+        
+        .general-data-row
+        {
+            width: 100%;
+            display: flex;
+            margin-top: 1em;
+/*            justify-content: space-between;*/
+/*            margin: 1em 0;*/
+        }
+        
+        
+        
+        .p-color-icon
+        {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,.1);
+        }
+        
+        
+        
+/*----------------------------------------------- POKE STATS CONTAINER TAB */
+        
+        #base-stats-cont p
+        {
+            width: 70%;
+            font-weight: bold;
+            background: #333;
+            color: white;
+            padding: 3%;
+            border-radius: 25px;
+            margin: 3% 0;
+        }
+        
+        .poke-stats-cont
+        {
+            margin-top: 5%;
+            width: 95%;
+/*            height: 90%;*/
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5%;
+        }
+        
+        
+        .poke-stat
+        {
+/*            width: 100%;*/
+/*            background: silver;*/
+            margin: .3em 0;
+            color: #000;
+        }
+        
+        .poke-stat-attr
+        {
+            width: 20%;
+            font-weight: bolder;
+            font-size: 1.1em;
+            color: #333;
+        }
+        
+        .poke-stat-num
+        {
+            width: 15%;
+            font-weight: bolder;
+            font-size: 1.3em;
+            text-shadow: 0px 0px .5px rgba(51,51,51,.3);
+            text-shadow: 0px 0px .5px rgba(0,0,0,.3);
+/*            color: #000 !important;*/
+            
+/*            !!! */
+        }
+        
+/*        Stats Progress Bar */
+        .poke-stat-progr-bar
+        {
+            position: relative;
+            width: 75%;
+/*            border: solid 1px;*/
+            border-radius: 25px;
+            background-color: rgba(0,0,0,.3);
+/*            background-color: rgba(0,0,0,.5);*/
+/*            background-color: #333;*/
+/*            background-color: rgba(51, 51, 51,.5);*/
+/*            background-color: rgba(251, 108, 108,.3);*/
+            height: 1em;
+            box-shadow: .5px .5px .5px rgba(0,0,0,.5);
+            transition: .5s;
+        }
+        
+        .stat-progr-bar-filling
+        {
+            position: absolute;
+            left: 0;
+            height: 100%;
+/*            width: 50%;*/
+            border-radius: 25px 20px 20px 25px;
+            border-radius: 25px;
+            box-shadow: .5px 0 1px rgba(255,255,255,.5);
+            transition: width 1s;
+/*            background: #FB6C6C !important;*/
+        }
+        
+        .progress-zero
+        {
+/*            width: 0 !important;*/
+        }
+        
+        
+/*        Progress Bars Colors */
+        .hp-stat-filling
+        {
+            background-color: #D43A44;
+            background-color: #C01F1C;
+            background-color: #D70A2C;
+/*            background-color: #F70102;*/
+        }
+        
+        .att-stat-filling
+        {
+            background-color: #F8A060;
+            background-color: #04358B;
+            background-color: #009AAF;
+        }
+        
+        .def-stat-filling
+        {
+            background-color: #5299DA;
+            background-color: #D7705F;
+            background-color: #E87C2E;
+        }
+        
+        .sp-att-stat-filling
+        {
+            background-color: #9B1D42;
+            background-color: #AD2F20;
+            background-color: #395F81;
+        }
+        
+        .sp-def-stat-filling
+        {
+            background-color: #9C6C95;
+            background-color: #52A7E7;
+            background-color: #94013C;
+            background-color: #871402;
+        }
+        
+        .speed-stat-filling
+        {
+            background-color: #328F38;
+            background-color: #034E2E;
+            background-color: #F2C92E;
+        }
+        
+        .total-stat-filling
+        {
+            background-color: #593C7E;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        #evolutions-tab-cont
+        {
+            padding: 5%;
+            cursor: default;
+        }
+        
+        .popup-evolution-headline
+        {
+            margin-bottom: 1.5em;
+        }
+        
+        .popup-headline-underline
+        {
+            position: absolute;
+            width: 8%;
+            height: 5px;
+            border-radius: 25px;
+            background-color: darkorange;
+        }
+        
+        .popup-evolution
+        {
+            border-radius: 50%;
+            width: 7em;
+            height: 7em;
+            background-color: #333;
+            background-color: rgba(0,0,0,.051);
+            background-color: rgba(0,0,0,.1);
+/*            background-color: #F5F5F5;*/
+        }
+        
+        .popup-evolution img
+        {
+            object-fit: cover;
+            width: 60%;
+            transform: scale(1.2);
+        }
+        
+        .popup-evolution-arrow
+        {
+            position: relative;
+            width: 4.5em;
+            height: 5px;
+            background-color: #000;
+            background-color: #333;
+            margin: 0 1.5em;
+            text-align: center;
+        }
+        
+        .popup-evolution-arrow:before,
+        .popup-evolution-arrow:after
+        {
+            content: '';
+            position: absolute;
+            right: -3px;
+/*            right: 0;*/
+            width: 20%;
+            height: 5px;
+            background-color: #000;
+            background-color: #333;
+            border-radius: 10px;
+        }
+        
+        .popup-evolution-arrow:before
+        {
+            transform: rotate(35deg) translateY(-75%);
+        }
+        
+        .popup-evolution-arrow:after
+        {
+            transform: rotate(-35deg) translateY(75%);
+        }
+        
+        .evolution-trigger,
+        .evolution-level
+        {
+            position: absolute;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+            font-size: .8em;
+        }
+        
+        .evolution-trigger
+        {
+            top: -500%;
+            color: ;
+/*            font-size: .7em;*/
+        }
+        
+        .evolution-level
+        {
+            
+            bottom: -500%;
+            color: blue;
+            transform: translateX(-50%);
+        }
+        
+        .evolution-name
+        {
+            font-weight: bold;
+            margin-top: .5em;
+            color: #333;
+        }
+        
+        .mega-evolution-cont
+        {
+            padding-top: 1em;
+            margin-top: 1em;
+            width: 100%;
+/*            background-color: aliceblue;*/
+            border-top: 2px solid rgba(0,0,0,.5);
+        }
+        
+
+/*----------------------------------------------- TYPE ADV TAB */
+        
+        #type-adv-tab
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 4em 8% 2% 8%;
+            gap: 10px;
+            padding-bottom: 2.5em;
+            padding-top: 5em;
+            cursor: default;
+        }
+        
+        .switch-weakn-adv-btn-cont
+        {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 15px;
+            padding: 2.5em 30%;
+            justify-content: space-around;
+/*            background: khaki;*/
+        }
+        
+        .swich-to-weakn-adv-btn
+        {
+            background-color: crimson;
+            color: #fff;
+            padding: 0em .5em;
+            margin: 5px;
+            border-bottom: solid #000;
+            transition: .3s;
+            font-weight: 600;
+        }
+        
+        .swich-to-weakn-adv-btn.selected-adv,
+        .swich-to-weakn-adv-btn:hover
+        {
+            background-color: #000;
+            border-bottom: solid crimson 4.5px;
+        }
+        
+        .swich-to-weakn-adv-btn.selected-adv
+        {
+            pointer-events: none;
+        }
+        
+        .adv-type-cont
+        {
+            background: rgba(0,0,0,.1);
+            border-radius: 5px;
+        }
+        
+        .adv-type
+        {
+            text-align: center;
+            min-width: 80px;
+            font-size: .8em;
+            font-weight: 600;
+            letter-spacing: .2em;
+            color: #fff;
+            text-shadow: 0px 0 5px #000;
+            padding: .2em .5em;
+            background-color: crimson;
+            border-radius: 5px;
+            margin-bottom: .8em;
+        }
+        
+        .adv-value
+        {
+            transform: translateY(-8px);
+            font-weight: bolder;
+            color: #000;
+            font-size: 1.05em;
+        }
+        
+        
+        
+        
+/*----------------------------------------------- MEDIA QUERIES */
+        
+
+        @media only screen and (min-width: 1500px) {
+            .pdl-cont
+            {
+                width: 70%;
+            }
+        }
+        
+        @media only screen and (max-width: 1250px) {
+            .pdl-popup-content
+            {
+                width: 90%;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 768px) {
+            .general-data-cont,
+            .breed-data-cont
+            {
+                width: 100%;
+            }
+            
+            .pdl-cont
+            {
+                width: 90%;
+/*                grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));*/
+            }
+            
+            .move-name
+            {
+/*                margin: 5px;*/
+            }
+        }
+        
+    
+        @media only screen and (max-width: 576px) {
+            .pdl-cont
+            {
+                width: 95%;
+/*                grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));*/
+            }
+            
+            .pdl-popup-cont
+            {
+                width: 106%;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 0;
+            }
+            .pdex-card
+            {
+                height: 200px;
+            }
+            
+            .move-name
+            {
+                margin: 5px;
+            }
+        }
+        
+        
+/*----------------------------------------------- MOVES CONTAINER TAB*/
+        
+        #moves-tab-cont
+        {
+            transition: .3s;
+            padding: 3%; 
+            min-height: 500px;
+        }
+        
+        
+        .popup-moves
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 100%;
+            width: 100%;
+            padding: 5%;
+            padding-top: 80px;
+        }
+        
+        .popup-move
+        {
+            margin: 5px;
+            cursor: default;
+            font-size: .8em;
+            
+        }
+        
+        .move-name
+        {
+            background-color: #51C4E7;
+            border-radius: 5px;
+            font-size: 1em; 
+/*            font-size: .8em !important; */
+            padding: .3em .8em;
+            margin: 0px;
+            text-shadow: .1px 0 5px #000;
+            font-weight: 600;
+            color: #fff;
+            transition: .3s;
+            cursor: pointer;
+        }
+        
+        .move-name:hover
+        {
+            background-color: ;
+            color: #000;
+            transform: scale(1.05);
+            text-shadow: .1px 0 5px #fff;
+        }
+    
+        
+        
+        .popup-move-descr-cont
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100%;
+            padding: 3%;
+            margin: 0;
+            background: #fafafa;
+            border-radius: 25px;
+/*            background: #f3f3f3; */
+/*            background: #51C4E7; */
+/*            background: #9D9EA0; */
+            cursor: default;
+            justify-content: space-between;
+            z-index: 6000;
+        }
+        
+        .popup-move-descr-back-btn
+        {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            font-size: 1.5em;
+            color: #fff;
+            color: #000;
+            background-color: #fafafa;
+            border-radius: 25px 0;
+            padding: .1em .8em;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        .popup-move-descr-back-btn:hover
+        {
+            padding: .1em 1em;
+        }
+        
+        .move-descr-grid
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            justify-content: center;
+            gap: 5px;
+            width: 100%;
+            margin-bottom: 3%;
+        }
+        
+        .move-descr-name
+        {
+            margin-bottom: 3%;
+            font-size: 1.8em;
+            font-weight: bolder;
+            letter-spacing: .03em;
+            color: #fafafa;
+            text-shadow: 1px 1px 1px rgba(0,0,0,.5); 
+/*            border-bottom: solid;*/
+        }
+        
+        .move-descr-cont
+        {
+            padding: 4%;
+            border-radius: 5px;
+            background: lightblue;
+            background: rgba(255,255,255,.5);
+            background: rgba(0,0,0,.8);
+            background: #000;
+            color: #fff;
+            
+            
+        }
+        
+        .move-descr-cont p
+        {
+            margin: 0;
+            text-shadow: 0 0 3px rgba(0,0,0,.5);
+        }
+        
+        .move-descr-label
+        {
+            font-weight: 600;
+            margin-bottom: 3px;
+            color: darkslategray;
+            color: #fafafa;
+            color: #f3f3f3;
+            color: #51C4E7;
+/*            color: red;*/
+        }
+        
+        .move-descr-txt
+        {
+            padding: 0;
+            text-align: center;
+            font-size: 1.05em;
+            font-weight: bold;
+            background: #fafafa;
+/*            background: #000;*/
+            border-radius: 5px;
+            margin-bottom: 1%;
+            padding: 1% 2%;
+/*            color: #fff;*/
+        }
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        #poke-search
+        {
+            border-radius: 5px;
+            border: none;
+            margin-right: 5px;
+            padding: 2px 10px;
+            font-weight: 500;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        .pdl-complexer-filter-cont
+        {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 500px;
+            min-height: 600px;
+            border-radius: 25px;
+            background-color: #fafafa;
+            font-size: ;
+            font-weight: 600;
+            z-index: 7000;
+        }
+        
+        .pdl-slider-cont
+        {
+            border-radius: 5px;
+            width: 75%;
+        }
+        
+        #idSlider
+        {
+            width: 100%;
+            height: 10px;
+            background: crimson;
+            outline: none;
+            appearance: none;
+            
+            border-radius: 25px;
+        }
+        
+        #idSlider::-webkit-slider-thumb
+        {
+            position: relative;
+            appearance: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            background: #fff;
+            border: solid 5px ;
+/*
+            border-radius: 5px;
+            background: green;
+            background: url(200350.jpg);
+            background-size: cover;
+*/
+        }
+        
+        #idSlider::-webkit-slider-thumb::before
+        {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: blue;
+            z-index: 4444444;
+        }
+        
+        
+        
+        
+        #doubleSlider
+        {
+            width: 90%;
+            background: blue;
+        }
+        
+        
+        
+        
+        .weight-range-btn
+        {
+            width: 70px;
+            height: 70px;
+            font-size: .8em;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+        
+        
+        
+        
+        
+        
+/*        RANGE DOUBLE SLIDER FOR FILTERING POKEMON */
+        
+        .slider-cont
+        {
+            position: relative;
+            width: 80%;
+            height: 100px;
+            background: rgba(0,0,0,.1);
+/*            justify-content: flex-start;*/
+            margin-bottom: 3em;
+            z-index: 1000;
+        }
+        
+        
+        .slider
+        {
+            position: relative;
+            height: 10px;
+            margin: 0 15px;
+            z-index: 1000;
+        }
+        
+        .slider > .track
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 5px;
+            background-color: #c6aee7;
+            z-index: 1000;
+        }
+        
+        .slider > .range
+        {
+            position: absolute;
+            left: 25%;
+            right: 25%;
+            top: 0;
+            bottom: 0;
+            border-radius: 5px;
+            background-color: #6200ee;
+        }
+        
+        .slider > .thumb
+        {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #6200ee;
+            border-radius: 50%;
+            z-index: 3000;
+        }
+        
+        .slider > .thumb.left
+        {
+            left: 25%;
+            transform: translate(-15px, -10px);
+        }
+        
+        .slider > .thumb.right
+        {
+            right: 25%;
+            transform: translate(15px, -10px);
+        }
+        
+        input[type=range]
+        {
+            -webkit-appearance: none;
+            pointer-events: none;
+            position: absolute;
+            height: 10px;
+            width: 100%;
+            opacity: 0;
+            z-index: 2000;
+        }
+        
+        input[type=range]::-webkit-slider-thumb
+        {
+            pointer-events: all;
+            width: 30px;
+            height: 30px;
+            border-radius: 0;
+            border: none;
+            -webkit-appearance: none;
+        }
+        
+        .range-nr
+        {
+            position: absolute;
+            left: 1%;
+            bottom: -350%;
+        }
+        
+        .range-nr.to
+        {
+            left: auto;
+            right: 1%;
+        }
+        
+        #range-slider
+        {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        .moves-category-btn-cont
+        {
+            position: absolute;
+            top: 5%;
+            background: #333;
+            color: #fff;
+/*            padding: .5em;*/
+            border-radius: 5px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 250px
+        }
+        
+        .moves-category-btn
+        {
+/*            margin: 0 10px;*/
+            transition: .3s;
+/*            border-radius: 5px;*/
+            height: 100%;
+            padding: .5em;
+            cursor: pointer;
+        }
+        
+        .moves-category-btn.selectedBtn
+        {
+            background: #fafafa;
+            color: #333;
+            font-weight: 700
+        }
+        
+        
+        
+        
+        
+        
+/*        PREVIOUS AND NEXT POKEMON BUTTONS  */
+        
+        .prev-next-pkmn-btn
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 75%;
+            width: 50px;
+            height: 50px;
+/*            background: white;*/
+/*            top: 50%;*/
+            color: #333;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        
+        .prev-next-pkmn-btn:before
+        {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            background-color: rgba(255,255,255,.3);
+            transition: .3s;
+            z-index: 1;
+        }
+        
+        .prev-next-pkmn-btn:nth-child(1)
+        {
+            left: 5%;
+        }
+        
+        .prev-next-pkmn-btn:nth-child(2)
+        {
+            right: 5%;
+        }
+        
+        .prev-next-pkmn-btn .fas
+        {
+            position: relative;
+            font-size: 1.5em;
+            z-index: 2;
+        }
+        
+        .prev-next-pkmn-btn:hover.prev-next-pkmn-btn:before
+        {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+/*        SCROLL UP/DOWN BUTTONS (TOP/BOTTOM OF SITE) */
+        
+        #scroll-bottom-btn,
+        #scroll-top-btn
+        {
+            position: fixed;
+            bottom: 3%;
+            left: 5%;
+/*            left: 3%;*/
+            font-weight: bold;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            color: #333;
+            outline: none;
+            z-index: 6000;
+        }
+        
+        
+        #scroll-bottom-btn.to-bottom-btn
+        {
+            left: auto;
+            right: 5% !important;
+            right: 3% !important;
+/*            right: 2.5% !important;*/
+        }
+        
+        
+        
+        
+        
+        
+        
+/*        LARGE IMAGE CONTAINER (WHEN CLICKING PKMN SPRITE) */
+        
+        .large-img-screen
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+            background-color: #333;
+            z-index: 9999999;
+        }
+        
+        .large-img
+        {
+            width: 25em;
+            height: 25em;
+/*            background: #fafafa;*/
+            margin-bottom: 5%;
+        }
+        
+        .img-underline
+        {
+            width: 25em;
+            height: 3px;
+            background: #fafafa;
+            margin-bottom: 3%;
+        }
+        
+        .large-img-sprite
+        {
+            width: 100px;
+            width: 5em;
+            height: 100px;
+            height: 5em;
+            margin: 15px;
+            border-radius: 5px;
+/*            border-radius: 50%;*/
+            background: #fafafa;
+        }
+        
+        
+/*        LARGE IMAGE BUTTONS */
+        .large-img-close-btn
+        {
+            position: absolute;
+            top: 5%;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,.2);
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        .large-img-close-btn .cross
+        {
+            height: 2px;
+            height: 1.5px;
+        }
+        
+        .large-img-close-btn:hover
+        {
+            background: #fafafa;
+        }
+        
+        .large-img-close-btn:hover .cross
+        {
+            background: #333;
+            box-shadow: none;
+        }
+        
+        
+        
+        
+/*        FAVORITE PKMN CONTAINER (TO ADD/REMOVE FAV. PKMN) */
+        .favorite-pkmn-cont
+        {
+            position: absolute;
+            top: 4%;
+            right: 6%;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1.1em;
+            background-color: #fff;
+            background-color: rgba(255,255,255,.6);
+            box-shadow: .5px 0 10px rgba(0,0,0,.25);
+            cursor: pointer;
+            transition: .3s;
+            z-index: 1;
+        }
+        
+        .favorite-pkmn-cont:hover
+        {
+            background-color: #fff;
+        }
+        
+        .favorite-pkmn-cont .far
+        {
+            font-size: 1em;
+        }
+        
+        .favorite-pkmn-cont .fas
+        {
+            color: crimson;
+            color: red;
+        }
+    </style>
+
+
+</head>
+<body>
+          
+           <div class="pdex-list-main-cont flex-center flex-column">
+              <div class="pdl-complexer-filter-cont flex-center flex-column hidden">
+                 <div onclick="toggleSpecificSearch()" class="close-specific-filter-btn">X</div>
+                     <div id="range-slider">
+                         <div class="slider-cont flex-center">
+                         <div class="slider flex-center">
+                             <input oninput="setLeftValue()" type="range" id="range-left" min="0" max="151" value="25">
+                             <input oninput="setRightValue()" type="range" id="range-right" min="0" max="151" value="75">
+
+                             <div class="range-nr">1</div>
+                             <div class="range-nr to">150</div>
+
+                             <div class="slider">
+                                 <div class="track"></div>
+                                 <div class="range"></div>
+                                 <div class="thumb left"></div>
+                                 <div class="thumb right"></div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <button onclick="displRangeSlider('id')">Id</button>
+                 <button onclick="displRangeSlider('height')">Height</button>
+                 <button onclick="displRangeSlider('weight')">Weight</button>
+
+                <div class="flex-center">
+                    <button onclick="filterHeight(19)" class="weight-range-btn">Small</button>
+                    <button onclick="filterHeight(15)" class="weight-range-btn">Medium</button>
+                    <button onclick="filterHeight(20)" class="weight-range-btn">Large</button>
+                    <button onclick="filterHeight(21)" class="weight-range-btn">X-Large</button>
+                    <br>
+                    <button onclick="specPokeFilterHeight()" class="specific-filter-btn">Filter By Hight</button>
+                </div>
+                
+                <div class="flex-center">
+                    <button onclick="filterWeight(19)" class="weight-range-btn">Light</button>
+                    <button onclick="filterWeight(60)" class="weight-range-btn">Medium</button>
+                    <button onclick="filterWeight(200)" class="weight-range-btn">Heavy</button>
+                    <button onclick="filterWeight(201)" class="weight-range-btn">X-Heavy</button>
+                    <br>
+                    <button onclick="specPokeFilterWeight()" class="specific-filter-btn">Filter By Weight</button>
+                </div>
+               
+              <button onclick="filterIdRange()" class="range-btn">Range Button</button>
+          </div>
+           <header class="pdl-header flex-center">
+               <div class="logo">DL</div>
+               <h2 class="pdl-header-headline">Online Pokedex</h2>
+               <div class="pdl-header-search-cont">
+                   <i class="fas fa-search"></i>
+                   <input type="text" id="poke-search" aria-label="search">
+                   <div onclick="searchForPkmn()" class="pdex-list-search-btn flex-center">Search</div>
+                   <button onclick="toggleSpecificSearch()" class="flex-center">Specific Search</button>
+               </div>
+               <button onclick="displayGen(0, genOnePkmn)" class="display-gen-btn">Gen 1</button>
+               <button onclick="displayGen(genOnePkmn, genTwoPkmn)" class="display-gen-btn">Gen 2</button>
+               <button onclick="displayGen(genTwoPkmn, genThrPkmn)" class="display-gen-btn">Gen 3</button>
+               <button onclick="displayGen(genThrPkmn, genFourPkmn)" class="display-gen-btn">Gen 4</button>
+               <button onclick="displFavoritePkmn()" class="display-gen-btn">Top 10</button>
+           </header>
+           <button onclick="scrollToTop()" id="scroll-top-btn"><i class="fas fa-arrow-up"></i></button>
+           <button onclick="scrollToBottom()" id="scroll-bottom-btn" class="to-bottom-btn"><i class="fas fa-arrow-down"></i></button>
+<!--           Popup Container -->
+           <div class="pdl-popup-cont hidden">
+               <div class="large-img-screen flex-center flex-column hidden"></div>
+              <div onclick="closePopup()" class="popup-close-btn flex-center">
+                  <span class="cross"></span>
+                  <span class="cross cross2"></span>
+               </div>
+<!--               Favorite Pkmn Container -->
+               <div onclick="favoritePkmn()" class="favorite-pkmn-cont flex-center">
+                   <i class="far fa-heart"></i>
+               </div>
+               <div class="pdl-popup-bg flex-center">
+                  <div onclick="prevNextPkmn(clickedPkmn, -1)" class="prev-next-pkmn-btn">
+                      <i class="fas fa-caret-left"></i>
+                  </div>
+                  <div onclick="prevNextPkmn(clickedPkmn, 1)" class="prev-next-pkmn-btn">
+                      <i class="fas fa-caret-right"></i>
+                  </div>
+                   <div class="flex-center flex-column">
+                   <h3 id="popup-pkmn-headline" class="poke-card-wide-headline pdl-popup-pokemon-name"></h3>
+                       <div class="flex-center">
+                           <div class="poke-card-wide-type flex-center popup-type"></div>
+                           <div class="poke-card-wide-type flex-center popup-type"></div>
+                       </div>
+                   </div>
+                   <div class="pdl-popup-id">#006 <br> <div class="pdl-popup-category">Seed Pokemon</div></div>
+               </div>
+               <div class="pdl-popup-content-cont flex-center flex-column">
+                   <div class="pdl-popup-content flex-center flex-column">
+                       <div onclick="enlargeImage(event)" id="popup-pkmn-img" class="pdl-popup-img"></div>
+                       <ul class="pdl-popup-tabs flex-center">
+                           <li onclick="fillAboutTab()" class="popup-tab">About</li>
+                           <li onclick="fillBaseStatsTab()" class="popup-tab">Base Stats</li>
+                           <li onclick="fillEvolutionsTab()" class="popup-tab">Evolutions</li>
+<!--                           !!!!!    -->
+                           <li onclick="getTypeAdv(clickedPkmn.type1.toLowerCase())" class="popup-tab">Type Adv</li>
+                           <li onclick="displayMoves(clickedPkmn)" class="popup-tab">Moves</li>
+<!--                           <li onclick="displayAllMoves(clickedPkmn)" class="popup-tab">Moves</li>-->
+                       </ul>
+
+                       <!--                       Poke About Data Popup Container -->
+                       <div id="about-tab-cont" class="popup-content-tab-cont poke-data flex-center hidde">
+<!--                           Description Text Container (toggle) -->
+<!--
+                           <div class="about-pkmn-descr-txt-cont flex-center flex-column opacity">
+                               <div onclick="addOpacity()" class="popup-move-descr-back-btn">&larr;</div>
+                               <div class="about-sprites-cont flex-center">
+                                   <div class="about-sprites flex-center">
+                                       <div class="about-sprites-headline">Default Sprites</div>
+                                       <div class="sprite"><img src="lightningpkmn.png" alt="front sprite"></div>
+                                       <div class="sprite"><img src="devilpkmn.png" alt="back sprite"></div>
+                                   </div>
+                                   <div class="about-sprites flex-center">
+                                       <div class="about-sprites-headline">Shiny Sprites</div>
+                                       <div class="sprite"><img src="gunpkmn.png" alt="front shiny sprite"></div>
+                                       <div class="sprite"><img src="spongepkmn.png" alt="back shiny sprite"></div>
+                                   </div>
+                               </div>
+                               <div class="about-descr-txt">
+                                  <h3>Desrcription Text</h3>
+                                   Spits fire that
+                                    is hot enough to
+                                    melt boulders. Known to cause
+                                    forest fires
+                                    unintentionally.
+                               </div>
+                           </div>
+                           <div class="about-to-txt-btn"><i class="far fa-file-alt"></i>Read Descr. &rarr;</div>
+                           <div class="general-data-cont">
+                              <div class="breed-data-headline">General</div>
+                               <div class="general-data-row"><span class="poke-data-attr">Species</span><span class="poke-data-attr-val">Seed</span></div>
+                               <div class="general-data-row"><span class="poke-data-attr">Height</span><span class="poke-data-attr-val">6'6.5" (1.90m)</span></div>
+                               <div class="general-data-row"><span class="poke-data-attr">Weight</span><span class="poke-data-attr-val">153.5lbs (54.7kg)</span></div>
+                               <div class="general-data-row"><span class="poke-data-attr">Abilities</span><span class="poke-data-attr-val">Overgrow, Chlorophyl</span></div>
+                               
+                               <div class="training-data-cont">
+                                  <div class="breed-data-headline">Training</div>
+                                   <div class="general-data-row"><span class="poke-data-attr">Catch Rate</span><span class="poke-data-attr-val">45 (17,4%)</span></div> 
+                                   <div class="general-data-row"><span class="poke-data-attr">Base Fr.ship</span><span class="poke-data-attr-val">140</span></div> 
+                                   <div class="general-data-row"><span class="poke-data-attr">Base Exp.</span><span class="poke-data-attr-val">236</span></div>
+                                   <div class="general-data-row"><span class="poke-data-attr">Groth Rate</span><span class="poke-data-attr-val">Medium Slow</span></div>
+                               </div>
+                           </div>
+                           <div class="breed-data-cont">
+                               <div class="breed-data-headline">Breeding</div>
+                               <div class="general-data-row"><span class="poke-data-attr">Gender</span>
+                                   <div class="gender-data-div poke-data-attr-val">
+                                       <span class="poke-data-attr-val gender-gap"><i class="fas fa-mars"></i>87.5%</span>
+                                       <span class="poke-data-attr-val"><i class="fas fa-venus"></i>12.6%</span>
+                                   </div>
+                               </div>
+                               <div class="general-data-row"><span class="poke-data-attr">Egg Groups</span><span class="poke-data-attr-val">Monster</span></div>
+                               <div class="general-data-row"><span class="poke-data-attr">Egg Cycle</span><span class="poke-data-attr-val">Fire</span></div>
+                               <div class="general-data-row"><span class="poke-data-attr">Hatch Time</span><span class="poke-data-attr-val">65998 Steps</span></div>
+                               <div class="general-data-row"><span class="poke-data-attr">Poked. Color</span><span class="poke-data-attr-val flex-center" style="justify-content: flex-start"><div class="p-color-icon" style="background: orange; margin-right: 5px"></div> Orange</span></div>
+                               Type Color -> type bgc 
+                               <div class="location-data-cont">
+                                   <div class="breed-data-headline">Location</div>
+                                   <div class="general-data-row"><span class="poke-data-attr">Habitat</span><span class="poke-data-attr-val">Grass Land</span></div>
+                                   <div class="general-data-row"><span class="poke-data-attr">Encounters</span><span class="poke-data-attr-val location-list-btn" style="font-size: .8em; font-weight: bold;" onclick="fetchPkmnEncounters()"><i class="far fa-file-alt"></i> Open List &rarr;</span></div>
+                               </div>
+                           </div>
+                           <div class="location-list-cont flex-center opacity">
+                               <div onclick="addOpacity()" class="popup-move-descr-back-btn">&larr;</div>
+                           </div>
+-->
+                       </div>
+                       <!--                       Poke Stats Popup Container -->
+                       <div id="base-stats-cont" class="popup-content-tab-cont poke-data flex-center hidden">
+
+<!--
+                           <div class="poke-stats-cont flex-column">
+                               <div class="poke-stat flex-center">
+                                   <div class="poke-stat-attr">HP</div>
+                                   <div class="poke-stat-num">150</div>
+                                   <div class="poke-stat-progr-bar hp-stat">
+                                       <div class="stat-progr-bar-filling hp-stat-filling"></div>
+                                   </div>
+                               </div>
+                               <div class="poke-stat flex-center">
+                                   <div class="poke-stat-attr">Attack</div>
+                                   <div class="poke-stat-num">184</div>
+                                   <div class="poke-stat-progr-bar att-stat">
+                                       <div class="stat-progr-bar-filling att-stat-filling"></div>
+                                   </div>
+                               </div>
+                               <div class="poke-stat flex-center">
+                                   <div class="poke-stat-attr">Defense</div>
+                                   <div class="poke-stat-num">142</div>
+                                   <div class="poke-stat-progr-bar def-stat">
+                                       <div class="stat-progr-bar-filling def-stat-filling"></div>
+                                   </div>
+                               </div>
+                               <div class="poke-stat flex-center">
+                                   <div class="poke-stat-attr">Sp. Att</div>
+                                   <div class="poke-stat-num">170</div>
+                                   <div class="poke-stat-progr-bar sp-att-stat">
+                                       <div class="stat-progr-bar-filling sp-att-stat-filling"></div>
+                                   </div>
+                               </div>
+                               <div class="poke-stat flex-center">
+                                   <div class="poke-stat-attr">Sp. Def</div>
+                                   <div class="poke-stat-num">123</div>
+                                   <div class="poke-stat-progr-bar sp-def-stat">
+                                       <div class="stat-progr-bar-filling sp-def-stat-filling"></div>
+                                   </div>
+                               </div>
+                               <div class="poke-stat flex-center">
+                                   <div class="poke-stat-attr">Speed</div>
+                                   <div class="poke-stat-num">109</div>
+                                   <div class="poke-stat-progr-bar speed-stat">
+                                       <div class="stat-progr-bar-filling speed-stat-filling"></div>
+                                   </div>
+                               </div>
+                               <div class="poke-stat flex-center">
+                                   <div class="poke-stat-attr">Total</div>
+                                   <div class="poke-stat-num">394</div>
+                                   <div class="poke-stat-progr-bar total-stat">
+                                       <div class="stat-progr-bar-filling total-stat-filling"></div>
+                                   </div>
+                               </div>
+                           </div>
+    
+                      <p style="width: 0%; font-weight: bold;">
+                          The ranges shown on the right are for a level 100 Pokémon. Maximum values are based on a beneficial nature, 252 EVs, 31 IVs; minimum values are based on a hindering nature, 0 EVs, 0 IVs.
+                      </p>
+-->
+                       </div>
+                       <div id="evolutions-tab-cont" class="popup-content-tab-cont poke-data flex-center flex-column hidde">
+<!--
+                           <div class="flex-center flex-column">
+                               <h3 class="popup-evolution-headline">Evolution Chain</h3>
+-->
+<!--                               <div class="popup-headline-underline"></div>-->
+<!--
+                           </div>
+                           <div id="evolutions-cont" class="flex-center flex-colum" style="flex-wrap: wrap">
+                               <div class="flex-center flex-column">
+                                   <div class="popup-evolution flex-center first-evolution"><img src="squirtle.png" alt="evolution"></div>
+                                   <div class="evolution-name">Squirtle</div>
+                               </div>
+                               
+                               <div class="popup-evolution-box flex-center">
+                               <div class="popup-evolution-arrow first-evolution-arrow">
+                                   <div class="evolution-trigger">Level Up</div>
+                                   <div class="evolution-level">Lv. 16</div>
+                               </div>
+                               <div class="flex-center flex-column">
+                                   <div class="popup-evolution flex-center second-evolution"><img src="ivisaur.png" alt="evolution"></div>
+                                   <div class="evolution-name">Wartortle</div>
+                               </div>
+                               </div>
+                               
+                               <div class="popup-evolution-box flex-center">
+                                   <div class="popup-evolution-arrow second-evolution-arrow">
+                                       <div class="evolution-trigger">Level Up</div>
+                                       <div class="evolution-level">Lv. 36</div>
+                                   </div>
+                                   <div class="flex-center flex-column">
+                                       <div class="popup-evolution flex-center third-evolution"><img src="blastoiseback.png" alt="evolution"></div>
+                                       <div class="evolution-name">Blastioise</div>
+                                   </div>
+                               </div>
+                               <div class="mega-evolution-cont flex-center">
+                                   <div class="flex-center flex-column">
+                                       <div class="popup-evolution flex-center first-evolution"><img src="squirtle.png" alt="evolution"></div>
+                                       <div class="evolution-name">Blastoise</div>
+                                   </div>
+
+                                   <div class="popup-evolution-box flex-center">
+                                   <div class="popup-evolution-arrow first-evolution-arrow">
+                                       <div class="evolution-trigger">Mega Stone</div>
+                                       <div class="evolution-level">Lv. 16</div>
+                                   </div>
+                                   <div class="flex-center flex-column">
+                                       <div class="popup-evolution flex-center second-evolution"><img src="ivisaur.png" alt="evolution"></div>
+                                       <div class="evolution-name">Mega Blastoise</div>
+                                   </div>
+                                   </div>
+                               </div>
+                           </div>
+-->
+                       </div>
+<!--                       TAB - Type Advantages -->
+                       <div id="type-adv-tab" class="popup-content-tab-cont poke-data flex-center hidden">
+                           <div class="switch-weakn-adv-btn-cont flex-center">
+                               <button onclick="changeWeaknessAdv(event)" class="swich-to-weakn-adv-btn">Weaknesses</button>
+                               <button onclick="changeWeaknessAdv(event)" class="swich-to-weakn-adv-btn">Advantages</button>
+                           </div>
+<!--
+                           <div class="adv-type-cont flex-center flex-column">
+                               <div class="adv-type">Fire</div>
+                               <div class="adv-value">x1</div>
+                           </div>
+-->
+                       </div>
+                       
+                       <div id="moves-tab-cont" class="popup-content-tab-cont poke-data flex-center hidden">
+                          <div class="popup-moves flex-center" style="flex-wrap: wrap"></div>
+                           <div class="popup-move-descr-cont flex-center flex-column opacity">
+<!--
+                           <div onclick="toggleMoveDescrCont()" class="popup-move-descr-back-btn">&larr;</div>
+                            <div class="move-descr-name">Ice-Beam</div>
+                             <div class="move-descr-grid">
+                                 <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Move-Power</div>
+                                  <p>95</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Accuracy</div>
+                                  <p>100</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Category</div>
+                                  <p>Special</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Move-Type</div>
+                                  <p>Ice</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Stat Change</div>
+                                  <p>Freeze</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Effect Chance</div>
+                                  <p>25%</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">PP/Max PP</div>
+                                  <p>15/20</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Generation</div>
+                                  <p>I</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Stat Value</div>
+                                  <p>None</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Contests</div>
+                                  <p>Cool</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Drains Hp</div>
+                                  <p>50%</p>
+                              </div>
+                              <div class="move-descr-cont flex-center flex-column">
+                                  <div class="move-descr-label">Flinch Chance</div>
+                                  <p>0%</p>
+                              </div>
+                              
+                             </div>
+                              <div class="move-descr-txt">
+                                  Inflicts regular damage with no additional effect.
+                              </div>
+                                 <div class="move-descr-txt">
+                                  Inflictso regulars damaged with no additional effect. and a beam of ice-cream freezez momma.
+                              </div>
+-->
+                          </div>
+                        
+<!--
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+                           <div class="popup-move flex-center flex-column">
+                               <div class="move-lv">Lv. 16</div>
+                               <div class="move-name">Ice Beam</div>
+                           </div>
+-->
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="poke-type-btn-cont"></div>
+           <div class="pdl-cont"></div>
+       </div>
+       
+       
+       
+       <script>
+    
+        // DOM Elements
+        const idSlider = document.querySelector("#idSlider");
+        const pDexListContainer = document.querySelector(".pdl-cont");
+        const typeButtonContainer = document.querySelector(".poke-type-btn-cont");
+        const popUpContainer = document.querySelector(".pdl-popup-cont");
+        const pokeSearchInput = document.querySelector("#poke-search");
+        const specificSearch = document.querySelector(".pdl-complexer-filter-cont");
+        const typeAdvTab = document.querySelector("#type-adv-tab");
+        const movesTab = document.querySelector("#moves-tab-cont");
+        const aboutTab = document.querySelector("#about-tab-cont");
+        const evolutionsTab = document.querySelector("#evolutions-tab-cont");
+        const allPopupTabs = document.querySelectorAll(".popup-content-tab-cont");
+        const baseStatsTab = document.querySelector("#base-stats-cont");
+        const movesDescrContainer = document.querySelector(".popup-move-descr-cont");
+        const displMovesContainer = document.querySelector(".popup-moves");
+        const popupHeadline = document.querySelector("#popup-pkmn-headline");
+        const favoritePkmnBtn = document.querySelector(".favorite-pkmn-cont");
+        const rangeSlider = document.querySelector("#range-slider");
+        const popupImage = document.querySelector("#popup-pkmn-img");
+        const popupTypes = document.querySelectorAll(".popup-type");
+        const popupBgColor = document.querySelector(".pdl-popup-bg");
+        const popupId = document.querySelector(".pdl-popup-id");
+        const popupSpecies = document.querySelector(".pdl-popup-category");
+        const popupTabBtns = document.querySelectorAll(".popup-tab");
+        const largeImageScreen = document.querySelector(".large-img-screen");
+           
+        // All Mega Evolution Names
+        const allMegaEvolutions = ["venusaur", "charizard", "blastoise", "beedrill", "pidgeot", "alakazam", "slowbro", "steelix", "gengar", "kangaskhan", "pinsir", "gyarados", "aerodactyl", "mewtwo", "ampharos", "scizor", "heracross", "houndoom", "tyranitar", "sceptile", "blaziken", "swampert", "gardevoir", "sableye", "mawile", "aggron", "medicham", "manectric", "sharpedo", "camerupt", "altaria", "glalie", "banette", "absol", "salamence", "metagross", "latias", "latios", "rayquaza", "lopunny", "garchomp", "lucario", "abomasnow", "gallade"];
+           
+
+//           https://www.pinclipart.com/
+//           https://www.kindpng.com/
+//           https://www.pngkit.com/
+//           https://www.clipartmax.com/
+//           https://www.pngitem.com/
+//           https://www.pngfind.com/
+           
+           
+        // List of all pkmn
+        let allPokemon = [];
+        let allFavoritePkmn;
+    
+        // Pkmn Generation indexes
+        const genOnePkmn = 151;
+        const genTwoPkmn = 251;
+        const genThrPkmn = 386;
+        const genFourPkmn = 493;
+        
+        // Specific filter vars
+        let weightToFilter = null;
+		let heightToFilter = null;
+           
+        let favoritePkmnCounter = -1;
+        
+        // Toggeling vars
+        let typeAdvWeakness = true;
+        let weaknessAdv;
+           
+        // List of all encounters
+//        let pkmnLocationList;
+           
+        // Type Adv. vars
+        let doubleDTo;
+        let doubleDFrom;
+        let halfDTo;
+        let halfDFrom;
+        let noDTo;
+        let noDFrom;
+           
+        let allTypes;
+        let fullArr;
+        let normalD;
+           
+        // Selected pkmn
+        let clickedPkmn;
+        let pkmnListLength;   
+           
+        // All type colors
+        const allColors = {
+            fire: '#FB6C6C',
+            grass: '#48D0B0',
+            electric: '#FFD86F',
+            water: '#76BDFE',
+            ground: '#D68E5E',
+            rock: '#C9B98B',
+            fairy: '#FEBAEA',
+            poison: '#54B564',
+//            poison: '#40244A',
+//            poison: '#98d7a5',
+            bug: '#2CDAB1',
+            dragon: '#0875C8',
+//            dragon: '#97b3e6',
+            psychic: '#9758AD',
+//            psychic: '#F366B9',
+            flying: '#AEC5EF',
+            fighting: '#DA475C',
+            fighting: '#E4476E',
+            fighting: '#EB4971',
+//            fighting: '#C27E6E',
+//            fighting: '#D56723',
+//            normal: '#5B5F68',
+            normal: '#B4A3A7',
+//            normal: '#F8C06E',
+            ice: '#51C4E7',
+            ghost: '#7B62A3',
+//            dark: '#707070',
+            dark: '#9D9EA0',
+            steel: '#9EB7B8'
+        }
+        
+        
+        // -------------------------------------------------------------------------------------------- FUNCTIONS -
+        
+        
+        // Creates all filter types buttons
+        const createTypeFilterButtons = (types) => {
+            if (typeButtonContainer.innerHTML = "") {
+                Object.keys(types).forEach(type => {
+                    typeButtonContainer.insertAdjacentHTML("beforeend", `
+                        <button class="poke-type-filter-btn bttn" style="background-color: ${Object.values(types)[Object.keys(types).indexOf(type)]}" onclick="filterPokemonType(event)">${capitalize(type)}</button>
+                    `);
+                });
+            }          
+        } 
+        
+        
+        // 
+        const searchForPkmn = () => {
+            // regExp for just numbers in a sting
+            const reg = /^[0-9]+$/;
+            const inputToSearch = pokeSearchInput.value.toLowerCase();
+            
+            // FUNCTIONS - Fitlers all Pokemon Array for either 1. a pkmn name or 2. a pkmn Id
+            const searchByName = str => allPokemon.filter(ap => ap.name.toLowerCase().includes(str));
+            const searchById = num => allPokemon.filter(ap => ap.id == num);
+            
+            // if input is a number -> search by Id, if string -> search by name
+            const pkmnToSearch = reg.test(inputToSearch) ? searchById(inputToSearch) : searchByName(inputToSearch);
+            
+            pDexListContainer.innerHTML = "";
+            fillPokemon(pkmnToSearch);
+        }
+        
+        
+        // Gets all pokemon via API
+        const displayGen = (fromGen, toGen) => { 
+            pkmnListLength = toGen - (fromGen + 1)
+            
+            const getMovesByCat = (moves, category) => moves.filter(move => move.version_group_details[0].move_learn_method.name === category);
+            
+//            const isMegaPkmn = name => allMegaEvolutions.includes(name) ? true : false;
+            const isMegaPkmn = name => allMegaEvolutions.includes(name) ? true : false;
+            
+            
+            pDexListContainer.innerHTML = "";
+            allPokemon = [];
+            
+            for (let i = (fromGen + 1); i <= toGen; i++) {
+                fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then(res => res.json()).then(data => {
+                    // formats every pokemon
+                    const formattetPokemon = {
+                        id : data.id,
+                        name : capitalize(data.name),
+                        weight : data.weight,
+                        height : data.height,                                      
+                        type1 : capitalize(data.types[0].type.name), 
+                        type2 : checkForSecondType(data.types),
+                        abilities : data.abilities,                  // [0].ability.name
+                        baseExp : data.base_experience,
+                        defaultSprites : [data.sprites.front_default, data.sprites.back_default],
+                        shinySprites : [data.sprites.front_shiny, data.sprites.back_shiny],
+                        movesLv : getMovesByCat(data.moves, "level-up"),
+                        movesTut : getMovesByCat(data.moves, "tutor"),
+                        movesTm : getMovesByCat(data.moves, "machine"),
+                        movesEgg : getMovesByCat(data.moves, "egg"),
+                        moves : data.moves,
+                        baseStats: [
+                            { stat : [data.stats[0].stat.name, data.stats[0].base_stat ] },
+                            { stat : [data.stats[1].stat.name, data.stats[1].base_stat ] },
+                            { stat : [data.stats[2].stat.name, data.stats[2].base_stat ] },
+                            { stat : [data.stats[3].stat.name, data.stats[3].base_stat ] },
+                            { stat : [data.stats[4].stat.name, data.stats[4].base_stat ] },
+                            { stat : [data.stats[5].stat.name, data.stats[5].base_stat ] },
+                        ]
+                    }
+                    // adds color and capitalizes all pokemon names
+                    formattetPokemon.color = Object.values(allColors)[Object.keys(allColors).indexOf((formattetPokemon.type1).toLowerCase())];
+                    
+                    // fetching species api
+                    fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}/`).then(res => res.json()).then(data => {
+                        formattetPokemon.text = modifyDescrTxt(data.flavor_text_entries[1].flavor_text);
+                        formattetPokemon.hatchCounter = 255 * (data.hatch_counter + 1);
+                        formattetPokemon.eggGroup = data.egg_groups[0].name;
+                        formattetPokemon.growthRate = data.growth_rate.name;
+                        formattetPokemon.growthRate = data.growth_rate.name;
+                        formattetPokemon.baseHappiness = data.base_happiness;
+                        formattetPokemon.category = data.genera[7].genus;
+                        formattetPokemon.habitat = data.habitat.name;
+                        formattetPokemon.dexColor = data.color.name, 
+                        formattetPokemon.catchRate = [data.capture_rate, Math.round((data.capture_rate / 255) * 100) + "%"];
+                        
+                        
+                        // fetches evolution data and adds to formattet pokemon                   
+                        fetch(`${data.evolution_chain.url}`).then(res => res.json()).then(data => {
+                            // adds first evolution name to formattet pokemon
+                            formattetPokemon.firstEvolution = data.chain.species.name;
+                            
+                            // adds second evolution pokemon data, to formattet pokemon if its there
+                            (data.chain.evolves_to.length > 0) ? formattetPokemon.secndEvolution = {
+                                levelup : "Lv. " + data.chain.evolves_to[0].evolution_details[0].min_level,
+                                secndName : data.chain.evolves_to[0].species.name,
+                                trigger : data.chain.evolves_to[0].evolution_details[0].trigger.name,
+                                item : data.chain.evolves_to[0].evolution_details[0].item ? capitalize(data.chain.evolves_to[0].evolution_details[0].item.name) : false
+                            } : formattetPokemon.secndEvolution = false;
+                            
+                            // adds third evolution pokemon data if there is one
+                            if (data.chain.evolves_to.length > 0) {
+                                if (data.chain.evolves_to[0].evolves_to.length > 0) {
+                                    formattetPokemon.isMega = isMegaPkmn(data.chain.evolves_to[0].evolves_to[0].species.name);
+                                    
+                                    formattetPokemon.thirdEvolution = {
+                                        levelup: "Lv. " + data.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level,
+                                        thirdName : data.chain.evolves_to[0].evolves_to[0].species.name,
+                                        trigger : data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name,
+                                        item : data.chain.evolves_to[0].evolves_to[0].evolution_details[0].item ?  capitalize(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].item.name) : ""
+                                    }
+                                } else {
+                                    // otherwise returns false
+                                    formattetPokemon.thirdEvolution = false;
+                                }
+                            } else {
+                                    formattetPokemon.thirdEvolution = false;
+                                }
+                        });
+                        
+                        // fetching api for images
+                        fetch(`https://pokeres.bastionbot.org/images/pokemon/${i}.png`).then(image => {
+                            formattetPokemon.sprite = image.url;
+                            allPokemon.push(formattetPokemon);
+                            
+                        }).catch(err => console.error(err));
+                                 
+                    }).catch(err => console.error(err));
+
+                }).catch(err => console.error(err));
+            }
+            // displays all pokemon when loaded
+//            allPokemon.sort((a, b) => a.id - b.id);
+            checkForFavsInLocalStorage();
+            checkIfLoaded();
+        }
+            
+        
+        // Checks every 50ms if All 150 pokemon are loaded - recursive
+        const checkIfLoaded = () => allPokemon.length >= pkmnListLength ? displayAllPokemon(allPokemon) : setTimeout(checkIfLoaded, 50);
+        
+           
+        // ------------------------------------------------------------------------------------------ GENERAL FUNCTIONS
+
+        
+        // Capitalizes a string
+        const capitalize = (str) => {
+            // capitalizes one string
+            const capitalizeOne = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+            
+            // capitalizes multible
+            if (str.includes("-")) {
+                return str.split("-").map(s => capitalizeOne(s)).join("-");
+            } if (str.includes(" ")) {
+                return str.split(" ").map(s => capitalizeOne(s)).join(" ");
+            } else {
+                return capitalizeOne(str);
+            } 
+        }   
+        
+        
+        
+        
+        // Checks if pokemon has a second type
+        const checkForSecondType = (types) => {
+            if (types.length > 1) {
+                return capitalize(types[1].type.name);
+            } else {
+                return "hidden";
+            }
+        }
+        
+   
+        // ------------------------------------------------------------------------------------- DISPLAYING POKEMON FUNCTIONS
+        
+        
+        // Displays all pokemon cards to screen
+        const displayAllPokemon = (pokeList) => {
+            // sorts pokemon list with pokeomn id
+            allPokemon.sort((a, b) => a.id - b.id);
+            createTypeFilterButtons(allColors);
+            fillPokemon(allPokemon);
+        }
+        
+        
+        // Fills container with pokemon cards
+        const fillPokemon = (pokeList) => {
+            pDexListContainer.innerHTML = "";
+            
+            pokeList.forEach(pokemon => {
+                pDexListContainer.insertAdjacentHTML("beforeend", `
+                 <div data-pokeId="${pokemon.id}" class="poke-card-wide" style="background-color: ${pokemon.color}">
+                   <div class="poke-card-wide-id">${displPkmnId(pokemon.id)}</div>
+                   <div onclick="displayClickedPokemon(event)" class="poke-card-wide-click" data-clickedpkmn="${pokemon.name}"></div>
+                    
+                   <div class="poke-card-wide-left flex-column">
+                       <h3 class="poke-card-wide-headline">${pokemon.name}</h3>
+                       <div class="poke-card-wide-type flex-center">${pokemon.type1}</div>
+                       <div class="poke-card-wide-type flex-center ${pokemon.type2}">${pokemon.type2}</div>
+                   </div>
+                   <div class="poke-card-wide-right">
+                       <div class="poke-card-wide-img flex-center">
+                           <div class="poke-circle flex-center" style="background-color:${pokemon.color}">
+                                <div class="poke-inner-circle"></div>
+                             </div>
+                           <img src="${pokemon.sprite}" alt="${pokemon.name}-image">
+                        </div>
+                   </div>
+               </div>`); 
+            });
+        }
+        
+        
+        // Fills Pokedex
+//        displayGen();
+        
+        
+        // -------------------------------------------------------------------------------------  CLICK FUNCTIONS
+        
+        
+        // Filters and displ. pkmn Btn - Type
+        const filterPokemonType = (e) => {
+            pDexListContainer.innerHTML = "";
+            fillPokemon(allPokemon.filter(pokemon => pokemon.type1 == e.target.innerHTML || pokemon.type2 == e.target.innerHTML));
+        }
+        
+
+        
+        // Displays Popup with pokemon data
+        const displayClickedPokemon = (e) => {
+            // makes popup container appear
+            popUpContainer.classList.remove("hidden");
+
+            displayClickedPkmn(e.target.dataset.clickedpkmn);
+        }
+        
+        
+        const displayClickedPkmn = pkmn => {
+            // clicked pokemon card data & made up gender percentages
+            popupTypes[1].classList.remove("hidden");
+            clickedPkmn = allPokemon.filter(p => p.name === pkmn)[0]; 
+            
+            // Filling Pkmn data in popup window (name,types, etc.)
+            popupHeadline.innerText = capitalize(clickedPkmn.name);
+            popupImage.innerHTML = `<img src="${clickedPkmn.sprite}" alt="clicked pokemon: ${clickedPkmn.name}" >`;
+            popupBgColor.style.backgroundColor = clickedPkmn.color;
+            popupId.innerHTML = `${displPkmnId(clickedPkmn.id)} <br> <div class="pdl-popup-category">${capitalize(clickedPkmn.category)}</div>`;
+            popupSpecies.innerText = "#" + capitalize(clickedPkmn.category);
+            
+            popupTypes[0].innerText = clickedPkmn.type1;
+            popupTypes[1].innerText = clickedPkmn.type2;
+            popupTypes[1].classList.add(clickedPkmn.type2);
+            
+            checkIfPkmIsFav();
+            fillAboutTab();
+        }
+       
+        
+        // 
+        const prevNextPkmn = (clPkmn, num) => {
+           if (clPkmn.id === 1 && num < 0) {
+               clickedPkmn = allPokemon[allPokemon.length - 1];
+           } else if (clPkmn.id === allPokemon.length && num > 0) {
+               clickedPkmn = allPokemon[0];
+           } else {
+               clickedPkmn = allPokemon.filter(p => p.id === parseInt(clPkmn.id) + num)[0];
+           }
+            displayClickedPkmn(clickedPkmn.name);
+        }
+        
+//allPokemon.filter(p => p.id === parseInt(clickedPkmn.id)+ 1)
+        
+        // 
+        const displPkmnId = id => {
+            let resId = id;
+        
+            const addZero = id => id.toString().split("").length < 3 ? resId="0" + id : resId; 
+              
+            addZero(resId);
+            while (resId.length < 3) { addZero(resId) } 
+            
+            return "#" + resId; 
+        }
+            
+        
+        //
+        const addHiddenToTabs = () => {
+            allPopupTabs.forEach(tab => tab.classList.add("hidden"));
+            popupTabBtns.forEach(btn => btn.classList.remove("selected-tab"));
+        }
+        
+        
+        //
+        const enlargeImage = e => {
+            toggleLargeImg();
+            
+            largeImageScreen.innerHTML = `
+                    <div onclick="toggleLargeImg()" class="large-img-close-btn">
+                        <span class="cross"></span>
+                        <span class="cross cross2"></span>
+                    </div>
+                    <div class="large-img"><img src="${clickedPkmn.sprite}"></div>
+                    <div class="img-underline"></div>
+                    <div class="large-img-sprite-cont flex-center">
+                        <div class="large-img-sprite"><img src="${clickedPkmn.defaultSprites[0]}"></div>
+                        <div class="large-img-sprite"><img src="${clickedPkmn.defaultSprites[1]}"></div>
+                        <div class="large-img-sprite"><img src="${clickedPkmn.shinySprites[0]}"></div>
+                        <div class="large-img-sprite"><img src="${clickedPkmn.shinySprites[1]}"></div>
+                    </div>         
+            `;
+        }
+        
+        
+        // 
+        const toggleLargeImg = () => largeImageScreen.classList.toggle("hidden");   
+        
+            
+        //
+        const fillAboutTab = () => {
+            addHiddenToTabs();
+            aboutTab.classList.remove("hidden");
+            popupTabBtns[0].classList.add("selected-tab");
+            
+            const genderPercentages = displayGenderPercentage();
+            
+            aboutTab.innerHTML = `
+                <div class="about-pkmn-descr-txt-cont flex-center flex-column opacity">
+                   <div onclick="toggleOpacityDescrTxt()" class="popup-move-descr-back-btn">&larr;</div>
+                   <div class="about-sprites-cont flex-center">
+                       <div class="about-sprites flex-center">
+                           <div class="about-sprites-headline">Default Sprites</div>
+                           <div class="sprite"><img src="${clickedPkmn.defaultSprites[0]}" alt="front sprite"></div>
+                           <div class="sprite"><img src="${clickedPkmn.defaultSprites[1]}" alt="back sprite"></div>
+                       </div>
+                       <div class="about-sprites flex-center">
+                           <div class="about-sprites-headline">Shiny Sprites</div>
+                           <div class="sprite"><img src="${clickedPkmn.shinySprites[0]}" alt="front shiny"></div>
+                           <div class="sprite"><img src="${clickedPkmn.shinySprites[1]}" alt="back shiny"></div>
+                       </div>
+                   </div>
+                   <div class="about-descr-txt">
+                      <h3>Desrcription Text</h3>
+                       ${modifyDescrTxt(clickedPkmn.text)}
+                   </div>
+               </div>
+                <div onclick="toggleOpacityDescrTxt()" class="about-to-txt-btn"><i class="far fa-file-alt"></i>Read Descr. &rarr;</div>
+                <div class="general-data-cont">
+                   <div class="general-data-row"><span class="poke-data-attr">Species</span><span class="poke-data-attr-val">${capitalize(clickedPkmn.category)}</span></div>
+                       <div class="general-data-row"><span class="poke-data-attr">Height</span><span class="poke-data-attr-val">${convertDecimeterToFeetMeter(clickedPkmn.height)[0]} (${convertDecimeterToFeetMeter(clickedPkmn.height)[1]})</span></div>
+                       <div class="general-data-row"><span class="poke-data-attr">Weight</span><span class="poke-data-attr-val">${clickedPkmn.weight}lbs (${convertLbsToKilos(clickedPkmn.weight)})</span></div>
+                       <div class="general-data-row"><span class="poke-data-attr">Abilities</span><span id="abilities" class="poke-data-attr-val">${displayAbilities(clickedPkmn.abilities)}</span></div>
+
+                   <div class="training-data-cont">
+                      <div class="breed-data-headline">Training</div>
+                       <div class="general-data-row"><span class="poke-data-attr">Catch Rate</span><span class="poke-data-attr-val">${clickedPkmn.catchRate[0]} (${clickedPkmn.catchRate[1]})</span></div> 
+                       <div class="general-data-row"><span class="poke-data-attr">Base Fr.ship</span><span class="poke-data-attr-val">${clickedPkmn.baseHappiness}</span></div> 
+                       <div class="general-data-row"><span class="poke-data-attr">Base Exp.</span><span class="poke-data-attr-val">${clickedPkmn.baseExp}</span></div>
+                       <div class="general-data-row"><span class="poke-data-attr">Groth Rate</span><span class="poke-data-attr-val">${capitalize(clickedPkmn.growthRate)}</span></div>
+                   </div>
+               </div>
+               <div class="breed-data-cont">
+                   <div class="breed-data-headline">Breeding</div>
+                   <div class="general-data-row"><span class="poke-data-attr">Gender</span>
+                       <div class="gender-data-div poke-data-attr-val">
+                           <span class="poke-data-attr-val gender-gap"><i class="fas fa-mars"></i>${genderPercentages[0]}%</span>
+                           <span class="poke-data-attr-val"><i class="fas fa-venus"></i>${genderPercentages[1]}%</span>
+                       </div>
+                   </div>
+                   <div class="general-data-row"><span class="poke-data-attr">Egg Groups</span><span class="poke-data-attr-val">${capitalize(clickedPkmn.eggGroup)}</span></div>
+                   <div class="general-data-row"><span class="poke-data-attr">Egg Cycle</span><span class="poke-data-attr-val">${capitalize(clickedPkmn.type1)}</span></div>
+                   <div class="general-data-row"><span class="poke-data-attr">Hatch Time</span><span class="poke-data-attr-val">${clickedPkmn.hatchCounter} Steps</span></div>
+                   <div class="general-data-row"><span class="poke-data-attr">Dex Color</span><span class="poke-data-attr-val flex-center" style="justify-content: flex-start"><div class="p-color-icon" style="background: ${clickedPkmn.dexColor}"></div> ${capitalize(clickedPkmn.dexColor)}</span></div>
+
+                   <div class="location-data-cont">
+                       <div class="breed-data-headline">Location</div>
+                       <div class="general-data-row"><span class="poke-data-attr">Habitat</span><span class="poke-data-attr-val">${capitalize(clickedPkmn.habitat)}</span></div>
+                   </div>
+                   <div class="general-data-row"><span class="poke-data-attr">Encounters</span><span class="poke-data-attr-val location-list-btn" style="font-size: .8em; font-weight: bold;" onclick="fetchPkmnEncounters(clickedPkmn.id)"><i class="far fa-file-alt"></i> See Locations &rarr;</span></div>
+               </div>
+               <div class="location-list-cont flex-center">
+                   <div onclick="toggleOpacityLocList()" class="popup-move-descr-back-btn">&larr;</div>
+               </div>
+            `;
+            fetchPkmnEncounters((clickedPkmn.name).toLowerCase());
+        }
+        
+        
+        // Removes all ↵ from p.dex text
+        const modifyDescrTxt = (txt) => { 
+            let res = "";
+            
+            for (let i of txt) {
+                (i == `↵`) ? res += " " : res += i;
+            }
+            return res; 
+        }
+       
+        
+        const fetchPkmnEncounters = pkmn => {
+            const locationList = document.querySelector(".location-list-cont");
+            
+            locationList.innerHTML = `<div onclick="toggleOpacityLocList()" class="popup-move-descr-back-btn">&larr;</div>`;
+            toggleOpacityLocList();
+            
+            fetch(`https://pokeapi.co/api/v2/pokemon/${pkmn}/encounters`).then(res => res.json()).then(e => {
+                if (e.length < 1) {
+                    locationList.innerHTML = `
+                        <div onclick="toggleOpacityLocList()" class="popup-move-descr-back-btn">&larr;</div>
+                        <p style="font-size: 1.5em">- No Encounters -</p>
+                    `;
+                } else {
+                    const pkmnLocationList = e.map(location => location.location_area.name);
+                    
+                    pkmnLocationList.forEach(l => locationList.insertAdjacentHTML("beforeend", `<p>${capitalize(l)}, </p>`));
+                    locationList.insertAdjacentHTML("afterbegin", `<h3>Encounter Locations</h3>`);
+                }
+
+            }).catch(err => console.error(err));
+        } 
+        
+    
+        // Toggles the opacity of Description Text and Location List (apper/dissappear)
+        const toggleOpacityDescrTxt = () => document.querySelector(".about-pkmn-descr-txt-cont").classList.toggle("opacity");
+           
+        const toggleOpacityLocList = () => document.querySelector(".location-list-cont").classList.toggle("opacity");
+        
+           
+        // Converts lbs to kilos
+        const convertLbsToKilos = (num) => (num * 0.45359237).toFixed(1) + "kg";
+
+        
+        // Converts decimeters (input) to feet and meters returns array with both values
+        const convertDecimeterToFeetMeter = (num) => [((num * 0.3280839895).toFixed(1) + `"`), (num / 10 + "m")];
+        
+        
+        // Displays pokemons abilities
+        const displayAbilities = (pkmnAbilities) => {
+            let pAbilities = []
+            
+            pkmnAbilities.forEach(ability => pAbilities.push(capitalize(ability.ability.name)));
+            return addWhiteSpace(pAbilities.toString());
+        }
+         
+        
+        const addWhiteSpace = str= str => str.includes(",") ? str.substr(0, str.indexOf(",") + 1) + " " + str.substr(str.indexOf(",") + 1) : str;
+        
+        // Displays Genders in %                                // Couldn't find the data so I'm making some up
+        const displayGenderPercentage = () => {
+            let female = Math.floor(Math.random() * 54) + 17;
+            let male = 100 - female;
+            
+            return [male, female];
+        }        
+         
+        // Displays a stat depending on index to ui
+        const displayStat = (statIndex) => clickedPkmn.baseStats[statIndex].stat[1];
+
+        
+        // Calculates % of stat and displays it
+        const calculateStatPercent = (stat) => Math.round(stat / 300 * 100);
+           
+           
+        // Calculates % of total stat and displays it 
+        const calculateTotalstatsPercent = (stat) => Math.round(stat / 1000 * 100);
+        
+        
+        // Closes Popup Window
+        const closePopup = () => popUpContainer.classList.add("hidden");
+           
+           
+        // Toggles the specific search window
+        const toggleSpecificSearch = () => specificSearch.classList.toggle("hidden");
+           
+        
+        // Toggles Move Describtion container
+        const toggleMoveDescrCont = () => movesDescrContainer.classList.toggle("opacity");
+           
+         
+        
+        const fillBaseStatsTab = () => {
+            addHiddenToTabs();
+            baseStatsTab.classList.remove("hidden");
+            popupTabBtns[1].classList.add("selected-tab");
+            
+            baseStatsTab.innerHTML = `
+                <div class="poke-stats-cont flex-column">
+                   <div class="poke-stat flex-center">
+                       <div class="poke-stat-attr">HP</div>
+                       <div class="poke-stat-num" style="color: ${clickedPkmn.color}">${displayStat(0)}</div>
+                       <div class="poke-stat-progr-bar hp-stat">
+                           <div class="stat-progr-bar-filling hp-stat-filling progress-zero" style="width: ${calculateStatPercent(displayStat(0))}%"></div>
+                       </div>
+                   </div>
+                   <div class="poke-stat flex-center">
+                       <div class="poke-stat-attr">Attack</div>
+                       <div class="poke-stat-num" style="color: ${clickedPkmn.color}">${displayStat(1)}</div>
+                       <div class="poke-stat-progr-bar att-stat">
+                           <div class="stat-progr-bar-filling att-stat-filling progress-zero" style="width: ${calculateStatPercent(displayStat(1))}%"></div>
+                       </div>
+                   </div>
+                   <div class="poke-stat flex-center">
+                       <div class="poke-stat-attr">Defense</div>
+                       <div class="poke-stat-num" style="color: ${clickedPkmn.color}">${displayStat(2)}</div>
+                       <div class="poke-stat-progr-bar def-stat">
+                           <div class="stat-progr-bar-filling def-stat-filling progress-zero" style="width: ${calculateStatPercent(displayStat(2))}%"></div>
+                       </div>
+                   </div>
+                   <div class="poke-stat flex-center">
+                       <div class="poke-stat-attr">Sp. Att</div>
+                       <div class="poke-stat-num" style="color: ${clickedPkmn.color}">${displayStat(3)}</div>
+                       <div class="poke-stat-progr-bar sp-att-stat">
+                           <div class="stat-progr-bar-filling sp-att-stat-filling progress-zero" style="width: ${calculateStatPercent(displayStat(3))}%"></div>
+                       </div>
+                   </div>
+                   <div class="poke-stat flex-center">
+                       <div class="poke-stat-attr">Sp. Def</div>
+                       <div class="poke-stat-num" style="color: ${clickedPkmn.color}">${displayStat(4)}</div>
+                       <div class="poke-stat-progr-bar sp-def-stat">
+                           <div class="stat-progr-bar-filling sp-def-stat-filling progress-zero" style="width: ${calculateStatPercent(displayStat(4))}%"></div>
+                       </div>
+                   </div>
+                   <div class="poke-stat flex-center">
+                       <div class="poke-stat-attr">Speed</div>
+                       <div class="poke-stat-num" style="color: ${clickedPkmn.color}">${displayStat(5)}</div>
+                       <div class="poke-stat-progr-bar speed-stat">
+                           <div class="stat-progr-bar-filling speed-stat-filling progress-zero" style="width: ${calculateStatPercent(displayStat(5))}%"></div>
+                       </div>
+                   </div>
+                   <div class="poke-stat flex-center">
+                       <div class="poke-stat-attr">Total</div>
+                       <div class="poke-stat-num" style="color: ${clickedPkmn.color}">${clickedPkmn.baseStats.map(p => p.stat[1]).reduce((a, b) => a + b)}</div>
+                       <div class="poke-stat-progr-bar total-stat">
+                           <div class="stat-progr-bar-filling total-stat-filling progress-zero" style="width: ${calculateTotalstatsPercent(clickedPkmn.baseStats.map(p => p.stat[1]).reduce((a, b) => a + b))}%"></div>
+                       </div>
+                   </div>
+               </div>
+               <p>
+                  The ranges shown on the right are for a level 100 Pokémon. Maximum values are based on a beneficial nature, 252 EVs, 31 IVs; minimum values are based on a hindering nature, 0 EVs, 0 IVs.
+               </p>
+            `;
+            setTimeout(() => document.querySelectorAll(".stat-progr-bar-filling").forEach(f => f.classList.remove("progress-zero")),200);
+        }
+           
+        
+        // ----------------------------------------------------------------------------------------------- EVOLUTIONS TAB
+        
+        
+        // 
+        const fillEvolutionsTab = () => { 
+            addHiddenToTabs();
+            evolutionsTab.classList.remove("hidden");
+            popupTabBtns[2].classList.add("selected-tab");
+            
+            
+            // 
+            const filterEvolution = pkmn => allPokemon.filter(p => p.name === capitalize(pkmn))[0];
+            
+            const returnIfTrue = item => capitalize(item) ? item : "";
+            
+            // 
+            const addFirstEvolution = () => {
+                const firstPkmnSprite = filterEvolution(clickedPkmn.firstEvolution).sprite;
+                evolutionsTab.innerHTML = `
+                    <div  class="flex-center flex-column">
+                       <h3 class="popup-evolution-headline">Evolution Chain</h3>
+                   </div>
+                   <div id="evolutions-cont" class="flex-center flex-colum" style="flex-wrap: wrap">
+                       <div class="flex-center flex-column">
+                           <div class="popup-evolution flex-center first-evolution"><img src="${firstPkmnSprite}" alt="evolution"></div>
+                           <div class="evolution-name">${capitalize(clickedPkmn.firstEvolution)}</div>
+                       </div>
+                   </div>
+                `;
+            }
+            
+            //
+            const addSecndEvolution = pkmn => {        
+                const secndPkmnSprite = filterEvolution(clickedPkmn.secndEvolution.secndName).sprite;
+                document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
+                    <div class="popup-evolution-box flex-center">
+                       <div class="popup-evolution-arrow second-evolution-arrow">
+                           <div class="evolution-trigger">${capitalize(clickedPkmn.secndEvolution.trigger)}</div>
+                           <div class="evolution-level">${clickedPkmn.secndEvolution.levelup.includes("null") ?  capitalize(clickedPkmn.secndEvolution.item) : returnIfTrue(clickedPkmn.secndEvolution.levelup)}</div>
+                       </div>
+                       <div class="flex-center flex-column">
+                           <div class="popup-evolution flex-center third-evolution"><img src="${secndPkmnSprite}" alt="evolution"></div>
+                           <div class="evolution-name">${capitalize(pkmn)}</div>
+                       </div>
+                   </div>        
+                `);
+            }
+            
+            const addThirdEvolution = pkmn => {        
+                const thirdPkmnSprite = filterEvolution(clickedPkmn.thirdEvolution.thirdName).sprite;
+                document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
+                    <div class="popup-evolution-box flex-center">
+                       <div class="popup-evolution-arrow second-evolution-arrow">
+                           <div class="evolution-trigger">${capitalize(clickedPkmn.thirdEvolution.trigger)}</div>
+                           <div class="evolution-level">${clickedPkmn.thirdEvolution.levelup.includes("null") ? capitalize(clickedPkmn.thirdEvolution.item) :  returnIfTrue(clickedPkmn.thirdEvolution.levelup)}</div>
+                       </div>
+                       <div class="flex-center flex-column">
+                           <div class="popup-evolution flex-center third-evolution"><img src="${thirdPkmnSprite}"  alt="evolution"></div>
+                           <div class="evolution-name">${capitalize(pkmn)}</div>
+                       </div>
+                   </div>        
+                `);
+            }
+            
+            //
+            const addMegaEvolution = () => {
+                const thirdPkmnSprite = filterEvolution(clickedPkmn.thirdEvolution.thirdName).sprite;
+                document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
+                    <div class="mega-evolution-cont flex-center">
+                       <div class="flex-center flex-column">
+                           <div class="popup-evolution flex-center first-evolution"><img src="${thirdPkmnSprite}" alt="evolution"></div>
+                           <div class="evolution-name">${capitalize(clickedPkmn.thirdEvolution.thirdName)}</div>
+                       </div>
+                       <div class="popup-evolution-box flex-center">
+                       <div class="popup-evolution-arrow first-evolution-arrow">
+                           <div class="evolution-trigger">Mega Stone</div>
+                           <div class="evolution-level"></div>
+                       </div>
+                       <div class="flex-center flex-column">
+                           <div class="popup-evolution flex-center second-evolution"><img src="mega_${clickedPkmn.thirdEvolution.thirdName}.png" alt="mega evolution"></div>
+                           <div class="evolution-name">Mega ${capitalize(clickedPkmn.thirdEvolution.thirdName)}</div>
+                       </div>
+                       </div>
+                   </div>
+                `);
+            }
+            
+
+            
+             addFirstEvolution();
+            
+             if (clickedPkmn.secndEvolution) {
+                 addSecndEvolution(clickedPkmn.secndEvolution.secndName);
+                 
+                 if (clickedPkmn.thirdEvolution) {
+                     addThirdEvolution(clickedPkmn.thirdEvolution.thirdName);
+                 }
+             } if (clickedPkmn.isMega) {
+                 console.log(clickedPkmn, clickedPkmn.isMega)
+                 addMegaEvolution();
+             }  
+        }
+        
+        
+        
+        
+        
+           
+        // Type Adv Api call
+       // ----------------------------------------------------------------------------- TYPE ADVANTAGES API CALL
+        
+        // Takes current type as input and fetches and modifies the api (pokemon api -type- endpoint)
+        const getTypeAdv = type => {
+            addHiddenToTabs();
+            typeAdvTab.classList.remove("hidden");
+            popupTabBtns[3].classList.add("selected-tab");
+            typeAdvWeakness = true;
+            weaknessAdv = true;
+            
+            fetch(`https://pokeapi.co/api/v2/type/${type}`).then(res => res.json()).then(data => {
+                
+                // Creates array with normal Demage
+                const calculateNormalD = (all, full) => {
+                    let normalDmg = [];
+                    
+                    all.forEach(a => {
+                        if (!full.includes(a)) {
+                            normalDmg.push(a);
+                        }
+                    });
+                    return normalDmg;
+                }
+
+                // assigns arrays with data - double/half/nomal/no demage from/to to global vars 
+                doubleDTo = data.damage_relations.double_damage_to.map(dd => dd.name);
+                doubleDFrom =  data.damage_relations.double_damage_from.map(dd => dd.name);
+                halfDTo = data.damage_relations.half_damage_to.map(hd => hd.name);
+                halfDFrom = data.damage_relations.half_damage_from.map(hd => hd.name);
+                noDTo = data.damage_relations.no_damage_to.map(nd => nd.name);
+                noDFrom = data.damage_relations.no_damage_from.map(nd => nd.name);
+                
+                // 
+                allTypes = [... Object.keys(allColors)]
+                fullArr = [... new Set(doubleDTo.concat(doubleDFrom, halfDTo, halfDFrom, noDTo, noDFrom))];
+                normalD = calculateNormalD(allTypes, fullArr);
+                // 
+                displayAllTypesTab();
+                
+            }).catch(err => console.error(err));
+        }
+              
+           
+        // ----------------------------------------------------------------------------- Change Between Weaknesses and Advantages
+           
+        // Btns - switches between weaknesses/advs.
+        const changeWeaknessAdv = (e) => {
+//            document.querySelectorAll(".swich-to-weakn-adv-btn").forEach(b => b.classList.remove("selected-adv"));
+//            e.target.classList.add("selected-adv");
+            const AdvBtns = document.querySelectorAll(".swich-to-weakn-adv-btn");
+            
+            weaknessAdv = weaknessAdv ? false : true;
+            weaknessAdv ? AdvBtns[0].classList.add("selected-adv") : AdvBtns[1].classList.add("selected-adv");
+            
+            (e.target.innerText.toLowerCase() === "weaknesses") ? typeAdvWeakness = true : typeAdvWeakness = false;
+            
+            displayAllTypesTab();
+        }
+        
+                
+        // Displays All Type Adv. in Tab
+        // Displays All Type Adv. in Tab
+        const displayAllTypesTab = () => { 
+            typeAdvTab.innerHTML = `
+                <div class="switch-weakn-adv-btn-cont flex-center">
+                   <button onclick="changeWeaknessAdv(event)" class="swich-to-weakn-adv-btn ${weaknessAdv ? 'selected-adv' : 'not'}">Weaknesses</button>
+                   <button onclick="changeWeaknessAdv(event)" class="swich-to-weakn-adv-btn ${!weaknessAdv ? 'selected-adv' : 'not'}">Advantages</button>
+               </div>
+            `;
+            for (let color in allColors) {
+                typeAdvTab.insertAdjacentHTML("beforeend", `
+                    <div class="adv-type-cont flex-center flex-column">
+                       <div class="adv-type" style="background-color: ${allColors[color]}">${capitalize(color)}</div>
+                       <div class="adv-value">x${typeAdvWeakness ? dispTypeAdvValue(doubleDFrom, halfDFrom, noDFrom, color) : dispTypeAdvValue(doubleDTo, halfDTo, noDTo, color)}</div>
+                    </div>
+                `);
+            }
+        }
+
+
+        // Displays all values (weakn./adv.) depending on clicked btn
+        const dispTypeAdvValue = (double, half, noD, type) => {
+//            console.log(type)
+//            console.log(double, half, noD, type);
+//            console.log(double.includes(type), half.includes(type), noD, type);
+            if (double.includes(type)) {
+                return 2;
+            } else if (half.includes(type)) {
+                return "1/2";
+            } else if (noD.includes(type)) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+
+// !!!!!!!!!!!!
+
+//                typeAdvTab         
+        
+
+        // ----------------------------------------------------------------------------- MOVE TAB
+           
+           //
+           const displayMoves = pkmn => {
+               addHiddenToTabs();
+               movesTab.classList.remove("hidden");
+               popupTabBtns[4].classList.add("selected-tab");
+               
+               displayLvMoves(pkmn);
+           }
+//            style="background-color:${movesBg(m)}
+           
+           
+           const resetMovesContainer = () => {            // opacity maybe...
+               displMovesContainer.innerHTML = `
+                    <div class="popup-move-descr-cont flex-center flex-column opacity"></div>
+                    <div class="moves-category-btn-cont flex-center">
+                        <div onclick="displayLvMoves(clickedPkmn)" class="moves-category-btn">Level</div>
+                        <div onclick="displayTmMoves(clickedPkmn)" class="moves-category-btn">Tm/Vm</div>
+                        <div onclick="displayTutMoves(clickedPkmn)" class="moves-category-btn">Tutor</div>
+                        <div onclick="displayEggMoves(clickedPkmn)" class="moves-category-btn">Egg</div>
+                    </div> 
+               `;
+            }
+           
+           
+           //
+           const remSelectedClassesBtns = btnIndex => {
+               const movesCatBtns = document.querySelectorAll(".moves-category-btn");
+               
+               movesCatBtns.forEach(btn => btn.classList.remove("selectedBtn"));
+               movesCatBtns[btnIndex].classList.add("selectedBtn");
+           }
+           
+           
+           //
+           const displayLvMoves = pkmn => {
+               resetMovesContainer();
+               remSelectedClassesBtns(0);
+               
+               const sortedLvMoves = pkmn.movesLv.sort((a, b) => a.version_group_details[0].level_learned_at - b.version_group_details[0].level_learned_at);
+               
+               sortedLvMoves.forEach(m => {
+                   displMovesContainer.insertAdjacentHTML("beforeend", `
+                        <div class="popup-move flex-center flex-column">
+                           <div class="move-lv">Lv. ${m.version_group_details[0].level_learned_at}</div>
+                           <div onclick="getMoveData(event)" class="move-name" style="background-color:crimson; font-size: ${moveElementSize(pkmn.movesLv)}">${capitalize(m.move.name)}</div>
+                        </div>
+                    `);
+                });
+             }
+           
+           
+           //
+           const displayTutMoves = pkmn => {
+               resetMovesContainer();
+               remSelectedClassesBtns(2);
+               
+                pkmn.movesTut.forEach(m => {
+                    displMovesContainer.insertAdjacentHTML("beforeend", `
+                        <div class="popup-move flex-center flex-column">
+                           <div onclick="getMoveData(event)" class="move-name" style="background-color:crimson; font-size: ${moveElementSize(pkmn.movesTut)}">${capitalize(m.move.name)}</div>
+                        </div>
+                   `);
+               });
+            }
+           
+           
+           //
+           const displayEggMoves = pkmn => {
+               resetMovesContainer();
+               remSelectedClassesBtns(3);
+               
+                pkmn.movesEgg.forEach(m => {
+                    displMovesContainer.insertAdjacentHTML("beforeend", `
+                        <div class="popup-move flex-center flex-column">
+                           <div onclick="getMoveData(event)" class="move-name" style="background-color:crimson; font-size: ${moveElementSize(pkmn.movesEgg)}">${capitalize(m.move.name)}</div>
+                        </div>
+                   `);
+               });
+            }
+           
+           
+           //
+           const moveElementSize = moves => {
+               console.log(moves.length);
+               if (moves.length <= 13) {
+                   return "1.3em";
+               } else if (moves.length > 13 && moves.length < 45) {
+                   return "1.1em";
+               } else if (moves.length > 100) {
+                   return ".8em";
+               } else if (moves.length > 70) {
+                   return ".85em";
+               } else if (moves.length > 45) {
+                   return ".9em";
+               } 
+           }
+           
+           
+//           let allTmNames = [];
+           
+           //
+           const displayTmMoves = pkmn => {
+               resetMovesContainer();
+               remSelectedClassesBtns(1);
+      
+                pkmn.movesTm.forEach(m => {
+                    displMovesContainer.insertAdjacentHTML("beforeend", `
+                        <div class="popup-move flex-center flex-column">
+                           <div onclick="getMoveData(event)" class="move-name" style="background-color:crimson; font-size: ${moveElementSize(pkmn.movesTm)};">${capitalize(m.move.name)}</div>
+                        </div>
+                   `);
+               });
+               
+            }
+           
+           //
+           const fetchTmData = move => {
+               const addSpaceTmName = name => capitalize(name.charAt(0)) + capitalize(name.slice(1, 2)) + name.substring(2);
+
+               fetch(move.url).then(res => res.json()).then(data => {
+                   fetch(data.machines[0].machine.url).then(res => res.json()).then(tm => {
+//                           allTmNames.push(addSpaceTmName(tm.item.name));
+//                           console.log(addSpaceTmName(tm.item.name))
+                       
+                   }).catch(err => console.error(err));
+
+               }).catch(err => console.error(err));
+           }
+
+           
+           // 
+           const displayAllMoves = pkmn => {
+               const lv = "#333";
+               const tm = "#999";
+               const other = "777";
+               const sortedMoves = pkmn.movesTm;
+//               const changeMoveBg = () => {
+//                   if ()
+//               }
+               
+               sortedMoves.forEach(m => {
+                   displMovesContainer.insertAdjacentHTML("beforeend", `
+                           <div onclick="getMoveData(event)" class="move-name" style="background-color: changeMoveBg()">${capitalize(m.move.name)}</div>
+                  `);
+               });
+            }
+           
+           
+        // ----------------------------------------------------------------------------- MOVE API CALL
+        
+        // Takes clicked move as input and fetches and modifies the api (pokemon api -move- endpoint)
+        const getMoveData = e => {
+            let move = e.target.innerText.toLowerCase();
+            
+            // !!! 2nd effChance bug replace
+            // 
+            const insertEffectChance = (txt, data) => {
+                if (txt.includes("$effect_chance%")) {
+                    return txt.replace("$effect_chance", (data).toString());
+                }
+                return txt;
+            }
+            
+            // Displays the genetarion roman number in uppercase
+            const dispGeneration = (gen) => (gen.slice(11).toUpperCase());
+            
+            
+            // Displays maximum power points - by 5 or by 3
+            const dispMaxPP = (pp) => pp > 5 ? pp + 5 : pp + 3;
+            
+            
+            // Fetches and modifies Move Data (all relevant data to display)
+            fetch(`https://pokeapi.co/api/v2/move/${move}`).then(res => res.json()).then(data => {
+                let formattedMove = {};
+                console.log("1", move);
+                // relevant data
+                formattedMove = {
+                    pp : data.pp,
+                    name : data.name,
+                    power : data.power,
+                    type : data.type.name,
+                    drain : data.meta.drain,
+                    accuracy : data.accuracy,
+                    category : data.damage_class.name,
+                    generation : data.generation.name,
+                    flinchChance : data.meta.flinch_chance,
+                    moveDescrTxt : data.flavor_text_entries[4].flavor_text,
+                    contest : data.contest_type ? data.contest_type.name : "None",
+                    effectChance : data.effect_chance ? data.effect_chance + "%" : "None",
+                    statChangeVal : data.stat_changes[0] ? data.stat_changes[0].change : "0",
+                    statChangeName : data.stat_changes[0] ? data.stat_changes[0].stat.name : "None",
+                    moveEffectTxt : insertEffectChance(data.effect_entries[0].short_effect, data.effect_chance)
+                }
+                
+//                console.log("naem", data.name);
+//                console.log("acc", data.accuracy);
+//                console.log("cat", data.damage_class.name);
+//                console.log("eff-ch", data.effect_chance);
+//                console.log("pow", data.power);
+//                console.log("cont", data.contest_type.name);
+//                console.log("pp", data.pp);
+//                console.log("type", data.type.name);
+//                console.log("gen", data.generation.name);
+////                console.log("txt-0", data.flavor_text_entries[1].flavor_text);
+//                console.log("txt-4", data.flavor_text_entries[4].flavor_text);
+//                // only if length > 0
+////                console.log(data.effect_entries[0].effect);
+//                console.log('----ttx----', insertEffectChance(data.effect_entries[0].short_effect, data.effect_chance));
+
+                
+//                const waitForMoveData = () => {
+//                    console.log("in wait", formattedMove)
+//                    Object.values(formattedMove).length >= 13 ? setTimeout(fillMovesDescrCont, 50) : waitForMoveData();
+//                }
+                
+                const fillMovesDescrCont = () => {
+                    movesDescrContainer.style.backgroundColor = allColors[formattedMove.type];
+                    movesDescrContainer.innerHTML = `
+                        <div onclick="toggleMoveDescrCont()" class="popup-move-descr-back-btn">&larr;</div>
+                        <div class="move-descr-name">${capitalize(formattedMove.name)}</div>
+                         <div class="move-descr-grid">
+                             <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">Move-Power</div>
+                              <p>${formattedMove.power ? formattedMove.power : "—"}</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">Accuracy</div>
+                              <p>${formattedMove.accuracy ? formattedMove.accuracy + "%" : "—"}</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">Category</div>
+                              <p>${capitalize(formattedMove.category)}</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">Move-Type</div>
+                              <p>${capitalize(formattedMove.type)}</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">Stat Change</div>
+                              <p>${capitalize(formattedMove.statChangeName)}</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">Effect Chance</div>
+                              <p>${formattedMove.effectChance}</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-labe style="color: ${allColors[formattedMove.type]}"" style="color: ${allColors[formattedMove.type]}">PP/Max PP</div>
+                              <p>${formattedMove.pp}/${dispMaxPP(formattedMove.pp)}</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">Generation</div>
+                              <p>${dispGeneration(formattedMove.generation)}</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">Stat Value</div>
+                              <p>${formattedMove.statChangeVal}</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">Contests</div>
+                              <p>${capitalize(formattedMove.contest)}</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">${formattedMove.drain > 0 ? "Drains Hp" : "Recoil"}</div>
+                              <p>${formattedMove.drain ? formattedMove.drain : "0"}%</p>
+                          </div>
+                          <div class="move-descr-cont flex-center flex-column">
+                              <div class="move-descr-label" style="color: ${allColors[formattedMove.type]}">Flinch Chance</div>
+                              <p>${formattedMove.flinchChance ? formattedMove.flinchChance : "0"}%</p>
+                          </div>
+                         </div>
+                          <div class="move-descr-txt">
+                              ${formattedMove.moveEffectTxt}
+                          </div>
+                             <div class="move-descr-txt">
+                              ${formattedMove.moveDescrTxt}
+                          </div>
+                        `;
+                    console.log(formattedMove)
+                     }
+                toggleMoveDescrCont();
+                fillMovesDescrCont();
+                
+            }).catch(err => console.error(err));
+        }
+        
+        
+        // 
+//        const 
+        
+        
+        // ----------------------------------------------------------------------------- NORMAL AND SPECIFIC FILTERS
+        
+        const complexerPkmnFilter = (firstVal, secondVal) => {
+            const weightFilter = weightClass;
+            const heightFilter = heightClass;
+            
+            
+        }
+        
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! issue - non , undefined slider vals
+        const displRangeSlider = sliderCategory => { 
+            let currentCategory;
+            let allSorted;
+            
+            switch (sliderCategory) {
+                case "id":
+                    allSorted = allPokemon.map(p => p.id).sort((a, b) => a - b);
+                    currentCategory = "id";
+                    break;
+                case "height":
+                    allSorted = allPokemon.map(p => p.height).sort((a, b) => a - b);
+                    currentCategory = "height";
+                    break;
+                case "weight":
+                    allSorted = allPokemon.map(p => p.weight).sort((a, b) => a - b);
+                    currentCategory = "weight";
+            }
+            sliderCat = sliderCategory;
+            
+            let minMax = [ Math.min(...allSorted), Math.max(...allSorted) ];
+            let values = [ Math.round(25 * 100 / Math.max(...allSorted)), Math.round(75 * 100 / Math.max(...allSorted)) ];
+            
+            document.querySelector("#slide-left").setAttribute("min", minMax[0]);
+            document.querySelector("#slide-left").value = values[0];
+
+            document.querySelector("#slide-right").setAttribute("max", minMax[1]);
+            document.querySelector("#slide-right").value = values[1];
+
+            
+//            rangeSlider.innerHTML = `
+//                 <div class="slider-cont flex-center">
+//                     <div class="slider flex-center">
+//                         <input oninput="setLeftValue()" type="range" id="slide-left" min="${minMax[0]}" max="${minMax[1]}" value="${values[0]}">
+//                         <input oninput="setRightValue()" type="range" id="slide-right" min="${minMax[0]}" max="${minMax[1]}" value="${values[1]}">
+//
+//                         <div class="range-nr">${minMax[0]}</div>
+//                         <div class="range-nr to">${minMax[1]}</div>
+//
+//                         <div class="slider">
+//                             <div class="track"></div>
+//                             <div class="range"></div>
+//                             <div class="thumb left"></div>
+//                             <div class="thumb right"></div>
+//                         </div>
+//                     </div>
+//                 </div>    
+//            `;
+//            document.querySelector("#range-left").addEventListener("input", setLeftValue);
+//            document.querySelector("#range-right").addEventListener("input", setRightValue);
+        }
+        
+        
+        // Vars for R/L slider   // maybe not global
+        let firstRangeSlider;
+        let secndRangeSlider;
+        let sliderCat;
+        
+        // Filters Id Range
+        const filterIdRange = () => {
+            let filteredRange;
+            firstRangeSlider = parseInt(document.querySelector("#slide-left").value);
+            secndRangeSlider = parseInt(document.querySelector("#slide-right").value);
+            
+            switch (sliderCat) {
+                case "id":
+                    filteredRange = allPokemon.filter(p => p.id >= firstRangeSlider && p.id <= secndRangeSlider);
+                    break;
+                case "height":
+                    filteredRange = allPokemon.filter(p => p.height >= firstRangeSlider && p.height <= secndRangeSlider);
+                    break;
+                case "weight":
+                    filteredRange = allPokemon.filter(p => p.weight >= firstRangeSlider && p.weight <= secndRangeSlider);
+            }
+            
+//            const filteredIdRange = allPokemon.filter(p => p.id >= firstRangeSlider && p.id <= secndRangeSlider);
+//            const filteredHeightRange = allPokemon.filter(p => p.height >= firstRangeSlider && p.height <= secndRangeSlider);
+//            const filteredWeightRange = allPokemon.filter(p => p.weight >= firstRangeSlider && p.weight <= secndRangeSlider);
+//            const bothSliderVals = doubleSlider.value.split(",");
+//            const filteredRange = allPokemon.filter(ap => ap.id >= parseInt(bothSliderVals[0]) && ap.id <= parseInt(bothSliderVals[1]));
+            
+            pDexListContainer.innerHTML = "";
+            fillPokemon(filteredRange);
+        } 
+
+        
+        // Assigns filtered range to array by clicking (height/weight)
+        const filterHeight = (height) => heightToFilter = height;
+        const filterWeight = (weight) => weightToFilter = weight;
+           
+        
+        // 
+        const specPokeFilterWeight = () => {
+			let filteredByWeight;
+						
+			if (weightToFilter) { 
+				if (weightToFilter <= 20) {
+					filteredByWeight = allPokemon.filter(p => p.weight <= 20); 
+                    console.log(allPokemon.filter(p => p.weight <= 20))
+				} else if (weightToFilter > 20 && weightToFilter <= 60) {
+                    filteredByWeight = allPokemon.filter(p => p.weight > 20 && p.weight <= 60); 
+				} else if (weightToFilter > 60 && weightToFilter <= 200) {
+                    filteredByWeight = allPokemon.filter(p => p.weight > 60 && p.weight <= 200);
+				} else {					
+					filteredByWeight = allPokemon.filter(p => p.weight > 200); 
+				}
+                
+				let res = filteredByWeight.sort((a, b) => a.weight - b.weight);
+                // Displays Pkmn
+                fillPokemon(res);
+			} else {
+                // maybe function to display what is missing or just ignore then
+                // or delete no need evtl.
+				alert("weight is not defined!");
+			}
+		}
+        
+        
+        //
+        const specPokeFilterHeight = () => {
+			let filteredByHeight;
+						
+			if (heightToFilter) { 
+				if (heightToFilter <= 10) {
+					filteredByHeight = allPokemon.filter(p => p.height <= 10); 
+				} else if (heightToFilter > 10 && heightToFilter <= 15) {
+						filteredByHeight = allPokemon.filter(p => p.height > 10 && p.height <= 15); 
+				} else if (heightToFilter > 15 && heightToFilter <= 20) {
+						filteredByHeight = allPokemon.filter(p => p.height > 15 && p.height <= 20);
+				} else {					
+					filteredByHeight = allPokemon.filter(p => p.height > 20); 
+				}
+                
+                let res = filteredByHeight.sort((a, b) => a.height - b.height);
+                console.log(filteredByHeight)
+                // Displays Pkmn
+                fillPokemon(res);
+			} else {
+                // maybe function to display what is missing or just ignore then
+                // or delete no need evtl.
+				alert("height is not defined!");
+			}
+		}
+        
+        
+        
+        // ----------------------------------------------------------------------------- RANGE SLIDER
+        
+        // Range Sliders
+        let inputLeft = document.querySelector("#range-left");
+        let inputRight = document.querySelector("#range-right");
+           
+        let thumbLeft = document.querySelector(".slider > .thumb.left");
+        let thumbRight = document.querySelector(".slider > .thumb.right");
+        let range = document.querySelector(".slider > .range");
+           
+        
+        // 
+        const setLeftValue = () => {
+            let _this = inputLeft;
+            let min = parseInt(_this.min);
+            let max = parseInt(_this.max);
+            
+            _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+            
+            let percent = ((_this.value - min) / (max - min)) * 100;
+            
+            thumbLeft.style.left = percent + "%";
+            range.style.left = percent + "%";
+        }
+        setLeftValue();
+           
+           
+        //
+        const setRightValue = () => {
+            let _this = inputRight;
+            let min = parseInt(_this.min);
+            let max = parseInt(_this.max);
+
+            _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+            let percent = ((_this.value - min) / (max - min)) * 100;
+
+            thumbRight.style.right = (100 - percent) + "%";
+            range.style.right = (100 - percent) + "%";
+         }
+         setRightValue();
+
+           
+           
+        // ----------------------------------------------------------------------------- SCROLL TO TOP / BOTTOM BUTTONS
+           
+           // Scroll to top Button
+           const scrollToTop = () => {
+               $('html, body').animate({ scrollTop: 0 }, 'fast');
+           }
+           
+           
+           //
+           const scrollToBottom = () => {
+               $("html, body").animate({ scrollTop: $(document).height() },
+                   { 
+                     duration: 2000,
+                     specialEasing: {
+                         width: "linear",
+                         height: "easeOutBounce"
+                     }
+                   });
+           }
+           
+           
+           // 
+           const scrollBtnFunc = () => {
+               document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? $(".scroll-top-btn").hide() : $(".scroll-top-btn").show();
+           }
+           
+           
+           // 
+           window.onscroll = function() { scrollBtnFunc() };
+           
+            
+           
+           
+           
+           
+           
+           
+           // 
+           const checkIfPkmIsFav = () => {
+               let currentFavs = JSON.parse(localStorage.getItem("favs"));
+               
+               currentFavs.filter(fav => fav === clickedPkmn).length > 0 ? favoritePkmnBtn.innerHTML = `<i class="fas fa-heart"></i>` : favoritePkmnBtn.innerHTML = `<i class="far fa-heart"></i>`;
+           }
+           
+           // Checks if favs is already in localSt.
+           const checkForFavsInLocalStorage = () => localStorage.getItem("favs") === null ? localStorage.setItem("favs", JSON.stringify( [] )) : favoritePkmnCounter++;
+           
+           
+           
+           
+           // 
+           const favoritePkmn = () => {
+               let currentFavs = JSON.parse(localStorage.getItem("favs"));
+               
+               console.log("curr 1", currentFavs);
+               if (favoritePkmnCounter >= 10) {
+                   alert("Sorry, You can favorize only 10 Pokemon");
+               } 
+               
+               if (favoritePkmnCounter < 10 && favoritePkmnBtn.children[0].classList.contains("far")) {  
+                   currentFavs.push(clickedPkmn);
+                   console.log("true", currentFavs);
+                   favoritePkmnBtn.innerHTML = `<i class="fas fa-heart"></i>`;
+               } else {
+                   currentFavs = currentFavs.filter(fav => fav !== clickedPkmn);
+                   favoritePkmnBtn.innerHTML = `<i class="far fa-heart"></i>`;
+                   console.log("false", currentFavs);
+               }
+               console.log("last", currentFavs);
+               window.localStorage.setItem("favs", JSON.stringify(currentFavs));
+           }
+           
+//                      const favoritePkmn = e => {
+//               console.log(e.target);
+//               let currentFavs = JSON.parse(localStorage.getItem("favs"));
+//               console.log("curr 1", currentFavs);
+//               if (favoritePkmnCounter >= 10) {
+//                   alert("Sorry, You can favorize only 10 Pokemon");
+//               }
+//               
+//               if (favoritePkmnCounter < 10 && (e.target.classList === "far")) {  
+//                   currentFavs.push(clickedPkmn);
+//                   console.log("true", currentFavs);
+//                   favoritePkmnBtn.innerHTML = `<i class="fas fa-heart"></i>`;
+//               } else {
+//                   currentFavs = currentFavs.filter(fav => fav != clickedPkmn);
+//                   favoritePkmnBtn.innerHTML = `<i class="far fa-heart"></i>`;
+//                   console.log("false", currentFavs);
+//               }
+//               window.localStorage.setItem("favs", JSON.stringify(currentFavs));
+//           }
+
+           
+           // 
+           const displFavoritePkmn = () => {
+               let currentFavs = JSON.parse(localStorage.getItem("favs"));
+               
+               displayAllPokemon(currentFavs);
+           }
+           
+           
+           // 
+           const clearFavoritePkmn = () => {
+               window.localStorage.removeItem("favs");
+           }
+           
+           
+           // favorite pkmn - make function to take just the names into arr for easier checking !!!!
+           // specific filter values / min/max after change - circles still in old position !!!!
+           // wieght glitch :)
+           
+           // MOVES    
+                // screenSize l -> move font-size bigger  !!
+                // moves size cont etc. ! 
+           
+           // specific filter !!!
+           
+           
+           // STYLE CSS
+               // prev/next buttons
+               // header
+               // css -> popup Bg section - font-size/spacing smaller, etc.    -  typws padding evt l smaller
+               // base stats different colors nums 
+                  // specific filter
+                    // 
+           
+                // moves - colors and btns
+           
+           
+        
+           
+           // Maybe Stuff
+            // maybe Specific filter - evtl abilities input filter ????
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+                  
+//         inputLeft.addEventListener("input", setLeftValue);
+//         inputRight.addEventListener("input", setRightValue);
+//         
+            
+           
+           
+           
+           
+           
+           
+           
+           //                console.log("double damage to", data.damage_relations.double_damage_to.map(dd => dd.name));
+//                console.log("double damage from", data.damage_relations.double_damage_from.map(dd => dd.name));
+//                console.log("half damage to", data.damage_relations.half_damage_to.map(hd => hd.name));
+//                console.log("no damage to", data.damage_relations.no_damage_to.map(nd => nd.name));
+//                console.log("no damage from", data.damage_relations.no_damage_from.map(nd => nd.name));
+                
+           
+        
+        
+           //            const getAllTmMoves = moves => moves.filter(move => move.version_group_details[0].move_learn_method.name === "machine");
+//            
+//            const getAllTutMoves = moves => moves.filter(move => move.version_group_details[0].move_learn_method.name === "tutor");
+//            
+//            const getAllEggMoves = moves => moves.filter(move => move.version_group_details[0].move_learn_method.name === "level-up" "egg");
+    
+           
+           
+      
+           
+           //        //        
+//        const fetchPkmnLocation = pkmn => {
+//            fetch(`https://pokeapi.co/api/v2/pokemon-habitat/${pkmn.toLowerCase()}/`).then(res => res.json()).then(location => {
+//                return location.name;
+//            }).catch(err => console.error(err));
+//        }
+  
+        
+        
+        
+//        1, 1.5, 2, >2
+        
+//        fetch(`https://pokeapi.co/api/v2/pokemon-species/1`).then(res => res.json()).then(data => {
+////            console.log(data.genera[7].genus)
+//        });
+           
+        
+//         Api for moves
+//        fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json()).then(data => {
+//            console.log(data.moves.filter(move => move));
+//            console.log("lvUp moves filtered", data.moves.filter(move => move.version_group_details[0].level_learned_at));
+//        });
+
+         
+        // Api for moves 
+//        fetch(`https://pokeapi.co/api/v2/move/200`).then(res => res.json()).then(data => {
+//            console.log("damage class", data.damage_class.name);
+//            console.log("type", data.type.name);
+//        });
+
+        
+        
+        // Api for Type
+//                        fetch(`https://pokeapi.co/api/v2/type/1`).then(res => res.json()).then(data => {
+//                            console.log("double damage to", data.damage_relations.double_damage_to.map(dd => dd.name));
+//                            console.log("double damage from", data.damage_relations.double_damage_from.map(dd => dd.name));
+//                            console.log("half damage to", data.damage_relations.half_damage_to.map(hd => hd.name));
+//                            console.log("no damage to", data.damage_relations.no_damage_to.map(nd => nd.name));
+//                            console.log("no damage from", data.damage_relations.no_damage_from.map(nd => nd.name));
+//                        }).catch(err => console.error(err));
+//        
+        
+        
+        
+        
+       // Moves Timeline kinda - type, lv, moveName (evtl physical/spedial) 
+        
+        
+        
+        
+        
+        
+        
+//                       <div class="pdl-popup-pkmn-name">Lizardon</div>
+//                       <div class="pdex-card-types-cont popup-type-cont flex-center">
+//                           <div class="pdex-card-type flex-center">Fire</div>
+//                           <div class="pdex-card-type flex-center">Flying</div>
+//                       </div>
+//        
+        
+        
+        
+                
+//         fetch(`https://pokeapi.co/api/v2/pokemon-species/1/`).then(res => res.json()).then(data => {
+//                    console.log(data.evolution_chain.url);
+//            });
+            
+//            
+//        fetch(`https://pokeapi.co/api/v2/pokemon/1/`).then(res => res.json()).then(data => {
+//                    console.log(data.abilities);
+//            });
+            
+        
+
+//        pkmnAbilities.forEach(ability => document.querySelector("#abilities").innerText += capitalize(ability.ability.name))
+        
+        // !
+       
+//        
+//        // fethcing evolution data
+//        fetch(`https://pokeapi.co/api/v2/evolution-chain/1/`).then(res => res.json()).then(data => {  
+//           // 1. evolution
+//            console.log(data.chain.species.name);
+//            // 2. evolution
+//            // level null if other evolution forms
+//           console.log(data.chain.evolves_to[0].evolution_details[0].min_level);
+//           console.log(data.chain.evolves_to[0].evolution_details[0].trigger.name);
+//            // if needs item (item name)
+////           console.log(data.chain.evolves_to[0].evolution_details[0].item.name);
+//           console.log(data.chain.evolves_to[0].species.name);
+//            
+//           // 3. evolution - needs if statement or something like that if less then 3 evolutions
+//           console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name);
+//           console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level);
+//           console.log(data.chain.evolves_to[0].evolves_to[0].species.name);
+//        });
+//        
+
+        
+        
+        // displ. abilities.forEach -> display if there 
+        
+        
+        
+        
+        
+        
+        
+                
+//        for (let i = 1; i <= 150; i++) {
+//            pDexListContainer.insertAdjacentHTML("beforeend", `
+//                <div class="poke-card-wide">
+//                   <div class="poke-card-wide-left flex-column">
+//                       <h3 class="poke-card-wide-headline">Charizard</h3>
+//                       <div class="poke-card-wide-type flex-center">Fire</div>
+//                       <div class="poke-card-wide-type flex-center">Flying</div>
+//                   </div>
+//                   <div class="poke-card-wide-right">
+//                       <img src="charizard.png" alt="charizard">
+//                   </div>
+//               </div>
+//            `)
+//        }
+//    
+        
+        
+        
+        
+        
+    //        const getAllPokemon = () => {
+//            for (let i = 1; i <= 150; i++) {
+//                fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then(res => res.json()).then(data => {
+//                    const formattetPokemon = {
+//                        id : data.id,
+//                        name : capitalize(data.name),
+//                        weight: data.weight,
+//                        height: data.height,                                      
+//                        type1: data.types[0].type.name,                          // [0].type.name  
+//                        type2: checkForSecondType(data.types),
+//                        abilities: data.abilities,                  // [0].ability.name
+//                        stats: [
+//                            { hpStat : [data.stats[0].stat.name, data.stats[0].base_stat ] },
+//                            { attStat : [data.stats[1].stat.name, data.stats[1].base_stat ] },
+//                            { defStat : [data.stats[2].stat.name, data.stats[2].base_stat ] },
+//                            { spAttStat : [data.stats[3].stat.name, data.stats[3].base_stat ] },
+//                            { spDefStat : [data.stats[4].stat.name, data.stats[4].base_stat ] },
+//                            { speedStat : [data.stats[5].stat.name, data.stats[5].base_stat ] },
+//                        ]
+//                    }
+//                    
+//                    formattetPokemon.color = Object.values(allColors)[Object.keys(allColors).indexOf(formattetPokemon.type1)];
+//            }).then(fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}/`).then(res => res.json()).then(data => {
+//    //                    console.log(data);
+//                        formattetPokemon.text = data.flavor_text_entries[1].flavor_text;
+//
+//        }
+//        
+         
+        
+        
+//        
+//        const displayAllPokemon = (pokeIndex) => {
+//            console.log(allPokemon[pokeIndex])
+//               pDexListContainer.insertAdjacentHTML("beforeend", `
+//                 <div class="poke-card-wide" style="background-color: ${allPokemon[pokeIndex].color}">
+//                   <div class="poke-card-wide-left flex-column">
+//                       <h3 class="poke-card-wide-headline">${allPokemon[pokeIndex].name}</h3>
+//                       <div class="poke-card-wide-type flex-center">${allPokemon[pokeIndex].type1}</div>
+//                       <div class="poke-card-wide-type flex-center ${allPokemon[pokeIndex].type2}">${allPokemon[pokeIndex].type2}</div>
+//                   </div>
+//                   <div class="poke-card-wide-right">
+//                       <img src="${allPokemon[pokeIndex].sprite}" alt="${allPokemon[pokeIndex].name}-image">
+//                   </div>
+//               </div>`); 
+//        }
+//                   
+            
+            
+            
+            
+            
+            
+            
+//        fetch(`https://pokeapi.co/api/v2/pokemon/2/`).then(res => res.json()).then(data => {
+////           console.log(data);
+////            let pokemonWeight = data.weight;
+//            fetch(`https://pokeapi.co/api/v2/pokemon-species/1/`).then(res => res.json()).then(data => {
+////                console.log();
+//            })
+//        });
+//        
+//         fetch(`https://pokeres.bastionbot.org/images/pokemon/1.png`).then(image => {
+////                    console.log(image)
+//                }).catch(err => console.error(err));
+//
+//        
+//        
+//        
+        
+        
+        
+        
+        // cards wide - circle a bit to left
+        // another div in right side - white bg circle -> absolute, feste groesse, img z-index, absolute
+
+        
+          
+        
+        
+        
+        
+        //            console.log(allPokemon[pokeIndex].color, allPokemon[pokeIndex].id)
+//            console.log(allPokemon, allPokemon.length);
+            
+//            console.log(allPokemon[pokeIndex].name);
+            
+//            for (let i = 1; i <= 150; i++) {
+//                pDexListContainer.insertAdjacentHTML("beforeend", `
+//                 <div class="pdex-card flex-center flex-column"> 
+//                    <div class="pdex-card-bg-color"></div>
+//                    <div class="popup-pkmn-nr flex-center">#6</div>
+//                    <div class="pdl-card-img">
+//                      <img src="charizard.png">  
+//                  </div>
+//                     <h3 class="pdex-card-name">${allPokemon[i - 1].name}</h3>
+//                       <div class="pdex-card-types-cont flex-center">
+//                            <span class="pdex-card-type flex-center fire">Fire</span>
+//                            <span class="pdex-card-type flex-center flying">Flying</span>
+//                       </div>
+//               </div>`);
+//            }
+            
+
+            
+//            allPokemon.forEach(pokemon => {
+//                console.log(pokemon.types.length);
+//               pDexListContainer.insertAdjacentHTML("beforeend", `
+//                 <div class="pdex-card flex-center flex-column"> 
+//                    <div class="pdex-card-bg-color"></div>
+//                    <div class="popup-pkmn-nr flex-center">#${pokemon.id}</div>
+//                    <div class="pdl-card-img">
+//                      <img src="charizard.png">  
+//                  </div>
+//                     <h3 class="pdex-card-name">${pokemon.name}</h3>
+//                       <div class="pdex-card-types-cont flex-center">
+//                            <span class="pdex-card-type flex-center ${pokemon.types[0].type.name}">${ pokemon.types[0].type.name }</span>
+//                            <span class="pdex-card-type flex-center ${ pokemon.types.length > 1 ? pokemon.types[0].type.name : "hidden" }">${pokemon.types[0].type.name }</span>
+//                       </div>
+//               </div>`); 
+//            });
+//            
+            
+        
+    </script>
+    
+</body>
+</html>
