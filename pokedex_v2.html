@@ -107,7 +107,7 @@
             width: 80%;
 /*            background: lightgray;*/
             min-height: 100vh;
-            padding-top: 2em;
+/*            padding-top: 1em;*/
             padding-bottom: 5em;
             display: grid;
             justify-content: center;
@@ -145,6 +145,7 @@
         
         .poke-card-wide-click
         {
+            transition: .3s;
             position: absolute;
             top: 0;
             left: 0;
@@ -158,8 +159,9 @@
         .poke-card-wide-id
         {
             position: absolute;
+            right: 8%;
             right: 5%;
-/*            right: 3%;*/
+            right: 6%;
             top: 5%;
             top: 3%;
             color: #000;
@@ -290,6 +292,7 @@
 /*            font-size: .95em;*/
 /*            font-size: .9em;*/
 /*            font-size: 1em;*/
+            
             width: 80%;
             text-align: center;
             margin: 1em 0;
@@ -1842,10 +1845,17 @@
             width: 40px;
             height: 40px;
             color: #333;
+            transition: .3s;
             outline: none;
             z-index: 6000;
         }
         
+        
+        #scroll-bottom-btn .fas,
+        #scroll-top-btn .fas
+        {
+            transition: .3s;
+        }
         
         #scroll-bottom-btn.to-bottom-btn
         {
@@ -1856,7 +1866,16 @@
         }
         
         
+        #scroll-bottom-btn:hover .fas
+        {
+            transform: translateY(.3em);
+        }
         
+        
+        #scroll-top-btn:hover .fas
+        {
+            transform: translateY(-.3em);
+        }
         
         
         
@@ -1970,6 +1989,23 @@
             color: crimson;
             color: red;
         }
+        
+        
+        
+        .display-gen-btn
+        {
+            
+        }
+        
+        .display-gen-btn:hover
+        {
+            
+        }
+        
+        .display-gen-btn .far
+        {
+            font-size: .8em;
+        }
     </style>
 
 
@@ -2034,7 +2070,7 @@
                <button onclick="displayGen(genOnePkmn, genTwoPkmn)" class="display-gen-btn">Gen 2</button>
                <button onclick="displayGen(genTwoPkmn, genThrPkmn)" class="display-gen-btn">Gen 3</button>
                <button onclick="displayGen(genThrPkmn, genFourPkmn)" class="display-gen-btn">Gen 4</button>
-               <button onclick="displFavoritePkmn()" class="display-gen-btn">Top 10</button>
+               <button onclick="displFavoritePkmn()" class="display-gen-btn">Fav <i class="far fa-heart"></i></button>
            </header>
            <button onclick="scrollToTop()" id="scroll-top-btn"><i class="fas fa-arrow-up"></i></button>
            <button onclick="scrollToBottom()" id="scroll-bottom-btn" class="to-bottom-btn"><i class="fas fa-arrow-down"></i></button>
@@ -2439,6 +2475,7 @@
         const popupId = document.querySelector(".pdl-popup-id");
         const popupSpecies = document.querySelector(".pdl-popup-category");
         const popupTabBtns = document.querySelectorAll(".popup-tab");
+        const rangeNumbers = document.querySelectorAll(".range-nr");
         const largeImageScreen = document.querySelector(".large-img-screen");
            
         // All Mega Evolution Names
@@ -2455,7 +2492,6 @@
            
         // List of all pkmn
         let allPokemon = [];
-        let allFavoritePkmn;
     
         // Pkmn Generation indexes
         const genOnePkmn = 151;
@@ -2467,7 +2503,7 @@
         let weightToFilter = null;
 		let heightToFilter = null;
            
-        let favoritePkmnCounter = -1;
+        let favoritePkmnCounter = 0;
         
         // Toggeling vars
         let typeAdvWeakness = true;
@@ -2531,13 +2567,12 @@
         
         // Creates all filter types buttons
         const createTypeFilterButtons = (types) => {
-            if (typeButtonContainer.innerHTML = "") {
+                typeButtonContainer.innerHTML = ""
                 Object.keys(types).forEach(type => {
                     typeButtonContainer.insertAdjacentHTML("beforeend", `
                         <button class="poke-type-filter-btn bttn" style="background-color: ${Object.values(types)[Object.keys(types).indexOf(type)]}" onclick="filterPokemonType(event)">${capitalize(type)}</button>
                     `);
                 });
-            }          
         } 
         
         
@@ -2578,7 +2613,7 @@
                     const formattetPokemon = {
                         id : data.id,
                         name : capitalize(data.name),
-                        weight : data.weight,
+                        weight : data.weight / 10,
                         height : data.height,                                      
                         type1 : capitalize(data.types[0].type.name), 
                         type2 : checkForSecondType(data.types),
@@ -2718,6 +2753,7 @@
         // Fills container with pokemon cards
         const fillPokemon = (pokeList) => {
             pDexListContainer.innerHTML = "";
+            createTypeFilterButtons(allColors);
             
             pokeList.forEach(pokemon => {
                 pDexListContainer.insertAdjacentHTML("beforeend", `
@@ -2806,6 +2842,7 @@
         const displPkmnId = id => {
             let resId = id;
         
+            // 
             const addZero = id => id.toString().split("").length < 3 ? resId="0" + id : resId; 
               
             addZero(resId);
@@ -2843,6 +2880,10 @@
         }
         
         
+        
+        // Converts lbs to kilos
+        const convertKilosToLbs = (num) => Math.round(num / 0.45359237) + "lbs";
+        
         // 
         const toggleLargeImg = () => largeImageScreen.classList.toggle("hidden");   
         
@@ -2879,7 +2920,7 @@
                 <div class="general-data-cont">
                    <div class="general-data-row"><span class="poke-data-attr">Species</span><span class="poke-data-attr-val">${capitalize(clickedPkmn.category)}</span></div>
                        <div class="general-data-row"><span class="poke-data-attr">Height</span><span class="poke-data-attr-val">${convertDecimeterToFeetMeter(clickedPkmn.height)[0]} (${convertDecimeterToFeetMeter(clickedPkmn.height)[1]})</span></div>
-                       <div class="general-data-row"><span class="poke-data-attr">Weight</span><span class="poke-data-attr-val">${clickedPkmn.weight}lbs (${convertLbsToKilos(clickedPkmn.weight)})</span></div>
+                       <div class="general-data-row"><span class="poke-data-attr">Weight</span><span class="poke-data-attr-val">${convertKilosToLbs(clickedPkmn.weight)} (${clickedPkmn.weight}kg)</span></div>
                        <div class="general-data-row"><span class="poke-data-attr">Abilities</span><span id="abilities" class="poke-data-attr-val">${displayAbilities(clickedPkmn.abilities)}</span></div>
 
                    <div class="training-data-cont">
@@ -3105,7 +3146,7 @@
                 `;
             }
             
-            //
+            //  !!!!!
             const addSecndEvolution = pkmn => {        
                 const secndPkmnSprite = filterEvolution(clickedPkmn.secndEvolution.secndName).sprite;
                 document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
@@ -3608,12 +3649,16 @@
             let minMax = [ Math.min(...allSorted), Math.max(...allSorted) ];
             let values = [ Math.round(25 * 100 / Math.max(...allSorted)), Math.round(75 * 100 / Math.max(...allSorted)) ];
             
-            document.querySelector("#slide-left").setAttribute("min", minMax[0]);
-            document.querySelector("#slide-left").value = values[0];
+            inputLeft.min = minMax[0];
+            inputLeft.max = minMax[1];
+            setLeftValue();
 
-            document.querySelector("#slide-right").setAttribute("max", minMax[1]);
-            document.querySelector("#slide-right").value = values[1];
+            inputRight.min = minMax[0];
+            inputRight.max = minMax[1];
+            setRightValue();
 
+            rangeNumbers[0].innerText = minMax[0];
+            rangeNumbers[1].innerText = minMax[1];
             
 //            rangeSlider.innerHTML = `
 //                 <div class="slider-cont flex-center">
@@ -3815,12 +3860,14 @@
            // 
            const checkIfPkmIsFav = () => {
                let currentFavs = JSON.parse(localStorage.getItem("favs"));
+               console.log(currentFavs, currentFavs.filter(fav => fav === clickedPkmn));
+               currentFavs.forEach(a => { console.log(a.id === clickedPkmn.id)})
                
-               currentFavs.filter(fav => fav === clickedPkmn).length > 0 ? favoritePkmnBtn.innerHTML = `<i class="fas fa-heart"></i>` : favoritePkmnBtn.innerHTML = `<i class="far fa-heart"></i>`;
+               return currentFavs.filter(fav => fav.id === clickedPkmn.id).length > 0 ? favoritePkmnBtn.innerHTML = `<i class="fas fa-heart"></i>` : favoritePkmnBtn.innerHTML = `<i class="far fa-heart"></i>`;
            }
            
            // Checks if favs is already in localSt.
-           const checkForFavsInLocalStorage = () => localStorage.getItem("favs") === null ? localStorage.setItem("favs", JSON.stringify( [] )) : favoritePkmnCounter++;
+           const checkForFavsInLocalStorage = () => localStorage.getItem("favs") === null ? localStorage.setItem("favs", JSON.stringify( [] )) : favoritePkmnCounter = JSON.parse(localStorage.getItem("favs")).length;
            
            
            
@@ -3829,19 +3876,18 @@
            const favoritePkmn = () => {
                let currentFavs = JSON.parse(localStorage.getItem("favs"));
                
-               console.log("curr 1", currentFavs);
                if (favoritePkmnCounter >= 10) {
                    alert("Sorry, You can favorize only 10 Pokemon");
                } 
                
                if (favoritePkmnCounter < 10 && favoritePkmnBtn.children[0].classList.contains("far")) {  
+                   favoritePkmnCounter++;
                    currentFavs.push(clickedPkmn);
-                   console.log("true", currentFavs);
                    favoritePkmnBtn.innerHTML = `<i class="fas fa-heart"></i>`;
                } else {
-                   currentFavs = currentFavs.filter(fav => fav !== clickedPkmn);
+                   favoritePkmnCounter--;
+                   currentFavs = currentFavs.filter(fav => fav.id !== clickedPkmn.id);
                    favoritePkmnBtn.innerHTML = `<i class="far fa-heart"></i>`;
-                   console.log("false", currentFavs);
                }
                console.log("last", currentFavs);
                window.localStorage.setItem("favs", JSON.stringify(currentFavs));
@@ -3849,7 +3895,7 @@
            
 //                      const favoritePkmn = e => {
 //               console.log(e.target);
-//               let currentFavs = JSON.parse(localStorage.getItem("favs"));
+//               let currentFavs = JSON.pars e(localStorage.getItem("favs"));
 //               console.log("curr 1", currentFavs);
 //               if (favoritePkmnCounter >= 10) {
 //                   alert("Sorry, You can favorize only 10 Pokemon");
@@ -3872,7 +3918,7 @@
            const displFavoritePkmn = () => {
                let currentFavs = JSON.parse(localStorage.getItem("favs"));
                
-               displayAllPokemon(currentFavs);
+               fillPokemon(currentFavs);
            }
            
            
@@ -3882,32 +3928,37 @@
            }
            
            
-           // favorite pkmn - make function to take just the names into arr for easier checking !!!!
+           
+           
+           // BUGS
+        // check togepi evolution, steelix evolution !!!! GEN 
+           
+           
            // specific filter values / min/max after change - circles still in old position !!!!
-           // wieght glitch :)
            
-           // MOVES    
-                // screenSize l -> move font-size bigger  !!
-                // moves size cont etc. ! 
            
-           // specific filter !!!
+           // moves - colors and btns !!!!
+            // screenSize l -> move font-size bigger  !!   X
            
+           
+           // try to set range slider value etc to 25/75%b !!
+//           thumbLeft.style.left = percent + "%";
+//            range.style.left = percent + "%";
            
            // STYLE CSS
-               // prev/next buttons
-               // header
-               // css -> popup Bg section - font-size/spacing smaller, etc.    -  typws padding evt l smaller
-               // base stats different colors nums 
-                  // specific filter
-                    // 
-           
-                // moves - colors and btns
+                // RESPONSIVE
+               // header !!!!
+               // sp. filter
+               // popup - types wrap if mobile phone - untereinander
+               // moves color
            
            
         
            
            // Maybe Stuff
             // maybe Specific filter - evtl abilities input filter ????
+            // checkbox for ids on wide cards - just toggle hidden class
+            // type btns br/2rows 9-9 row
            
            
            
@@ -3917,10 +3968,9 @@
            
            
            
-           
-           
-           
-           
+           // when clicking pkmn func for checking scnd sprite (not there)
+           // could define sprite 
+           // if pkmn name not in list -> get img
            
            
            
