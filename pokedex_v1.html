@@ -1,0 +1,1437 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <title>Developers Nostalgia</title>
+    
+    
+    <style>
+    
+        .p-dex-main-cont
+        {
+            min-height: 100vh;
+            width: 100vw;
+            background: #525252;
+        }
+
+/*------------------------------------------------------------ GENERAL */
+        
+        .flex-center
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+        .flex-column
+        {
+            flex-direction: column;
+        }
+        
+        .selected
+        {
+            color: #fff;
+            transform: scale(1.02);
+        }
+        
+        
+        .hidden
+        {
+            display: none !important;
+        }
+        
+        .notactive
+        {
+            pointer-events: none;
+            background-color: #535353 !important;
+            color: #f0f0f0;
+        }
+        
+        .disabl
+        {
+            pointer-events: none;
+            background-color: #525252 !important;
+            color: #000 !important;
+            box-shadow: inset 0 0 0 2.5px #000;
+        }
+        
+        .opacity
+        {
+            opacity: 0 !important;
+            z-index: -5 !important;
+        }
+        
+        .wide
+        {
+            width: 100% !important;
+        }
+        
+        .main-dex
+        {
+            background: crimson;
+            min-height: 650px;
+            min-width: 550px;
+/*            flex-direction: column;*/
+            display: grid;
+            grid-template-rows: 47.5% auto 47.5%;
+            border: solid 6px #000;
+        }
+        
+        
+        
+        
+
+/*------------------------------------------------------------ POKEDEX PARTS TOP/MIDDLE/BOTTOM */
+
+        .p-dex-top
+        {
+            position: relative;
+            border-bottom: solid 5px #000;
+        }
+        
+        .p-dex-top:before
+        {
+            
+        }
+        
+        
+        
+/*        Middle Part */
+        .p-dex-middle
+        {
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+        }
+        
+/*        Logo */
+/*        .p-dex-micro*/
+        {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: black;
+        }
+        
+        .p-dex-middle-outer-joint-l
+        {
+            box-shadow: inset 0 0 3px 1px #000;
+            border-right: solid 3px #000;
+        }
+        
+        .p-dex-middle-outer-joint-r
+        {
+            box-shadow: inset 0 0 3px 1px #000;
+            border-left: solid 3px #000;
+        }
+        
+        .p-dex-bottom
+        {
+            border-top: solid 5px #000;
+            flex-direction: column;
+        }
+    
+        
+        
+/*------------------------------------------------------------ POKEDEX SCREEN SECTION */
+    
+        .p-dex-lamp
+        {
+            position: absolute;
+            top: 1%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: lightblue;
+            background: #0066CC;
+            width: 25px;
+            height: 25px;
+            border: solid 3px #fff;
+        }
+        
+        .p-dex-lamp:before
+        {
+            content: '';
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            border-radius: 50%;
+            box-shadow: 0 0 6px 2px #fff;
+            width: 4px;
+            height: 4px;
+            background: rgba(255,255,255,.6);
+        }
+        
+        .p-dex-screen-frame
+        {
+            width: 85%;
+            height: 80%;
+            background: #fafafa;
+            border: solid 3px #000;
+        }
+        
+        .p-dex-screen
+        {
+            position: relative;
+            width: 95%;
+            height: 90%;
+            background: #000;
+        }
+        
+        
+        
+        
+        
+        .p-dex-image-cont
+        {
+            position: relative;
+            width: 30%;
+            background: #f5f5f5;
+            background: rgba(255,255,255,.5);
+            margin-right: 5%;
+            border-radius: 5px;
+        }
+        
+        .p-dex-image-cont img 
+        {
+            position: relative;
+            width: 100%;
+            transform: scale(1.2);
+            z-index: 10;
+        }
+        
+        .turn-sprite-btn
+        {
+            position: absolute;
+            bottom: -30%;
+            border-radius: 50%;
+            border-radius: 5px;
+            width: 20px;
+            height: 20px;
+            padding: 12px;
+            font-size: .8em;
+            background-color: crimson;
+            background-color: #000;
+            color: #fff;
+            transition: .3s;
+            cursor: pointer;
+        }
+        
+        .turn-sprite-btn .fas
+        {
+            transform: scale(1.1);
+        }
+        
+        .turn-sprite-btn:hover
+        {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        .p-dex-data-cont
+        {
+            position: relative;
+            width: 75%;
+            padding: 2%;
+            background: #f3f3f3;
+            background: #333;
+            color: #fafafa;
+            border-radius: 5px;
+            font-size: .9em;
+            letter-spacing: .003em;
+            cursor: default;
+        }
+        
+        .p-dex-data-row
+        {
+/*            background: khaki;*/
+            width: 130%;
+            margin: 2% 0;
+            justify-content: space-between;
+        }
+        
+        
+        .p-dex-type
+        {
+            padding: .1em .3em;
+            border-radius: 5px;
+            color: #fff;
+        }
+        
+        .p-dex-category
+        {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 5%;
+            margin-top: -3%;
+        }
+        
+        
+        .p-dex-txt
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: #fafafa;
+/*            justify-content: space-between;*/
+            color: #000;
+            border-radius: 5px;
+            padding: 5%;
+            font-size: .9em;
+            z-index: 10;
+        }
+        
+        .descr-circle
+        {
+            content: '';
+            position: absolute;
+            top: -25%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: crimson;
+        }
+        
+        .p-dex-txt h6
+        {
+            position: relative;
+            color: #fff;
+            margin-bottom: 2.5em;
+/*            margin-bottom: 15%;*/
+            z-index: 5;
+        }
+        
+/*
+        .p-dex-ball
+        {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: crimson;
+        }
+*/
+        
+/*------------------------------------------------------------ POKEDEX START SCREEN SECTION */
+        
+        .p-dex-start-screen
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 3%;
+            width: 100%;
+            height: 100%;
+            cursor: default;
+            font-weight: bold;
+            text-align: center;
+/*            background: darkorange;*/
+            background: #48D0B0;
+            background: #FFD86F;
+            background-color: mediumpurple;
+            border: solid 2px #000;
+            justify-content: space-between;
+            transition: .3s;
+            z-index: 15;
+            opacity: 1;
+        }
+        
+        .p-dex-start-headline
+        {
+            font-weight: bolder;
+        }
+        
+        .element-square
+        {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            font-size: .6em;
+            background-color: #000;
+            color: #fff;
+            margin: 0 .5em;
+        }
+        
+        .d-arrows
+        {
+            font-size: 1.5em;
+            color: #fff;
+            margin: 0 1em;
+        }
+        
+/*------------------------------------------------------------ POKEDEX CONTROL SECTION */
+        
+        .p-dex-ctrl-frame
+        {
+            position: relative;
+            width: 80%;
+            height: 70%;
+            background: #000;
+            border-radius: 1px;
+            overflow: hidden;
+        }
+        
+        
+/*        CONTROL START SCREEN */
+        .pdex-ctrl-start-screen
+        {
+            position: absolute;
+            border-radius: 5px;
+            background: lightgreen;
+            background: silver;
+            background: #20BDFF;
+            background: #4364F7;
+            background: #2193b0;
+            background: #6dd5ed;
+            width: 95%;
+            height: 90%;
+            z-index: 15;
+        }
+        
+        
+        
+        
+        .slidein
+        {
+            animation: slide 1s forwards;
+        }
+        
+        @keyframes slide {
+            to
+            {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .p-dex-mode-options-btn
+        {
+            position: relative;
+            transform: translateY(30%);
+            opacity: 0;
+            background: #fff;
+            border-radius: 5px;
+            width: 30%;
+            min-height: 40%;
+            margin: 0 5%;
+            font-weight: bold;
+            cursor: pointer;
+            flex-direction: column;
+            box-shadow: 1px 1px 10px rgba(0,0,0,.5);
+        }
+        
+        
+        .p-dex-mode-options-btn:before
+        {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 5px 5px 0 0;
+            width: 100%;
+            height: 50%;
+            transition: .3s;
+            background-color: red;
+            z-index: 1;
+        }
+        
+        .p-dex-mode-options-btn:after
+        {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            border-radius: 5px 5px 0 0;
+            background-color: #fafafa;
+            z-index: 2;
+            transition: .5s;
+        }
+        
+        .option-icons
+        {
+            z-index: 3;
+            color: #fff;
+            font-size: 1.3em;
+            margin-top: .8em;
+            margin-bottom: .5em;
+            transition: .4s;
+        }
+        
+        .p-dex-mode-options-btn p
+        {
+            margin-top: .5em;
+            z-index: 5;
+        }
+        
+        .p-dex-mode-options-btn:hover.p-dex-mode-options-btn:before
+        {
+            height: 100%;
+            border-radius: 5px;
+        }
+        
+        .p-dex-mode-options-btn:hover.p-dex-mode-options-btn:after
+        {
+            height: 50%;
+        }
+        
+        .p-dex-mode-options-btn:hover.p-dex-mode-options-btn p
+        {
+            color: #fff;
+        }
+        
+        .p-dex-mode-options-btn:hover .option-icons
+        {
+            color: #000;
+            transform: scale(1.3);
+        }
+
+        
+        
+        
+        
+        
+        
+        .p-dex-ctrl-screen
+        {
+            width: 95%;
+            height: 90%;
+            border-radius: 5px;
+/*            background: #333;*/
+            background: lightblue;
+            padding: 5% 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(5, auto);
+            justify-items: start;
+            justify-content: center;
+            overflow: hidden;
+            font-weight: bolder;
+        }
+        
+
+        .bottom-pkmn-id
+        {
+            font-size: .8em;
+            color: #fafafa;
+/*            color: #333;*/
+            pointer-events: none;
+            margin-right: 5px;
+            font-size: .75em;
+            font-weight: bolder;
+        }
+        
+        .p-dex-data
+        {
+            cursor: pointer;
+            transition: .1s;
+/*            background: blue;*/
+            margin-left: 15%;
+        }
+        
+        .p-dex-data:hover
+        {
+            color: #fff;
+            transform: scale(1.02);
+        }
+        
+ /*------------------------------------------------------------ CONTROL BUTTONS */
+       
+        
+        .p-dex-btn-cont
+        {
+            position: relative;
+            width: 80%;
+            height: 20%;
+            justify-content: space-around;
+            justify-content: space-between;
+            padding: 0 5%;
+            padding-top: 3%;
+/*            background: pink;*/
+        }
+        
+        
+/*        Cross Button */
+        .p-dex-cross-btn-cont
+        {
+            position: absolute;
+            left: 10%;
+            background: #fafafa;
+            border-radius: 50%;
+        }
+        
+        .p-dex-cross-btn-cont:before
+        {
+            content: '';
+            position: absolute;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: silver;
+            background: #525252;
+        }
+        
+        .p-dex-cross
+        {
+            position: absolute;
+            width: 17px;
+            height: 50px;
+            background: #000;
+            border-radius: 3px;
+        }
+        
+        .p-dex-cross:nth-child(2)
+        {
+            transform: rotate(90deg);
+        }
+        
+        
+/*        A/B Buttons */
+        .p-dex-ab-btns-cont
+        {
+            position: absolute;
+            right: 3%;
+        }
+        
+        .p-dex-ab-btn
+        {
+            width:45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #000;
+/*            background: #525252;*/
+            font-weight: bold;
+            color: #fff;
+            font-size: 1em;
+            transform: translateY(.3em);
+/*            box-shadow: */
+            border: solid 3px #525252;
+            cursor: default;
+        }
+        
+        .p-dex-ab-btn:nth-child(2)
+        {
+            margin-left: .3em;
+            transform: translateY(-.3em);
+        }
+        
+        
+/*        Nav Buttons */
+        .p-dex-nav-btns-cont
+        {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .p-dex-nav-btn
+        {
+            border: solid 3px #000;
+            padding: 3px 8px;
+            font-weight: bold;
+            background: #fafafa;
+            border-radius: 3px;
+            margin-right: .5em;
+            transition: .3s;
+            cursor: pointer;
+        }
+        
+        .p-dex-nav-btn:hover
+        {
+            background: #000;
+            color: #fff;
+        }
+        
+        
+        
+ /*------------------------------------------------------------ TYPE FINDER SCREEN */      
+        
+        
+        .p-dex-ctrl-type-finder-scr
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 95%;
+            height: 90%;
+            border-radius: 5px;
+            transform: translate(-50%, -50%);
+            background-color: #fafafa;
+            background-color: #333;
+            box-shadow: inset 0 0 5px rgba(255,255,255,.3);
+        }
+        
+        .type-finder-types-box
+        {
+            padding-top: 5%;
+            display: grid;
+            gap: 7px;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        
+        .type-finder-types-box h6
+        {
+            position: absolute; 
+            font-weight: 700;
+            color: #fff;
+            left: 35%; 
+            top: 8%;
+            
+        }
+        
+        .type-finder-type-btn
+        {
+            padding: .1em;
+            border-radius: 5px;
+            font-size: .9em;
+            font-weight: bolder;
+            color: #fff;
+            text-shadow: .1px 0 5px #000;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .type-finder-type-btn:hover
+        {
+            
+        }
+        
+        
+        
+/*        TYPE FINDER NAMES  */
+        .type-finder-names-box
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            background-color: lightblue;
+            padding: 5px;
+            flex-wrap: wrap;
+            font-size: .9em;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #fff;
+            z-index: 11;
+        }
+        
+        .type-finder-name
+        {
+            margin: 5px;
+            transition: .3s;
+            cursor: pointer;
+            text-shadow: .5px 0 6px #000;
+        }
+        
+        .type-finder-name:hover
+        {
+            color: #000;
+            text-shadow: none;
+            text-shadow: .5px .3px 8px #fff;
+        }
+        
+        
+        .main-ctrl-btn
+        {
+            background-color: #000;
+            color: #fafafa;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            margin: 0 3px;
+            padding: 11px;
+            font-size: .8em;
+            cursor: pointer;
+        }
+        
+        
+        
+        
+        
+/*        CONTROL BUTTONS */
+        .off-btn
+        {
+            color: red;
+        }
+        
+        .square-info
+        {
+            border-radius: 5px;
+            padding: 1em;
+            background-color: crimson;
+        }
+
+        
+        .p-dex-info-btn
+        {
+            position: absolute;
+            top: 5%;
+            font-size: 1.5em;
+            color: ;
+            transition: .5s;
+            cursor: pointer;
+            z-index: 101;
+        }
+        
+        .p-dex-info-btn:hover
+        {
+            color: #fafafa;
+            color: crimson;
+            transform: scale(1.2);
+        }
+        
+        .p-dex-info-cont
+        {
+            position: absolute;
+            top: 1%;
+            width: 700px;
+            background-color: #fafafa;
+            border-radius: 5px;
+            padding: 1em;
+            z-index: 100;
+            font-weight: bold;
+        }
+        
+        .p-dex-info-row
+        {
+            width: 100%;
+            justify-content: flex-start;
+            min-height: 50px;
+        }
+        
+        .p-dex-info-cont p
+        {
+            margin-left: 3em;
+        }
+        
+    </style>
+    
+    
+</head>
+<body>
+   
+   <div class="p-dex-main-cont flex-center">
+     <div onclick="toggleInfoCont()" class="p-dex-info-btn"><i class="fas fa-question-circle"></i></div>
+      <div class="p-dex-info-cont opacity">
+          <div class="p-dex-info-row flex-center">
+              <div class="main-ctrl-btn flex-center"><i class="fas fa-power-off"></i></div>
+              <div class="main-ctrl-btn flex-center" style="color: crimson"><i class="fas fa-power-off"></i></div>
+              <p>Turn On / Turn Off The Pokedex</p>
+          </div>
+          <div class="p-dex-info-row flex-center">
+              <div class="main-ctrl-btn flex-center"><i class="fas fa-bars"></i></div> 
+              <p>Return To Main Menu - Select a Mode</p>
+          </div>
+          <div class="p-dex-info-row flex-center">
+              <div class="main-ctrl-btn flex-center"><i class="fas fa-arrow-left"></i></div>
+              <p>Go Back To Type Filter Mode - (Only After Clicking A Filtered Pokemon)</p>
+          </div>
+          <div class="p-dex-info-row flex-center">
+              <div class="main-ctrl-btn square-info flex-center"><i class=" fas fa-book-open"></i></div>
+              <p>Dexter Mode - A Pokemon Enzyclopedia - Click on any pokemon name (bottom display) to get the Data (top display). By clicking the button below the image (top Display) - Info Text and back sprite gets revealed.</p>
+          </div>
+          <div class="p-dex-info-row flex-center">
+              <div class="main-ctrl-btn square-info flex-center"><i class="fab fa-searchengin"></i></div>
+              <p>Type Filter Mode - Click on any pokemon Type (bottom display) to get a filtered list of pokemon names. Click on any pokemon name (bottom display) to get the Data (top display).</p>
+          </div>
+      </div>
+       <div class="main-dex">
+<!--          Pokedex Top Part -->
+           <div class="p-dex-top flex-center">
+              <div class="p-dex-lamp"></div>
+               <div class="p-dex-screen-frame flex-center">
+                   <div class="p-dex-screen">
+<!--                      Start Screen -->
+                       <div class="p-dex-start-screen flex-center flex-column opacity">
+                           <h2 class="p-dex-start-headline">Online Pokedex</h2>
+                           <p>
+                               Choose between Dexter and Type Finder Mode.<br>
+                               Dexter Mode - List of all 150 Pokemon (1st Gen)<br>
+                               Type Finder Mode - Search Pokemon via Tpe<br>
+                           </p>
+                           <div class="flex-center">
+                               <div class="element-square flex-center"><i class="fas fa-tint"></i></div>
+                               <div class="element-square flex-center"><i class="fas fa-fire"></i></div>
+                               <div class="element-square flex-center"><i class="fas fa-seedling"></i></div>
+                           </div>
+                           
+                           <div class="p-dex-start-info">
+                               <span class="d-arrows">&darr;</span> Choose Mode <span class="d-arrows">&darr;</span>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+<!--       Pokedex Middle Part -->
+           <div class="p-dex-middle">
+               <div class="p-dex-middle-outer-joint-l"></div>
+               <div class="p-dex-middle-middle-joint flex-center">
+<!--               Main Control Buttons -->
+        <div onclick="displayAllTypesBtns()" class="main-ctrl-btn flex-center btf-btn opacity disabl"><i class="fas fa-arrow-left"></i></div>
+                   <div onclick="turnOnDex()" class="main-ctrl-btn flex-center on-btn"><i class="fas fa-power-off"></i></div>
+                   <div onclick="turnOffDex()" class="main-ctrl-btn flex-center off-btn hidden"><i class="fas fa-power-off"></i></div>
+                   <div onclick="displayMenuScr()" class="main-ctrl-btn flex-center menu-btn opacity"><i class="fas fa-bars"></i></div>
+               </div>
+               <div class="p-dex-middle-outer-joint-r"></div>
+           </div>
+<!--           Pokedex Bottom Part -->
+          <div class="p-dex-bottom flex-center">
+              <div class="p-dex-ctrl-frame flex-center">
+<!--              Control Start Screen -->
+              <div class="pdex-ctrl-start-screen flex-center opacity">
+                  <div onclick="selectOptionMode(true)" class="p-dex-mode-options-btn flex-center">
+                      <i class="option-icons fas fa-book-open"></i>
+                      <p>Dexter Mode</p>
+                  </div>
+                  <div onclick="selectOptionMode(false)" class="p-dex-mode-options-btn flex-center">
+                      <i class="option-icons fab fa-searchengin"></i>
+                      <p>Type Finder</p>
+                  </div>
+              </div>
+<!--              Type Finder Screen -->
+              <div class="p-dex-ctrl-type-finder-scr flex-center">
+                  <div id="type-finder-names-types" class="type-finder-types-box opacity">
+                  </div>
+              </div>
+<!--                 Control Screen -->
+                  <div class="p-dex-ctrl-screen opacity"></div>
+              </div>
+<!--              Controller Buttons -->
+             <div class="p-dex-btn-cont flex-center">
+                <div class="p-dex-cross-btn-cont flex-center">
+                    <div class="p-dex-cross"></div>
+                    <div class="p-dex-cross"></div>
+                </div>
+<!--                Navigation Buttons Next/Prev -->
+                <div class="p-dex-nav-btns-cont flex-center">
+                     <div onclick="paginationBtnFunc(event)" class="p-dex-nav-btn p-dex-prev-btn notactive">PREV</div>
+                     <div onclick="paginationBtnFunc(event)" class="p-dex-nav-btn p-dex-next-btn notactive">NEXT</div>
+                 </div>
+<!--                 A and B Buttons -->
+                <div class="p-dex-ab-btns-cont flex-center">
+                    <div class="p-dex-ab-btn flex-center">B</div>
+                    <div class="p-dex-ab-btn flex-center">A</div>
+                </div>
+             </div>
+          </div>
+       </div>
+   </div>
+   
+   <script>
+       
+       // All types colors
+        const allColors = {
+            fire: '#FB6C6C',
+            grass: '#48D0B0',
+            electric: '#FFD86F',
+            water: '#76BDFE',
+            ground: '#D68E5E',
+            rock: '#C9B98B',
+            fairy: '#FEBAEA',
+            poison: '#54B564',
+//            poison: '#40244A',
+//            poison: '#98d7a5',
+            bug: '#2CDAB1',
+            dragon: '#0875C8',
+//            dragon: '#97b3e6',
+            psychic: '#9758AD',
+//            psychic: '#F366B9',
+            flying: '#AEC5EF',
+            fighting: '#DA475C',
+//            fighting: '#C27E6E',
+            normal: '#5B5F68',
+            ice: '#51C4E7',
+            ghost: '#7B62A3',
+            dark: '#9D9EA0',
+            steel: '#9EB7B8'
+        }
+       
+        
+       const dexTurnOnBtn = document.querySelector(".on-btn");
+       const dexMenuBtn = document.querySelector(".menu-btn");
+       const dexTurnOffBtn = document.querySelector(".off-btn");
+       const backToFiltersBtn = document.querySelector(".btf-btn");
+       const pkmnTxtContainer = document.querySelector(".p-dex-txt");
+       const topDisplay = document.querySelector(".p-dex-start-screen");
+       const bottomDisplay = document.querySelector(".p-dex-ctrl-screen");
+       const dexInfoContainer = document.querySelector(".p-dex-info-cont");
+       const pkmnDataContainer = document.querySelector(".p-dex-data-cont");
+       const navigationButtons = document.querySelectorAll(".p-dex-nav-btn");
+       const bottomDisplayBg = document.querySelector(".p-dex-ctrl-screen-bg");
+       const controlStartScr = document.querySelector(".pdex-ctrl-start-screen");
+       const modeOptionBtns = document.querySelectorAll(".p-dex-mode-options-btn");
+       const typeFinderScr = document.querySelector(".p-dex-ctrl-type-finder-scr");
+       const typeFinderTypesCont = document.querySelector(".type-finder-types-box");
+       const typeFinderNamesCont = document.querySelector(".type-finder-names-box");
+       const typeFinderNamesTypes = document.querySelector("#type-finder-names-types");
+       
+       const startScrBg = "#6dd5ed";
+       const pkmnLimit = 150;
+       
+       let currentPkmnSet;
+       let pkmnSetIndex;
+    
+       let loaded = false;
+       let allPkmn = [];
+       
+       
+       // Gets all Pokemon (API) and modifies data
+       const getAndModifyPkmn = () => {
+           for (let pkmn = 1; pkmn <= pkmnLimit; pkmn++) {
+               fetch(`https://pokeapi.co/api/v2/pokemon/${pkmn}`).then(res => res.json()).then(pokemon => {
+                   const sprites = [pokemon.sprites.front_default, pokemon.sprites.back_default];
+                   const pData = [pokemon.height, pokemon.weight];
+                   
+                   fetch(`https://pokeapi.co/api/v2/pokemon-species/${pkmn}/`).then(res => res.json()).then(pkmn => {
+                       const formattetPkmn = {
+                           id : pkmn.id,
+                           name : pkmn.name,
+                           height : pData[0],
+                           weight : pData[1],
+                           backSprite : sprites[1],
+                           frontSprite : sprites[0],
+                           category : pkmn.genera[7].genus,
+                           type1 : pokemon.types[0].type.name,
+                           color : allColors[pokemon.types[0].type.name],
+                           text : pkmn.flavor_text_entries[1].flavor_text,
+                           type2 : (pokemon.types[1] ? pokemon.types[1].type.name : "hidden"),
+                       }
+                       allPkmn.push(formattetPkmn);
+                       
+                   }).catch(err => console.error(err));
+                   
+               }).catch(err => console.error(err));
+           } 
+       }       
+       
+       
+       
+       // Start - turns on the Dex
+       const turnOnDex = () => {
+           turnOnAnimation();
+           allPkmn.sort((a, b) => a.id - b.id);
+//           displayFirstOrLastNames(true);
+       }
+       
+       
+       // Displays start screen
+       const turnOnAnimation = () => {
+           toggleStartScreen();
+           toggleBottomDispl();
+           toggleMainCtrlfBtns();
+           setTimeout(slideInBtns, 500);
+       }
+       
+       // Removes Start Screen
+       const toggleStartScreen = () => topDisplay.classList.toggle("opacity");
+       
+       // Toggles Bootom Displ - changes bg-color
+       const toggleBottomDispl = () => controlStartScr.classList.toggle("opacity");
+       
+       
+       // Toggles Options Btns - slides them up / in
+       const slideInBtns = () => [...modeOptionBtns].forEach(mob => mob.classList.toggle("slidein"));
+                                                        
+       
+       // Toggles Nav Btns - disables / enables them
+       const toggleNavBtns = () => navigationButtons.forEach(nb => nb.classList.toggle("notactive"));
+       
+       
+       // Toggles Info Cont - opacity
+       const toggleInfoCont = () => dexInfoContainer.classList.toggle("opacity");
+       
+       
+       // Toggles On/Off Buttons
+       const toggleMainCtrlfBtns = () => {
+           dexMenuBtn.classList.toggle("opacity");
+           dexTurnOnBtn.classList.toggle("hidden");
+           dexTurnOffBtn.classList.toggle("hidden");
+           backToFiltersBtn.classList.toggle("opacity");
+       }
+       
+       
+       // Click Function - Makes all Sreens disappear except selected Scr
+       const selectOptionMode = (bool) => {
+           const modes = [bottomDisplay, controlStartScr, typeFinderScr];
+           
+           modes.forEach(mode => mode.classList.add("opacity"));
+           if (bool) {
+               [...navigationButtons].forEach(nb => nb.classList.remove("notactive"));
+               bottomDisplay.classList.remove("opacity");
+               displayFirstOrLastNames(true);
+           } else {
+               displayAllTypesBtns();
+               typeFinderScr.classList.remove("opacity");
+               typeFinderNamesTypes.classList.remove("opacity");
+           }
+       }
+       
+       
+       // Diplays all Types Btns and headline
+       const displayAllTypesBtns = () => {
+           backToFiltersBtn.classList.add("disabl");
+           switchTypesNamesBox("types", "names");
+           typeFinderTypesCont.insertAdjacentHTML("beforeend", `<h6>- Choose a Type -</h6>`);
+           
+           for (const type in allColors) {
+               typeFinderTypesCont.insertAdjacentHTML("beforeend", `
+               <div onclick="filterViaType(event)" class="type-finder-type-btn flex-center" style="background-color: ${allColors[type]}">${capitalize(type)}</div>
+           `);
+          }
+       }
+
+
+       //
+          const switchTypesNamesBox = (choice1, choice2) => {
+           typeFinderNamesTypes.innerHTML = "";
+           typeFinderNamesTypes.classList.remove(`type-finder-${choice2}-box`);
+           typeFinderNamesTypes.classList.add(`type-finder-${choice1}-box`, `${choice1 === "names" ? "flex-center" : "no"}`);
+           
+           if (choice1 === "types") {
+               typeFinderNamesTypes.style.backgroundColor = "#333";
+           }
+       }
+
+       
+       // 
+       const filterViaType = (e) => {
+           backToFiltersBtn.classList.remove("disabl");
+           const typeToFilter = e.target.innerText.toLowerCase();
+           const filteredPkmn = allPkmn.filter(p => p.type1 === typeToFilter || p.type2 === typeToFilter).sort((a, b) => a.id - b.id);
+ 
+           switchTypesNamesBox("names", "types");
+           typeFinderNamesTypes.style.backgroundColor = allColors[typeToFilter];
+           
+           filteredPkmn.forEach(fp => {
+               typeFinderNamesTypes.insertAdjacentHTML("beforeend", `
+                  <div onclick="dipslayClickedPkmn(event, false)" class="type-finder-name" style="font-size: ${filteredPkmn.length >= 19 ? ".85em" : "1.1em"}">
+                      ${capitalize(fp.name)}
+                  </div>`);
+           });
+       }
+       
+       
+       // 
+       const displayFirstOrLastNames = (bool) => {
+           // sorts all pokemon by id from 1-150
+           
+           pkmnSetIndex = bool ? 10 : 150;
+           bottomDisplay.innerHTML = "";
+           
+           for (let i = 10; i >= 1; i--) {
+               bottomDisplay.insertAdjacentHTML("beforeend", `
+                    <span onclick="dipslayClickedPkmn(event, true)" class="p-dex-data flex-center">
+                        <span class="bottom-pkmn-id">#${displayPkmnId(allPkmn[pkmnSetIndex - i].id)}</span>
+                        ${capitalize(allPkmn[pkmnSetIndex - i].name)}
+                    </span> 
+              `);
+           }
+       }
+       
+       
+       
+       const paginationBtnFunc = (e) => {
+           if (pkmnSetIndex >= 10 && pkmnSetIndex <= 150) {
+               bottomDisplay.innerHTML = "";
+               
+               let finish = e.target.innerText.toLowerCase() === "prev" ? pkmnSetIndex -= 10 : pkmnSetIndex += 10;
+               
+               if (finish < 10) {
+                   displayFirstOrLastNames(false);
+               } else if (finish > 150) {
+                   displayFirstOrLastNames(true);
+               } else {
+                   let start = finish - 10;
+                   let updatedSetToDisplay = allPkmn.filter(ap => ap.id > start && ap.id <= finish);
+                   
+                   updatedSetToDisplay.forEach(p => {
+                      bottomDisplay.insertAdjacentHTML("beforeend", `
+                        <span onclick="dipslayClickedPkmn(event, true)" class="p-dex-data flex-center">
+                            <span class="bottom-pkmn-id">#${displayPkmnId(p.id)}</span>
+                            ${capitalize(p.name)}
+                        </span> 
+                       `);
+                   });
+               } 
+           }
+       }
+       
+       
+       const dipslayClickedPkmn = (e, bool) => {
+           removeSelectedClass();
+           e.target.classList.add("selected");
+           const selectedName = `${bool ? e.target.innerText.slice(4).toLowerCase().trim() : e.target.innerText.toLowerCase()}`;
+           const selectedPkmn = allPkmn.filter(ap => ap.name === selectedName)[0];
+           const dexContainer = document.createElement("div");
+           
+                 dexContainer.classList.add("flex-center", "wide");
+                 topDisplay.style.backgroundColor = selectedPkmn.color;
+           
+           const dexContainerInnerHTML = `
+                <div class="p-dex-image-cont flex-center flex-column">
+                      <img class="front-sprite" src="${selectedPkmn.frontSprite}" alt="pokemon">
+                      <img class="back-sprite hidden" src="${selectedPkmn.backSprite}" alt="pokemon">
+                      <div onclick="changeDexInfo()" class="turn-sprite-btn flex-center">
+                          <i class="fas fa-sync-alt"></i>
+                      </div>
+                  </div>
+                  <div class="p-dex-data-cont flex-center flex-column">
+                     <div class="flex-center flex-column">
+                         <div class="flex-center p-dex-data-row">
+                             <h3 class="p-dex-name">${capitalize(selectedPkmn.name)}</h3>
+                             <div class="p-dex-data poke-id">#${displayPkmnId(selectedPkmn.id)}</div>
+                         </div>
+                         <div class="p-dex-category">- ${selectedPkmn.category} -</div>
+                          <div class="flex-center p-dex-data-row">
+                             <div class="p-dex-descr">Types:</div>
+                              <div class="p-dex-type" style="background-color: green">${capitalize(selectedPkmn.type1)}</div>
+                              <div class="p-dex-type ${selectedPkmn.type2}" style="background-color: purple">${capitalize(selectedPkmn.type2)}</div>
+                          </div>
+                          <div class="flex-center p-dex-data-row">
+                              <div class="pdex-data-descr">Height:</div>
+                              <div class="pdex-data">${convertDecimeterToFeetMeter(selectedPkmn.height)[0]} (${convertDecimeterToFeetMeter(selectedPkmn.height)[1]})</div>
+                          </div>
+                          <div class="flex-center p-dex-data-row">
+                              <div class="pdex-data-descr">Weight:</div>
+                              <div class="pdex-data">${selectedPkmn.weight}lbs (${convertLbsToKilos(selectedPkmn.weight)}kg)</div>
+                          </div>
+                      </div>
+                      <div class="p-dex-txt hidden">
+                             <div class="descr-circle" style="background-color: ${allColors[selectedPkmn.type1]}"></div>
+                         <h6>Descr.</h6>
+                          <p>${filterPkmnText(selectedPkmn.text)}</p>
+                      </div>
+                  </div>
+            `;
+           topDisplay.innerHTML = "";
+           dexContainer.innerHTML = dexContainerInnerHTML;
+           topDisplay.append(dexContainer);
+       }
+       
+       
+       // Removes all selected classes from Names
+       const removeSelectedClass = () => {
+           const currPkmnNames = document.querySelectorAll(".p-dex-data");
+           currPkmnNames.forEach(cpn => cpn.classList.remove("selected"));
+       }
+       
+       // Capitalizes a String
+       const capitalize = (str) => str[0].toUpperCase() + str.slice(1);
+       
+       
+       // Converts lbs to kilos
+        const convertLbsToKilos = (num) => (num * 0.45359237).toFixed(1) + "kg";
+
+        
+        // Converts decimeters (input) to feet and meters returns array with both values
+        const convertDecimeterToFeetMeter = (num) => [((num * 0.3280839895).toFixed(1) + `"`), (num / 10 + "m")];
+       
+       
+       // Displays Id in 3. characters
+       const displayPkmnId = (id) => {
+           let result = [];
+           let idSplitted = "000" + id.toString().split();
+           
+           for (let i = idSplitted.length - 1; i > idSplitted.length - 4; i--) {
+               result.push(idSplitted[i]);
+           }
+           return result.reverse().join("");
+       }
+
+       
+       // Displ Sprite & Descr. Text
+       const changeDexInfo = () => {
+           document.querySelector(".front-sprite").classList.toggle("hidden");
+           document.querySelector(".back-sprite").classList.toggle("hidden");
+           document.querySelector(".p-dex-txt").classList.toggle("hidden");
+       }
+       
+       
+       // Filters non letters out        
+       const filterPkmnText = (txt) => {
+           const checkIfLetter = (char) => (/[a-zA-Z]/).test(char);  // coderrocketfuel.com
+           
+           return txt.split("").filter(char => (checkIfLetter(char) || char === " " || char === ".")).join("");
+       }
+       
+       
+       
+       const startScreenInnerHTML = `
+           <h2 class="p-dex-start-headline">Online Pokedex</h2>
+           <p>
+               Choose between Dexter and Type Finder Mode.<br>
+               Dexter Mode - List of all 150 Pokemon (1st Gen)<br>
+               Type Finder Mode - Search Pokemon via Tpe<br>
+           </p>
+           <div class="flex-center">
+               <div class="element-square flex-center"><i class="fas fa-tint"></i></div>
+               <div class="element-square flex-center"><i class="fas fa-fire"></i></div>
+               <div class="element-square flex-center"><i class="fas fa-seedling"></i></div>
+           </div>
+           <div class="p-dex-start-info">
+               <span class="d-arrows">&darr;</span> Choose Mode <span class="d-arrows">&darr;</span>
+           </div>
+       `;
+       
+       //
+       const displayMenuScr = () => {
+           topDisplay.style.backgroundColor = startScrBg;
+           topDisplay.innerHTML = `${startScreenInnerHTML}`;
+           [bottomDisplay, controlStartScr].forEach(m => m.classList.remove("opacity"));
+           
+           if (!navigationButtons[0].classList.contains("notactive")) {
+               toggleNavBtns();
+           }
+       }
+       
+       
+       //
+       const turnOffDex = () => {
+           toggleMainCtrlfBtns();
+           topDisplay.style.backgroundColor = startScrBg;
+           topDisplay.innerHTML = `${startScreenInnerHTML}`;
+           [controlStartScr, topDisplay].forEach(m => m.classList.add("opacity"));
+           switchTypesNamesBox("types", "names");
+           bottomDisplay.classList.add("opacity");
+           
+           if (!navigationButtons[0].classList.contains("notactive")) {
+               toggleNavBtns();
+           } if (modeOptionBtns[0].classList.contains("slidein")) {
+               slideInBtns();
+           }
+       }
+       
+       // 
+       getAndModifyPkmn();
+
+           
+           
+           
+           
+       
+           
+       
+       
+           // Info box - circle btns expl  O - Turns on / off ...etc. dexter mode - blablalba       
+       // Colors general (final step)
+               
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+                  
+//       
+//       fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`).then(res => res.json()).then(pkmn => {
+//               console.log(pkmn.results)
+//           }).catch(err => console.error(err));
+               
+//           fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json()).then(pkmn => {
+//               console.log(pkmn.height, pkmn.weight)
+//           }).catch(err => console.error(err));
+       
+       
+       
+       
+       
+//       <!--                     create this one  -->
+//<!--
+//                      <div class="flex-center">
+//                          <div class="p-dex-image-cont flex-center flex-column">
+//                              <img class="front-sprite" src="ivisaur.png" alt="pokemon">
+//                              <img class="back-sprite" src="lizardonstandingcomic.png" alt="pokemon" hidden>
+//                              <div onclick="turnSprite()" class="turn-sprite-btn">O</div>
+//                          </div>
+//                          <div class="p-dex-data-cont flex-center flex-column">
+//                             <div class="flex-center flex-column">
+//                                 <div class="flex-center p-dex-data-row">
+//                                     <h3 class="p-dex-name">Ivisaur</h3>
+//                                     <div class="p-dex-data poke-id">#002</div>
+//                                 </div>
+//                                 <div class="p-dex-category">- Seed Pokemon -</div>
+//                                  <div class="flex-center p-dex-data-row">
+//                                     <div class="p-dex-descr">Types:</div>
+//                                      <div class="p-dex-type" style="background-color: green">Grass</div>
+//                                      <div class="p-dex-type" style="background-color: purple">Poison</div>
+//                                  </div>
+//                                  <div class="flex-center p-dex-data-row">
+//                                      <div class="pdex-data-descr">Height:</div>
+//                                      <div class="pdex-data-descr">Height:</div>
+//                                      <div class="pdex-data">6.1" (1.6m)</div>
+//                                  </div>
+//                                  <div class="flex-center p-dex-data-row">
+//                                      <div class="pdex-data-descr">Weight:</div>
+//                                      <div class="pdex-data">120lbs (60kg)</div>
+//                                  </div>
+//                              </div>
+//                              <div class="p-dex-txt hidden">
+//                                 <h6>Descr.</h6>
+//                                  <p>
+//                                      It can freely recombine its own cellular structure to transform into other life-forms.
+//                                  </p>
+//                                  <div class="p-dex-ball"></div>
+//                              </div>
+//                          </div>
+//                      </div>
+//-->
+//       
+//       
+       
+       
+       
+       
+              
+//       const getPkmnNames = () => {
+//           fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`).then(res => res.json()).then(pkmn => {
+//               const allPknmNames = pkmn.results.map(res => res.name);
+////               console.log(allPknmNames);
+//               
+//           });
+//       
+       
+//      
+//       
+//       const displayPkmnSet = (setIndex) => {
+//           let currentSet;
+//           
+//           currentPkmnSet = [];
+//           
+//           for (let i = (setIndex - 10); i <= setIndex; i++) {
+//               fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then(res => res.json()).then(data => {
+//                   
+//                   
+//                   currentPkmnSet.push(pokemon);
+//               });
+//           }
+//       }
+    
+   </script>
+    
+</body>
+</html>
