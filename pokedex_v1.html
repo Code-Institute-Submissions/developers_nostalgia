@@ -18,55 +18,60 @@
     <style>
         /*----------------------------------------------- GENERAL */
 
-        .html {
+        .html 
+        {
             scroll-behavior: smooth;
         }
 
 
-        .flex-center {
+        .flex-center 
+        {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .flex-column {
+        .flex-column 
+        {
             flex-direction: column;
         }
 
-        .hidden {
+        .hidden 
+        {
             display: none !important;
         }
 
-        .opacity {
+        .opacity 
+        {
             opacity: 0 !important;
             z-index: -100 !important;
         }
 
-        button {
+        button 
+        {
             cursor: pointer;
             outline: none;
             border: none;
-
             border-radius: 5px;
         }
 
 
         /*----------------------------------------------- MAIN CONTAINER */
-        .pdex-list-main-cont {
+        
+        .pdex-list-main-cont 
+        {
             position: relative;
             padding-top: 80px;
             width: 100vw;
             min-height: 100vh;
-            /*            background: #fafafa;*/
             background-color: #333;
         }
 
 
-
-
-
-        /*        POKEDEX LIST HEADER */
-        .pdl-header {
+        /*----------------------------------------------- HEADER */
+        
+        .pdl-header 
+        {
             position: absolute;
             top: 0;
             left: 0;
@@ -77,44 +82,36 @@
             background: crimson;
         }
 
-        .pdex-list-search-btn {
+        /* Header BUTTONS*/
+        .pdex-list-search-btn 
+        {
             background-color: #000;
             width: 60px;
             border-radius: 5px;
             padding: .1em;
             cursor: pointer;
         }
-
-
-
-
-        /*        POKEDEX LIST CONTAINER */
-        .pdl-cont {
-            /*            text-align: center;*/
+        
+        /*----------------------------------------------- POKEDEX LIST CONTAINER */
+        
+        .pdl-cont 
+        {
             position: relative;
             padding-top: 10px;
-            /*            padding-top: 20px;*/
             width: 80%;
-            /*            background: lightgray;*/
             min-height: 100vh;
-            /*            padding-top: 1em;*/
             padding-bottom: 5em;
             display: grid;
             justify-content: center;
-            /*            grid-template-columns: repeat(auto-fit, minmax(19%, 1fr));*/
-
-            /*            grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));*/
-            /*            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));*/
             grid-template-columns: repeat(auto-fit, 260px);
             gap: 20px;
-            /*            grid-gap: 10px;*/
-            /*            padding-inline-start: 0;*/
-
         }
 
-
+        
         /*----------------------------------------------- POKEDEX CARDS WIDE */
-        .poke-card-wide {
+        
+        .poke-card-wide 
+        {
             position: relative;
             padding: .5em 1em;
             padding-top: 10%;
@@ -126,12 +123,15 @@
             transition: .3s;
             cursor: pointer;
         }
-
-        .poke-card-wide:hover {
+        /* Card wide - Hover*/
+        .poke-card-wide:hover 
+        {
             transform: scale(1.05);
         }
 
-        .poke-card-wide-click {
+        /* Surface on card with onclick function */
+        .poke-card-wide-click 
+        {
             transition: .3s;
             position: absolute;
             top: 0;
@@ -144,7 +144,8 @@
             z-index: 3200;
         }
 
-        .poke-card-wide-id {
+        .poke-card-wide-id 
+        {
             position: absolute;
             right: 8%;
             right: 5%;
@@ -154,36 +155,38 @@
             color: #000;
             color: rgba(55, 55, 55, .3);
             margin-left: 5%;
-            /*            letter-spacing: .03em;*/
             font-size: 1em;
             font-weight: bold;
             z-index: 1;
         }
 
-        .pdl-popup-category {
+        .pdl-popup-category 
+        {
             font-size: .8em;
             color: ;
             min-width: 200px;
             font-weight: 600;
         }
 
-        .poke-card-wide-headline {
-            /*             !important;*/
+        .poke-card-wide-headline 
+        {
             font-size: 1.2em;
             font-size: 1.3em;
             margin-bottom: .5em;
             color: #fff;
             letter-spacing: .01em;
             margin-left: 5%;
-
         }
 
-        #popup-pkmn-headline {
-            /*            font-size: 2.5em;*/
+/*        !!! */
+        #popup-pkmn-headline 
+        {
+/*                        font-size: 2.5em;*/
             text-shadow: 0 0 .5px rgba(0, 0, 0.3);
         }
 
-        .poke-card-wide-type {
+        .poke-card-wide-type 
+        {
             width: 50%;
             margin: .5em;
             margin-left: 5%;
@@ -191,26 +194,25 @@
             padding: .3em 2.6em;
             padding: .3em 3em;
             font-weight: 600;
-            /*            text-transform: uppercase;*/
             color: #fff;
             font-size: small;
             font-size: smaller;
             letter-spacing: .2em;
             background-color: rgba(255, 255, 255, .3);
-            text-shadow: 0 0 .5px rgba(0, 0, 0.3);
+            text-shadow: 0 0 .5px rgba(0, 0, 0, .5);
         }
 
-        .poke-card-wide-right {
+        .poke-card-wide-right 
+        {
             position: absolute;
             width: 50%;
             height: 100%;
             right: -3%;
-            text-shadow: 0 0 .5px rgba(0, 0, 0.3);
-            /*            border-radius: 50%;*/
-            /*            background-color: rgba(255,255,255, .3);*/
+            text-shadow: 0 0 .5px rgba(0, 0, 0, .3);
         }
 
-        .poke-card-wide-img {
+        .poke-card-wide-img 
+        {
             position: absolute;
             top: 20%;
             top: 15%;
@@ -244,37 +246,97 @@
             width: 100%;
             transform: scale(.95) translate(-10%, -20%);
             z-index: 15;
-            /*            transform: scale(.9);*/
-            /*            transform: translateY(5%);*/
         }
 
 
 
 
-
-
-
-
-        /*----------------------------------------------- POKEDEX CARDS */
-
-        /*        POKEMON FILTETR TYPE BUTTONS */
-        .bttn {
-            border: none;
-            cursor: pointer;
+/*--------------------------------- */
+        .poke-circle
+        {
+            position: absolute;
+            top: 8%;
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            background-color: rgba(255,255,255,.5);
+/*            animation: rotate-ball infinite 6s linear;*/
+        }
+        
+        @keyframes rotate-ball 
+        {
+            from
+            {
+                transform: rotate(0);
+            }
+            to 
+            {
+                transform: rotate(360deg)
+            }
+        }
+        
+        .poke-circle:before
+        {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 15%;
+            width: 40%;
+            background-color: #000;
+            border-radius: ;
+        }
+        
+        .poke-circle:after
+        {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 15%;
+            width: 30%;
+            background-color: #000;
+        }
+        
+        .poke-inner-circle
+        {
+            position: relative;
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            background-color: #000;
+            
+        }
+        
+        .poke-inner-circle:before
+        {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 60%;
+            width: 60%;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,.5);
         }
 
 
-        .poke-type-btn-cont {
-            /*            font-size: .95em;*/
-            /*            font-size: .9em;*/
-            /*            font-size: 1em;*/
 
-            width: 80%;
+        /*----------------------------------------------- FILTETR BY TYPE BUTTONS */
+
+        .poke-type-btn-cont 
+        {
+            font-size: .85em;
+            width: 80%; 
             text-align: center;
             margin: 1em 0;
         }
 
-        .poke-type-filter-btn {
+        .poke-type-filter-btn 
+        {
             border-radius: 20px;
             padding: .3em 1em;
             margin: .3em .1em;
@@ -282,10 +344,11 @@
             color: #fff;
             font-weight: bold;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
-            /*            text-transform: uppercase;*/
         }
 
 
+        
+/*
         .pdex-card {
             position: relative;
             padding: 10% 0;
@@ -306,8 +369,6 @@
             width: 100%;
             border-radius: 10px 10px 0 0;
             background-color: rgba(255, 255, 255, .5);
-            /*            background-color: darkorange;*/
-            /*            background: linear-gradient(to right, darkorange, lightblue);*/
             opacity: .5;
         }
 
@@ -319,6 +380,7 @@
             margin-bottom: 1em;
             z-index: 10;
         }
+*/
 
         /*
         .pdl-card-img:before
@@ -338,11 +400,12 @@
         }
 */
 
+/*
         .pdl-card-img img {
             object-fit: cover;
             width: 100%;
             height: 100%;
-            /*            transform: scale(1.1);*/
+                        transform: scale(1.1);
         }
 
 
@@ -353,19 +416,23 @@
             color: goldenrod;
             font-size: ;
         }
+*/
 
-        .pdex-card-types-cont {
+/*        .pdex-card-types-cont {*/
             /*            height: 20%;*/
             /*            width: 100%;*/
             /*            width: 80%;*/
             /*            background: khaki;*/
-        }
+/*        }*/
 
+/*
         .pdex-card-type {
             border-radius: 25px;
             padding: 2px;
+*/
             /*            width: 30%;*/
             /*            height: 100%;*/
+/*
             font-weight: bolder;
             text-transform: uppercase;
             font-size: .7em;
@@ -373,22 +440,28 @@
             margin: 5px;
             color: #fff;
         }
+*/
 
 
         /*----------------------------------------------- POPUP CONTAINER */
-        .pdl-popup-cont {
+        
+        .pdl-popup-cont 
+        {
             position: fixed;
             left: 0%;
             top: 0;
             width: 100%;
             height: 100vh;
-            /*            border-radius: 10px;*/
             background-color: #333;
             cursor: default;
             z-index: 6000;
         }
+        
+        /* POPUP TOP SECTION (BG) --------- */
 
-        .popup-close-btn {
+        /* Close Popup window btn */
+        .popup-close-btn 
+        {
             position: absolute;
             top: 3%;
             left: 50%;
@@ -400,20 +473,23 @@
             transition: .3s;
             background-color: rgba(255, 255, 255, .5);
             z-index: 30000;
-            /*            left: */
         }
-
-        .popup-close-btn:hover {
+        /* Close Popup Btn - Hover */
+        .popup-close-btn:hover 
+        {
             transform: translateX(-50%) scale(1.3);
         }
-
+        /* Close Popup Btn Crosses - Hover */
         .close-specific-filter-btn:hover .cross,
-        .popup-close-btn:hover .cross {
+        .popup-close-btn:hover .cross 
+        {
             background: #000;
         }
 
 
-        .cross {
+        /* Close Popup Btn Cross X */
+        .cross 
+        {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -422,40 +498,36 @@
             height: 1px;
             background: #333;
             background: #fff;
-            /*            background: rgba(0,0,0,.3);*/
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 0, 0, .5);
             transition: .3s;
         }
 
-        .cross2 {
+        .cross2 
+        {
             transform: translate(-50%, -50%) rotate(-45deg);
         }
 
-        .pdl-popup-img {
+        /* Popup Sprite / Image */
+        .pdl-popup-img 
+        {
             position: fixed;
             /*            top: 10%;*/
             /*            top: 15%;*/
             top: 9%;
-            /*            mobile x2 */
-            /*            top: 15%;*/
             left: 50%;
             transform: translateX(-50%);
             width: 13em;
             /*            width: 8em;*/
-            /*            height: 12em;*/
-            /*            background: url("charizard.png");*/
+/*                        height: 12em;*/
             background-size: cover;
             cursor: pointer;
             transition: .3s;
         }
 
-        .pdl-popup-id {
-            /*          put this one in a div flex-end / text align right  !!! */
+        .pdl-popup-id 
+        {
             margin-top: 3%;
-            /*            margin-top: 3.5%;*/
-            margin-left: 12em;
-            margin-left: 80%;
             margin-left: 70%;
             font-size: 1.8em;
             letter-spacing: .05em;
@@ -464,22 +536,21 @@
             color: #F0FBF9;
         }
 
-        .popup-type {
-            /*            bigger font size less padding;  margin smaller between; more left dadurch!!! */
-            padding: .6em 2em;
-            /*            padding: .6em 4em;*/
+        .popup-type 
+        {
+            padding: .5em 2em;
             font-size: .8em;
             color: #F0FBF9;
             font-weight: bold;
+/*            ??? */
+/*            font-weight: 600;*/
             min-width: 6.9em;
-            /*            2 versions !!! */
-            /*            padding: .5em 1.5em;*/
-            /*            font-size: 1.1em; */
-            /*            font-size: .9em; */
+            text-shadow: 0 0 5px rgba(0,0,0,.3);
         }
 
 
-        .pdl-popup-pokemon-name {
+        .pdl-popup-pokemon-name 
+        {
             font-size: 3em;
             font-weight: 600;
             margin-bottom: 0em;
