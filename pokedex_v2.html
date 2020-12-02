@@ -329,7 +329,7 @@
             position: absolute;
             right: 6%;
             top: 3%;
-            color: rgba(55, 55, 55, .3);
+            color: rgba(55, 55, 55, .6);
             margin-left: 5%;
             font-size: 1em;
             font-weight: bolder;
@@ -1602,12 +1602,16 @@
         .weight-range-btn:hover,
         .weight-range-btn.selected-wr-btn 
         {
-            background-color: crimson;
+            color: #000;
+            text-shadow: none;
+            background: #fafafa;
+            box-shadow: .5px .5px 10px rgba(0,0,0,.5);
         }
 
         .weight-range-btn.selected-wr-btn 
         {
             transform: scale(1.1);
+            color: #9EB7B8;
         }
 
          
@@ -1883,6 +1887,58 @@
 
         /*----------------------------------------------- FAVORITE PKMN CONTAINER (TO ADD/REMOVE FAV. PKMN) */
         
+        /* BUTTON - For clearing favs */
+        .clear-favs-btn,
+        .clear-favs-btn:before,
+        .fa-trash-alt
+        {
+            transition: .3s;
+        }
+        
+        /* BUTTON - Clear Favs */
+        .clear-favs-btn
+        {
+            position: relative;
+            border-radius: 25px;
+            font-size: 1.2em;
+            background: #333;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            min-height: 150px;
+            cursor: pointer;
+        }
+        
+        .clear-favs-btn:before
+        {
+            content: '';
+            position: absolute;
+/*            background: rgba(255,255,255,.5);  !!! */
+            background: rgba(0,0,0,.5); 
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        /* HOVERS - Clear Favs Button  */
+        .clear-favs-btn:hover .fa-trash-alt
+        {
+            transform: scale(1.1);
+        }
+        
+        .clear-favs-btn:hover.clear-favs-btn:before
+        {
+/*            background: transparent;*/
+            transform: scale(1.1);
+        }
+        
+        .clear-favs-btn:hover
+        {
+            color: red;
+            background: rgba(255,255,255,.1);
+        }
+        
+        /* Favorite Pkmn Heart Btn */
         .favorite-pkmn-cont 
         {
             position: absolute;
@@ -1904,7 +1960,7 @@
         {
             background-color: #fff;
         }
-
+        
         .display-gen-btn .far 
         {
             font-size: .8em;
@@ -1986,7 +2042,21 @@
 
         @media only screen and (max-width: 768px) 
         {
-
+            .pdl-header
+            {
+                font-size: .9em;
+            }
+            
+            .pdl-gen-btns-cont
+            {
+                left: 3%;
+            }
+            
+            .pdl-header-search-cont
+            {
+                right: 3%;
+            }
+            
             .general-data-cont,
             .breed-data-cont 
             {
@@ -1997,6 +2067,12 @@
             {
                 width: 90%;
                 /*                grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));*/
+            }
+            
+            .poke-type-btn-cont
+            {
+                width: 90%;
+                font-size: .75em;
             }
 
             .move-name 
@@ -2042,7 +2118,6 @@
 </head>
 
 <body>
-   
     <!-- MAIN CONTAINER -->
     <div class="pdex-list-main-cont flex-center flex-column">
        
@@ -2059,9 +2134,9 @@
                 <button class="range-btn" onclick="displRangeSlider('weight')">Weight</button>
             </div>
             <div class="flex-center range-values-cont">
-                <div class="range-value">35</div>
+                <div class="range-value"></div>
                 <div>-</div>
-                <div class="range-value">85</div>
+                <div class="range-value"></div>
             </div>
             <!-- Double range slider -->
             <div id="range-slider">
@@ -2087,23 +2162,23 @@
             <div class="line" style="width: 40%; height: 2px; background: #fff; margin: 2em 0;"></div>
             <div class="filter-btn-cont flex-center flex-column">
                 <div class="flex-center" style="justify-content: space-around; width: 100%">
-                    <button onclick="filterHeight(19)" class="weight-range-btn">Small</button>
-                    <button onclick="filterHeight(15)" class="weight-range-btn">Medium</button>
-                    <button onclick="filterHeight(20)" class="weight-range-btn">Large</button>
-                    <button onclick="filterHeight(21)" class="weight-range-btn">X-Large</button>
+                    <button onclick="filterHeight(19, event)" class="weight-range-btn">Small</button>
+                    <button onclick="filterHeight(15, event)" class="weight-range-btn">Medium</button>
+                    <button onclick="filterHeight(20, event)" class="weight-range-btn">Large</button>
+                    <button onclick="filterHeight(21, event)" class="weight-range-btn">X-Large</button>
                 </div>
-                <button onclick="specPokeFilterHeight()" class="specific-filter-btn">Filter By Hight</button>
+                <button onclick="specPokeFilterHeight(event)" class="specific-filter-btn">Filter By Height</button>
             </div>
             <div class="line" style="width: 40%; height: 2px; background: #fff; margin: 2em 0;"></div>
 
             <div class="filter-btn-cont flex-center flex-column">
                 <div class="flex-center" style="justify-content: space-around; width: 100%">
-                    <button onclick="filterWeight(19)" class="weight-range-btn">Light</button>
-                    <button onclick="filterWeight(60)" class="weight-range-btn">Medium</button>
-                    <button onclick="filterWeight(200)" class="weight-range-btn">Heavy</button>
-                    <button onclick="filterWeight(201)" class="weight-range-btn">X-Heavy</button>
+                    <button onclick="filterWeight(19, event)" class="weight-range-btn">Light</button>
+                    <button onclick="filterWeight(60, event)" class="weight-range-btn">Medium</button>
+                    <button onclick="filterWeight(200, event)" class="weight-range-btn">Heavy</button>
+                    <button onclick="filterWeight(201, event)" class="weight-range-btn">X-Heavy</button>
                 </div>
-                <button onclick="specPokeFilterWeight()" class="specific-filter-btn">Filter By Weight</button>
+                <button onclick="specPokeFilterWeight(event)" class="specific-filter-btn">Filter By Weight</button>
             </div>
         </div>
         
@@ -2238,6 +2313,7 @@
     <script>
         
         // DOM Elements
+        const pDexMainContainer = document.querySelector(".pdex-list-main-cont");
         const pDexListContainer = document.querySelector(".pdl-cont");
         const typeButtonContainer = document.querySelector(".poke-type-btn-cont");
         const popUpContainer = document.querySelector(".pdl-popup-cont");
@@ -2260,7 +2336,9 @@
         const popupId = document.querySelector(".pdl-popup-id");
         const popupSpecies = document.querySelector(".pdl-popup-category");
         const popupTabBtns = document.querySelectorAll(".popup-tab");
+        const filterRangeBtns = document.querySelectorAll(".weight-range-btn");
         const rangeNumbers = document.querySelectorAll(".range-nr");
+        const rangeValue = document.querySelectorAll(".range-value");
         const largeImageScreen = document.querySelector(".large-img-screen");
         const headerMenu = document.querySelector(".header-menu-cont");
         const headerMenuBtn = document.querySelector(".header-menu-btn");
@@ -2295,6 +2373,7 @@
         let favoritePkmnCounter = 0;
 
         // Toggeling vars
+        let clearFavsBtnActive = false;
         let typeAdvWeakness = true;
         let menuOpen = false;
         let weaknessAdv;
@@ -2370,7 +2449,7 @@
             if (menuOpen) toggleHeaderMenu();
         }
 
-        // Creates all filter types buttons
+        // Creates all filter types buttons (click to filter by type)
         const createTypeFilterButtons = (types) => {
             typeButtonContainer.innerHTML = ""
             Object.keys(types).forEach(type => {
@@ -2430,6 +2509,8 @@
 
         // Gets all pokemon via API
         const displayGen = (fromGen, toGen, e) => {
+            // removes trash icon
+            clearFavsBtnActive = false;
             assignSelectedGenBtn(e.target);
             closeMenuIfOpen();
             
@@ -2507,9 +2588,9 @@
 
                             // adds second evolution pokemon data, to formattet pokemon if its there
                             (data.chain.evolves_to.length > 0) ? formattetPokemon.secndEvolution = {
-                                levelup: "Lv. " + data.chain.evolves_to[0].evolution_details[0].min_level,
+                                levelup: data.chain.evolves_to[0].evolution_details[0] ? "Lv. " + data.chain.evolves_to[0].evolution_details[0].min_level : "Lv. ?",
                                 secndName: data.chain.evolves_to[0].species.name,
-                                trigger: data.chain.evolves_to[0].evolution_details[0].trigger.name,
+                                trigger: data.chain.evolves_to[0].evolution_details[0] ? data.chain.evolves_to[0].evolution_details[0].trigger.name : "",
                                 item: data.chain.evolves_to[0].evolution_details[0].item ? capitalize(data.chain.evolves_to[0].evolution_details[0].item.name) : false
                             }: formattetPokemon.secndEvolution = false;
 
@@ -2602,6 +2683,10 @@
         const fillPokemon = (pokeList) => {
             pDexListContainer.innerHTML = "";
             createTypeFilterButtons(allColors);
+            
+            if (clearFavsBtnActive) {
+                pDexListContainer.innerHTML += `<div onclick="clearFavoritePkmn()" class="clear-favs-btn flex-center"><i class="fas fa-trash-alt"></i></div>`;
+            }
 
             pokeList.forEach(pokemon => {
                 pDexListContainer.insertAdjacentHTML("beforeend", `
@@ -3505,7 +3590,7 @@
 
         // ----------------------------------------------------------------------------- NORMAL AND SPECIFIC FILTERS
 
-        // 
+        // Changes Values on Slider depending on range-btn
         const displRangeSlider = sliderCategory => {
             let currentCategory;
             let allSorted;
@@ -3571,26 +3656,33 @@
                 case "weight":
                     filteredRange = allPokemon.filter(p => p.weight >= firstRangeSlider && p.weight <= secndRangeSlider);
             }
-            console.log(sliderCat);
-
-            //            const filteredIdRange = allPokemon.filter(p => p.id >= firstRangeSlider && p.id <= secndRangeSlider);
-            //            const filteredHeightRange = allPokemon.filter(p => p.height >= firstRangeSlider && p.height <= secndRangeSlider);
-            //            const filteredWeightRange = allPokemon.filter(p => p.weight >= firstRangeSlider && p.weight <= secndRangeSlider);
-            //            const bothSliderVals = doubleSlider.value.split(",");
-            //            const filteredRange = allPokemon.filter(ap => ap.id >= parseInt(bothSliderVals[0]) && ap.id <= parseInt(bothSliderVals[1]));
-
             pDexListContainer.innerHTML = "";
             fillPokemon(filteredRange);
             toggleSpecificSearch();
         }
 
 
-        // Assigns filtered range to array by clicking (height/weight)
-        const filterHeight = (height) => heightToFilter = height;
-        const filterWeight = (weight) => weightToFilter = weight;
+        // Assigns filtered height range by clicking 
+        const filterHeight = (height, e) => {
+            selectFilterRangeBtn(e.target);
+            heightToFilter = height;
+            weightToFilter = null;
+        }
+        
+        // Assigns filtered weight range by clicking 
+        const filterWeight = (weight, e) => {
+            selectFilterRangeBtn(e.target);
+            weightToFilter = weight;
+            heightToFilter = null;
+        } 
 
+        // Assign selected class to Fil. Range Button
+        const selectFilterRangeBtn = btn => {
+            filterRangeBtns.forEach(btn => btn.classList.remove("selected-wr-btn"));
+            btn.classList.add("selected-wr-btn");
+        }
 
-        // 
+        // Filters allPkmn by Weight Categories 
         const specPokeFilterWeight = () => {
             let filteredByWeight;
 
@@ -3611,14 +3703,13 @@
                 fillPokemon(sortedRes);
                 toggleSpecificSearch();
             } else {
-                // maybe function to display what is missing or just ignore then
-                // or delete no need evtl.
-                alert("weight is not selected!");
+                // alert if no weight button is selected
+                alert("Weight is not selected! Please select a weight (light, mediumm, heavy, x-heavy)");
             }
         }
 
 
-        //
+        // Filters allPkmn by Height Categories
         const specPokeFilterHeight = () => {
             let filteredByHeight;
 
@@ -3638,9 +3729,8 @@
                 fillPokemon(sortedRes);
                 toggleSpecificSearch();
             } else {
-                // maybe function to display what is missing or just ignore then
-                // or delete no need evtl.
-                alert("height is not defined!");
+                // alert if no height button is selected
+                alert("Height is not defined! Please select a size (small, medium, large, x-large)");
             }
         }
 
@@ -3669,6 +3759,8 @@
 
             thumbLeft.style.left = percent + "%";
             range.style.left = percent + "%";
+            
+            rangeValue[0].innerText = inputLeft.value;
         }
         setLeftValue();
 
@@ -3685,9 +3777,10 @@
 
             thumbRight.style.right = (100 - percent) + "%";
             range.style.right = (100 - percent) + "%";
+            
+            rangeValue[1].innerText = inputRight.value;
         }
         setRightValue();
-
 
 
         // ----------------------------------------------------------------------------- SCROLL TO TOP / BOTTOM BUTTONS
@@ -3700,12 +3793,12 @@
         }
 
 
-        //
+        // Scroll to bottom Button
         const scrollToBottom = () => {
             $("html, body").animate({
                 scrollTop: $(document).height()
             }, {
-                duration: 2000,
+                duration: 1000,
                 specialEasing: {
                     width: "linear",
                     height: "easeOutBounce"
@@ -3713,24 +3806,8 @@
             });
         }
 
-
-        // 
-        const scrollBtnFunc = () => {
-            document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? $(".scroll-top-btn").hide() : $(".scroll-top-btn").show();
-        }
-
-
-        // 
-        window.onscroll = function() {
-            scrollBtnFunc()
-        };
-
-
-
-
-
-
-
+            
+        // ----------------------------------------------------------------------------- FAVORITE PKMN
 
         // Checks if Pkmn is Favorite (heart red/hollow)
         const checkIfPkmIsFav = () => {
@@ -3747,7 +3824,7 @@
         const checkForFavsInLocalStorage = () => localStorage.getItem("favs") === null ? localStorage.setItem("favs", JSON.stringify([])) : favoritePkmnCounter = JSON.parse(localStorage.getItem("favs")).length;
 
 
-        // 
+        // Adds a pkmn to favs (local storage), toggles heart icon
         const favoritePkmn = () => {
             let currentFavs = JSON.parse(localStorage.getItem("favs"));
 
@@ -3772,6 +3849,7 @@
         const displFavoritePkmn = (e) => {
             let currentFavs = JSON.parse(localStorage.getItem("favs"));
 
+            clearFavsBtnActive = true;
             assignSelectedGenBtn(e.target);
             fillPokemon(currentFavs);
         }
@@ -3786,31 +3864,27 @@
 
 
         // SLIDERS        
-        // sort range ergebnisse
-        
-                // specific filter inside (or create in main-cont and make appear) create onclick to remove filter and div 100%
-
-
 
  
         // STYLE CSS
         // RESPONSIVE
-            // Header elements change position let/right : 5%
-        
+            // bei PDL -cont padding keiner when tablet so 3 cards can be 
+            // bei mobile maybe scale down cards to make 2 next to each other
+            // Mobile - Header - extra header for mobile
+            // Mobile - clicked pkmn -> fontsize, scroll, img scale down, Specific F. -> top0 - l, r, b, 0 evtl 
         // moves color
-        // specific filter btns select (range btns h/w)
-
-            
+        
 
 
         // BUGS
         // Height filter 
         // evolution !!!!! GEN 
         // Gen 4 images not leading
-        // Prev / Next button 
+        // Prev / Next button - maybe define new ver -> allCards zb (CURRENT PKMN LIST var global -> btn for currentPkmn = allPkmn to displ all again - function prev/next -> takes current pkmn)
 
 
 
+        // Maybe -
         // add circle ball animated to popup
 
 
@@ -3849,7 +3923,10 @@
         
         
         
-//        tRight.addEventListener("input", setRightValue);
+        
+        
+        
+        
         //         
 
 
@@ -3858,27 +3935,18 @@
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+//        
+//                // 
+//        const scrollBtnFunc = () => {
+//            document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? $(".scroll-top-btn").hide() : $(".scroll-top-btn").show();
+//        }
+//
+//
+//        // 
+//        window.onscroll = function() {
+//            scrollBtnFunc()
+//        };
+
         
         
 
@@ -3981,25 +4049,25 @@
 
         // !
 
-        //        
-        //        // fethcing evolution data
-        //        fetch(`https://pokeapi.co/api/v2/evolution-chain/1/`).then(res => res.json()).then(data => {  
-        //           // 1. evolution
-        //            console.log(data.chain.species.name);
-        //            // 2. evolution
-        //            // level null if other evolution forms
-        //           console.log(data.chain.evolves_to[0].evolution_details[0].min_level);
-        //           console.log(data.chain.evolves_to[0].evolution_details[0].trigger.name);
-        //            // if needs item (item name)
-        ////           console.log(data.chain.evolves_to[0].evolution_details[0].item.name);
-        //           console.log(data.chain.evolves_to[0].species.name);
-        //            
-        //           // 3. evolution - needs if statement or something like that if less then 3 evolutions
-        //           console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name);
-        //           console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level);
-        //           console.log(data.chain.evolves_to[0].evolves_to[0].species.name);
-        //        });
-        //        
+                
+                // fethcing evolution data
+                fetch(`https://pokeapi.co/api/v2/evolution-chain/1/`).then(res => res.json()).then(data => {  
+                   // 1. evolution
+                    console.log(data.chain.species.name);
+                    // 2. evolution
+                    // level null if other evolution forms
+                   console.log(data.chain.evolves_to[0].evolution_details[0].min_level);
+//                   console.log(data.chain.evolves_to[0].evolution_details[0].trigger.name);
+                    // if needs item (item name)
+        //           console.log(data.chain.evolves_to[0].evolution_details[0].item.name);
+//                   console.log(data.chain.evolves_to[0].species.name);
+                    
+                   // 3. evolution - needs if statement or something like that if less then 3 evolutions
+//                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name);
+                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level);
+//                   console.log(data.chain.evolves_to[0].evolves_to[0].species.name);
+                });
+                
 
 
 
