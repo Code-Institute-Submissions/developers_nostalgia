@@ -23,6 +23,11 @@
 
 /*------------------------------------------------------------ GENERAL */
         
+        a:hover
+        {
+            text-decoration: none;
+        }
+        
         .flex-center
         {
             display: flex;
@@ -30,12 +35,12 @@
             align-items: center;
         }
         
-        
         .flex-column
         {
             flex-direction: column;
         }
         
+        /* Selected pkmn name */
         .selected
         {
             color: #fff;
@@ -55,6 +60,7 @@
             color: #f0f0f0;
         }
         
+        /* Disabled prev/next buttons */
         .disabl
         {
             pointer-events: none;
@@ -95,7 +101,7 @@
             border-bottom: solid 5px #000;
         }
         
-/*        Middle Part */
+        /* Middle Part */
         .p-dex-middle
         {
             display: grid;
@@ -175,7 +181,6 @@
         {
             position: relative;
             width: 30%;
-            background: #f5f5f5;
             background: rgba(255,255,255,.5);
             margin-right: 5%;
             border-radius: 5px;
@@ -194,13 +199,11 @@
         {
             position: absolute;
             bottom: -30%;
-            border-radius: 50%;
             border-radius: 5px;
             width: 20px;
             height: 20px;
             padding: 12px;
             font-size: .8em;
-            background-color: crimson;
             background-color: #000;
             color: #fff;
             transition: .3s;
@@ -225,7 +228,6 @@
             position: relative;
             width: 75%;
             padding: 2%;
-            background: #f3f3f3;
             background: #333;
             color: #fafafa;
             border-radius: 5px;
@@ -308,8 +310,6 @@
             cursor: default;
             font-weight: bold;
             text-align: center;
-            background: #48D0B0;
-            background: #FFD86F;
             background-color: mediumpurple;
             border: solid 2px #000;
             justify-content: space-between;
@@ -360,29 +360,11 @@
         {
             position: absolute;
             border-radius: 5px;
-            background: lightgreen;
-            background: silver;
             background: #4364F7;
 /*            background: #6dd5ed; !!! */
             width: 95%;
             height: 90%;
             z-index: 15;
-        }
-        
-        
-        /*------------------------------------------------------------ ANIMATIONS */
-        
-        .slidein
-        {
-            animation: slide 1s forwards;
-        }
-        
-        @keyframes slide {
-            to
-            {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
         
         
@@ -547,7 +529,6 @@
             width: 65px;
             height: 65px;
             border-radius: 50%;
-            background: silver;
             background: #525252;
         }
         
@@ -620,6 +601,61 @@
             color: #fff;
         }
         
+        /*------------------------------------------------------------ NAVIGATION */
+        
+        .nav-three-btns
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 70px;
+            width: 100%;
+            padding-left: 5%;
+            justify-content: flex-start;
+            border-bottom: solid;
+        }
+        
+        /* Logo */
+        .logo
+        {
+            margin-right: 1.5em;
+            font-size: 1.1em;
+            font-weight: bolder;
+            color: #000;
+            cursor: default;
+            text-shadow: .5px 0px 3px rgba(255,255,255,.3),
+                         .5px 0px 3px rgba(255,255,255,.3);
+        }
+        
+        .nav a
+        {
+            position: relative;
+            margin: .5em;
+            padding: .1em;
+            color: #fafafa;
+            font-weight: bold;
+        }
+        
+        /* Nav - Underline */
+        .nav a:before
+        {
+            content: '';
+            position: absolute;
+            bottom: -25%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 1px;
+            background: crimson;
+            transform-origin: center;
+            transition: .3s;
+        }
+        
+        /* HOVER - Underline */
+        .nav:hover.nav a:before
+        {
+            width: 100%;
+        }
         
         
  /*------------------------------------------------------------ TYPE FINDER SCREEN */      
@@ -633,7 +669,6 @@
             height: 90%;
             border-radius: 5px;
             transform: translate(-50%, -50%);
-            background-color: #fafafa;
             background-color: #333;
             box-shadow: inset 0 0 5px rgba(255,255,255,.3);
         }
@@ -680,9 +715,9 @@
             min-height: 100%;
             transform: translate(-50%, -50%);
             background-color: lightblue;
+            border-radius: 5px;
             padding: 5px;
             flex-wrap: wrap;
-            font-size: .9em;
             font-size: 1.1em;
             font-weight: 700;
             color: #fff;
@@ -742,9 +777,8 @@
             position: absolute;
             top: 5%;
             font-size: 1.5em;
-/*            color: #fafafa; !!!*/
-            color: #000;
-            transition: .5s;
+            color: #fafafa;
+            transition: .2s;
             cursor: pointer;
             z-index: 101;
         }
@@ -779,6 +813,23 @@
             margin-left: 3em;
         }
         
+        
+        /*------------------------------------------------------------ ANIMATIONS */
+        
+        .slidein
+        {
+            animation: slide 1s forwards;
+        }
+        
+        @keyframes slide {
+            to
+            {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        
     </style>
     
     
@@ -787,6 +838,15 @@
    
     <!-- Main Container -->
    <div class="p-dex-main-cont flex-center">
+        <!-- Navigation Bar -->
+        <nav class="nav-three-btns flex-center">
+            <ul class="flex-center" style="margin: 0">
+                <div class="logo flex-center"><span class="logo-span">&#128187</span>DN</div>
+                <li class="nav"><a href="#">Home</a></li>
+                <li class="nav"><a href="#">Pokedex</a></li>
+                <li class="nav"><a href="#">Games</a></li>
+            </ul>
+        </nav>
     <!-- Toggle Info Button -->
      <div onclick="toggleInfoCont()" class="p-dex-info-btn"><i class="fas fa-question-circle"></i></div>
      <!--  Information/Manual -->
@@ -870,8 +930,7 @@
               </div>
               <!-- Type Finder Screen -->
               <div class="p-dex-ctrl-type-finder-scr flex-center">
-                  <div id="type-finder-names-types" class="type-finder-types-box opacity">
-                  </div>
+                  <div id="type-finder-names-types" class="type-finder-types-box opacity"></div>
               </div>
                   <!-- Control Screen -->
                   <div class="p-dex-ctrl-screen opacity"></div>
@@ -927,6 +986,7 @@
        const dexTurnOffBtn = document.querySelector(".off-btn");
        const backToFiltersBtn = document.querySelector(".btf-btn");
        const pkmnTxtContainer = document.querySelector(".p-dex-txt");
+       const pDexInfoBtn = document.querySelector(".p-dex-info-btn");
        const topDisplay = document.querySelector(".p-dex-start-screen");
        const bottomDisplay = document.querySelector(".p-dex-ctrl-screen");
        const dexInfoContainer = document.querySelector(".p-dex-info-cont");
@@ -951,6 +1011,8 @@
        let loaded = false;
        let allPkmn = [];
        
+       
+       //------------------------------------------------------------------------------ FETCHES & MODIFIES ALL 150 PKMN
        
        // Gets all Pokemon (API) and modifies data
        const getAndModifyPkmn = () => {
@@ -983,7 +1045,6 @@
        }       
        
        
-       
        // Start - turns on the Dex
        const turnOnDex = () => {
            turnOnAnimation();
@@ -992,7 +1053,7 @@
        }
        
        
-       // Displays start screen
+       // Displays start screen and menu
        const turnOnAnimation = () => {
            toggleStartScreen();
            toggleBottomDispl();
@@ -1000,8 +1061,12 @@
            setTimeout(slideInBtns, 500);
        }
        
+       
+       //------------------------------------------------------------------------------ TOGGLE FUNCTIONS
+       
        // Removes Start Screen
        const toggleStartScreen = () => topDisplay.classList.toggle("opacity");
+       
        
        // Toggles Bootom Displ - changes bg-color
        const toggleBottomDispl = () => controlStartScr.classList.toggle("opacity");
@@ -1016,7 +1081,11 @@
        
        
        // Toggles Info Cont - opacity
-       const toggleInfoCont = () => dexInfoContainer.classList.toggle("opacity");
+       const toggleInfoCont = () => {
+           dexInfoContainer.classList.toggle("opacity");
+           
+           dexInfoContainer.classList.contains("opacity") ? pDexInfoBtn.style.color = "#fafafa" : pDexInfoBtn.style.color = "crimson";
+       }
        
        
        // Toggles On/Off Buttons
@@ -1028,7 +1097,10 @@
        }
        
        
-       // Click Function - Makes all Sreens disappear except selected Scr
+       
+       //------------------------------------------------------------------------------ (BOTTOM SCREEN) CHOOSE MODE
+       
+       // Displays selected Mode (depending on boolean)
        const selectOptionMode = (bool) => {
            const modes = [bottomDisplay, controlStartScr, typeFinderScr];
            
@@ -1045,7 +1117,9 @@
        }
        
        
-       // Diplays all Types Btns and headline
+       //------------------------------------------------------------------------------ (BOTTOM SCREEN) FILTER BY TYPE MODE
+       
+       // Diplays all filter by types Btns and headline
        const displayAllTypesBtns = () => {
            backToFiltersBtn.classList.add("disabl");
            switchTypesNamesBox("types", "names");
@@ -1059,19 +1133,19 @@
        }
 
 
-       //
-          const switchTypesNamesBox = (choice1, choice2) => {
+      // 
+      const switchTypesNamesBox = (choice1, choice2) => {
            typeFinderNamesTypes.innerHTML = "";
            typeFinderNamesTypes.classList.remove(`type-finder-${choice2}-box`);
            typeFinderNamesTypes.classList.add(`type-finder-${choice1}-box`, `${choice1 === "names" ? "flex-center" : "no"}`);
-           
+
            if (choice1 === "types") {
                typeFinderNamesTypes.style.backgroundColor = "#333";
            }
        }
 
-       
-       // 
+    
+       // Filters by type - Button
        const filterViaType = (e) => {
            backToFiltersBtn.classList.remove("disabl");
            const typeToFilter = e.target.innerText.toLowerCase();
@@ -1089,7 +1163,10 @@
        }
        
        
-       // 
+       
+       //------------------------------------------------------------------------------ PAGINATION BUTTONS (PREV/NEXT) & FILL PKMN NAMES BOTTOM SCREEN
+       
+       // Displays first 10 or last 10 (140-150) PKMN depending on boolean
        const displayFirstOrLastNames = (bool) => {
            // sorts all pokemon by id from 1-150
            
@@ -1107,7 +1184,7 @@
        }
        
        
-       
+       // Perev/Next - Button Funcion
        const paginationBtnFunc = (e) => {
            if (pkmnSetIndex >= 10 && pkmnSetIndex <= 150) {
                bottomDisplay.innerHTML = "";
@@ -1135,63 +1212,69 @@
        }
        
        
+       //------------------------------------------------------------------------------ DISPLAY CLICKED PKMN DATA IN TOP SCREEN 
+       
+       // Displays Data in Top Screen of clicked pkmn name
        const dipslayClickedPkmn = (e, bool) => {
            removeSelectedClass();
            e.target.classList.add("selected");
            const selectedName = `${bool ? e.target.innerText.slice(4).toLowerCase().trim() : e.target.innerText.toLowerCase()}`;
            const selectedPkmn = allPkmn.filter(ap => ap.name === selectedName)[0];
            const dexContainer = document.createElement("div");
-           
-                 dexContainer.classList.add("flex-center", "wide");
-                 topDisplay.style.backgroundColor = selectedPkmn.color;
-           
+
+           dexContainer.classList.add("flex-center", "wide");
+           topDisplay.style.backgroundColor = selectedPkmn.color;
+
+           // Top screen innner Html
            const dexContainerInnerHTML = `
-                <div class="p-dex-image-cont flex-center flex-column">
-                      <img class="front-sprite" src="${selectedPkmn.frontSprite}" alt="pokemon">
-                      <img class="back-sprite hidden" src="${selectedPkmn.backSprite}" alt="pokemon">
-                      <div onclick="changeDexInfo()" class="turn-sprite-btn flex-center">
-                          <i class="fas fa-sync-alt"></i>
-                      </div>
-                  </div>
-                  <div class="p-dex-data-cont flex-center flex-column">
-                     <div class="flex-center flex-column">
-                         <div class="flex-center p-dex-data-row">
-                             <h3 class="p-dex-name">${capitalize(selectedPkmn.name)}</h3>
-                             <div class="p-dex-data poke-id">#${displayPkmnId(selectedPkmn.id)}</div>
-                         </div>
-                         <div class="p-dex-category">- ${selectedPkmn.category} -</div>
-                          <div class="flex-center p-dex-data-row">
-                             <div class="p-dex-descr">Types:</div>
-                              <div class="p-dex-type" style="background-color: green">${capitalize(selectedPkmn.type1)}</div>
-                              <div class="p-dex-type ${selectedPkmn.type2}" style="background-color: purple">${capitalize(selectedPkmn.type2)}</div>
-                          </div>
-                          <div class="flex-center p-dex-data-row">
-                              <div class="pdex-data-descr">Height:</div>
-                              <div class="pdex-data">${convertDecimeterToFeetMeter(selectedPkmn.height)[0]} (${convertDecimeterToFeetMeter(selectedPkmn.height)[1]})</div>
-                          </div>
-                          <div class="flex-center p-dex-data-row">
-                              <div class="pdex-data-descr">Weight:</div>
-                              <div class="pdex-data">${convertKilosToLbs(selectedPkmn.weight)} (${selectedPkmn.weight}kg)</div>
-                          </div>
-                      </div>
-                      <div class="p-dex-txt hidden">
-                             <div class="descr-circle" style="background-color: ${allColors[selectedPkmn.type1]}"></div>
-                         <h6>Descr.</h6>
-                          <p>${filterPkmnText(selectedPkmn.text)}</p>
-                      </div>
-                  </div>
-            `;
+               <div class="p-dex-image-cont flex-center flex-column">
+                   <img class="front-sprite" src="${selectedPkmn.frontSprite}" alt="pokemon">
+                   <img class="back-sprite hidden" src="${selectedPkmn.backSprite}" alt="pokemon">
+                   <div onclick="changeDexInfo()" class="turn-sprite-btn flex-center">
+                       <i class="fas fa-sync-alt"></i>
+                   </div>
+               </div>
+               <div class="p-dex-data-cont flex-center flex-column">
+                   <div class="flex-center flex-column">
+                       <div class="flex-center p-dex-data-row">
+                           <h3 class="p-dex-name">${capitalize(selectedPkmn.name)}</h3>
+                           <div class="p-dex-data poke-id">#${displayPkmnId(selectedPkmn.id)}</div>
+                       </div>
+                       <div class="p-dex-category">- ${selectedPkmn.category} -</div>
+                       <div class="flex-center p-dex-data-row">
+                           <div class="p-dex-descr">Types:</div>
+                           <div class="p-dex-type" style="background-color: green">${capitalize(selectedPkmn.type1)}</div>
+                           <div class="p-dex-type ${selectedPkmn.type2}" style="background-color: purple">${capitalize(selectedPkmn.type2)}</div>
+                       </div>
+                       <div class="flex-center p-dex-data-row">
+                           <div class="pdex-data-descr">Height:</div>
+                           <div class="pdex-data">${convertDecimeterToFeetMeter(selectedPkmn.height)[0]} (${convertDecimeterToFeetMeter(selectedPkmn.height)[1]})</div>
+                       </div>
+                       <div class="flex-center p-dex-data-row">
+                           <div class="pdex-data-descr">Weight:</div>
+                           <div class="pdex-data">${convertKilosToLbs(selectedPkmn.weight)} (${selectedPkmn.weight}kg)</div>
+                       </div>
+                   </div>
+                   <div class="p-dex-txt hidden">
+                       <div class="descr-circle" style="background-color: ${allColors[selectedPkmn.type1]}"></div>
+                       <h6>Descr.</h6>
+                       <p>${filterPkmnText(selectedPkmn.text)}</p>
+                   </div>
+               </div>
+           `;
            topDisplay.innerHTML = "";
            dexContainer.innerHTML = dexContainerInnerHTML;
            topDisplay.append(dexContainer);
        }
        
        
-       // Removes all selected classes from Names
+       // Removes all selected classes from clicked pkmn Names
        const removeSelectedClass = () => {
            const currPkmnNames = document.querySelectorAll(".p-dex-data");
            currPkmnNames.forEach(cpn => cpn.classList.remove("selected"));
        }
+       
+       //------------------------------------------------------------------------------ TOP SCREEN FUNCITONS FOR DISPLAYED PKMN DATA
        
        // Capitalizes a String
        const capitalize = (str) => str[0].toUpperCase() + str.slice(1);
@@ -1217,7 +1300,7 @@
        }
 
        
-       // Displ Sprite & Descr. Text
+       // Displays Sprite backside & Descr. Text
        const changeDexInfo = () => {
            document.querySelector(".front-sprite").classList.toggle("hidden");
            document.querySelector(".back-sprite").classList.toggle("hidden");
@@ -1233,7 +1316,7 @@
        }
        
        
-       
+       // Start Screen Html
        const startScreenInnerHTML = `
            <h2 class="p-dex-start-headline">Online Pokedex</h2>
            <p>
@@ -1251,7 +1334,10 @@
            </div>
        `;
        
-       //
+       
+       //------------------------------------------------------------------------------ CONRTOLL BUTTONS (PDEX MIDDLE PART)
+       
+       // Display Menu/Go back to Menu - Button
        const displayMenuScr = () => {
            topDisplay.style.backgroundColor = startScrBg;
            topDisplay.innerHTML = `${startScreenInnerHTML}`;
@@ -1263,7 +1349,7 @@
        }
        
        
-       //
+       // Turns off both screens
        const turnOffDex = () => {
            toggleMainCtrlfBtns();
            topDisplay.style.backgroundColor = startScrBg;
@@ -1279,121 +1365,10 @@
            }
        }
        
-       // 
-       getAndModifyPkmn();
+       
+       // Gets all 150 Pkmn after site is loaded
+       window.addEventListener("load", getAndModifyPkmn);
 
-           
-           
-           
-           
-       
-           
-       
-       
-           // Info box - circle btns expl  O - Turns on / off ...etc. dexter mode - blablalba       
-       // Colors general (final step)
-               
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-                  
-//       
-//       fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`).then(res => res.json()).then(pkmn => {
-//               console.log(pkmn.results)
-//           }).catch(err => console.error(err));
-               
-//           fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json()).then(pkmn => {
-//               console.log(pkmn.height, pkmn.weight)
-//           }).catch(err => console.error(err));
-       
-       
-       
-       
-       
-//       <!--                     create this one  -->
-//<!--
-//                      <div class="flex-center">
-//                          <div class="p-dex-image-cont flex-center flex-column">
-//                              <img class="front-sprite" src="ivisaur.png" alt="pokemon">
-//                              <img class="back-sprite" src="lizardonstandingcomic.png" alt="pokemon" hidden>
-//                              <div onclick="turnSprite()" class="turn-sprite-btn">O</div>
-//                          </div>
-//                          <div class="p-dex-data-cont flex-center flex-column">
-//                             <div class="flex-center flex-column">
-//                                 <div class="flex-center p-dex-data-row">
-//                                     <h3 class="p-dex-name">Ivisaur</h3>
-//                                     <div class="p-dex-data poke-id">#002</div>
-//                                 </div>
-//                                 <div class="p-dex-category">- Seed Pokemon -</div>
-//                                  <div class="flex-center p-dex-data-row">
-//                                     <div class="p-dex-descr">Types:</div>
-//                                      <div class="p-dex-type" style="background-color: green">Grass</div>
-//                                      <div class="p-dex-type" style="background-color: purple">Poison</div>
-//                                  </div>
-//                                  <div class="flex-center p-dex-data-row">
-//                                      <div class="pdex-data-descr">Height:</div>
-//                                      <div class="pdex-data-descr">Height:</div>
-//                                      <div class="pdex-data">6.1" (1.6m)</div>
-//                                  </div>
-//                                  <div class="flex-center p-dex-data-row">
-//                                      <div class="pdex-data-descr">Weight:</div>
-//                                      <div class="pdex-data">120lbs (60kg)</div>
-//                                  </div>
-//                              </div>
-//                              <div class="p-dex-txt hidden">
-//                                 <h6>Descr.</h6>
-//                                  <p>
-//                                      It can freely recombine its own cellular structure to transform into other life-forms.
-//                                  </p>
-//                                  <div class="p-dex-ball"></div>
-//                              </div>
-//                          </div>
-//                      </div>
-//-->
-//       
-//       
-       
-       
-       
-       
-              
-//       const getPkmnNames = () => {
-//           fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`).then(res => res.json()).then(pkmn => {
-//               const allPknmNames = pkmn.results.map(res => res.name);
-////               console.log(allPknmNames);
-//               
-//           });
-//       
-       
-//      
-//       
-//       const displayPkmnSet = (setIndex) => {
-//           let currentSet;
-//           
-//           currentPkmnSet = [];
-//           
-//           for (let i = (setIndex - 10); i <= setIndex; i++) {
-//               fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then(res => res.json()).then(data => {
-//                   
-//                   
-//                   currentPkmnSet.push(pokemon);
-//               });
-//           }
-//       }
     
    </script>
     
