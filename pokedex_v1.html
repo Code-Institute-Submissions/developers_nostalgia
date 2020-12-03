@@ -12,12 +12,13 @@
     
     
     <style>
-    
+        
+        /* Main Container */
         .p-dex-main-cont
         {
             min-height: 100vh;
             width: 100vw;
-            background: #525252;
+            background: #333;
         }
 
 /*------------------------------------------------------------ GENERAL */
@@ -73,35 +74,26 @@
             width: 100% !important;
         }
         
+        
+/*------------------------------------------------------------ POKEDEX PARTS TOP/MIDDLE/BOTTOM */
+
+        /* Pdex Container */
         .main-dex
         {
             background: crimson;
             min-height: 650px;
             min-width: 550px;
-/*            flex-direction: column;*/
             display: grid;
             grid-template-rows: 47.5% auto 47.5%;
             border: solid 6px #000;
         }
         
-        
-        
-        
-
-/*------------------------------------------------------------ POKEDEX PARTS TOP/MIDDLE/BOTTOM */
-
+        /* Top Part Pdex */
         .p-dex-top
         {
             position: relative;
             border-bottom: solid 5px #000;
         }
-        
-        .p-dex-top:before
-        {
-            
-        }
-        
-        
         
 /*        Middle Part */
         .p-dex-middle
@@ -109,16 +101,8 @@
             display: grid;
             grid-template-columns: 20% 60% 20%;
         }
-        
-/*        Logo */
-/*        .p-dex-micro*/
-        {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: black;
-        }
-        
+
+        /* Joints Pdex - L / R */
         .p-dex-middle-outer-joint-l
         {
             box-shadow: inset 0 0 3px 1px #000;
@@ -131,6 +115,7 @@
             border-left: solid 3px #000;
         }
         
+        /* Bottom Part Pdex */
         .p-dex-bottom
         {
             border-top: solid 5px #000;
@@ -140,7 +125,7 @@
         
         
 /*------------------------------------------------------------ POKEDEX SCREEN SECTION */
-    
+        /* Pdex Lamp (middle top) */
         .p-dex-lamp
         {
             position: absolute;
@@ -148,7 +133,6 @@
             left: 50%;
             transform: translateX(-50%);
             border-radius: 50%;
-            background: lightblue;
             background: #0066CC;
             width: 25px;
             height: 25px;
@@ -168,6 +152,7 @@
             background: rgba(255,255,255,.6);
         }
         
+        /* Frame for the Top Screen */
         .p-dex-screen-frame
         {
             width: 85%;
@@ -176,6 +161,7 @@
             border: solid 3px #000;
         }
         
+        /* Top Screen */
         .p-dex-screen
         {
             position: relative;
@@ -184,10 +170,7 @@
             background: #000;
         }
         
-        
-        
-        
-        
+        /* Pdex Image */
         .p-dex-image-cont
         {
             position: relative;
@@ -206,6 +189,7 @@
             z-index: 10;
         }
         
+        /* BUTTON - Turn sprite (show backside), toggle descr. txt */
         .turn-sprite-btn
         {
             position: absolute;
@@ -228,12 +212,14 @@
             transform: scale(1.1);
         }
         
+        /* HOVER - Turn sprite btn */
         .turn-sprite-btn:hover
         {
             background-color: #fff;
             color: #000;
         }
         
+        /* Data Container - types, name, height, id, ... */
         .p-dex-data-cont
         {
             position: relative;
@@ -250,13 +236,12 @@
         
         .p-dex-data-row
         {
-/*            background: khaki;*/
             width: 130%;
             margin: 2% 0;
             justify-content: space-between;
         }
         
-        
+        /* Pkmn types */
         .p-dex-type
         {
             padding: .1em .3em;
@@ -272,7 +257,7 @@
             margin-top: -3%;
         }
         
-        
+        /* Pkmn Descriptin Text */
         .p-dex-txt
         {
             position: absolute;
@@ -282,7 +267,6 @@
             width: 100%;
             height: 100%;
             background-color: #fafafa;
-/*            justify-content: space-between;*/
             color: #000;
             border-radius: 5px;
             padding: 5%;
@@ -290,6 +274,15 @@
             z-index: 10;
         }
         
+        .p-dex-txt h6
+        {
+            position: relative;
+            color: #fff;
+            margin-bottom: 2.5em;
+            z-index: 5;
+        }
+        
+        /* Circle in background color (descr. txt) */
         .descr-circle
         {
             content: '';
@@ -300,27 +293,7 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background: crimson;
         }
-        
-        .p-dex-txt h6
-        {
-            position: relative;
-            color: #fff;
-            margin-bottom: 2.5em;
-/*            margin-bottom: 15%;*/
-            z-index: 5;
-        }
-        
-/*
-        .p-dex-ball
-        {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: crimson;
-        }
-*/
         
 /*------------------------------------------------------------ POKEDEX START SCREEN SECTION */
         
@@ -335,7 +308,6 @@
             cursor: default;
             font-weight: bold;
             text-align: center;
-/*            background: darkorange;*/
             background: #48D0B0;
             background: #FFD86F;
             background-color: mediumpurple;
@@ -351,6 +323,7 @@
             font-weight: bolder;
         }
         
+        /* Pkmn element Icons */
         .element-square
         {
             width: 20px;
@@ -369,7 +342,7 @@
             margin: 0 1em;
         }
         
-/*------------------------------------------------------------ POKEDEX CONTROL SECTION */
+        /*------------------------------------------------------------ POKEDEX CONTROL SECTION (Btns - back, turn on/off, menu) */
         
         .p-dex-ctrl-frame
         {
@@ -382,24 +355,22 @@
         }
         
         
-/*        CONTROL START SCREEN */
+        /* Start Screen with description (top screen) */
         .pdex-ctrl-start-screen
         {
             position: absolute;
             border-radius: 5px;
             background: lightgreen;
             background: silver;
-            background: #20BDFF;
             background: #4364F7;
-            background: #2193b0;
-            background: #6dd5ed;
+/*            background: #6dd5ed; !!! */
             width: 95%;
             height: 90%;
             z-index: 15;
         }
         
         
-        
+        /*------------------------------------------------------------ ANIMATIONS */
         
         .slidein
         {
@@ -414,6 +385,10 @@
             }
         }
         
+        
+        /*------------------------------------------------------------ POKEDEX MENU (Select between modes) */
+         
+        /* Select Mode BUTTONS */
         .p-dex-mode-options-btn
         {
             position: relative;
@@ -429,7 +404,6 @@
             flex-direction: column;
             box-shadow: 1px 1px 10px rgba(0,0,0,.5);
         }
-        
         
         .p-dex-mode-options-btn:before
         {
@@ -475,6 +449,7 @@
             z-index: 5;
         }
         
+        /* HOVER - Select Mode Button */
         .p-dex-mode-options-btn:hover.p-dex-mode-options-btn:before
         {
             height: 100%;
@@ -497,18 +472,14 @@
             transform: scale(1.3);
         }
 
-        
-        
-        
-        
-        
+
+        /*------------------------------------------------------------ POKEDEX BOTTOM SCRREEN */
         
         .p-dex-ctrl-screen
         {
             width: 95%;
             height: 90%;
             border-radius: 5px;
-/*            background: #333;*/
             background: lightblue;
             padding: 5% 10%;
             display: grid;
@@ -520,49 +491,47 @@
             font-weight: bolder;
         }
         
-
+        /* Id next to name (bottom scr) */
         .bottom-pkmn-id
         {
             font-size: .8em;
             color: #fafafa;
-/*            color: #333;*/
             pointer-events: none;
             margin-right: 5px;
             font-size: .75em;
             font-weight: bolder;
         }
         
+        /* Pkmn Name - Click to display pkmn in top disp. */
         .p-dex-data
         {
             cursor: pointer;
             transition: .1s;
-/*            background: blue;*/
             margin-left: 15%;
         }
         
+        /* HOVER - Pkmn Name*/
         .p-dex-data:hover
         {
             color: #fff;
             transform: scale(1.02);
         }
         
+        
  /*------------------------------------------------------------ CONTROL BUTTONS */
        
-        
         .p-dex-btn-cont
         {
             position: relative;
             width: 80%;
             height: 20%;
-            justify-content: space-around;
             justify-content: space-between;
             padding: 0 5%;
             padding-top: 3%;
-/*            background: pink;*/
         }
         
         
-/*        Cross Button */
+        /* Cross Button */
         .p-dex-cross-btn-cont
         {
             position: absolute;
@@ -597,7 +566,7 @@
         }
         
         
-/*        A/B Buttons */
+        /* A/B Buttons */
         .p-dex-ab-btns-cont
         {
             position: absolute;
@@ -610,12 +579,10 @@
             height: 45px;
             border-radius: 50%;
             background: #000;
-/*            background: #525252;*/
             font-weight: bold;
             color: #fff;
             font-size: 1em;
             transform: translateY(.3em);
-/*            box-shadow: */
             border: solid 3px #525252;
             cursor: default;
         }
@@ -657,7 +624,6 @@
         
  /*------------------------------------------------------------ TYPE FINDER SCREEN */      
         
-        
         .p-dex-ctrl-type-finder-scr
         {
             position: absolute;
@@ -691,6 +657,7 @@
             
         }
         
+        /* Filter by type BUTTON */
         .type-finder-type-btn
         {
             padding: .1em;
@@ -702,15 +669,8 @@
             cursor: pointer;
             z-index: 10;
         }
-        
-        .type-finder-type-btn:hover
-        {
-            
-        }
-        
-        
-        
-/*        TYPE FINDER NAMES  */
+           
+        /* Names of filtered Pkmn */
         .type-finder-names-box
         {
             position: absolute;
@@ -737,13 +697,13 @@
             text-shadow: .5px 0 6px #000;
         }
         
+        /* HOVER - Filtered Names */
         .type-finder-name:hover
         {
             color: #000;
             text-shadow: none;
             text-shadow: .5px .3px 8px #fff;
         }
-        
         
         .main-ctrl-btn
         {
@@ -759,10 +719,8 @@
         }
         
         
-        
-        
-        
 /*        CONTROL BUTTONS */
+        
         .off-btn
         {
             color: red;
@@ -776,12 +734,16 @@
         }
 
         
+        /*------------------------------------------------------------ POKEDEX INFO CONTAINER (Manual for using Pdex) */
+        
+        /* Information/Manual BUTTON */
         .p-dex-info-btn
         {
             position: absolute;
             top: 5%;
             font-size: 1.5em;
-            color: ;
+/*            color: #fafafa; !!!*/
+            color: #000;
             transition: .5s;
             cursor: pointer;
             z-index: 101;
@@ -789,7 +751,6 @@
         
         .p-dex-info-btn:hover
         {
-            color: #fafafa;
             color: crimson;
             transform: scale(1.2);
         }
@@ -824,8 +785,11 @@
 </head>
 <body>
    
+    <!-- Main Container -->
    <div class="p-dex-main-cont flex-center">
+    <!-- Toggle Info Button -->
      <div onclick="toggleInfoCont()" class="p-dex-info-btn"><i class="fas fa-question-circle"></i></div>
+     <!--  Information/Manual -->
       <div class="p-dex-info-cont opacity">
           <div class="p-dex-info-row flex-center">
               <div class="main-ctrl-btn flex-center"><i class="fas fa-power-off"></i></div>
@@ -849,13 +813,16 @@
               <p>Type Filter Mode - Click on any pokemon Type (bottom display) to get a filtered list of pokemon names. Click on any pokemon name (bottom display) to get the Data (top display).</p>
           </div>
       </div>
+      <!-- Pokedex Container -->
        <div class="main-dex">
-<!--          Pokedex Top Part -->
+           <!-- Pokedex Top Part -->
            <div class="p-dex-top flex-center">
+              <!-- Pokedex Lamp -->
               <div class="p-dex-lamp"></div>
                <div class="p-dex-screen-frame flex-center">
+                   <!-- Top Screen -->
                    <div class="p-dex-screen">
-<!--                      Start Screen -->
+                       <!-- Start Screen -->
                        <div class="p-dex-start-screen flex-center flex-column opacity">
                            <h2 class="p-dex-start-headline">Online Pokedex</h2>
                            <p>
@@ -868,7 +835,6 @@
                                <div class="element-square flex-center"><i class="fas fa-fire"></i></div>
                                <div class="element-square flex-center"><i class="fas fa-seedling"></i></div>
                            </div>
-                           
                            <div class="p-dex-start-info">
                                <span class="d-arrows">&darr;</span> Choose Mode <span class="d-arrows">&darr;</span>
                            </div>
@@ -876,22 +842,22 @@
                    </div>
                </div>
            </div>
-<!--       Pokedex Middle Part -->
+           <!-- Pokedex Middle Part -->
            <div class="p-dex-middle">
                <div class="p-dex-middle-outer-joint-l"></div>
                <div class="p-dex-middle-middle-joint flex-center">
-<!--               Main Control Buttons -->
-        <div onclick="displayAllTypesBtns()" class="main-ctrl-btn flex-center btf-btn opacity disabl"><i class="fas fa-arrow-left"></i></div>
+                   <!-- Main Control Buttons -->
+                   <div onclick="displayAllTypesBtns()" class="main-ctrl-btn flex-center btf-btn opacity disabl"><i class="fas fa-arrow-left"></i></div>
                    <div onclick="turnOnDex()" class="main-ctrl-btn flex-center on-btn"><i class="fas fa-power-off"></i></div>
                    <div onclick="turnOffDex()" class="main-ctrl-btn flex-center off-btn hidden"><i class="fas fa-power-off"></i></div>
                    <div onclick="displayMenuScr()" class="main-ctrl-btn flex-center menu-btn opacity"><i class="fas fa-bars"></i></div>
                </div>
                <div class="p-dex-middle-outer-joint-r"></div>
            </div>
-<!--           Pokedex Bottom Part -->
+          <!-- Pokedex Bottom Part -->
           <div class="p-dex-bottom flex-center">
               <div class="p-dex-ctrl-frame flex-center">
-<!--              Control Start Screen -->
+              <!-- Control Start Screen -->
               <div class="pdex-ctrl-start-screen flex-center opacity">
                   <div onclick="selectOptionMode(true)" class="p-dex-mode-options-btn flex-center">
                       <i class="option-icons fas fa-book-open"></i>
@@ -902,26 +868,26 @@
                       <p>Type Finder</p>
                   </div>
               </div>
-<!--              Type Finder Screen -->
+              <!-- Type Finder Screen -->
               <div class="p-dex-ctrl-type-finder-scr flex-center">
                   <div id="type-finder-names-types" class="type-finder-types-box opacity">
                   </div>
               </div>
-<!--                 Control Screen -->
+                  <!-- Control Screen -->
                   <div class="p-dex-ctrl-screen opacity"></div>
               </div>
-<!--              Controller Buttons -->
+             <!-- Controller Buttons (Cross) -->
              <div class="p-dex-btn-cont flex-center">
                 <div class="p-dex-cross-btn-cont flex-center">
                     <div class="p-dex-cross"></div>
                     <div class="p-dex-cross"></div>
                 </div>
-<!--                Navigation Buttons Next/Prev -->
+                <!-- Navigation Buttons Next/Prev -->
                 <div class="p-dex-nav-btns-cont flex-center">
                      <div onclick="paginationBtnFunc(event)" class="p-dex-nav-btn p-dex-prev-btn notactive">PREV</div>
                      <div onclick="paginationBtnFunc(event)" class="p-dex-nav-btn p-dex-next-btn notactive">NEXT</div>
                  </div>
-<!--                 A and B Buttons -->
+                <!-- A and B Buttons -->
                 <div class="p-dex-ab-btns-cont flex-center">
                     <div class="p-dex-ab-btn flex-center">B</div>
                     <div class="p-dex-ab-btn flex-center">A</div>
@@ -943,16 +909,11 @@
             rock: '#C9B98B',
             fairy: '#FEBAEA',
             poison: '#54B564',
-//            poison: '#40244A',
-//            poison: '#98d7a5',
             bug: '#2CDAB1',
             dragon: '#0875C8',
-//            dragon: '#97b3e6',
             psychic: '#9758AD',
-//            psychic: '#F366B9',
             flying: '#AEC5EF',
             fighting: '#DA475C',
-//            fighting: '#C27E6E',
             normal: '#5B5F68',
             ice: '#51C4E7',
             ghost: '#7B62A3',
@@ -960,7 +921,7 @@
             steel: '#9EB7B8'
         }
        
-        
+       // DOM
        const dexTurnOnBtn = document.querySelector(".on-btn");
        const dexMenuBtn = document.querySelector(".menu-btn");
        const dexTurnOffBtn = document.querySelector(".off-btn");
@@ -979,7 +940,9 @@
        const typeFinderNamesCont = document.querySelector(".type-finder-names-box");
        const typeFinderNamesTypes = document.querySelector("#type-finder-names-types");
        
+       // Background for start scr.
        const startScrBg = "#6dd5ed";
+       // Maximal amount pkmn
        const pkmnLimit = 150;
        
        let currentPkmnSet;
@@ -996,6 +959,7 @@
                    const sprites = [pokemon.sprites.front_default, pokemon.sprites.back_default];
                    const pData = [pokemon.height, pokemon.weight/10];
                    
+                   // fetches species data
                    fetch(`https://pokeapi.co/api/v2/pokemon-species/${pkmn}/`).then(res => res.json()).then(pkmn => {
                        const formattetPkmn = {
                            id : pkmn.id,
