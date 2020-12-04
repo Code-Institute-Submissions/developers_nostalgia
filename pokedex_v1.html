@@ -130,7 +130,7 @@
     
         
         
-/*------------------------------------------------------------ POKEDEX SCREEN SECTION */
+/*------------------------------------------------------------ POKEDEX TOP SCREEN */
         /* Pdex Lamp (middle top) */
         .p-dex-lamp
         {
@@ -243,6 +243,12 @@
             justify-content: space-between;
         }
         
+        /* Removes unwanted hover effect */
+        .poke-id
+        {
+            pointer-events: none;
+        }
+        
         /* Pkmn types */
         .p-dex-type
         {
@@ -352,6 +358,12 @@
             background: #000;
             border-radius: 1px;
             overflow: hidden;
+        }
+        
+        .p-dex-ctrl-frame:before
+        {
+            content: ''; 
+            z-index: 1;
         }
         
         
@@ -471,6 +483,7 @@
             justify-content: center;
             overflow: hidden;
             font-weight: bolder;
+            z-index: 2;
         }
         
         /* Id next to name (bottom scr) */
@@ -622,7 +635,7 @@
             font-size: 1.1em;
             font-weight: bolder;
             color: #000;
-            cursor: default;
+            cursor: pointer;
             text-shadow: .5px 0px 3px rgba(255,255,255,.3),
                          .5px 0px 3px rgba(255,255,255,.3);
         }
@@ -659,7 +672,7 @@
         
         
  /*------------------------------------------------------------ TYPE FINDER SCREEN */      
-        
+        .p-dex-ctrl-frame:before,
         .p-dex-ctrl-type-finder-scr
         {
             position: absolute;
@@ -671,6 +684,11 @@
             transform: translate(-50%, -50%);
             background-color: #333;
             box-shadow: inset 0 0 5px rgba(255,255,255,.3);
+        }
+        
+        .p-dex-ctrl-type-finder-scr
+        {
+            z-index: 2;
         }
         
         .type-finder-types-box
@@ -686,6 +704,7 @@
         {
             position: absolute; 
             font-weight: 700;
+            cursor: default;
             color: #fff;
             left: 35%; 
             top: 8%;
@@ -896,7 +915,6 @@
                                <div class="element-square flex-center"><i class="fas fa-seedling"></i></div>
                            </div>
                            <div class="p-dex-start-info">
-                               <span class="d-arrows">&darr;</span> Choose Mode <span class="d-arrows">&darr;</span>
                            </div>
                        </div>
                    </div>
@@ -1329,9 +1347,7 @@
                <div class="element-square flex-center"><i class="fas fa-fire"></i></div>
                <div class="element-square flex-center"><i class="fas fa-seedling"></i></div>
            </div>
-           <div class="p-dex-start-info">
-               <span class="d-arrows">&darr;</span> Choose Mode <span class="d-arrows">&darr;</span>
-           </div>
+           <div class="p-dex-start-info"></div>
        `;
        
        
@@ -1370,6 +1386,8 @@
        window.addEventListener("load", getAndModifyPkmn);
 
     
+       // home btn (logo) - js -> direct to home (cursor)
+               
    </script>
     
 </body>
