@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <title>Developers Nostalgia</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+
+        --------------------------------------------------- 
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            color: #fafafa;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #fafafa;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            object-fit: cover;
+        }
+
+
+        /*        BUTTONS */
+        
+        .about-btn {
+            background: #fff;
+            color: crimson;
+            padding: 10px 15px;
+            outline: none;
+            border: none;
+            border-radius: 1px;
+            font-size: .8em;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .about-btn:hover {
+            background: crimson;
+            color: #fff;
+        }
+
+
+        /*        NAVIGATION AND LOGO */
+
+        .logo {
+            margin-right: 15px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: crimson;
+            font-size: 2.5em;
+            font-weight: bolder;
+            color: #fafafa;
+            z-index: 100000;
+            transform: scale(.6);
+        }
+
+        .logo-span {
+            color: #fafafa;
+            font-size: 1em;
+        }
+
+        /*        NAVIGATION*/
+        .nav-three-btns ul {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            display: flex;
+            justify-content: center;
+            padding-right: 5%;
+            height: 150px;
+            align-items: center;
+            z-index: 9999999999;
+
+        }
+
+        .nav-three-btns ul li {
+            position: relative;
+            margin-left: 1em;
+            font-size: 1.2em;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .nav-three-btns ul li a {
+            color: #fff;
+        }
+
+
+        
+/*        BARS UNDER THE NAVS not sure to keep them*/
+        .nav-three-btns ul li:before {
+            content: '';
+            position: absolute;
+            bottom: -.3em;
+            left: 50%;
+            transform: translateX(-50%);
+            transform-origin: center;
+            width: 30%;
+            width: 15%;
+            height: 2px;
+            background: crimson;
+            transition: .3s;
+        }
+
+        .nav-three-btns ul li:hover:before {
+            width: 100%;
+        }
+
+
+        /*        PARALLAX MAIN CONTAINER */
+
+        .parallax-main-cont {
+            position: relative;
+            background: #0a2a43;
+            min-height: 1500px;
+            min-height: 1000px;
+
+        }
+
+
+        /*        Parallax Section */
+        .parallax-main-cont section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .parallax-main-cont section:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 8%;
+            /*            height: 10%;*/
+            background: linear-gradient(to top, #0a2a43, transparent);
+            z-index: 10000;
+        }
+
+
+        /*        Parallax Filters */
+
+            .parallax-main-cont section:after
+            {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 42, 67, .3);
+            z-index: 10000;
+            mix-blend-mode: color;
+        }
+
+        /*        Parallax Images */
+
+        .parallax-main-cont section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .parallax-headline {
+            position: relative;
+            color: #fff;
+            font-size: 10em;
+            z-index: 1;
+        }
+
+
+        #road {
+            z-index: 2;
+        }
+
+
+
+        /*    Tests  */
+        #fly-lizardon {
+            position: absolute;
+            bottom: 250px;
+            left: auto;
+            top: auto;
+            right: 38%;
+            width: 60px;
+            height: 80px;
+
+            z-index: 3;
+
+
+        }
+
+        #fly-hooh {
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            width: 210px;
+            height: 230px;
+            z-index: 3;
+            /*            transform: rotateY(180deg);*/
+        }
+
+        #ash-serina {
+            position: absolute;
+            bottom: 80px;
+            top: auto;
+            /*            left: 200px;*/
+            left: auto;
+            right: 200px;
+            width: 110px;
+            height: 100px;
+            z-index: 3;
+        }
+
+
+        #random-poks {
+            position: absolute;
+            /*            bottom: 80px;*/
+            top: 0px;
+            left: 400px;
+            /*            left: auto;*/
+            /*            right: 200px;*/
+            width: 800px;
+            height: 400px;
+            z-index: 1;
+            /*            transform: rotateY(180deg);*/
+        }
+
+
+        /*        ABOUT CONTAINER BELOW PARALLAX CONT */
+
+        .main-cont-about {
+            min-height: 100vh;
+            background: #0a2a43;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #second-parr-headline {
+            top: 400px;
+        }
+
+        .about-txt {
+            color: #fff;
+            /*            width: 70%;*/
+            width: 60%;
+            padding-top: 150px;
+            font-size: 1.2em;
+
+            margin-bottom: 50px;
+        }
+
+
+        /*        Parralax Card Container */
+        .parr-card-headline {
+            color: #fafafa;
+            font-size: 1.6em;
+            text-align: center;
+            margin-bottom: 5em;
+        }
+
+        .parr-card-cont {
+            margin: 3em 0;
+            flex-wrap: wrap;
+        }
+
+        .parr-card-cont:nth-child(2) {
+            transform: translateY(100px);
+        }
+
+        .parr-card {
+            height: 200px;
+            width: 200px;
+            background: white;
+            margin: 5px 50px;
+            padding: 0 1%;
+            text-align: center;
+            flex-direction: column;
+            justify-content: space-around;
+            transition: .5s;
+            /*            margin: 0 auto;*/
+            /*            padding: 5%;*/
+        }
+        
+        .parr-card:hover
+        {
+            background-color: #333;
+            box-shadow: 1px 1px 15px rgba(255, 255, 255, .4);
+/*            !!! */
+        }
+        
+        .parr-card:hover.parr-card p
+        {
+            color: #fafafa;
+        }
+        
+        .parr-card:hover.parr-card .fa-seedling
+        {
+            color: limegreen;
+        }
+        
+        .parr-card:hover.parr-card .fa-fire
+        {
+            color: crimson;
+        }
+        
+        .parr-card:hover.parr-card .fa-tint
+        {
+            color: #69B9E3;
+        }
+        
+        
+        
+
+        .parr-card-cont .parr-card p {
+            color: black;
+            font-size: .8em;
+            transition: .5s;
+        }
+
+        .parr-card-cont .parr-card .fas {
+            color: darkorange;
+            color: coral;
+            color: goldenrod;
+            color: darkgoldenrod;
+            font-size: 2em;
+            transition: .5s;
+        }
+
+        .parr-card-underline-headline {
+            width: 50px;
+            height: 2px;
+            background: crimson;
+            /*            background: darkorange;*/
+            /*            background: #525252;*/
+            margin-bottom: 50px;
+        }
+
+        .parr-card-underline {
+            width: 50px;
+            height: 1px;
+            background: crimson;
+            /*            background: darkorange;*/
+            /*            background: #525252;*/
+        }
+
+
+
+
+        .parr-double-cont {
+            /*            background: lightgreen;*/
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 5em;
+            height: 300px;
+            margin-top: 5em;
+            margin-bottom: 5em;
+/*            margin-bottom: 8em;*/
+        }
+
+        .parr-double-cont img {
+            object-fit: cover;
+            padding: 0;
+        }
+
+        .parr-right-txt {
+            background: crimson;
+            flex-direction: column;
+            align-items: flex-start;
+            color: #fff;
+            padding: 1em;
+            padding-left: 2em;
+        }
+
+        #revealedTxt
+        {
+            display: none;
+        }
+
+
+        /*------------------------------------------------ WHITE SECTION */
+        
+/*        NIGHT MODE TOGGLE SWITCH */
+        .white-section {
+            background-color: #fafafa;
+            padding: 3em 0;
+            margin: 10em 0;
+            cursor: default;
+        }
+        
+        .white-section-night-mode
+        {
+            background-color: #2B292C !important;
+            color: #fff !important;
+        }
+        
+        .white-section-card.white-section-night-mode:hover
+        {
+            box-shadow: 1px 1px 15px rgba(255,255,255,.4);
+        }
+
+        .row-white-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: .8em;
+        }
+
+
+        /*        White Section Card */
+        .white-section-card {
+            flex-direction: column;
+            cursor: default;
+            /*            !!!! */
+            padding: 2.5em;
+            text-align: center;
+            transition: .3s;
+/*            margin: 5px;*/
+        }
+
+        .white-section-card:hover {
+            box-shadow: 1px 1px 15px rgba(0, 0, 0, .4);
+        }
+
+        .white-section-card-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            /*            background-color: crimson;*/
+            margin-bottom: 1em;
+            background-image: url(ash-168629.png);
+            background-image: url(scissorspkmn.png);
+            background-image: url(lizardonstandingcomic.png);
+            background-image: url(balloonpikachu.png);
+            background-image: url(pocketpikachu.png);
+            background-size: cover;
+
+        }
+
+        .white-section-card p {
+            padding: 0 2em;
+        }
+
+        .white-section-headline {
+            text-align: center;
+            margin: 3em;
+            margin: 2em;
+        }
+
+
+
+
+
+
+
+
+
+
+        .parr-mega-lizardon {
+            position: relative;
+            /*            object-fit: cover;*/
+            /*            width: 70%;*/
+            height: 500px;
+            /*            border-radius: 50%;*/
+        }
+
+        .parr-mega-lizardon:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*            background: rgba(10,42,67,.5);*/
+            background-color: crimson;
+            z-index: 10000;
+            /*            mix-blend-mode: color;*/
+        }
+
+
+
+
+
+
+
+        /*---------------------------------------------------------- FOOTER */
+
+        footer.flex-center {
+            position: relative;
+            width: 98vw;
+            height: 250px;
+            margin: 0;
+            padding: 0 5%;
+            justify-content: space-between;
+            background: darkorange;
+        }
+        
+        /* Scroll To Top - BUTTON */
+        .scroll-to-top-btn
+        {
+            position: absolute;
+            transition: .3s;
+            cursor: pointer;
+            top: -10%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            color: #fafafa;
+            border-radius: 50%;
+            background: darkorange;
+            transform: translateX(-50%) scale(1);
+        }
+        
+        .scroll-to-top-btn .fas
+        {
+            transform: translateY(-55%);
+        }
+        
+        /* HOVER - Scroll to top btn */
+        .scroll-to-top-btn:hover
+        {
+            transform: translateX(-50%) scale(1.3);
+        }
+
+        /* Footer Navigation*/
+        .footer-nav-cont ul {
+            display: flex;
+            margin-left: 5%;
+        }
+
+        .footer-nav {
+            font-size: ;
+            font-weight: ;
+            color: ;
+            margin-right: 1em;
+        }
+
+        /*        Footer Social Icons*/
+        .social-contact-cont {
+            flex-wrap: wrap;
+            display: flex;
+            margin-right: 5%;
+        }
+
+        .social-contact {
+            margin-left: 5px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: red;
+            background: darkred;
+            /*            background: crimson;*/
+        }
+
+
+/*        NIGHT MODE TOGGLE CHECKBOX  */
+/*        Title: "CSS Custom Checkbox | Day Night Mode"; From: Online Tutorials; On: Youtube */
+        
+        #night-toggle
+        {
+            width: 100%;
+/*            background: blue;*/
+            text-align: center;
+            transform: translateY(1em);
+        }
+
+        input[type="checkbox"]
+        {
+            -webkit-appearance: none;
+            visibility: hidden;
+            display: none;
+        }
+        
+        .check
+        {
+            position: relative;
+            display: block;
+            width: 40px;
+            height: 20px;
+            background: crimson;
+            cursor: pointer;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: ease-in .5s;
+        }
+
+        input[type="checkbox"]:checked ~ .check
+        {
+            background: #fafafa;
+/*            box-shadow: 0 0 0 1200px #092c3e;*/
+        }
+        
+        .check:before,
+        .check:after
+        {
+            position: absolute;
+            width: 16px; 
+            height: 16px;
+            border-radius: 50%;
+            transition: .5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 2px;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: .5em;
+        }
+        
+        .check:before
+        {
+            content: '\f186';
+            color: #fff;
+            left: 2px;
+            background: #333;
+        }
+
+        input[type="checkbox"]:checked ~ .check:before
+        {
+            transform: translateX(-50px);
+        }
+
+        .check:after
+        {
+            content: '\f185';
+            content: '\f0eb';
+            right: 2px;
+            background: red;
+            font-size: .55em;
+            font-size: .73em;
+            color: yellow;
+            color: #fafafa;
+/*            color: gold;*/
+            transform: translateX(50px);
+        }
+
+        input[type="checkbox"]:checked ~ .check:after
+        {
+            transform: translateX(0);
+        }
+
+        
+        
+        /*---------------------------------------------------------- NEWSLETTER CONTAINER */
+        
+        .newsletter-cont
+        {
+            position: relative;
+            width: 400px;
+            height: 140px;
+            border-radius: 5px;
+            background: crimson;
+            margin-bottom: 11em;
+        }
+        
+        #subscribe-input
+        {
+            width: ;
+            border-radius: 3px;
+            border: none;
+            
+        }
+        
+        .newsletter-cover
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: #fafafa;
+            
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            transition: 1s;
+        }
+        
+        .newsletter-cover.revealed-newsletter
+        {
+            -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+        }
+        
+        /*---------------------------------------------------------- MEDIA QUERIES */
+
+        @media only screen and (max-width: 768px) {
+            .parallax-headline
+            {
+                font-size: 6em;
+                text-align: center;
+            }
+            
+            .parr-card
+            {
+                margin-bottom: 2em;
+            }
+            
+            .parr-double-cont
+            {
+                margin-left: 10%
+            }
+            
+            .white-section
+            {
+                margin-top: 10em;
+            }
+        }
+
+        @media only screen and (max-width: 576px) {
+            .nav-three-btns ul {
+                padding: 0;
+            }
+
+            .parallax-headline {
+                font-size: 4em;
+            }
+            
+            .parr-double-cont
+            {
+                margin-left: 0%
+            }
+        }
+        
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="row no-gutters">
+        <div class="col parallax-main-cont">
+
+            <nav class="nav-three-btns">
+                <ul>
+                    <div class="logo flex-center"><span class="logo-span">&#128187</span>DN</div>
+                    <li class="nav"><a href="#">About Us</a></li>
+                    <li class="nav"><a href="#">Pokedex</a></li>
+                    <li class="nav"><a href="#">Games</a></li>
+                </ul>
+            </nav>
+            <section class="flex-center">
+                <img src="bg.jpg" id="bg" alt="night sky">
+                <img src="moon.png" id="moon" alt="moon">
+                <img src="mountain.png" id="mountain" alt="mountains">
+                <div><img src="ash-ketchum-168620.png" id="fly-lizardon" alt="lizardon flies"></div>
+                <div><img src="normalhoohflying.png" id="fly-hooh" alt="lizardon flies"></div>
+                <!--               <div><img src="pngfind.com-green-light-png-30496.png" id="random-poks" alt="lizardon flies"></div>-->
+                <img src="road.png" id="road" alt="long road">
+                <!--               <div><img id="ash-serina" src="PikPng.com_pokemon-ash-png_1316146.png" alt="Png - Pokemon Ash And Serena Png Clipart@pikpng.com"></div>-->
+                <h2 class="parallax-headline">Moon Light</h2>
+            </section>
+            <div class="row no-gutters">
+                <div class="col main-cont-about">
+                    <h2 id="second-parr-headline" class="parallax-headline">Home</h2>
+                    <p class="about-txt">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam omnis assumenda amet nulla nisi itaque officia, culpa numquam ex harum deserunt odio sequi distinctio illum labore aperiam incidunt velit, expedita in minus ea laborum odit suscipit nihil. Cupiditate enim eveniet, minima odio quisquam nesciunt amet fugiat. Officiis iusto numquam id blanditiis dolor asperiores, earum corporis. Aliquam, illo repellendus iste commodi, laborum sed illum iusto dolore autem eveniet explicabo facere quasi ullam. Soluta consequatur nemo qui, ut, doloremque omnis dignissimos corporis sint! Velit, assumenda, inventore sequi cupiditate, laudantium accusantium necessitatibus. Illum veritatis explicabo tempora doloremque. Repellat saepe sunt libero deserunt laboriosam error minus magnam exercitationem maxime, reiciendis sequi, autem fuga ex explicabo nam eius ea tempore quas facilis officia modi culpa! Quaerat, quasi natus quisquam consectetur incidunt provident ipsum placeat quis fugit, sunt cum veritatis eos, maiores provident ipsa cum.
+                    </p>
+                    <img src="imageedit_1_5630962790.png" alt="all pokemon starters" class="all-starters-img" style="max-width: 100%; object-fit: cover">
+                    <!--                   Parralax Card Container -->
+                    <!--                  <h3 class="parr-card-headline">Hardest Descission Of My Childhood...</h3>-->
+                    <div class="parr-card-cont flex-center">
+
+                        <div class="parr-card flex-center">
+                            <i class="fas fa-fire"></i>
+                            <span class="parr-card-underline"></span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <div class="parr-card flex-center">
+                            <i class="fas fa-tint"></i>
+                            <span class="parr-card-underline"></span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <div class="parr-card flex-center">
+                            <i class="fas fa-seedling"></i>
+                            <span class="parr-card-underline"></span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                        </div>
+                    </div>
+                    <span class="parr-card-underline-headline"></span>
+                    <h3 class="parr-card-headline">Hardest Descission Of My Childhood...</h3>
+
+                    <!--                   <img src="4%20Greninja%20Pokmon%20HD%20Wallpapers%20Backgroundss2.png" alt="" class="parr-mega-lizardon">-->
+
+                    <p class="about-txt" style="width: 50%; padding-top: 0">
+                        <span class="little-headline" style="font-size: 1.2em; color: crimson;">Little Headline</span> <br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, porem ipsum dolor sit amet. iorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, quae. consequuntur quam natus!
+                    </p>
+
+                    <p class="about-txt" style="width: 50%; padding-top: 0; text-align: right">
+                        <span class="little-headline" style="font-size: 1.2em; color: crimson;">Little Headline</span> <br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, porem ipsum dolor sit amet. iorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, culpa? consequuntur quam natus!
+                    </p>
+
+                    <p class="about-txt" style="width: 50%; padding-top: 0">
+                        <span class="little-headline" style="font-size: 1.2em; color: crimson">Little Headline</span> <br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, porem ipsum dolor sit amet. iorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, quae. consequuntur quam natus!
+                    </p>
+
+
+                    <div class="container parr-double-cont">
+                        <img src="Cute%20Pokemon%20HD%20Wallpaper.jpg" alt="May sitting on Milotic" class="col-12 col-md-10 col-lg-6 parr-left-img">
+                        <div class="col-12 col-lg-6 col-md-10 parr-right-txt flex-center">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto qui, nisi repudiandae impedit porro sunt sed repellendus reiciendis aspernatur harum?
+                            </p>
+                            <p id="revealedTxt">
+                                dolor sit amet, adipisicing elit. Iusto qui, nisi repudiandae impedit porro sunt sed repellendus reiciendis aspernatur harum?
+                            </p>
+                            <button onclick="revealText()" class="about-btn">Show More</button>
+                        </div>
+                    </div>
+
+
+                    <!--
+                  
+                   <p class="about-txt" style="width: 25%; padding-top: 0">
+                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, consequuntur quam natus!
+                   </p>
+-->
+
+
+                    <!----------------------------------------------------------->
+
+
+                    <div class="container-fluid white-section">
+                        <div class="container">
+                            <div class="col row-white-section">
+                                <div class="col-12 col-lg-4 white-section-card flex-center">
+                                    <div class="white-section-card-icon flex-center"></div>
+                                    <h5 class="white-section-card-headline">Charmander</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum ex labore.
+                                    </p>
+                                </div>
+                                <div class="col-12 col-lg-4 white-section-card flex-center">
+                                    <div class="white-section-card-icon flex-center"></div>
+                                    <h5 class="white-section-card-headline">Charmander</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum ex labore.
+                                    </p>
+                                </div>
+                                <div class="col-12 col-lg-4 white-section-card flex-center">
+                                    <div class="white-section-card-icon flex-center"></div>
+                                    <h5 class="white-section-card-headline">Charmander</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum ex labore.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h3 class="white-section-headline">Headline whith some Text</h3>
+
+                            <div class="col row-white-section">
+                                <div class="col-12 col-lg-4 white-section-card flex-center">
+                                    <div class="white-section-card-icon flex-center"></div>
+                                    <h5 class="white-section-card-headline">Charmander</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum ex labore.
+                                    </p>
+                                </div>
+                                <div class="col-12 col-lg-4 white-section-card flex-center">
+                                    <div class="white-section-card-icon flex-center"></div>
+                                    <h5 class="white-section-card-headline">Charmander</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum ex labore.
+                                    </p>
+                                </div>
+                                <div class="col-12 col-lg-4 white-section-card flex-center">
+                                    <div class="white-section-card-icon flex-center"></div>
+                                    <h5 class="white-section-card-headline">Charmander</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum ex labore.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12" style="text-align: center; transform: translateY(1em)">
+                                <label for="night-toggle">
+                                    <input id="night-toggle" type="checkbox">
+                                    <span class="check"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-12">
+                            <div class="newsletter-cont flex-center">
+                              <div class="newsletter-cover"></div>
+                               <div class="flex-center">
+                                   <input type="email" id="subscribe-input" aria-label="subscribe-input">
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <!-- FOOTER-->
+                        <footer class="col flex-center">
+                           <!-- Scroll to top Button -->
+                           <div onclick="scrollToTop()" class="scroll-to-top-btn flex-center"><i class="fas fa-chevron-up"></i></div>
+                            <div class="footer-nav-cont flex-center">
+                                <ul>
+                                    <li class="footer-nav"><a href="#">Home</a></li>
+                                    <li class="footer-nav"><a href="#">Pokedex</a></li>
+                                    <li class="footer-nav"><a href="#">Games</a></li>
+                                </ul>
+                            </div>
+                            <div class="social-contact-cont flex-center">
+                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.facebook.com" target="_blank"><i class="social-fab fab fa-facebook-f"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.instagram.com" target="_blank"><i class="social-fab fab fa-instagram"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.twitter.com" target="_blank"><i class="social-fab fab fa-twitter"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.youtube.com" target="_blank"><i class="social-fab fab fa-youtube"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.pinterest.com" target="_blank"><i class="social-fab fab fa-pinterest-p"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+                            </div>
+                            <!-- subscribe/newsletter -->
+                            
+                        </footer>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // PARALLAX SECTION 
+        const nightToggle = document.querySelector("#night-toggle");
+        const whiteSection = document.querySelector(".white-section");
+        const newsLetterCover = document.querySelector(".newsletter-cover");
+        const newsLetterContainer = document.querySelector(".newsletter-cont");
+        
+        
+        let bg = document.querySelector("#bg");
+        let moon = document.querySelector("#moon");
+        let mountain = document.querySelector("#mountain");
+        let road = document.querySelector("#road");
+        let parallaxHeadline = document.querySelector(".parallax-headline");
+        let secondParallaxHeadline = document.querySelector("#second-parr-headline");
+        let flyLizardon = document.querySelector("#fly-lizardon");
+        let flyHooh = document.querySelector("#fly-hooh");
+
+        window.addEventListener("scroll", () => {   // Youtube - 
+            let val = window.scrollY;
+
+            bg.style.top = val * .5 + "px";
+            moon.style.left = -val * .5 + "px";
+            mountain.style.top = -val * .15 + "px";
+            road.style.top = val * .15 + "px";
+            parallaxHeadline.style.top = val * .6 + "px";
+            secondParallaxHeadline.style.top = -val * .3 + 400 + "px";
+            //            secondParallaxHeadline.style.top = -val * .3 + 400 + "px";
+
+            //            flyLizardon.style.left = val * .1 + 950 + "px";
+            //            flyLizardon.style.bottom = -val * .12 + 180 + "px";
+            flyHooh.style.left = val * .5 + 100 + "px";
+            flyLizardon.style.bottom = -val * .15 + 250 + "px";
+
+        });
+        
+        
+        
+        const revealText = () => {
+            $("#revealedTxt").toggle();
+            $(".about-btn").text() === "Show More" ? $(".about-btn").text("Show Less") : $(".about-btn").text("Show More");
+        }
+        
+         
+//        function wheel(event) {   // Stack Overflow - 
+//            var delta = 0;
+//            if (event.wheelDelta) {(delta = event.wheelDelta / 120);}
+//            else if (event.detail) {(delta = -event.detail / 3);}
+//
+//            handle(delta);
+//            if (event.preventDefault) {(event.preventDefault());}
+//            event.returnValue = false;
+//         }
+//        
+//        window.addEventListener("scroll", wheel);
+        
+        
+        const toggleNight = () => {
+            toggleNightClasses();
+//            if (nightToggle.value) {
+//                
+//            } else {
+//                
+//            }
+        }
+        
+        
+        //
+        const toggleNightClasses = () => {
+            const allWhiteSectionCards = document.querySelectorAll(".white-section-card");
+            
+            allWhiteSectionCards.forEach(card => card.classList.toggle("white-section-night-mode"));
+            whiteSection.classList.toggle("white-section-night-mode");
+        }
+        // Event Listener for the night mode toggle checkbox
+        nightToggle.addEventListener("click", toggleNight);
+        
+        
+        // Scrolls to top of the site
+        const scrollToTop = () => {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 'slow');
+        }
+        
+        // Toggles Newsletter Clip path animation effect
+        const revealNewsletter = () => newsLetterCover.classList.toggle("revealed-newsletter");
+        
+        // Event Listener for Newsletter
+        newsLetterCover.addEventListener("click", revealNewsletter);
+        newsLetterContainer.addEventListener("click", revealNewsletter);
+        
+        
+        // Whote PageTxt -> Lazy Load
+        // reveal clip path - close btn -> js add class to make it slide up and appear - evtl jquery, transition delay
+        
+        
+        
+        
+        
+    </script>
+
+</body></html>
