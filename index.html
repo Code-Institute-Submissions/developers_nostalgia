@@ -28,6 +28,11 @@
             text-decoration: none;
             color: #fafafa;
         }
+        
+        h2, h3
+        {
+            cursor: default;
+        }
 
         .flex-center {
             display: flex;
@@ -130,6 +135,23 @@
         .nav-three-btns ul li:hover:before {
             width: 100%;
         }
+        
+        
+/*        FOOTER NAVS */
+        .footer-nav-cont ul li a
+        {
+            margin: 0 .3em;
+            cursor: pointer;
+            font-weight: 700;
+            text-shadow: .5px .5px 5px rgba(0,0,0,.2);
+            transition: .3s;
+        }
+
+        .footer-nav-cont ul li a:hover
+        {
+            color: #0a2a43;
+            text-shadow: .5px .5px 5px rgba(255,255,255,.5);
+        }
 
 
         /*        PARALLAX MAIN CONTAINER */
@@ -190,6 +212,7 @@
             pointer-events: none;
         }
 
+        
         .parallax-headline {
             position: relative;
             color: #fff;
@@ -198,14 +221,15 @@
         }
 
 
+/*        ROAD Img */
         #road {
             z-index: 2;
         }
 
 
 
-        /*    Tests  */
-        #fly-lizardon {
+        /* Ash Ketchum  */
+        #ash-ketchum {
             position: absolute;
             bottom: 250px;
             left: auto;
@@ -213,12 +237,10 @@
             right: 38%;
             width: 60px;
             height: 80px;
-
             z-index: 3;
-
-
         }
 
+        /* HO-OH - Flying Pkmn (top-left, moves left to right parallax effect) */
         #fly-hooh {
             position: absolute;
             top: 200px;
@@ -226,35 +248,7 @@
             width: 210px;
             height: 230px;
             z-index: 3;
-            /*            transform: rotateY(180deg);*/
         }
-
-        #ash-serina {
-            position: absolute;
-            bottom: 80px;
-            top: auto;
-            /*            left: 200px;*/
-            left: auto;
-            right: 200px;
-            width: 110px;
-            height: 100px;
-            z-index: 3;
-        }
-
-
-        #random-poks {
-            position: absolute;
-            /*            bottom: 80px;*/
-            top: 0px;
-            left: 400px;
-            /*            left: auto;*/
-            /*            right: 200px;*/
-            width: 800px;
-            height: 400px;
-            z-index: 1;
-            /*            transform: rotateY(180deg);*/
-        }
-
 
         /*        ABOUT CONTAINER BELOW PARALLAX CONT */
 
@@ -270,18 +264,18 @@
             top: 400px;
         }
 
+        /* All Text in main container (except cards etc) */
         .about-txt {
             color: #fff;
-            /*            width: 70%;*/
             width: 60%;
             padding-top: 150px;
             font-size: 1.2em;
-
             margin-bottom: 50px;
+            cursor: default;
         }
 
 
-        /*        Parralax Card Container */
+        /* Parralax Card Container */
         .parr-card-headline {
             color: #fafafa;
             font-size: 1.6em;
@@ -307,9 +301,8 @@
             text-align: center;
             flex-direction: column;
             justify-content: space-around;
+            cursor: default;
             transition: .5s;
-            /*            margin: 0 auto;*/
-            /*            padding: 5%;*/
         }
         
         .parr-card:hover
@@ -361,8 +354,6 @@
             width: 50px;
             height: 2px;
             background: crimson;
-            /*            background: darkorange;*/
-            /*            background: #525252;*/
             margin-bottom: 50px;
         }
 
@@ -370,8 +361,6 @@
             width: 50px;
             height: 1px;
             background: crimson;
-            /*            background: darkorange;*/
-            /*            background: #525252;*/
         }
 
 
@@ -400,6 +389,7 @@
             color: #fff;
             padding: 1em;
             padding-left: 2em;
+            cursor: default;
         }
 
         #revealedTxt
@@ -573,19 +563,53 @@
         }
 
         .social-contact {
+            position: relative;
             margin-left: 5px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: red;
             background: darkred;
-            /*            background: crimson;*/
+            cursor: pointer;
+        }
+        
+        /* HOVER - Circle (Social Media Btns) */
+        .social-contact:before
+        {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #000;
+            border-radius: 50%;
+            width: 0;
+            height: 0; 
+            transition: .2s;
+        }
+        
+        .social-contact:hover.social-contact:before
+        {
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+        /* Social Media Icons */
+        .social-link
+        {
+            transition: .2s;
+            z-index: 5;
+        }
+        
+        /* HOVER - Social Media Icons*/
+        .social-contact:hover .social-link
+        {
+            transform: scale(1.3);
         }
 
-
-/*        NIGHT MODE TOGGLE CHECKBOX  */
-/*        Title: "CSS Custom Checkbox | Day Night Mode"; From: Online Tutorials; On: Youtube */
         
+        /* NIGHT MODE TOGGLE CHECKBOX  */
+            /* Title: "CSS Custom Checkbox | Day Night Mode"; From: Online Tutorials; On: Youtube */
         #night-toggle
         {
             width: 100%;
@@ -683,14 +707,75 @@
             margin-bottom: 11em;
         }
         
-        #subscribe-input
+        /* BUTTON - Back to Newsletter Cover (activates clip art effect) */
+        .back-to-cover-arrow-btn
         {
-            width: ;
-            border-radius: 3px;
-            border: none;
-            
+            position: absolute;
+            top: -5%;
+            left: 5%;
+            font-size: 2em;
+            color: #fff;
+            cursor: pointer;
+            transition: .3s;
         }
         
+        /* HOVER - Back to Newsletter Cover Button */
+        .back-to-cover-arrow-btn:hover
+        {
+            transform: scale(1.3);
+        }
+        
+        .newsletter-input-headline
+        {
+            position: relative;
+            font-size: 1.1em;
+            transform: translateY(-80%);
+            font-weight: bold;
+            cursor: default;
+            color: #333;
+        }
+        
+/*        Email Input */
+        #subscribe-input
+        {
+            background: #f3f3f3;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+            padding-left: .6em;
+            transition: .3s;
+        }
+        
+        /* HOVER - Email Input */
+        #subscribe-input:hover {
+            box-shadow: inset 1px 2px 8px rgba(0, 0, 0, .2);
+            background: #fff;
+        }
+        
+        /* FOCUS - Email Input */
+        #subscribe-input:focus {
+          color: #4b515d;
+          border: 1px solid #B8B6B6;
+          box-shadow: inset 1px 2px 4px rgba(0, 0, 0, .01), 0px 0px 8px rgba(0, 0, 0, .3);
+        }
+        
+        #newsletter-submit-btn
+        {
+            border-radius: 3px;
+            border: none;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        #newsletter-submit-btn:hover
+        {
+            background: #fafafa;
+            color: #333;
+        }
+        
+        /* Newsletter Cover (clip art effect) */
         .newsletter-cover
         {
             position: absolute;
@@ -700,21 +785,172 @@
             bottom: 0;
             width: 100%;
             height: 100%;
+            cursor: default;
+            border-radius: 5px;
             background: #fafafa;
             
             -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
             transition: 1s;
+            z-index: 3;
         }
         
+/* Class for revealing with clip art effect */
         .newsletter-cover.revealed-newsletter
         {
             -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
             clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
         }
         
+/* Headline in Newsletter Cover */
+        .newsletter-cover-headline
+        {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            left: -20%;
+            font-weight: 700;
+            color: #000;
+            transition: .3s;
+            transition-delay: .3s;
+            opacity: 0;
+        }
+        
+        .newsletter-cover:hover .newsletter-cover-headline
+        {
+            left: 5%;
+        }
+        
+        /* Icon Conatiner in Newsletter Cover */
+        .newsletter-cover-icon-cont
+        {
+            position: absolute;
+            top: 20%;
+            right: 5%;
+            font-size: 1.1em;
+            color: crimson;
+            text-shadow: 0 0 3px rgba(55,55,55,.2);
+            transition: .3s;
+            transition-delay: .5s;
+            opacity: 0;
+        }
+        
+        .newsletter-cover-icon-cont .fas
+        {
+            margin-left: .7em;
+        }
+        
+        /* DELAYED HOVER - Makes Icons/Text appear when hovered */
+        .newsletter-cover:hover .newsletter-cover-icon-cont,
+        .newsletter-cover:hover .newsletter-cover-headline,
+        .newsletter-cover:hover .newsletter-cover-txt
+        {
+            opacity: 1;
+        }
+        
+        /* Pokeball line in newsletter cover */
+        .newsletter-cover-line
+        {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 5px;
+            background: #333;
+        }
+        
+        /* Pokeball circles in newsletter cover */
+        .newsletter-cover-line:before,
+        .newsletter-cover-line:after
+        {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fafafa;
+            border-radius: 50%;
+            transition: .3s;
+            transition-delay: .3s;
+        }
+        
+        .newsletter-cover-line:before
+        {
+            border: solid 5px #333;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .newsletter-cover-line:after
+        {
+            border: solid 3px #333;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .newsletter-cover:hover .newsletter-cover-line:after
+        {
+            background: crimson;
+        }
+        
+        
+/* Text in Newsletter Cover */
+        .newsletter-cover-txt
+        {
+            position: absolute;
+            bottom: -.5em;
+            left: 5%;
+            color: #333;
+            width: 45%;
+            color: #525252;
+            font-size: .8em;
+            font-weight: 600;
+            line-height: 1.35em;
+            transition: .3s;
+            transition-delay: .5s;
+            opacity: 0;
+        }
+        
+        
+        /* BUTTON - Arrow to activate clip art effect */
+        .cover-arrow-btn
+        {
+            position: absolute;
+            bottom: -5%;
+            right: 5%;
+            font-size: 2em;
+            color: #000;
+            cursor: pointer;
+        }
+        
+        .cover-arrow-btn:hover .arrow-btn-span
+        {
+            transform: scale(1.03);
+            transition: .3s;
+            color: #0a2a43;
+        }
+        
+        .cover-arrow-btn:hover .arrow-btn-arrow
+        {
+            color: crimson;
+        }
+        
+        .arrow-btn-span
+        {
+            font-size: .4em;
+            font-weight: bold;
+        }
+        
+        .arrow-btn-arrow
+        {
+            transform: translateY(-5%); 
+            margin-left: .1em;
+            transition: .3s;
+        }
+        
         /*---------------------------------------------------------- MEDIA QUERIES */
 
+        /* Tablet */
         @media only screen and (max-width: 768px) {
             .parallax-headline
             {
@@ -727,6 +963,11 @@
                 margin-bottom: 2em;
             }
             
+            .about-txt
+            {
+                width: 65% !important;
+            }
+            
             .parr-double-cont
             {
                 margin-left: 10%
@@ -734,23 +975,107 @@
             
             .white-section
             {
-                margin-top: 10em;
+                margin-top: 15em;
             }
         }
 
-        @media only screen and (max-width: 576px) {
+        /* Mobile */
+        @media only screen and (max-width: 576px) 
+        {
+            .not-visible-mobile
+            {
+                display: none !important;
+            }
+            
             .nav-three-btns ul {
+                height: 8em;
+                margin-left: 1em;
                 padding: 0;
+                font-size: .83em;
+            }
+            
+            .logo
+            {
+                width: 2em;
+                height: 2em;
+            }
+            
+            #fly-hooh
+            {
+                transform: translate(-25%, -15%) scale(.6);
             }
 
             .parallax-headline {
                 font-size: 4em;
             }
             
+            #second-parr-headline
+            {
+                transform: translateY(-200%);
+            }
+            
+            .about-txt
+            {
+                font-size: 1.1em;
+                width: 75% !important;
+            }
+            
             .parr-double-cont
             {
-                margin-left: 0%
+                margin-left: 0%;
+                font-size: .95em;
             }
+            
+            .about-btn
+            {
+                font-weight: bold;
+            }
+            
+/*            ------------------------ FOOTER */
+            
+            footer
+            {
+                flex-direction: column;
+            }
+            
+            .footer-nav-cont
+            {
+                margin-top: 20%;
+            }
+            
+            .footer-nav-cont ul
+            {
+                margin: 0;
+            }
+            
+            .footer-nav-cont ul li a
+            {
+                margin: 0 .3em;
+                cursor: pointer;
+                font-weight: 700;
+                text-shadow: .5px .5px 5px rgba(0,0,0,.2);
+            }
+            
+            .footer-nav-cont ul li a:hover
+            {
+                color: #0a2a43;
+                text-shadow: .5px .5px 5px rgba(255,255,255,.5);
+            }
+            
+            .footer-line-mobile
+            {
+                width: 85%; 
+                height: 2px; 
+                background: #fff;
+                transform: translateY(-.5em); 
+            }
+            
+            .social-contact-cont
+            {
+                margin-bottom: 10%;
+                width: 100%;
+            }
+            
         }
         
     </style>
@@ -759,10 +1084,10 @@
 </head>
 
 <body>
-
+    <!--    Main Container Parallax -->
     <div class="row no-gutters">
         <div class="col parallax-main-cont">
-
+            <!-- Navigation -->
             <nav class="nav-three-btns">
                 <ul>
                     <div class="logo flex-center"><span class="logo-span">&#128187</span>DN</div>
@@ -771,28 +1096,32 @@
                     <li class="nav"><a href="#">Games</a></li>
                 </ul>
             </nav>
+            <!-- Parallax images Section -->
             <section class="flex-center">
                 <img src="bg.jpg" id="bg" alt="night sky">
                 <img src="moon.png" id="moon" alt="moon">
                 <img src="mountain.png" id="mountain" alt="mountains">
-                <div><img src="ash-ketchum-168620.png" id="fly-lizardon" alt="lizardon flies"></div>
+                <div><img src="ash-ketchum-168620.png" id="ash-ketchum" alt="lizardon flies"></div>
                 <div><img src="normalhoohflying.png" id="fly-hooh" alt="lizardon flies"></div>
-                <!--               <div><img src="pngfind.com-green-light-png-30496.png" id="random-poks" alt="lizardon flies"></div>-->
                 <img src="road.png" id="road" alt="long road">
-                <!--               <div><img id="ash-serina" src="PikPng.com_pokemon-ash-png_1316146.png" alt="Png - Pokemon Ash And Serena Png Clipart@pikpng.com"></div>-->
                 <h2 class="parallax-headline">Moon Light</h2>
             </section>
+            <!-- Main Container Content -->
             <div class="row no-gutters">
                 <div class="col main-cont-about">
+                    <!-- Second Parallax Headline -->
                     <h2 id="second-parr-headline" class="parallax-headline">Home</h2>
+                    <!-- Apperaing Text (depends on scroll) -->
                     <p class="about-txt">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam omnis assumenda amet nulla nisi itaque officia, culpa numquam ex harum deserunt odio sequi distinctio illum labore aperiam incidunt velit, expedita in minus ea laborum odit suscipit nihil. Cupiditate enim eveniet, minima odio quisquam nesciunt amet fugiat. Officiis iusto numquam id blanditiis dolor asperiores, earum corporis. Aliquam, illo repellendus iste commodi, laborum sed illum iusto dolore autem eveniet explicabo facere quasi ullam. Soluta consequatur nemo qui, ut, doloremque omnis dignissimos corporis sint! Velit, assumenda, inventore sequi cupiditate, laudantium accusantium necessitatibus. Illum veritatis explicabo tempora doloremque. Repellat saepe sunt libero deserunt laboriosam error minus magnam exercitationem maxime, reiciendis sequi, autem fuga ex explicabo nam eius ea tempore quas facilis officia modi culpa! Quaerat, quasi natus quisquam consectetur incidunt provident ipsum placeat quis fugit, sunt cum veritatis eos, maiores provident ipsa cum.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam omnis assumenda amet nulla nisi itaque officia, culpa numquam ex harum deserunt odio sequi distinctio illum labore aperiam incidunt velit, expedita in minus ea laborum odit suscipit nihil. Cupiditate enim eveniet, minima odio quisquam nesciunt amet fugiat. Officiis iusto numquam id blanditiis dolor asperiores, earum corporis. Aliquam, illo repellendus iste commodi, laborum sed illum iusto dolore autem eveniet explicabo facere quasi ullam. Soluta consequatur nemo qui, ut, doloremque omnis dignissimos corporis sint! Velit, assumenda, inventore sequi cupiditate, laudantium accusantium necessitatibus.
+                        <span class="not-visible-mobile">
+                             Illum veritatis explicabo tempora doloremque. Repellat saepe sunt libero deserunt laboriosam error minus magnam exercitationem maxime, reiciendis sequi, autem fuga ex explicabo nam eius ea tempore quas facilis officia modi culpa! Quaerat, quasi natus quisquam consectetur incidunt provident ipsum placeat quis fugit, sunt cum veritatis eos, maiores provident ipsa cum.
+                        </span>
                     </p>
+                    <!-- Image with starter pokemon -->
                     <img src="imageedit_1_5630962790.png" alt="all pokemon starters" class="all-starters-img" style="max-width: 100%; object-fit: cover">
-                    <!--                   Parralax Card Container -->
-                    <!--                  <h3 class="parr-card-headline">Hardest Descission Of My Childhood...</h3>-->
+                    <!-- Three Hover Element Cards  -->
                     <div class="parr-card-cont flex-center">
-
                         <div class="parr-card flex-center">
                             <i class="fas fa-fire"></i>
                             <span class="parr-card-underline"></span>
@@ -817,52 +1146,40 @@
                     </div>
                     <span class="parr-card-underline-headline"></span>
                     <h3 class="parr-card-headline">Hardest Descission Of My Childhood...</h3>
-
-                    <!--                   <img src="4%20Greninja%20Pokmon%20HD%20Wallpapers%20Backgroundss2.png" alt="" class="parr-mega-lizardon">-->
-
+                    <!-- 3x Slidein Headline + Text -->
                     <p class="about-txt" style="width: 50%; padding-top: 0">
                         <span class="little-headline" style="font-size: 1.2em; color: crimson;">Little Headline</span> <br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, porem ipsum dolor sit amet. iorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, quae. consequuntur quam natus!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span class="not-visible-mobile">Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, porem ipsum dolor sit amet.</span> iorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, quae. consequuntur quam natus!
                     </p>
 
                     <p class="about-txt" style="width: 50%; padding-top: 0; text-align: right">
                         <span class="little-headline" style="font-size: 1.2em; color: crimson;">Little Headline</span> <br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, porem ipsum dolor sit amet. iorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, culpa? consequuntur quam natus!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span class="not-visible-mobile">Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, porem ipsum dolor sit amet.</span> iorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, culpa? consequuntur quam natus!
                     </p>
 
                     <p class="about-txt" style="width: 50%; padding-top: 0">
                         <span class="little-headline" style="font-size: 1.2em; color: crimson">Little Headline</span> <br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, porem ipsum dolor sit amet. iorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, quae. consequuntur quam natus!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span class="not-visible-mobile">Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, porem ipsum dolor sit amet.</span> iorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, quae. consequuntur quam natus!
                     </p>
-
-
+                    <!-- Double Container (Image left, Text right) -->
                     <div class="container parr-double-cont">
                         <img src="Cute%20Pokemon%20HD%20Wallpaper.jpg" alt="May sitting on Milotic" class="col-12 col-md-10 col-lg-6 parr-left-img">
                         <div class="col-12 col-lg-6 col-md-10 parr-right-txt flex-center">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto qui, nisi repudiandae impedit porro sunt sed repellendus reiciendis aspernatur harum?
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto qui, nisi repudiandae <span class="not-visible-mobile">impedit porro sunt sed repellendus reiciendis</span> aspernatur harum?
+                                
                             </p>
                             <p id="revealedTxt">
-                                dolor sit amet, adipisicing elit. Iusto qui, nisi repudiandae impedit porro sunt sed repellendus reiciendis aspernatur harum?
+                                dolor sit amet, adipisicing elit. Iusto qui, <span class="not-visible-mobile">nisi repudiandae impedit porro sunt sed </span> repellendus reiciendis aspernatur harum?
                             </p>
+                            <!-- BUTTON - Reveals/Toggles hiddex Text-->
                             <button onclick="revealText()" class="about-btn">Show More</button>
                         </div>
                     </div>
-
-
-                    <!--
-                  
-                   <p class="about-txt" style="width: 25%; padding-top: 0">
-                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat eos perspiciatis reiciendis vitae, officiis quisquam saepe at, consequuntur quam natus!
-                   </p>
--->
-
-
-                    <!----------------------------------------------------------->
-
-
+                    <!-- White Section  -->
                     <div class="container-fluid white-section">
                         <div class="container">
+                           <!-- 1st Row (White Seciton) -->
                             <div class="col row-white-section">
                                 <div class="col-12 col-lg-4 white-section-card flex-center">
                                     <div class="white-section-card-icon flex-center"></div>
@@ -886,9 +1203,9 @@
                                     </p>
                                 </div>
                             </div>
-
+                            <!-- White Section Headline (middle) -->
                             <h3 class="white-section-headline">Headline whith some Text</h3>
-
+                            <!-- 2nd Row (White Seciton) -->
                             <div class="col row-white-section">
                                 <div class="col-12 col-lg-4 white-section-card flex-center">
                                     <div class="white-section-card-icon flex-center"></div>
@@ -912,6 +1229,7 @@
                                     </p>
                                 </div>
                             </div>
+                            <!-- Night Mode Toggle Checkbox -->
                             <div class="col-12" style="text-align: center; transform: translateY(1em)">
                                 <label for="night-toggle">
                                     <input id="night-toggle" type="checkbox">
@@ -920,19 +1238,46 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Newsletter Container -->
                     <div class="row no-gutters">
                         <div class="col-12">
                             <div class="newsletter-cont flex-center">
-                              <div class="newsletter-cover"></div>
-                               <div class="flex-center">
-                                   <input type="email" id="subscribe-input" aria-label="subscribe-input">
+                              <!-- Newsletter Cover (info) -->
+                              <div class="newsletter-cover">
+                                 <!-- Headline in Newsletter Cover -->
+                                 <h6 class="newsletter-cover-headline">My Newsletter</h6>
+                                  <!-- Icons Container in Newsletter Cover -->
+                                  <div class="newsletter-cover-icon-cont flex-center">
+                                      <i class="fas fa-code"></i>
+                                      <i class="fas fa-user-plus"></i>
+                                      <i class="fas fa-bug"></i>
+                                      <i class="fas fa-code-branch"></i>
+                                      <i class="fas fa-project-diagram"></i>
+                                  </div>
+                                  <!-- Pokeball line in Newsletter Cover -->
+                                  <div class="newsletter-cover-line"></div>
+                                  <!-- Text in Newsletter Cover -->
+                                  <p class="newsletter-cover-txt">
+                                      Lorem ipsum dolor amet.<br> Optio, railsandae autem <br> rerumno earum.
+                                  </p>
+                                  <!-- BUTTON - Activate clip art effect -->
+                                  <div onclick="revealNewsletter()" class="cover-arrow-btn flex-center"><span class="arrow-btn-span">Subscribe Here</span> <div class="arrow-btn-arrow">&rarr;</div></div>
+                              </div>
+                               <!-- Newsletter - Email Input -->
+                               <div class="flex-center flex-column">
+                                   <div onclick="revealNewsletter()" class="back-to-cover-arrow-btn">&larr;</div>
+                                   <h6 class="newsletter-input-headline">Get your newsletter now!</h6>
+                                   <div>
+                                       <input type="email" id="subscribe-input" aria-label="subscribe-input" placeholder="example@gmail.com">
+                                       <button id="newsletter-submit-btn">Submit</button>
+                                   </div>
                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- FOOTER -->
                     <div class="row no-gutters">
-                        <!-- FOOTER-->
-                        <footer class="col flex-center">
+                        <footer class="flex-center">
                            <!-- Scroll to top Button -->
                            <div onclick="scrollToTop()" class="scroll-to-top-btn flex-center"><i class="fas fa-chevron-up"></i></div>
                             <div class="footer-nav-cont flex-center">
@@ -942,6 +1287,8 @@
                                     <li class="footer-nav"><a href="#">Games</a></li>
                                 </ul>
                             </div>
+                            <div class="footer-line-mobile"></div>
+                            <!-- Social Media Link BUTTONS -->
                             <div class="social-contact-cont flex-center">
                                 <div class="social-contact flex-center"><a class="social-link" href="http://wwww.facebook.com" target="_blank"><i class="social-fab fab fa-facebook-f"></i></a></div>
                                 <div class="social-contact flex-center"><a class="social-link" href="http://wwww.instagram.com" target="_blank"><i class="social-fab fab fa-instagram"></i></a></div>
@@ -950,11 +1297,8 @@
                                 <div class="social-contact flex-center"><a class="social-link" href="http://wwww.pinterest.com" target="_blank"><i class="social-fab fab fa-pinterest-p"></i></a></div>
                                 <div class="social-contact flex-center"><a class="social-link" href="http://wwww.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
                             </div>
-                            <!-- subscribe/newsletter -->
-                            
                         </footer>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -962,12 +1306,14 @@
 
 
     <script>
-        // PARALLAX SECTION 
+        // ------------------------------------------------------------------- DOM VARIABLES
+        
         const nightToggle = document.querySelector("#night-toggle");
         const whiteSection = document.querySelector(".white-section");
         const newsLetterCover = document.querySelector(".newsletter-cover");
         const newsLetterContainer = document.querySelector(".newsletter-cont");
         
+        // ------------------------------------------------------------------- PARALLAX ELEMENTS VARIABLES
         
         let bg = document.querySelector("#bg");
         let moon = document.querySelector("#moon");
@@ -975,9 +1321,21 @@
         let road = document.querySelector("#road");
         let parallaxHeadline = document.querySelector(".parallax-headline");
         let secondParallaxHeadline = document.querySelector("#second-parr-headline");
-        let flyLizardon = document.querySelector("#fly-lizardon");
+        let flyLizardon = document.querySelector("#ash-ketchum");
         let flyHooh = document.querySelector("#fly-hooh");
 
+        
+        //------------------------------------------------------------------- FUNCTIONS
+        
+        // Toggles hidden text
+        const revealText = () => {
+            $("#revealedTxt").toggle();
+            $(".about-btn").text() === "Show More" ? $(".about-btn").text("Show Less") : $(".about-btn").text("Show More");
+        }
+        
+        
+        // ------------------------------------------------------------------- PARALLAX FUNCTIONS
+        
         window.addEventListener("scroll", () => {   // Youtube - 
             let val = window.scrollY;
 
@@ -987,56 +1345,30 @@
             road.style.top = val * .15 + "px";
             parallaxHeadline.style.top = val * .6 + "px";
             secondParallaxHeadline.style.top = -val * .3 + 400 + "px";
-            //            secondParallaxHeadline.style.top = -val * .3 + 400 + "px";
-
-            //            flyLizardon.style.left = val * .1 + 950 + "px";
-            //            flyLizardon.style.bottom = -val * .12 + 180 + "px";
             flyHooh.style.left = val * .5 + 100 + "px";
             flyLizardon.style.bottom = -val * .15 + 250 + "px";
-
         });
         
         
+        // ------------------------------------------------------------------- NIGHT MODE FUNCTIONS
         
-        const revealText = () => {
-            $("#revealedTxt").toggle();
-            $(".about-btn").text() === "Show More" ? $(".about-btn").text("Show Less") : $(".about-btn").text("Show More");
-        }
-        
-         
-//        function wheel(event) {   // Stack Overflow - 
-//            var delta = 0;
-//            if (event.wheelDelta) {(delta = event.wheelDelta / 120);}
-//            else if (event.detail) {(delta = -event.detail / 3);}
-//
-//            handle(delta);
-//            if (event.preventDefault) {(event.preventDefault());}
-//            event.returnValue = false;
-//         }
-//        
-//        window.addEventListener("scroll", wheel);
+        // Toggles Day/Night Mode (white section)
+        const toggleNight = () => toggleNightClasses();
         
         
-        const toggleNight = () => {
-            toggleNightClasses();
-//            if (nightToggle.value) {
-//                
-//            } else {
-//                
-//            }
-        }
-        
-        
-        //
+        // Toggles all necessary classes to de/activate night mode
         const toggleNightClasses = () => {
             const allWhiteSectionCards = document.querySelectorAll(".white-section-card");
             
             allWhiteSectionCards.forEach(card => card.classList.toggle("white-section-night-mode"));
             whiteSection.classList.toggle("white-section-night-mode");
         }
+        
         // Event Listener for the night mode toggle checkbox
         nightToggle.addEventListener("click", toggleNight);
         
+        
+        // ------------------------------------------------------------------- SCROLL FUNCTIONS
         
         // Scrolls to top of the site
         const scrollToTop = () => {
@@ -1045,20 +1377,24 @@
             }, 'slow');
         }
         
+        // ------------------------------------------------------------------- NEWSLETTER FUCNTIONS
+        
         // Toggles Newsletter Clip path animation effect
         const revealNewsletter = () => newsLetterCover.classList.toggle("revealed-newsletter");
         
         // Event Listener for Newsletter
-        newsLetterCover.addEventListener("click", revealNewsletter);
-        newsLetterContainer.addEventListener("click", revealNewsletter);
+//        newsLetterCover.addEventListener("click", revealNewsletter);
+//        newsLetterContainer.addEventListener("click", revealNewsletter);
         
         
         // Whote PageTxt -> Lazy Load
         // reveal clip path - close btn -> js add class to make it slide up and appear - evtl jquery, transition delay
         
         
+         // Mobile - show more -> show less txt (class) evtl font size smaller
         
         
+        // translate 2nd headline up a bit pc
         
     </script>
 
