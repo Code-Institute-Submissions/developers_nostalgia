@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <title>Developers Nostalgia</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        .main-cont {
+            width: 100vw;
+            height: 100vh;
+            background: #525252;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ttc-cont {
+            width: 500px;
+            height: 500px;
+            /*            background: #000;*/
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: .3em;
+        }
+
+        .ttc-square {
+            width: calc(500px/3 * .98);
+            height: calc(500px/3 * .98);
+            background: lightblue;
+            background: black;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        .ttc-square:hover
+        {
+            transform: scale(1.03);
+            background: rgba(0,0,0,.9);
+        }
+
+        .ttc-square.disabled {
+            pointer-events: none;
+        }
+
+        .circle {
+            position: relative;
+            height: calc(500px/3 * .98 * .6);
+            width: calc(500px/3 * .98 * .6);
+            border-radius: 50%;
+            border: solid 5px #fff;
+        }
+        
+        .circle:before,
+        .circle:after
+        {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+        }
+        
+        .circle:before
+        {
+            width: 100%;
+            height: 5px;
+        }
+        
+        .circle:after
+        {
+            border-radius: 50%;
+            width: 30%;
+            height: 30%;
+        }
+
+        .cross {
+            position: relative;
+            height: calc(500px/3 * .98 * .6);
+            width: calc(500px/3 * .98 * .6);
+            transform: scale(1.1);
+        }
+
+        .cross span {
+            position: absolute;
+            top: 50%;
+            transform: rotate(45deg);
+            border: solid 8px #fff;
+            width: calc(500px/3 * .98 * .6);
+            background: #fff;
+            border-radius: 5px;
+/*            background: blue;*/
+        }
+
+        .cross .second {
+            transform: rotate(-45deg);
+        }
+
+        .green {
+            background: green;
+        }
+        
+        .menu-screen
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            background: #525252;
+            width: 500px;
+            height: 500px;
+            flex-direction: column;
+            display: none;
+            transition: .5s ease;
+        }
+        .menu-screen.visible
+        {
+            display: flex;
+        }
+        
+        .start-ttc-game
+        {
+            margin-top: 1em;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bolder;
+            font-size: 1.2em;
+            transition: .5s;
+        }
+        
+        .start-ttc-game:hover
+        {
+            background: #000;
+            color: #fff;
+            transform: scale(1.08);
+        }
+        
+        .ttc-headline
+        {
+            position: relative;
+            font-size: 3em;
+            font-weight: bolder;
+            color: #fafafa;
+            margin-bottom: .8em;
+        }
+        
+        .ttc-headline:before
+        {
+            content: '';
+            position: absolute;
+            bottom: -.3em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25%;
+            height: 5px;
+            background-color: #fff;
+        }
+        
+        .winning-txt
+        {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: aqua;
+            margin-bottom: .5em;
+        }
+        
+        label
+        {
+            font-weight: bolder;
+            margin-bottom: 1em;
+            color: #fafafa;
+        }
+        
+        input[type="checkbox"]
+        {
+            width: 25px;
+            height: 25px;
+            border: none;
+            border-radius: 100px;
+        }
+        
+        
+    </style>
+
+        
+</head>
+
+<body>
+
+
+    <div class="main-cont flex-center">
+<!--      Menu Screen -->
+       <div class="menu-screen visible flex-center">
+           <h1 class="ttc-headline">PokeTacToe</h1>
+<!--           Text for declaring Winner -->
+           <p class="winning-txt"></p>
+<!--           Checkbox for Random Player -->
+          <label for="random-pl-checkbox">Random Player On/Off</label>
+          <input type="checkbox" id="random-pl-checkbox" name="random-pl-checkbox">
+<!--          Start Game Button -->
+           <button class="start-ttc-game">Start Game</button>
+       </div>
+<!--       PokeTakToe Game Field -->
+        <div class="ttc-cont flex-center">
+            <div class="ttc-square flex-center" data-square="1"></div>
+            <div class="ttc-square flex-center" data-square="2"></div>
+            <div class="ttc-square flex-center" data-square="3"></div>
+            <div class="ttc-square flex-center" data-square="4"></div>
+            <div class="ttc-square flex-center" data-square="5"></div>
+            <div class="ttc-square flex-center" data-square="6"></div>
+            <div class="ttc-square flex-center" data-square="7"></div>
+            <div class="ttc-square flex-center" data-square="8"></div>
+            <div class="ttc-square flex-center" data-square="9"></div>
+        </div>
+    </div>
+
+
+    <script>
+        // Variables
+        const startButtonGame = document.querySelector(".start-ttc-game");
+        const allSquares = document.querySelectorAll(".ttc-square");
+        const allSquaresArray = [...allSquares];
+
+        let menuScreen = document.querySelector(".menu-screen");
+        let winningTxt = document.querySelector(".winning-txt");
+        let randomPlayerCheckbox = document.querySelector("#random-pl-checkbox");
+        
+        let turnPlayerOne = true;
+        let randomPlayerOn = true;
+
+        
+        
+        // Event Listeners
+        startButtonGame.addEventListener("click", startTtcGame);
+        allSquaresArray.forEach(s => s.addEventListener('click', setMark));
+
+
+        // Starts PokeTakToe Game, determits randomPlayer, sets up field
+        function startTtcGame() {
+            randomPlayerOn = randomPlayerCheckbox.checked ? true : false;
+            allSquaresArray.map(sa => {
+                sa.innerHTML = "";
+                sa.classList.remove("p1", "p2", "disabled");
+            });
+            menuScreen.classList.remove("visible");
+        }
+        
+        
+        // Sets a Circle or a Cross and checks if some of the players won
+        function setMark(e) {
+            // P1
+            if (e.target.innerHTML === "" && turnPlayerOne) {
+                e.target.insertAdjacentHTML("beforeend", `
+                    <div class="circle"></div>
+                `);
+                turnPlayerOne = false;
+                e.target.classList.add("disabled", "p1");
+                if (checkForWin("p1")) {
+                    winningTxt.innerText = "Player1 Wins!"
+                    gameOver();
+                }
+                checkIfAllSquaresActive(allSquaresArray);
+                if (randomPlayerOn) {
+                    setTimeout(randomPlayerMove, 500);
+                    return;
+                }
+            // P2   
+            } else if (e.target.innerHTML === '' && !turnPlayerOne) {
+                e.target.insertAdjacentHTML("beforeend", `
+                    <div class="cross">
+                        <span></span>
+                        <span class="second"></span>
+                    </div>
+                  `);
+                turnPlayerOne = true;
+                e.target.classList.add("disabled", "p2");
+                if (checkForWin("p2")) {
+                    winningTxt.innerText = "Player2 Wins!"
+                    gameOver();
+                }
+                checkIfAllSquaresActive(allSquaresArray);
+            }
+        }
+
+        
+        // Random Computer Move - Sets a random cross on an empty field
+        function randomPlayerMove() {
+            let allEmptySquares = [...allSquares].filter(s => s.innerHTML === "");
+            
+            allEmptySquares[Math.floor(Math.random() * allEmptySquares.length)].insertAdjacentHTML("beforeend", `
+                    <div class="cross">
+                        <span></span>
+                        <span class="second"></span>
+                    </div>
+                  `);
+            turnPlayerOne = true;
+            // winning functions for later...
+        }
+        
+
+        // Checks if all aquares are filled and finishes the game
+        function checkIfAllSquaresActive(arr) {
+            let filteredSquareArray = arr.filter(s => s.innerHTML === "");
+
+            if (filteredSquareArray.length === 0) {
+                winningTxt.innerText = "Draw";
+                gameOver();
+            }
+        }
+
+
+        // Finishes the game
+        function gameOver() {
+            allSquaresArray.map(sa => sa.classList.add('disabled'));
+            setTimeout(() => menuScreen.classList.add("visible"), 500);
+        }
+
+
+        // Creates a 3d-array of squares
+        function createNestedArrays(arr) {
+            let allSortedArrays = [];
+            let firstArray = arr.filter(s => parseInt(s.dataset.square) < 4);
+            let secondArray = arr.filter(s => parseInt(s.dataset.square) > 3 && parseInt(s.dataset.square) < 7);
+            let thirdArray = arr.filter(s => parseInt(s.dataset.square) > 6 && parseInt(s.dataset.square) < 10);
+
+            allSortedArrays.push(firstArray, secondArray, thirdArray);
+            return allSortedArrays;
+        }
+
+        
+        // Checks if some of the players win
+        function checkForWin(player) {
+            let normalArray = [...document.querySelectorAll(".ttc-square")];
+            let nestedArrays = createNestedArrays([...document.querySelectorAll(".ttc-square")]);
+            // returns boolean
+            return (checkForHorizontalWin(nestedArrays, player) ||
+                    checkForVerticalWin(nestedArrays, player) || 
+                    checkForDiagonalWin(normalArray, player));
+        }
+            
+
+        // Takes p1/p2 as input and checks for Horizontal win
+        function checkForHorizontalWin(nSquares, playerMark) {
+            let verticalTrue = false;
+            nSquares.forEach(na => {
+                if (na.every(ne => ne.classList.contains(playerMark))) {
+                    verticalTrue = true;
+                }
+            });
+            return verticalTrue;
+        }
+
+
+        // Takes p1/p2 as input and checks for Vertical win
+        function checkForVerticalWin(nSquares, playerMark) {
+            for (let i = 0; i < nSquares.length; i++) {
+                if (nSquares.every(e => e[i].classList.contains(playerMark))) {
+                    return true;
+                    // try to give green classes!
+                }
+            }
+            return false;
+        }
+
+
+        // Takes p1/p2 as input and checks for Diagonal win
+        function checkForDiagonalWin(arr, playerMark) {
+            if (arr[0].classList.contains(playerMark) &&
+                arr[4].classList.contains(playerMark) &&
+                arr[8].classList.contains(playerMark)) {
+                
+                return true;
+            } else if (arr[2].classList.contains(playerMark) &&
+                arr[4].classList.contains(playerMark) &&
+                arr[6].classList.contains(playerMark)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+
+
+
+
+//        let playerOneMoves = [];
+//        let playerTwoMoves = [];
+
+
+        //        
+        //        
+        //                let nestedArrays = createNestedArrays(allSquaresArray);
+        //        //        nestedArrays[0][0].classList.add('');
+        //        console.log(nestedArrays);
+        //        nestedArrays.forEach(a => {
+        //            a.map(e => e.classList.add('player'));
+        //        });
+
+
+
+        //        
+        //        
+        //                function checkForHorizontalWin(playerMark) {
+        //            let horizontalWin = false;
+        //            let hCounter = 0;
+        //
+        //            createNestedArrays([...document.querySelectorAll('.ttc-square')]).forEach(na => {
+        //                if (na.every(ne => ne.classList.contains(playerMark))) {
+        //                    hCounter += 1;
+        //                }
+        //            });
+        //            if (hCounter > 0) {
+        //                horizontalWin = true;
+        //            }
+        //            return horizontalWin;
+        //        }
+        //
+        //
+
+
+        //        
+        //        nestedArrays.forEach(a => {
+        //            if (playerOneMoves.length >= 3) {
+        //                a.forEach(ar => {
+        //                    if (ar.firstElementChild) {
+        //                        ar.firstElementChild.classList.contains('circle') ? console.log('yep') : console.log('nope');
+        //                    }
+        //                });
+        //            }
+        //        })
+        //        
+
+
+
+        //        console.log(playerOneMoves.sort())
+
+
+
+        //        for (let x = 0; x <= 9; x++) {
+        //            for (let y = 0; y <= 3; y++) {
+        //                if (nestedArrays[x][y])
+        //            }
+        //        }
+
+
+
+        //        nestedArrays.forEach(a => {
+        //                    a.map(e => {
+        //                        e.classList.contains('p1') ? e.classList.add('green') : e.classList.remove('player')
+        //                    })
+
+
+        //        function filterWinningCombination(arr, one, two, three) {
+        //            let res = arr.filter(c => c === one && c === two && c === three);
+        //
+        //            res.length === 3 ? true : false;
+        //        }
+
+
+
+
+        //                let allSortedArrays = [];
+        //                let firstArray = allSquaresArray.filter(s => parseInt(s.dataset.square) < 4);
+        //                let secondArray = allSquaresArray.filter(s => parseInt(s.dataset.square) > 3 && parseInt(s.dataset.square) < 7);
+        //                let thirdArray = allSquaresArray.filter(s => parseInt(s.dataset.square) > 6 && parseInt(s.dataset.square) < 10);
+        //        
+        //                allSortedArrays.push(firstArray, secondArray, thirdArray);
+
+
+
+
+        //                allSquaresArray.forEach(s => console.log(s.dataset.square));
+
+
+        //        let sortedArrays = [];
+        //        let firstArr = [];
+        //        let secondArr = [];
+        //        let thirdArr = [];
+        //
+        //        for (let i = 1; i <= allSquaresArray.length; i++) {
+        //            if (i <= 3) {
+        //                firstArr.push(allSquaresArray[i]);
+        //            }
+        //            if (i > 3 && i <= 6) {
+        //                secondArr.push(allSquaresArray[i]);
+        //            }
+        //            if (i > 6 && i <= 9) {
+        //                thirdArr.push(allSquaresArray[i]);
+        //            }
+        //        }
+        //        sortedArrays.push(firstArr, secondArr, thirdArr);
+        //
+        //        console.log(sortedArrays);
+    </script>
+
+</body></html>
