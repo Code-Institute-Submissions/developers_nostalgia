@@ -314,6 +314,7 @@
             min-height: 30px;
             flex-wrap: wrap;
             padding: .5em 1em;
+            opacity: .8;
             transition: .3s;
         }
         
@@ -569,6 +570,18 @@
             .ampel
             {
                 margin: .5em;
+            }
+            
+            @keyframes rotate-ball 
+            {
+                from
+                {
+                    transform: translateY(-10%) scale(.6) rotate(0);
+                }
+                to 
+                {
+                    transform: translateY(-10%) scale(.6) rotate(360deg)
+                }
             }
         }
         
@@ -855,6 +868,9 @@
         gameStartBtn.addEventListener('click', startGame);
         allPlayersBtns.forEach(b => b.addEventListener('click', playersBtn));
 
+        
+        
+        
         
         
         
