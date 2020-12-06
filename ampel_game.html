@@ -13,7 +13,7 @@
 
     <style>
         
-        /*------------------------------------------------------------ GENERAL */
+        /* ------------------------------------------------------------ GENERAL */
         
         a
         {
@@ -41,7 +41,7 @@
         }
 
         
-        /*------------------------------------------------------------ MAIN CONTAINER */
+        /* ------------------------------------------------------------ MAIN CONTAINER */
         
         .main-cont 
         {
@@ -52,7 +52,7 @@
         }
         
         
-        /*------------------------------------------------------------ NAVIGATION */
+        /* ------------------------------------------------------------ NAVIGATION */
         
         .nav-three-btns
         {
@@ -133,11 +133,13 @@
         }
         
         
-        /*------------------------------------------------------------ NAVIGATION FOR GAMES */
+        /* ------------------------------------------------------------ NAVIGATION FOR GAMES */
         
+        #players-choice-checkbox,
         #animation-checkbox
         {
-            margin-right: .5em;
+            margin: .5em;
+            margin-right: 1em;
         }
         
         .games-nav
@@ -154,7 +156,7 @@
         }
         
     
-        /*------------------------------------------------------------ AMPEL CONTAINER */
+        /* ------------------------------------------------------------ AMPEL CONTAINER */
 
         .ampel-cont
         {
@@ -201,20 +203,20 @@
             box-shadow: inset 0 0 15px rgba(0,0,0,.5);
         }
 
-        /* Ampel Lights Colors */
-        .ampel.red 
+        /* Ampel Lights / Players Choices Colors */
+        .red 
         {
-            background: red;
+            background: red !important;
         }
 
-        .ampel.blue 
+        .blue 
         {
-            background: blue;
+            background: blue !important;
         }
 
-        .ampel.green 
+        .green 
         {
-            background: green;
+            background: green !important;
         }
 
         
@@ -235,7 +237,6 @@
         #start-game-btn:hover
         {
             background: #fafafa;
-            color: darkorange;
             box-shadow: 1px 1px 15px 0 rgba(0,0,0,.8);
         }
 
@@ -255,7 +256,7 @@
         }
         
 
-        /*------------------------------------------------------------ AMPEL - PLAYERS FIELD (BUTTONS) */
+        /* ------------------------------------------------------------ AMPEL - PLAYERS FIELD (BUTTONS) */
         
         .players-field 
         {
@@ -303,7 +304,31 @@
         }
         
         
-        /*------------------------------------------------------------ POKEBALL-/CIRCLE */
+        /* ------------------------------------------------------------ PLAYERS CHOICES (COLORS) */
+        
+        .players-choices-cont
+        {
+            position: absolute;
+            bottom: -20%;
+            width: 100%;
+            min-height: 30px;
+            flex-wrap: wrap;
+            padding: .5em 1em;
+            transition: .3s;
+        }
+        
+        /* BUTTON - Players Choice */
+        .players-choice
+        {
+            width: 13px;
+            height: 13px;
+            background: #000;
+            border-radius: 50%;
+            margin: .2em;
+            box-shadow: .5px .5px 15px rgba(0,0,0,.3);
+        }
+        
+        /* ------------------------------------------------------------ POKEBALL-/CIRCLE */
         
         .poke-circle
         {
@@ -370,22 +395,36 @@
             
         }
         
-        /* Poke circle - inner inner circle */
-        .poke-inner-circle:before
+        /* Poke circle - inner inner (inner) circle */
+        .poke-inner-circle:before,
+        .poke-inner-circle:after
         {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+        
+        .poke-inner-circle:before
+        {
             height: 60%;
             width: 60%;
-            border-radius: 50%;
             background-color: rgba(255,255,255,.5);
         }
         
+        .poke-inner-circle:after
+        {
+            width: 35%;
+            height: 35%;
+            border: solid 3px #000;
+            box-shadow: 1px 1px 15px rgba(0,0,0,.5);
+            z-index: 3;
+        }
         
-        /**------------------------------------------------------------ BUTTON - Reload site */
+        
+        /* ------------------------------------------------------------ BUTTON - Reload site */
         
         .reload-btn
         {
@@ -410,7 +449,7 @@
         }
         
         
-        /*------------------------------------------------------------ SOCIAL MEDIA LINKS CONTAINER (FOOTER) */
+        /* ------------------------------------------------------------ SOCIAL MEDIA LINKS CONTAINER (FOOTER) */
         
         .ttc-socials-cont
         {
@@ -511,7 +550,7 @@
         }
         
         
-        /*------------------------------------------------------------ MEDIA QUERIES */
+        /* ------------------------------------------------------------ MEDIA QUERIES */
         
         /* Mobile */
         @media only screen and (max-width: 576px) 
@@ -557,25 +596,32 @@
             <!-- Games Navigation -->
             <ul class="flex-center games-nav" style="margin: 0">
                 <li class="nav"><input onclick="toggleAnimationBall()" id="animation-checkbox" type="checkbox"></li>
+                <li class="nav"><input onclick="togglelPlayersChoices()" id="players-choice-checkbox" type="checkbox"></li>
                 <li class="nav"><a href="#">PokeTacToe</a></li>
                 <li class="nav"><a href="#">PokeLights</a></li>
                 <li class="nav"><a href="#">PokeQuiz</a></li>
             </ul>
         </nav>
        </header>
+       <!-- Ampel Container -->
        <div class="ampel-cont flex-center">
+          <!-- Ampel Score -->
           <div id="ampel-score"></div>
+           <!-- Ampel Box - Lights -->
            <div class="ampel-box flex-center">
             <div class="ampel" id="red"></div>
             <div class="ampel" id="blue"></div>
             <div class="ampel" id="green"></div>
         </div>
+        <!-- BUTTON - Start Ampel Game -->
         <button id="start-game-btn" class="flex-center">Start Game</button>
+        <!-- Players Field & Seleciton Buttons -->
         <div class="players-field flex-center">
             <button class="players-btn" id="p-red">Red</button>
             <button class="players-btn" id="p-blue">Blue</button>
             <button class="players-btn" id="p-green">Green</button>
         </div>
+        <div class="players-choices-cont flex-center"></div>
        </div>
        <!-- Social Media Container (Footer) -->
         <div class="ttc-socials-cont flex-center">
@@ -623,33 +669,42 @@
         
         // --------------------------------------------------------------- DOM VARIABLES
         
-        let playersRed = document.querySelector('#p-red');
-        let playersBlue = document.querySelector('#p-blue');
-        let allLights = document.querySelectorAll('.ampel');
-        let playersGreen = document.querySelector('#p-green');
-        let pokeBall = document.querySelector('.poke-circle');
-        let ampelScore = document.querySelector("#ampel-score");
-        let playersField = document.querySelector('.players-field');
-        let gameStartBtn = document.querySelector('#start-game-btn');
-        let allPlayersBtns = document.querySelectorAll('.players-btn');
-        let animatiionCheckBox = document.querySelector('#animation-checkbox');
+        const playersRed = document.querySelector('#p-red');
+        const playersBlue = document.querySelector('#p-blue');
+        const allLights = document.querySelectorAll('.ampel');
+        const playersGreen = document.querySelector('#p-green');
+        const pokeBall = document.querySelector('.poke-circle');
+        const ampelScore = document.querySelector("#ampel-score");
+        const playersField = document.querySelector('.players-field');
+        const gameStartBtn = document.querySelector('#start-game-btn');
+        const allPlayersBtns = document.querySelectorAll('.players-btn');
+        const animatiionCheckBox = document.querySelector('#animation-checkbox');
+        const playersChoicesCont = document.querySelector('.players-choices-cont');
+        const PlayersChoiceCheckBox = document.querySelector('#players-choice-checkbox');
 
+        
         // --------------------------------------------------------------- GAME VARIABLES
         
         let playersChoices;
+        let choiceCounter;
         let combination;
         let display;
         let counter;
         let round = 0;
 
         
-        // --------------------------------------------------------------- POKEBALL-/CIRCLE
+        // --------------------------------------------------------------- TOGGLE FUNCTIONS - POKEBALL-/CIRCLE
         
         // Toggles Animation (Circle)
         function toggleAnimationBall() {
             animatiionCheckBox.checked ? pokeBall.classList.add("animate") : pokeBall.classList.remove("animate");
         }
 
+        
+        function togglelPlayersChoices() {
+            PlayersChoiceCheckBox.checked ? playersChoicesCont.style.opacity = 0 : playersChoicesCont.style.opacity = 1;
+        }
+        
         
         // --------------------------------------------------------------- RESTART, START, PREPARE GAME
         
@@ -664,6 +719,8 @@
                 ampelScore.innerHTML = 0;
             }
             
+            fillPlayersChoices();
+            choiceCounter = -1;
             playersChoices = [];
             round++;
             combination = createOrder();
@@ -674,6 +731,15 @@
             playersField.classList.add('active', 'disabled-btns');
         }
 
+        
+        // Displays amount of colors
+        function fillPlayersChoices() {
+            playersChoicesCont.innerHTML = "";
+            
+            for (let i = 0; i <= round; i++) {
+                playersChoicesCont.innerHTML += `<div class="players-choice"></div>`;
+            }
+        }
   
         // Removes all bg-color classes
         function removeAllLights() {
@@ -724,17 +790,23 @@
 
         // --------------------------------------------------------------- CHECK PLAYERS SELECTION
         
-        // Pushes all players choices to global array - playersChoices
+        // BUTTONS - Pushes all players choices to global array - playersChoices
         function playersBtn(e) {
+            const allChoices = document.querySelectorAll(".players-choice");
+            
+            choiceCounter++;
             switch (e.target.id) {
                 case 'p-red':
                     playersChoices.push('red');
+                    allChoices[choiceCounter].classList.add("red");
                     break;
                 case 'p-blue':
                     playersChoices.push('blue');
+                    allChoices[choiceCounter].classList.add("blue");
                     break;
                 case 'p-green':
                     playersChoices.push('green');
+                    allChoices[choiceCounter].classList.add("green");
             }
             checkProgress();
         }
@@ -782,20 +854,17 @@
         
         gameStartBtn.addEventListener('click', startGame);
         allPlayersBtns.forEach(b => b.addEventListener('click', playersBtn));
-        
 
-
-        
-        
-        
-        
         
         
         
         // Gives player possibility to erase last choice
         function removeOneChoice() {
+            const allChoices = document.querySelectorAll(".players-choice");
+            
             playersChoices.pop();
-            // remove last color selection
+            choiceCounter--;
+            allChoices[choiceCounter].classList.remove("red", "blue", "green");
         }
         
         
