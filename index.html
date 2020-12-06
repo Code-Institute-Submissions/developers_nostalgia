@@ -39,6 +39,11 @@
             justify-content: center;
             align-items: center;
         }
+        
+        .flex-column
+        {
+            flex-direction: column;
+        }
 
         ul {
             list-style: none;
@@ -69,8 +74,82 @@
         }
 
 
-        /*        NAVIGATION AND LOGO */
-
+        /*---------------------------------------------------------- SOCIAL MEDIA (SIDE) BTN/CONTAINER */
+        
+        /* BUTTON - Social Media Side Button */
+        #social-media-btn
+        {
+            position: fixed;
+            bottom: 3%;
+            left: 2%;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,.8);
+            box-shadow: 1px 1px 15px rgba(0,0,0,.6);
+            transform: scale(.8);
+            font-size: 1.5em;
+            opacity: .5;
+            transition: .3s;
+            cursor: pointer;
+            z-index: 9999999;
+        }
+        
+        /* HOVER & ACTIVE - Social Media Side Btn */
+        #social-media-btn:hover,
+        #social-media-btn.active
+        {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        /* Social Media Container with all Links (hidden) */
+        .social-media-side-cont
+        {
+            position: absolute;
+            top: -535%;
+            left: 45%;
+            transform: translate(-50%);
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s;
+            z-index: -1000;
+        }
+        
+        /* ACTIVE - Social Media Container (visible) */
+        .social-media-side-cont.active
+        {
+            opacity: 1;
+            z-index: 999;
+            pointer-events: auto;
+        }
+        
+        /* Social Media Links */
+        .social-media-side-cont .social-contact
+        {
+            width: 30px;
+            height: 30px;
+            margin-top: .18em;
+            background: #fafafa;
+            box-shadow: 1px 1px 15px rgba(0,0,0,.8);
+        }
+        
+        .social-media-side-cont .social-contact i
+        {
+            color: #000;
+            transform: scale(.8);
+        }
+        
+        /* HOVER - Social Media Icons */
+        .social-media-side-cont .social-contact:hover.social-contact i
+        {
+            color: #fff;
+            transform: scale(.6);
+        }
+        
+        
+        /*---------------------------------------------------------- NAVIGATION AND LOGO */
+        
         .logo {
             margin-right: 15px;
             width: 80px;
@@ -80,8 +159,9 @@
             font-size: 2.5em;
             font-weight: bolder;
             color: #fafafa;
-            z-index: 100000;
+            cursor: pointer;
             transform: scale(.6);
+            z-index: 100000;
         }
 
         .logo-span {
@@ -262,6 +342,7 @@
 
         #second-parr-headline {
             top: 400px;
+            transform: translateY(-50%);
         }
 
         /* All Text in main container (except cards etc) */
@@ -505,7 +586,8 @@
 
         /*---------------------------------------------------------- FOOTER */
 
-        footer.flex-center {
+        footer.flex-center 
+        {
             position: relative;
             width: 98vw;
             height: 250px;
@@ -968,6 +1050,11 @@
                 width: 65% !important;
             }
             
+            #second-parr-headline
+            {
+                transform: translateY(-200%);
+            }
+            
             .parr-double-cont
             {
                 margin-left: 10%
@@ -985,6 +1072,22 @@
             .not-visible-mobile
             {
                 display: none !important;
+            }
+            
+            #social-media-btn
+            {
+                transform: scale(.6);
+                opacity: .3;
+                bottom: 1%;
+                left: 1%;
+            }
+            
+            /* HOVER & ACTIVE - Social Media Side Btn */
+            #social-media-btn:hover,
+            #social-media-btn.active
+            {
+                opacity: 1;
+                transform: scale(1);
             }
             
             .nav-three-btns ul {
@@ -1005,14 +1108,17 @@
                 transform: translate(-25%, -15%) scale(.6);
             }
 
-            .parallax-headline {
+            .parallax-headline 
+            {
                 font-size: 4em;
             }
             
+/*
             #second-parr-headline
             {
                 transform: translateY(-200%);
             }
+*/
             
             .about-txt
             {
@@ -1078,20 +1184,34 @@
             
         }
         
+        
     </style>
 
 
 </head>
 
 <body>
-    <!--    Main Container Parallax -->
+    <!-- Main Container Parallax -->
     <div class="row no-gutters">
         <div class="col parallax-main-cont">
+<!-- Social Media Side - BUTTON -->
+            <div onclick="toggleSocialMediaBtn()" id="social-media-btn" class="flex-center">
+                <i id="hashtag" class="fas fa-hashtag"></i>
+                <!-- Social Media Side Container -->
+                <div class="social-media-side-cont flex-center flex-column">
+                    <div class="social-contact flex-center"><a class="social-link" href="http://www.facebook.com" target="_blank"><i class="social-fab fab fa-facebook-f"></i></a></div>
+                    <div class="social-contact flex-center"><a class="social-link" href="http://www.instagram.com" target="_blank"><i class="social-fab fab fa-instagram"></i></a></div>
+                    <div class="social-contact flex-center"><a class="social-link" href="http://www.twitter.com" target="_blank"><i class="social-fab fab fa-twitter"></i></a></div>
+                    <div class="social-contact flex-center"><a class="social-link" href="http://www.youtube.com" target="_blank"><i class="social-fab fab fa-youtube"></i></a></div>
+                    <div class="social-contact flex-center"><a class="social-link" href="http://www.pinterest.com" target="_blank"><i class="social-fab fab fa-pinterest-p"></i></a></div>
+                    <div class="social-contact flex-center"><a class="social-link" href="http://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+                </div>
+            </div>
             <!-- Navigation -->
             <nav class="nav-three-btns">
                 <ul>
                     <div class="logo flex-center"><span class="logo-span">&#128187</span>DN</div>
-                    <li class="nav"><a href="#">About Us</a></li>
+                    <li class="nav"><a href="#">Home</a></li>
                     <li class="nav"><a href="#">Pokedex</a></li>
                     <li class="nav"><a href="#">Games</a></li>
                 </ul>
@@ -1115,7 +1235,7 @@
                     <p class="about-txt">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam omnis assumenda amet nulla nisi itaque officia, culpa numquam ex harum deserunt odio sequi distinctio illum labore aperiam incidunt velit, expedita in minus ea laborum odit suscipit nihil. Cupiditate enim eveniet, minima odio quisquam nesciunt amet fugiat. Officiis iusto numquam id blanditiis dolor asperiores, earum corporis. Aliquam, illo repellendus iste commodi, laborum sed illum iusto dolore autem eveniet explicabo facere quasi ullam. Soluta consequatur nemo qui, ut, doloremque omnis dignissimos corporis sint! Velit, assumenda, inventore sequi cupiditate, laudantium accusantium necessitatibus.
                         <span class="not-visible-mobile">
-                             Illum veritatis explicabo tempora doloremque. Repellat saepe sunt libero deserunt laboriosam error minus magnam exercitationem maxime, reiciendis sequi, autem fuga ex explicabo nam eius ea tempore quas facilis officia modi culpa! Quaerat, quasi natus quisquam consectetur incidunt provident ipsum placeat quis fugit, sunt cum veritatis eos, maiores provident ipsa cum.
+                            Illum veritatis explicabo tempora doloremque. Repellat saepe sunt libero deserunt laboriosam error minus magnam exercitationem maxime, reiciendis sequi, autem fuga ex explicabo nam eius ea tempore quas facilis officia modi culpa! Quaerat, quasi natus quisquam consectetur incidunt provident ipsum placeat quis fugit, sunt cum veritatis eos, maiores provident ipsa cum.
                         </span>
                     </p>
                     <!-- Image with starter pokemon -->
@@ -1167,7 +1287,7 @@
                         <div class="col-12 col-lg-6 col-md-10 parr-right-txt flex-center">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto qui, nisi repudiandae <span class="not-visible-mobile">impedit porro sunt sed repellendus reiciendis</span> aspernatur harum?
-                                
+
                             </p>
                             <p id="revealedTxt">
                                 dolor sit amet, adipisicing elit. Iusto qui, <span class="not-visible-mobile">nisi repudiandae impedit porro sunt sed </span> repellendus reiciendis aspernatur harum?
@@ -1179,7 +1299,7 @@
                     <!-- White Section  -->
                     <div class="container-fluid white-section">
                         <div class="container">
-                           <!-- 1st Row (White Seciton) -->
+                            <!-- 1st Row (White Seciton) -->
                             <div class="col row-white-section">
                                 <div class="col-12 col-lg-4 white-section-card flex-center">
                                     <div class="white-section-card-icon flex-center"></div>
@@ -1242,44 +1362,46 @@
                     <div class="row no-gutters">
                         <div class="col-12">
                             <div class="newsletter-cont flex-center">
-                              <!-- Newsletter Cover (info) -->
-                              <div class="newsletter-cover">
-                                 <!-- Headline in Newsletter Cover -->
-                                 <h6 class="newsletter-cover-headline">My Newsletter</h6>
-                                  <!-- Icons Container in Newsletter Cover -->
-                                  <div class="newsletter-cover-icon-cont flex-center">
-                                      <i class="fas fa-code"></i>
-                                      <i class="fas fa-user-plus"></i>
-                                      <i class="fas fa-bug"></i>
-                                      <i class="fas fa-code-branch"></i>
-                                      <i class="fas fa-project-diagram"></i>
-                                  </div>
-                                  <!-- Pokeball line in Newsletter Cover -->
-                                  <div class="newsletter-cover-line"></div>
-                                  <!-- Text in Newsletter Cover -->
-                                  <p class="newsletter-cover-txt">
-                                      Lorem ipsum dolor amet.<br> Optio, railsandae autem <br> rerumno earum.
-                                  </p>
-                                  <!-- BUTTON - Activate clip art effect -->
-                                  <div onclick="revealNewsletter()" class="cover-arrow-btn flex-center"><span class="arrow-btn-span">Subscribe Here</span> <div class="arrow-btn-arrow">&rarr;</div></div>
-                              </div>
-                               <!-- Newsletter - Email Input -->
-                               <div class="flex-center flex-column">
-                                   <div onclick="revealNewsletter()" class="back-to-cover-arrow-btn">&larr;</div>
-                                   <h6 class="newsletter-input-headline">Get your newsletter now!</h6>
-                                   <div>
-                                       <input type="email" id="subscribe-input" aria-label="subscribe-input" placeholder="example@gmail.com">
-                                       <button id="newsletter-submit-btn">Submit</button>
-                                   </div>
-                               </div>
+                                <!-- Newsletter Cover (info) -->
+                                <div class="newsletter-cover">
+                                    <!-- Headline in Newsletter Cover -->
+                                    <h6 class="newsletter-cover-headline">My Newsletter</h6>
+                                    <!-- Icons Container in Newsletter Cover -->
+                                    <div class="newsletter-cover-icon-cont flex-center">
+                                        <i class="fas fa-code"></i>
+                                        <i class="fas fa-user-plus"></i>
+                                        <i class="fas fa-bug"></i>
+                                        <i class="fas fa-code-branch"></i>
+                                        <i class="fas fa-project-diagram"></i>
+                                    </div>
+                                    <!-- Pokeball line in Newsletter Cover -->
+                                    <div class="newsletter-cover-line"></div>
+                                    <!-- Text in Newsletter Cover -->
+                                    <p class="newsletter-cover-txt">
+                                        Lorem ipsum dolor amet.<br> Optio, railsandae autem <br> rerumno earum.
+                                    </p>
+                                    <!-- BUTTON - Activate clip art effect -->
+                                    <div onclick="revealNewsletter()" class="cover-arrow-btn flex-center"><span class="arrow-btn-span">Subscribe Here</span>
+                                        <div class="arrow-btn-arrow">&rarr;</div>
+                                    </div>
+                                </div>
+                                <!-- Newsletter - Email Input -->
+                                <div class="flex-center flex-column">
+                                    <div onclick="revealNewsletter()" class="back-to-cover-arrow-btn">&larr;</div>
+                                    <h6 class="newsletter-input-headline">Get your newsletter now!</h6>
+                                    <div>
+                                        <input type="email" id="subscribe-input" aria-label="subscribe-input" placeholder="example@gmail.com">
+                                        <button id="newsletter-submit-btn">Submit</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- FOOTER -->
                     <div class="row no-gutters">
                         <footer class="flex-center">
-                           <!-- Scroll to top Button -->
-                           <div onclick="scrollToTop()" class="scroll-to-top-btn flex-center"><i class="fas fa-chevron-up"></i></div>
+                            <!-- Scroll to top Button -->
+                            <div onclick="scrollToTop()" class="scroll-to-top-btn flex-center"><i class="fas fa-chevron-up"></i></div>
                             <div class="footer-nav-cont flex-center">
                                 <ul>
                                     <li class="footer-nav"><a href="#">Home</a></li>
@@ -1290,12 +1412,12 @@
                             <div class="footer-line-mobile"></div>
                             <!-- Social Media Link BUTTONS -->
                             <div class="social-contact-cont flex-center">
-                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.facebook.com" target="_blank"><i class="social-fab fab fa-facebook-f"></i></a></div>
-                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.instagram.com" target="_blank"><i class="social-fab fab fa-instagram"></i></a></div>
-                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.twitter.com" target="_blank"><i class="social-fab fab fa-twitter"></i></a></div>
-                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.youtube.com" target="_blank"><i class="social-fab fab fa-youtube"></i></a></div>
-                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.pinterest.com" target="_blank"><i class="social-fab fab fa-pinterest-p"></i></a></div>
-                                <div class="social-contact flex-center"><a class="social-link" href="http://wwww.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://www.facebook.com" target="_blank"><i class="social-fab fab fa-facebook-f"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://www.instagram.com" target="_blank"><i class="social-fab fab fa-instagram"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://www.twitter.com" target="_blank"><i class="social-fab fab fa-twitter"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://www.youtube.com" target="_blank"><i class="social-fab fab fa-youtube"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://www.pinterest.com" target="_blank"><i class="social-fab fab fa-pinterest-p"></i></a></div>
+                                <div class="social-contact flex-center"><a class="social-link" href="http://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
                             </div>
                         </footer>
                     </div>
@@ -1303,15 +1425,16 @@
             </div>
         </div>
     </div>
-
-
     <script>
+        
         // ------------------------------------------------------------------- DOM VARIABLES
         
         const nightToggle = document.querySelector("#night-toggle");
         const whiteSection = document.querySelector(".white-section");
+        const socialMediaBtn = document.querySelector("#social-media-btn");
         const newsLetterCover = document.querySelector(".newsletter-cover");
         const newsLetterContainer = document.querySelector(".newsletter-cont");
+        const socialMediaSideCont = document.querySelector(".social-media-side-cont");
         
         // ------------------------------------------------------------------- PARALLAX ELEMENTS VARIABLES
         
@@ -1325,12 +1448,27 @@
         let flyHooh = document.querySelector("#fly-hooh");
 
         
-        //------------------------------------------------------------------- FUNCTIONS
+        //------------------------------------------------------------------- TOGGLE FUNCTIONS
         
         // Toggles hidden text
         const revealText = () => {
             $("#revealedTxt").toggle();
             $(".about-btn").text() === "Show More" ? $(".about-btn").text("Show Less") : $(".about-btn").text("Show More");
+        }
+        
+        // Toggles Social Media Button (Side)
+        const toggleSocialMediaBtn = () => {
+            // toggles Social Media Side Container
+            socialMediaBtn.classList.contains("active") ? socialMediaBtn.classList.remove("active") : socialMediaBtn.classList.add("active");
+            
+            // replaces icon (thumb/hashtag), toggles Social Media Side Container
+            if (socialMediaBtn.classList.contains("active")) {
+                socialMediaSideCont.classList.add("active");
+                $("#hashtag").replaceWith(`<i id="thumb" class="far fa-thumbs-up"></i>`);
+            } else {
+                socialMediaSideCont.classList.remove("active");
+                $("#thumb").replaceWith(`<i id="hashtag" class="fas fa-hashtag"></i>`);
+            }
         }
         
         
@@ -1382,20 +1520,15 @@
         // Toggles Newsletter Clip path animation effect
         const revealNewsletter = () => newsLetterCover.classList.toggle("revealed-newsletter");
         
-        // Event Listener for Newsletter
-//        newsLetterCover.addEventListener("click", revealNewsletter);
-//        newsLetterContainer.addEventListener("click", revealNewsletter);
-        
-        
+        // Submit function
         // Whote PageTxt -> Lazy Load
-        // reveal clip path - close btn -> js add class to make it slide up and appear - evtl jquery, transition delay
-        
-        
-         // Mobile - show more -> show less txt (class) evtl font size smaller
-        
-        
-        // translate 2nd headline up a bit pc
+        // logo js - 
+        // attach ash to road.png
+        // comments css
+        // social button (toggle vertical open shows all socials) - checkbox to remove social btn
+        // js hover btn disappear when on footer
         
     </script>
 
-</body></html>
+</body>
+</html>
