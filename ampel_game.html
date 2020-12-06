@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <title>Developers Nostalgia</title>
+
+    <style>
+        
+        /*------------------------------------------------------------ GENERAL */
+        
+        a
+        {
+            color: #fafafa;
+        }
+        
+        a:hover
+        {
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        .flex-center
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        button 
+        {
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        
+        /*------------------------------------------------------------ MAIN CONTAINER */
+        
+        .main-cont 
+        {
+            height: 100vh;
+            width: 100vw;
+            background: #333;
+            flex-direction: column;
+        }
+        
+        
+        /*------------------------------------------------------------ NAVIGATION */
+        
+        .nav-three-btns
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 70px;
+            width: 100%;
+            padding-left: 5%;
+            justify-content: flex-start;
+            border-bottom: solid;
+            padding-left: 0;
+        }
+        
+        /* HOVER - Navigation Links opacity 1 */
+        .nav-three-btns:hover .nav a
+        {
+            color: rgba(255,255,255,1);
+        }
+        
+        /* LOGO */
+        .logo
+        {
+            position: relative;
+            margin-right: .8em;
+            font-size: 1.1em;
+            font-weight: bolder;
+            color: #000;
+            color: #fafafa;
+            cursor: pointer;
+            text-shadow: .5px 0px 3px rgba(0,0,0,.3),
+                         .5px 0px 3px rgba(0,0,0,.5);
+            z-index: 2;
+        }
+        
+        .logo:before
+        {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: darkred;
+            background: rgba(139,0,0,.6);
+            z-index: 1;
+        }
+        
+        /* Navigation Links */
+        .nav a
+        {
+            position: relative;
+            margin: .5em;
+            padding: .1em;
+            color: #fafafa;
+            color: rgba(255,255,255,.8);
+            font-weight: bold;
+        }
+        
+        /* Nav - Underline */
+        .nav a:before
+        {
+            content: '';
+            position: absolute;
+            bottom: -25%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 1px;
+            background: crimson;
+            transform-origin: center;
+            transition: .3s;
+        }
+        
+        /* HOVER - Underline */
+        .nav:hover.nav a:before
+        {
+            width: 100%;
+        }
+        
+        
+        /*------------------------------------------------------------ NAVIGATION FOR GAMES */
+        
+        #animation-checkbox
+        {
+            margin-right: .5em;
+        }
+        
+        .games-nav
+        {
+            margin: 0;
+            position: absolute;
+            right: 5%;
+        }
+        
+        /* Game nav - Underline */
+        .games-nav .nav a:before
+        {
+            background: #fafafa;
+        }
+        
+    
+        /*------------------------------------------------------------ AMPEL CONTAINER */
+
+        .ampel-cont
+        {
+            position: relative;
+            flex-direction: column;
+            border-radius: 15px;
+            background: #0a2a43;
+            transition: .3s;
+            transform: translateY(10%);
+        }
+        
+        /* Score */
+        #ampel-score
+        {
+            position: absolute;
+            top: -25%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        /* Ampel - Upper part (lights) */
+        .ampel-box 
+        {
+            width: 100%;
+            padding: 1.5em;
+            padding: 1em;
+            background: black;
+            border-radius: 15px 15px 0 0;
+            justify-content: space-around;
+        }
+
+        /* Light */
+        .ampel 
+        {
+            height: calc(20vh * .7);
+            width: calc(20vh * .7);
+            margin: 1em;
+            border-radius: 50%;
+            background: #525252;
+            transition: .5s;
+            box-shadow: inset 0 0 15px rgba(0,0,0,.5);
+        }
+
+        /* Ampel Lights Colors */
+        .ampel.red 
+        {
+            background: red;
+        }
+
+        .ampel.blue 
+        {
+            background: blue;
+        }
+
+        .ampel.green 
+        {
+            background: green;
+        }
+
+        
+        /* BUTTON - Start Ampel Game */
+        #start-game-btn 
+        {
+            width: 180px;
+            height: 50px;
+            margin: 26px;
+            font-size: 1.6em;
+            font-weight: bold;
+            background: darkorange;
+            border-radius: 15px;
+            display: flex;
+        }
+        
+        /* HOVER - Start Ampel Game Btn */
+        #start-game-btn:hover
+        {
+            background: #fafafa;
+            color: darkorange;
+            box-shadow: 1px 1px 15px 0 rgba(0,0,0,.8);
+        }
+
+        /* ACTIVE - Start Ampel Game Btn */
+        #start-game-btn.active {
+            display: none;
+        }
+
+        /* Correct/Wrong classes for Btn */
+        #start-game-btn.correct {
+            pointer-events: none;
+            background-color: green;
+        }
+
+        #start-game-btn.wrong {
+            background-color: crimson;
+        }
+        
+
+        /*------------------------------------------------------------ AMPEL - PLAYERS FIELD (BUTTONS) */
+        
+        .players-field 
+        {
+            width: 300px;
+            height: 102px;
+            border-radius: 15px;
+            display: none;
+            transition: .3s;
+        }
+
+/*        ACTIVE/VISIBLE - Players Field */
+        .players-field.active 
+        {
+            display: flex;
+        }
+        
+/*        DISABLED - Players Field (can't click) */
+        .players-field.disabled-btns
+        {
+            pointer-events: none;
+            filter: opacity(.8);
+        }
+
+        /* BUTTONS - Selection red/blue/green */
+        .players-btn 
+        {
+            width: 25%;
+            padding: .5em 0;
+            border-radius: 15px;
+            border: none;
+            margin: 0 10px;
+            font-weight: bold;
+            letter-spacing: .03em;
+            background-color: darkred;
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        .players-btn:hover
+        {
+            background: #fafafa;
+            color: #000;
+        }
+        
+        
+        /*------------------------------------------------------------ POKEBALL-/CIRCLE */
+        
+        .poke-circle
+        {
+            position: absolute;
+            top: 12%;
+            border-radius: 50%;
+            height: 140px;
+            width: 140px;
+            background-color: rgba(255,255,255,.5);
+        }
+        
+        /* ANIMATION - Rotates poke circle */
+        .poke-circle.animate
+        {
+            animation: rotate-ball infinite 6s linear;
+        }
+        
+        @keyframes rotate-ball 
+        {
+            from
+            {
+                transform: rotate(0);
+            }
+            to 
+            {
+                transform: rotate(360deg)
+            }
+        }
+        
+/*        Poke cirlce - inner lines l/r */
+        .poke-circle:before
+        {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 15%;
+            width: 40%;
+            background-color: #000;
+            border-radius: ;
+        }
+        
+        .poke-circle:after
+        {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 15%;
+            width: 30%;
+            background-color: #000;
+        }
+        
+        /* Poke cirlce - inner circle */
+        .poke-inner-circle
+        {
+            position: relative;
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            background-color: #000;
+            
+        }
+        
+        /* Poke circle - inner inner circle */
+        .poke-inner-circle:before
+        {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 60%;
+            width: 60%;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,.5);
+        }
+        
+        
+        /**------------------------------------------------------------ BUTTON - Reload site */
+        
+        .reload-btn
+        {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            color: #fff;
+            width: 50px;
+            opacity: .6;
+            height: 50px;
+            transition: .3s;
+            font-size: 1.25em;
+            border-radius: 50%;
+            background: rgba(0,0,0,.5);
+            transform: translateX(-50%);
+        }
+        
+        .reload-btn:hover
+        {
+            opacity: 1;
+            font-size: 1.4em;
+        }
+        
+        
+        /*------------------------------------------------------------ SOCIAL MEDIA LINKS CONTAINER (FOOTER) */
+        
+        .ttc-socials-cont
+        {
+            position: absolute;
+            bottom: 0;
+            padding-right: 5%;
+            width: 100%;
+            height: 80px;
+            justify-content: flex-end;
+            background: rgba(0,0,0,.5);
+            transition: .3s;
+        }
+        
+        /* HOVER - Social Media Container (bg, box-shadow) */
+        .ttc-socials-cont:hover
+        {
+            background: #fafafa;
+            box-shadow: -.1px -1px 15px rgba(0,0,0,.5);
+        }
+        
+        /* HOVER - Social Media Circles (color, box-shadow) */
+        .ttc-socials-cont:hover .social-contact
+        {
+            background: rgba(139,0,0,1);
+            box-shadow: 1px 1px 15px rgba(0,0,0,.35);
+            color: rgba(255,255,255,1);
+        }
+        
+        /* HOVER - Footer Text (appear)*/
+        .ttc-socials-cont:hover.ttc-socials-cont p
+        {
+            opacity: 1;
+        }
+        
+        /* Footer Text */
+        .ttc-socials-cont p
+        {
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+            font-size: 1.3em;
+            font-size: 1.1em;
+            color: #000;
+            cursor: default;
+            transition: .5s;
+            opacity: 0;
+        }
+        
+        /* Social Circles*/
+        .social-contact 
+        {
+            position: relative;
+            margin-left: 5px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #8B0000;
+            background: rgba(139,0,0,.2);
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        /* Social Circle - circle (0%) */
+        .social-contact:before
+        {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #000;
+            border-radius: 50%;
+            width: 0;
+            height: 0; 
+            transition: .2s;
+        }
+        
+        /* HOVER - Social Circle - circle (width 100%) */
+        .social-contact:hover.social-contact:before
+        {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Social Media Icons */
+        .social-link
+        {
+            transition: .3s;
+            z-index: 5;
+        }
+        
+        /* HOVER - Social Media Icons*/
+        .social-contact:hover .social-link
+        {
+            transform: scale(1.3);
+        }
+        
+        
+        /*------------------------------------------------------------ MEDIA QUERIES */
+        
+        /* Mobile */
+        @media only screen and (max-width: 576px) 
+        {
+            .poke-circle
+            {
+                transform: translateY(-10%) scale(.6);
+            }
+            
+            .ampel-cont
+            {
+                width: 95%;
+                transform: scale(.9);
+            }
+            
+            .ampel
+            {
+                margin: .5em;
+            }
+        }
+        
+        
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="main-cont flex-center">
+       <div class="poke-circle flex-center"><div class="poke-inner-circle"></div></div>
+       <header>
+           <!-- Navigation -->
+           <nav class="nav-three-btns flex-center">
+            <ul class="flex-center" style="margin: 0">
+                <div class="logo flex-center">
+                    <span class="logo-span" style="z-index: 3">&#128187DN</span>
+                </div>
+                <li class="nav"><a href="#">Home</a></li>
+                <li class="nav"><a href="#">Pokedex</a></li>
+                <li class="nav"><a href="#">Games</a></li>
+            </ul>
+            <!-- Games Navigation -->
+            <ul class="flex-center games-nav" style="margin: 0">
+                <li class="nav"><input onclick="toggleAnimationBall()" id="animation-checkbox" type="checkbox"></li>
+                <li class="nav"><a href="#">PokeTacToe</a></li>
+                <li class="nav"><a href="#">PokeLights</a></li>
+                <li class="nav"><a href="#">PokeQuiz</a></li>
+            </ul>
+        </nav>
+       </header>
+       <div class="ampel-cont flex-center">
+          <div id="ampel-score"></div>
+           <div class="ampel-box flex-center">
+            <div class="ampel" id="red"></div>
+            <div class="ampel" id="blue"></div>
+            <div class="ampel" id="green"></div>
+        </div>
+        <button id="start-game-btn" class="flex-center">Start Game</button>
+        <div class="players-field flex-center">
+            <button class="players-btn" id="p-red">Red</button>
+            <button class="players-btn" id="p-blue">Blue</button>
+            <button class="players-btn" id="p-green">Green</button>
+        </div>
+       </div>
+       <!-- Social Media Container (Footer) -->
+        <div class="ttc-socials-cont flex-center">
+           <button onclick="reloadSite()" class="reload-btn"><i class="fas fa-sync-alt"></i></button>
+           <p><i class="fas fa-hashtag"></i> Follow me</p>
+           <p style="left: 20%;"><i class="fas fa-laptop-code"></i> Code with me</p>
+            <!-- Social Media Circles - Links -->
+            <div class="flex-center">
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://wwww.facebook.com" target="_blank">
+                        <i class="social-fab fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://wwww.instagram.com" target="_blank">
+                        <i class="social-fab fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://wwww.twitter.com" target="_blank">
+                        <i class="social-fab fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://wwww.youtube.com" target="_blank">
+                        <i class="social-fab fab fa-youtube"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://wwww.pinterest.com" target="_blank">
+                        <i class="social-fab fab fa-pinterest-p"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://wwww.linkedin.com" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        
+        // --------------------------------------------------------------- DOM VARIABLES
+        
+        let playersRed = document.querySelector('#p-red');
+        let playersBlue = document.querySelector('#p-blue');
+        let allLights = document.querySelectorAll('.ampel');
+        let playersGreen = document.querySelector('#p-green');
+        let pokeBall = document.querySelector('.poke-circle');
+        let ampelScore = document.querySelector("#ampel-score");
+        let playersField = document.querySelector('.players-field');
+        let gameStartBtn = document.querySelector('#start-game-btn');
+        let allPlayersBtns = document.querySelectorAll('.players-btn');
+        let animatiionCheckBox = document.querySelector('#animation-checkbox');
+
+        // --------------------------------------------------------------- GAME VARIABLES
+        
+        let playersChoices;
+        let combination;
+        let display;
+        let counter;
+        let round = 0;
+
+        
+        // --------------------------------------------------------------- POKEBALL-/CIRCLE
+        
+        // Toggles Animation (Circle)
+        function toggleAnimationBall() {
+            animatiionCheckBox.checked ? pokeBall.classList.add("animate") : pokeBall.classList.remove("animate");
+        }
+
+        
+        // --------------------------------------------------------------- RESTART, START, PREPARE GAME
+        
+        // Restarts - Ampel Game
+        function reloadSite() {
+            location.reload();
+        }
+        
+        // Start Ampel Game Function
+        function startGame() {
+            if (round < 1) {
+                ampelScore.innerHTML = 0;
+            }
+            
+            playersChoices = [];
+            round++;
+            combination = createOrder();
+            counter = 0;
+            gameStartBtn.classList.add('active');
+            removeAllLights();
+            display = setInterval(displayCombination, 1500);
+            playersField.classList.add('active', 'disabled-btns');
+        }
+
+  
+        // Removes all bg-color classes
+        function removeAllLights() {
+            [...allLights].forEach(a => a.classList.remove('red', 'blue', 'green'));
+        }
+
+
+        // Creates an array with the color-order (based on rounds)
+        const createOrder = () => {
+            const allColors = ['red', 'blue', 'green'];
+            const result = [];
+
+            for (let i = 1; i <= round; i++) {
+                let randomSelection = allColors[Math.floor(Math.random() * 3)];
+
+                result.push(randomSelection);
+            }
+            return result
+        }   
+        
+
+        // --------------------------------------------------------------- DISPLAY COMBINATION
+        
+        // Displays Color Combination
+        function displayCombination() {
+            displayColor(combination[counter]);
+            counter++;
+
+            if (counter >= combination.length) {
+                clearInterval(display);
+                setTimeout(() => playersField.classList.remove('disabled-btns'), 1200);
+//                setTimeout(removeAllLights, 1500);
+            }
+        }   
+        
+
+        // Changes bg-color of one light 
+        function displayColor(color) {
+            removeAllLights();
+
+            let combiIndex = [...allLights].indexOf([...allLights].filter(c => c.id === `${color}`)[0]);
+            let combi = allLights.item(combiIndex);
+            
+            combi.classList.add(`${color}`);
+            setTimeout(removeAllLights, 1000);
+        }
+
+
+        // --------------------------------------------------------------- CHECK PLAYERS SELECTION
+        
+        // Pushes all players choices to global array - playersChoices
+        function playersBtn(e) {
+            switch (e.target.id) {
+                case 'p-red':
+                    playersChoices.push('red');
+                    break;
+                case 'p-blue':
+                    playersChoices.push('blue');
+                    break;
+                case 'p-green':
+                    playersChoices.push('green');
+            }
+            checkProgress();
+        }
+        
+        
+        // Checks if players selection is correct
+        function checkProgress () {
+            let currentSelectionSlice = combination.slice(0, playersChoices.length);    
+            
+            if (playersChoices.toString() !== currentSelectionSlice.toString()) {
+                playersField.classList.remove('active');
+                gameStartBtn.classList.remove('active');
+                playerLoses();
+            } else if (playersChoices.toString() === combination.toString()) {
+                playersField.classList.remove('active');
+                gameStartBtn.classList.remove('active');
+                playerWins();
+            }
+        }
+
+        
+        // --------------------------------------------------------------- GAME FINISHES
+
+        // Player is Correct (increase score)
+        function playerWins() {
+            gameStartBtn.innerText = 'Correct!'
+            gameStartBtn.classList.remove('wrong');
+            gameStartBtn.classList.add('correct');
+            ampelScore.innerHTML++;
+
+            setTimeout(startGame, (1000 * round) + 1000);
+        }
+
+
+        // Player is Wrong
+        function playerLoses() {
+            round = 0;
+            gameStartBtn.innerText = 'Try Again!';
+            gameStartBtn.classList.remove('correct');
+            gameStartBtn.classList.add('wrong');
+        }
+
+
+        // --------------------------------------------------------------- Event Listeners
+        
+        gameStartBtn.addEventListener('click', startGame);
+        allPlayersBtns.forEach(b => b.addEventListener('click', playersBtn));
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+        // Gives player possibility to erase last choice
+        function removeOneChoice() {
+            playersChoices.pop();
+            // remove last color selection
+        }
+        
+        
+        
+                
+        
+        
+
+    </script>
+
+
+</body>
+
+</html>
