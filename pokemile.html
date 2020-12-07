@@ -13,31 +13,18 @@
     
 
     <style>
-
-        /* --------------------------------------------------- FONT */
-        
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
 
-        /* --------------------------------------------------- GENERAL */
-        
-        * 
-        {
+        --------------------------------------------------- 
+        * {
             font-family: 'Poppins', sans-serif;
         }
-        
-        .opacity
-        {
-            opacity: 0 !important;
-            pointer-events: none !important;
-        }
 
-        a 
-        {
+        a {
             color: #fafafa;
         }
 
-        a:hover 
-        {
+        a:hover {
             text-decoration: none;
             color: #fafafa;
         }
@@ -47,8 +34,7 @@
             cursor: default;
         }
 
-        .flex-center 
-        {
+        .flex-center {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -59,18 +45,36 @@
             flex-direction: column;
         }
 
-        ul 
-        {
+        ul {
             list-style: none;
         }
 
-        img 
-        {
+        img {
             object-fit: cover;
         }
 
 
-        /* ---------------------------------------------------------- SOCIAL MEDIA (SIDE) BTN/CONTAINER */
+        /*        BUTTONS */
+        
+        .about-btn {
+            background: #fff;
+            color: crimson;
+            padding: 10px 15px;
+            outline: none;
+            border: none;
+            border-radius: 1px;
+            font-size: .8em;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .about-btn:hover {
+            background: crimson;
+            color: #fff;
+        }
+
+
+        /*---------------------------------------------------------- SOCIAL MEDIA (SIDE) BTN/CONTAINER */
         
         /* BUTTON - Social Media Side Button */
         #social-media-btn
@@ -144,45 +148,29 @@
         }
         
         
-        /* ---------------------------------------------------------- LOGO */
+        /*---------------------------------------------------------- NAVIGATION AND LOGO */
         
-        .logo-home-link
-        {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-        }
-        
-        .logo 
-        {
+        .logo {
             margin-right: 15px;
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: rgba(139,0,0,.8);
+            background: crimson;
             font-size: 2.5em;
             font-weight: bolder;
             color: #fafafa;
             cursor: pointer;
             transform: scale(.6);
-            box-shadow: .5px 0px 15px rgba(0,0,0,.3),
-                        .5px 0px 15px rgba(0,0,0,.5);
-            text-shadow: .5px 0px 10px rgba(0,0,0,.8);
             z-index: 100000;
         }
 
-        .logo-span 
-        {
+        .logo-span {
             color: #fafafa;
             font-size: 1em;
-            text-shadow: .5px 0px 10px rgba(0,0,0,.8);
         }
 
-        /* ---------------------------------------------------------- NAVIGATION*/
-        
-        .nav-three-btns ul 
-        {
+        /*        NAVIGATION*/
+        .nav-three-btns ul {
             position: absolute;
             top: 0%;
             left: 0%;
@@ -192,10 +180,10 @@
             height: 150px;
             align-items: center;
             z-index: 9999999999;
+
         }
 
-        .nav-three-btns ul li
-        {
+        .nav-three-btns ul li {
             position: relative;
             margin-left: 1em;
             font-size: 1.2em;
@@ -203,34 +191,33 @@
             cursor: pointer;
         }
 
-        .nav-three-btns ul li a 
-        {
+        .nav-three-btns ul li a {
             color: #fff;
         }
 
-        /* BARS UNDER THE NAVS not sure to keep them*/
-        .nav-three-btns ul li:before 
-        {
+
+        
+/*        BARS UNDER THE NAVS not sure to keep them*/
+        .nav-three-btns ul li:before {
             content: '';
             position: absolute;
             bottom: -.3em;
             left: 50%;
             transform: translateX(-50%);
             transform-origin: center;
+            width: 30%;
             width: 15%;
             height: 2px;
             background: crimson;
             transition: .3s;
         }
 
-        .nav-three-btns ul li:hover:before 
-        {
+        .nav-three-btns ul li:hover:before {
             width: 100%;
         }
         
         
-        /* ---------------------------------------------------------- FOOTER NAVS */
-        
+/*        FOOTER NAVS */
         .footer-nav-cont ul li a
         {
             margin: 0 .3em;
@@ -247,39 +234,41 @@
         }
 
 
-        /* ---------------------------------------------------------- PARALLAX MAIN CONTAINER */
+        /*        PARALLAX MAIN CONTAINER */
 
-        .parallax-main-cont 
-        {
+        .parallax-main-cont {
             position: relative;
             background: #0a2a43;
+            min-height: 1500px;
             min-height: 1000px;
+
         }
 
 
-        /* Parallax Section */
-        .parallax-main-cont section 
-        {
+        /*        Parallax Section */
+        .parallax-main-cont section {
             position: relative;
             width: 100%;
             height: 100vh;
             overflow: hidden;
         }
 
-        /* Parallax Filters */
-        .parallax-main-cont section:before 
-        {
+        .parallax-main-cont section:before {
             content: '';
             position: absolute;
             bottom: 0;
             width: 100%;
             height: 8%;
+            /*            height: 10%;*/
             background: linear-gradient(to top, #0a2a43, transparent);
             z-index: 10000;
         }
 
-        .parallax-main-cont section:after
-        {
+
+        /*        Parallax Filters */
+
+            .parallax-main-cont section:after
+            {
             content: '';
             position: absolute;
             top: 0;
@@ -290,20 +279,10 @@
             z-index: 10000;
             mix-blend-mode: color;
         }
-        
-        /* Parallax Headline */
-        .parallax-headline 
-        {
-            position: relative;
-            text-align: center;
-            font-size: 10em;
-            color: #fff;
-            z-index: 1;
-        }
 
-        /* PARALLAX IMAGES */
-        .parallax-main-cont section img 
-        {
+        /*        Parallax Images */
+
+        .parallax-main-cont section img {
             position: absolute;
             top: 0;
             left: 0;
@@ -313,15 +292,24 @@
             pointer-events: none;
         }
 
-        /* ROAD Img */
-        #road 
-        {
+        
+        .parallax-headline {
+            position: relative;
+            color: #fff;
+            font-size: 10em;
+            z-index: 1;
+        }
+
+
+/*        ROAD Img */
+        #road {
             z-index: 2;
         }
 
+
+
         /* Ash Ketchum  */
-        #ash-ketchum 
-        {
+        #ash-ketchum {
             position: absolute;
             bottom: 250px;
             left: auto;
@@ -333,8 +321,7 @@
         }
 
         /* HO-OH - Flying Pkmn (top-left, moves left to right parallax effect) */
-        #fly-hooh 
-        {
+        #fly-hooh {
             position: absolute;
             top: 200px;
             left: 100px;
@@ -342,12 +329,10 @@
             height: 230px;
             z-index: 3;
         }
-        
-        
-        /* ---------------------------------------------------------- ABOUT CONTAINER BELOW PARALLAX CONT */
 
-        .main-cont-about
-        {
+        /*        ABOUT CONTAINER BELOW PARALLAX CONT */
+
+        .main-cont-about {
             min-height: 100vh;
             background: #0a2a43;
             display: flex;
@@ -355,16 +340,13 @@
             align-items: center;
         }
 
-        /* Second Parallax Headline */
-        #second-parr-headline 
-        {
+        #second-parr-headline {
             top: 400px;
             transform: translateY(-50%);
         }
 
         /* All Text in main container (except cards etc) */
-        .about-txt 
-        {
+        .about-txt {
             color: #fff;
             width: 60%;
             padding-top: 150px;
@@ -373,31 +355,25 @@
             cursor: default;
         }
 
-        
-        /* ---------------------------------------------------------- PARRALAX CARDS CONTAINER */
-        
-        .parr-card-headline 
-        {
+
+        /* Parralax Card Container */
+        .parr-card-headline {
             color: #fafafa;
             font-size: 1.6em;
             text-align: center;
             margin-bottom: 5em;
         }
 
-        .parr-card-cont 
-        {
+        .parr-card-cont {
             margin: 3em 0;
             flex-wrap: wrap;
         }
 
-        .parr-card-cont:nth-child(2) 
-        {
+        .parr-card-cont:nth-child(2) {
             transform: translateY(100px);
         }
 
-        /* Parralax Card */
-        .parr-card 
-        {
+        .parr-card {
             height: 200px;
             width: 200px;
             background: white;
@@ -410,42 +386,11 @@
             transition: .5s;
         }
         
-        .parr-card-cont .parr-card p 
-        {
-            color: black;
-            font-size: .8em;
-            transition: .5s;
-        }
-
-        .parr-card-cont .parr-card .fas 
-        {
-            color: darkgoldenrod;
-            font-size: 2em;
-            transition: .5s;
-        }
-
-        .parr-card-underline-headline 
-        {
-            width: 50px;
-            height: 2px;
-            background: crimson;
-            margin-bottom: 50px;
-        }
-
-        .parr-card-underline 
-        {
-            width: 50px;
-            height: 1px;
-            background: crimson;
-        }
-
-        
-        /* ---------------------------------------------------------- HOVER - Parralax Cards */
-        
         .parr-card:hover
         {
             background-color: #333;
             box-shadow: 1px 1px 15px rgba(255, 255, 255, .4);
+/*            !!! */
         }
         
         .parr-card:hover.parr-card p
@@ -467,30 +412,58 @@
         {
             color: #69B9E3;
         }
-
-
-        /* ---------------------------------------------------------- DOUBLE CONTAINER (IMAGE/TEXT) */
         
-        .parr-double-cont 
-        {
+        
+        
+
+        .parr-card-cont .parr-card p {
+            color: black;
+            font-size: .8em;
+            transition: .5s;
+        }
+
+        .parr-card-cont .parr-card .fas {
+            color: darkorange;
+            color: coral;
+            color: goldenrod;
+            color: darkgoldenrod;
+            font-size: 2em;
+            transition: .5s;
+        }
+
+        .parr-card-underline-headline {
+            width: 50px;
+            height: 2px;
+            background: crimson;
+            margin-bottom: 50px;
+        }
+
+        .parr-card-underline {
+            width: 50px;
+            height: 1px;
+            background: crimson;
+        }
+
+
+
+
+        .parr-double-cont {
+            /*            background: lightgreen;*/
             display: flex;
             flex-wrap: wrap;
             padding: 0 5em;
             height: 300px;
             margin-top: 5em;
             margin-bottom: 5em;
+/*            margin-bottom: 8em;*/
         }
 
-        /* Image (l) */
-        .parr-double-cont img 
-        {
+        .parr-double-cont img {
             object-fit: cover;
             padding: 0;
         }
 
-        /* Text (r) */
-        .parr-right-txt 
-        {
+        .parr-right-txt {
             background: crimson;
             flex-direction: column;
             align-items: flex-start;
@@ -500,100 +473,22 @@
             cursor: default;
         }
 
-        /* Hidden Text */
         #revealedTxt
         {
             display: none;
         }
 
-        /* BUTTON - About (toggles hidden text) */
-        .about-btn 
-        {
-            background: #fff;
-            color: crimson;
-            padding: 10px 15px;
-            outline: none;
-            border: none;
-            border-radius: 1px;
-            font-size: .8em;
-            cursor: pointer;
-            transition: .3s;
-        }
 
-        /* HOVER - About Button */
-        .about-btn:hover 
-        {
-            background: crimson;
-            color: #fff;
-        }
-
+        /*------------------------------------------------ WHITE SECTION */
         
-        /* ---------------------------------------------------------- WHITE SECTION */
-        
-        .white-section 
-        {
+/*        NIGHT MODE TOGGLE SWITCH */
+        .white-section {
             background-color: #fafafa;
             padding: 3em 0;
             margin: 10em 0;
             cursor: default;
         }
-
-        .row-white-section 
-        {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            font-size: .8em;
-        }
-
-
-        /* White Section Card */
-        .white-section-card 
-        {
-            flex-direction: column;
-            cursor: default;
-            padding: 2.5em;
-            text-align: center;
-            transition: .3s;
-        }
-
-        /* HOVER - White Section Card */
-        .white-section-card:hover 
-        {
-            box-shadow: 1px 1px 15px rgba(0, 0, 0, .4);
-        }
-
-        /* Icon - White Section Card */
-        .white-section-card-icon 
-        {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 1em;
-            background-image: url(ash-168629.png);
-            background-image: url(scissorspkmn.png);
-            background-image: url(lizardonstandingcomic.png);
-            background-image: url(balloonpikachu.png);
-            background-image: url(pocketpikachu.png);
-            background-size: cover;
-        }
-/*        !!! */
-
-        .white-section-card p 
-        {
-            padding: 0 2em;
-        }
-
-        .white-section-headline 
-        {
-            text-align: center;
-            margin: 3em;
-            margin: 2em;
-        }
-
-
-        /* ---------------------------------------------------------- NIGHT MODE WHITE SECTION */
-
+        
         .white-section-night-mode
         {
             background-color: #2B292C !important;
@@ -605,13 +500,202 @@
             box-shadow: 1px 1px 15px rgba(255,255,255,.4);
         }
 
+        .row-white-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: .8em;
+        }
+
+
+        /*        White Section Card */
+        .white-section-card {
+            flex-direction: column;
+            cursor: default;
+            /*            !!!! */
+            padding: 2.5em;
+            text-align: center;
+            transition: .3s;
+/*            margin: 5px;*/
+        }
+
+        .white-section-card:hover {
+            box-shadow: 1px 1px 15px rgba(0, 0, 0, .4);
+        }
+
+        .white-section-card-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            /*            background-color: crimson;*/
+            margin-bottom: 1em;
+            background-image: url(ash-168629.png);
+            background-image: url(scissorspkmn.png);
+            background-image: url(lizardonstandingcomic.png);
+            background-image: url(balloonpikachu.png);
+            background-image: url(pocketpikachu.png);
+            background-size: cover;
+
+        }
+
+        .white-section-card p {
+            padding: 0 2em;
+        }
+
+        .white-section-headline {
+            text-align: center;
+            margin: 3em;
+            margin: 2em;
+        }
+
+
+
+
+
+
+
+
+
+
+        .parr-mega-lizardon {
+            position: relative;
+            /*            object-fit: cover;*/
+            /*            width: 70%;*/
+            height: 500px;
+            /*            border-radius: 50%;*/
+        }
+
+        .parr-mega-lizardon:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*            background: rgba(10,42,67,.5);*/
+            background-color: crimson;
+            z-index: 10000;
+            /*            mix-blend-mode: color;*/
+        }
+
+
+
+
+
+
+
+        /*---------------------------------------------------------- FOOTER */
+
+        footer.flex-center 
+        {
+            position: relative;
+            width: 98vw;
+            height: 250px;
+            margin: 0;
+            padding: 0 5%;
+            justify-content: space-between;
+            background: darkorange;
+        }
         
-        /* ---------------------------------------------------------- NIGHT MODE TOGGLE CHECKBOX  */
+        /* Scroll To Top - BUTTON */
+        .scroll-to-top-btn
+        {
+            position: absolute;
+            transition: .3s;
+            cursor: pointer;
+            top: -10%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            color: #fafafa;
+            border-radius: 50%;
+            background: darkorange;
+            transform: translateX(-50%) scale(1);
+        }
         
-        /* Title: "CSS Custom Checkbox | Day Night Mode"; From: Online Tutorials; On: Youtube (most of the checkbox) */
+        .scroll-to-top-btn .fas
+        {
+            transform: translateY(-55%);
+        }
+        
+        /* HOVER - Scroll to top btn */
+        .scroll-to-top-btn:hover
+        {
+            transform: translateX(-50%) scale(1.3);
+        }
+
+        /* Footer Navigation*/
+        .footer-nav-cont ul {
+            display: flex;
+            margin-left: 5%;
+        }
+
+        .footer-nav {
+            font-size: ;
+            font-weight: ;
+            color: ;
+            margin-right: 1em;
+        }
+
+        /*        Footer Social Icons*/
+        .social-contact-cont {
+            flex-wrap: wrap;
+            display: flex;
+            margin-right: 5%;
+        }
+
+        .social-contact {
+            position: relative;
+            margin-left: 5px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: darkred;
+            cursor: pointer;
+        }
+        
+        /* HOVER - Circle (Social Media Btns) */
+        .social-contact:before
+        {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #000;
+            border-radius: 50%;
+            width: 0;
+            height: 0; 
+            transition: .2s;
+        }
+        
+        .social-contact:hover.social-contact:before
+        {
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+        /* Social Media Icons */
+        .social-link
+        {
+            transition: .2s;
+            z-index: 5;
+        }
+        
+        /* HOVER - Social Media Icons*/
+        .social-contact:hover .social-link
+        {
+            transform: scale(1.3);
+        }
+
+        
+        /* NIGHT MODE TOGGLE CHECKBOX  */
+            /* Title: "CSS Custom Checkbox | Day Night Mode"; From: Online Tutorials; On: Youtube */
         #night-toggle
         {
             width: 100%;
+/*            background: blue;*/
             text-align: center;
             transform: translateY(1em);
         }
@@ -674,11 +758,15 @@
 
         .check:after
         {
+            content: '\f185';
             content: '\f0eb';
             right: 2px;
             background: red;
+            font-size: .55em;
             font-size: .73em;
+            color: yellow;
             color: #fafafa;
+/*            color: gold;*/
             transform: translateX(50px);
         }
 
@@ -686,118 +774,90 @@
         {
             transform: translateX(0);
         }
+
         
         
-        /*---------------------------------------------------------- FOOTER */
+        /*---------------------------------------------------------- NEWSLETTER CONTAINER */
         
-        footer.flex-center 
+        .newsletter-cont
         {
             position: relative;
-            width: 98.5vw;
-            height: 250px;
-            margin: 0;
-            padding: 0 5%;
-            justify-content: space-between;
-            background: darkorange;
+            width: 400px;
+            height: 140px;
+            border-radius: 5px;
+            background: crimson;
+            margin-bottom: 11em;
         }
         
-        /* Scroll To Top - BUTTON */
-        .scroll-to-top-btn
+        /* BUTTON - Back to Newsletter Cover (activates clip art effect) */
+        .back-to-cover-arrow-btn
         {
             position: absolute;
+            top: -5%;
+            left: 5%;
+            font-size: 2em;
+            color: #fff;
+            cursor: pointer;
             transition: .3s;
-            cursor: pointer;
-            top: -10%;
-            left: 50%;
-            width: 50px;
-            height: 50px;
-            color: #fafafa;
-            border-radius: 50%;
-            background: darkorange;
-            transform: translateX(-50%) scale(1);
         }
         
-        .scroll-to-top-btn .fas
-        {
-            transform: translateY(-55%);
-        }
-        
-        /* HOVER - Scroll to top btn */
-        .scroll-to-top-btn:hover
-        {
-            transform: translateX(-50%) scale(1.3);
-        }
-
-        
-        /* ---------------------------------------------------------- FOOTER NAVIGATION */
-        
-        .footer-nav-cont ul 
-        {
-            display: flex;
-            margin-left: 5%;
-        }
-
-        .footer-nav 
-        {
-            margin-right: 1em;
-        }
-
-        /* Footer Social Icons */
-        .social-contact-cont 
-        {
-            flex-wrap: wrap;
-            display: flex;
-            margin-right: 5%;
-        }
-
-        .social-contact 
-        {
-            position: relative;
-            margin-left: 5px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: darkred;
-            cursor: pointer;
-        }
-        
-        .social-contact:before
-        {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #000;
-            border-radius: 50%;
-            width: 0;
-            height: 0; 
-            transition: .2s;
-        }
-        
-        /* HOVER - Circle (Social Media Btns) */
-        .social-contact:hover.social-contact:before
-        {
-            width: 100%;
-            height: 100%;
-        }
-        
-        /* Social Media Icons */
-        .social-link
-        {
-            transition: .2s;
-            z-index: 5;
-        }
-        
-        /* HOVER - Social Media Icons*/
-        .social-contact:hover .social-link
+        /* HOVER - Back to Newsletter Cover Button */
+        .back-to-cover-arrow-btn:hover
         {
             transform: scale(1.3);
-        }       
+        }
         
+        .newsletter-input-headline
+        {
+            position: relative;
+            font-size: 1.1em;
+            transform: translateY(-80%);
+            font-weight: bold;
+            cursor: default;
+            color: #333;
+        }
         
-        /* ---------------------------------------------------------- NEWSLETTER COVER (clip art effect) */
+/*        Email Input */
+        #subscribe-input
+        {
+            background: #f3f3f3;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+            padding-left: .6em;
+            transition: .3s;
+        }
         
+        /* HOVER - Email Input */
+        #subscribe-input:hover {
+            box-shadow: inset 1px 2px 8px rgba(0, 0, 0, .2);
+            background: #fff;
+        }
+        
+        /* FOCUS - Email Input */
+        #subscribe-input:focus {
+          color: #4b515d;
+          border: 1px solid #B8B6B6;
+          box-shadow: inset 1px 2px 4px rgba(0, 0, 0, .01), 0px 0px 8px rgba(0, 0, 0, .3);
+        }
+        
+        #newsletter-submit-btn
+        {
+            border-radius: 3px;
+            border: none;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        #newsletter-submit-btn:hover
+        {
+            background: #fafafa;
+            color: #333;
+        }
+        
+        /* Newsletter Cover (clip art effect) */
         .newsletter-cover
         {
             position: absolute;
@@ -817,14 +877,14 @@
             z-index: 3;
         }
         
-        /* Class for revealing with clip art effect */
+/* Class for revealing with clip art effect */
         .newsletter-cover.revealed-newsletter
         {
             -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
             clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
         }
         
-        /* Headline in Newsletter Cover */
+/* Headline in Newsletter Cover */
         .newsletter-cover-headline
         {
             position: absolute;
@@ -838,7 +898,6 @@
             opacity: 0;
         }
         
-        /* HOVER - Newsletter Cover - Headline*/
         .newsletter-cover:hover .newsletter-cover-headline
         {
             left: 5%;
@@ -858,7 +917,6 @@
             opacity: 0;
         }
         
-        /* Icons - Newsletter Cover */
         .newsletter-cover-icon-cont .fas
         {
             margin-left: .7em;
@@ -912,13 +970,13 @@
             height: 20px;
         }
         
-        /* HOVER - Newsletter Continer - Pokeball inner circle -> red */
         .newsletter-cover:hover .newsletter-cover-line:after
         {
             background: crimson;
         }
         
-        /* Text in Newsletter Cover */
+        
+/* Text in Newsletter Cover */
         .newsletter-cover-txt
         {
             position: absolute;
@@ -927,13 +985,14 @@
             color: #333;
             width: 45%;
             color: #525252;
-            font-size: .75em;
+            font-size: .8em;
             font-weight: 600;
             line-height: 1.35em;
             transition: .3s;
             transition-delay: .5s;
             opacity: 0;
         }
+        
         
         /* BUTTON - Arrow to activate clip art effect */
         .cover-arrow-btn
@@ -970,97 +1029,11 @@
             margin-left: .1em;
             transition: .3s;
         }
-   
-        
-        /* ---------------------------------------------------------- NEWSLETTER CONTAINER */
-        
-        .newsletter-cont
-        {
-            position: relative;
-            width: 400px;
-            height: 140px;
-            border-radius: 5px;
-            background: crimson;
-            margin-bottom: 11em;
-        }
-        
-        /* BUTTON - Back to Newsletter Cover (activates clip art effect) */
-        .back-to-cover-arrow-btn
-        {
-            position: absolute;
-            top: -5%;
-            left: 5%;
-            font-size: 2em;
-            color: #fff;
-            cursor: pointer;
-            transition: .3s;
-        }
-        
-        /* HOVER - Back to Newsletter Cover Button */
-        .back-to-cover-arrow-btn:hover
-        {
-            transform: scale(1.3);
-        }
-        
-        .newsletter-input-headline
-        {
-            position: relative;
-            font-size: 1.1em;
-            transform: translateY(-80%);
-            font-weight: bold;
-            cursor: default;
-            color: #333;
-        }
-        
-        /* Email Input */
-        #subscribe-input
-        {
-            background: #f3f3f3;
-            border-radius: 3px;
-            border: none;
-            outline: none;
-            padding-left: .6em;
-            transition: .3s;
-        }
-        
-        /* HOVER - Email Input */
-        #subscribe-input:hover 
-        {
-            box-shadow: inset 1px 2px 8px rgba(0, 0, 0, .2);
-            background: #fff;
-        }
-        
-        /* FOCUS - Email Input */
-        #subscribe-input:focus 
-        {
-          color: #4b515d;
-          box-shadow: inset 1px 2px 4px rgba(0, 0, 0, .01), 0px 0px 8px rgba(0, 0, 0, .3);
-        }
-        
-        /* BUTTON - Submit Email */
-        #newsletter-submit-btn
-        {
-            border-radius: 3px;
-            border: none;
-            background: #333;
-            color: #fff;
-            cursor: pointer;
-            transition: .3s;
-        }
-        
-        /* HOVER - Submit Email Button */
-        #newsletter-submit-btn:hover
-        {
-            background: #fafafa;
-            color: #333;
-        }
-        
         
         /*---------------------------------------------------------- MEDIA QUERIES */
 
         /* Tablet */
-        @media only screen and (max-width: 768px)
-        {
+        @media only screen and (max-width: 768px) {
             .parallax-headline
             {
                 font-size: 6em;
@@ -1096,7 +1069,6 @@
         /* Mobile */
         @media only screen and (max-width: 576px) 
         {
-            /* invisible */
             .not-visible-mobile
             {
                 display: none !important;
@@ -1118,8 +1090,7 @@
                 transform: scale(1);
             }
             
-            .nav-three-btns ul 
-            {
+            .nav-three-btns ul {
                 height: 8em;
                 margin-left: 1em;
                 padding: 0;
@@ -1142,6 +1113,13 @@
                 font-size: 4em;
             }
             
+/*
+            #second-parr-headline
+            {
+                transform: translateY(-200%);
+            }
+*/
+            
             .about-txt
             {
                 font-size: 1.1em;
@@ -1159,7 +1137,7 @@
                 font-weight: bold;
             }
             
-            /* ------------------------ FOOTER */
+/*            ------------------------ FOOTER */
             
             footer
             {
@@ -1207,7 +1185,6 @@
         }
         
         
-        
     </style>
 
 
@@ -1217,7 +1194,7 @@
     <!-- Main Container Parallax -->
     <div class="row no-gutters">
         <div class="col parallax-main-cont">
-            <!-- Social Media Side - BUTTON -->
+<!-- Social Media Side - BUTTON -->
             <div onclick="toggleSocialMediaBtn()" id="social-media-btn" class="flex-center">
                 <i id="hashtag" class="fas fa-hashtag"></i>
                 <!-- Social Media Side Container -->
@@ -1230,14 +1207,10 @@
                     <div class="social-contact flex-center"><a class="social-link" href="http://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
                 </div>
             </div>
-            <!-- Navigation (HEADER) -->
+            <!-- Navigation -->
             <nav class="nav-three-btns">
                 <ul>
-                    <!-- Logo (home link) -->
-                    <div class="logo flex-center">
-                        <a href="pokemile_about.html" class="logo-home-link"></a>
-                        <span class="logo-span">&#128187</span>DN
-                    </div>
+                    <div class="logo flex-center"><span class="logo-span">&#128187</span>DN</div>
                     <li class="nav"><a href="#">Home</a></li>
                     <li class="nav"><a href="#">Pokedex</a></li>
                     <li class="nav"><a href="#">Games</a></li>
@@ -1245,18 +1218,12 @@
             </nav>
             <!-- Parallax images Section -->
             <section class="flex-center">
-                <!-- Parralax Img - SKY -->
                 <img src="bg.jpg" id="bg" alt="night sky">
-                <!-- Parallax Img - MOON -->
                 <img src="moon.png" id="moon" alt="moon">
-                <!-- Parallax Img - MOUNTAINS -->
                 <img src="mountain.png" id="mountain" alt="mountains">
                 <div><img src="ash-ketchum-168620.png" id="ash-ketchum" alt="lizardon flies"></div>
-                <!-- Parallax Img - HO-OH (bird) -->
                 <div><img src="normalhoohflying.png" id="fly-hooh" alt="lizardon flies"></div>
-                <!-- Parallax Img - ROAD -->
                 <img src="road.png" id="road" alt="long road">
-                <!-- Parallax - HEADLINE -->
                 <h2 class="parallax-headline">Moon Light</h2>
             </section>
             <!-- Main Container Content -->
@@ -1322,7 +1289,6 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto qui, nisi repudiandae <span class="not-visible-mobile">impedit porro sunt sed repellendus reiciendis</span> aspernatur harum?
 
                             </p>
-                            <!-- Hidden Text -->
                             <p id="revealedTxt">
                                 dolor sit amet, adipisicing elit. Iusto qui, <span class="not-visible-mobile">nisi repudiandae impedit porro sunt sed </span> repellendus reiciendis aspernatur harum?
                             </p>
@@ -1424,10 +1390,8 @@
                                     <div onclick="revealNewsletter()" class="back-to-cover-arrow-btn">&larr;</div>
                                     <h6 class="newsletter-input-headline">Get your newsletter now!</h6>
                                     <div>
-                                        <!-- Email Input Field -->
                                         <input type="email" id="subscribe-input" aria-label="subscribe-input" placeholder="example@gmail.com">
-                                        <!-- BUTTON - Submit Email -->
-                                        <button onclick="submitUserEmail(event)" type="submit" id="newsletter-submit-btn">Submit</button>
+                                        <button id="newsletter-submit-btn">Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -1461,22 +1425,16 @@
             </div>
         </div>
     </div>
-    
-    
-    
     <script>
         
         // ------------------------------------------------------------------- DOM VARIABLES
         
-        const footerElement = document.querySelector("footer");
         const nightToggle = document.querySelector("#night-toggle");
         const whiteSection = document.querySelector(".white-section");
         const socialMediaBtn = document.querySelector("#social-media-btn");
-        const emailInputField = document.querySelector("#subscribe-input");
         const newsLetterCover = document.querySelector(".newsletter-cover");
         const newsLetterContainer = document.querySelector(".newsletter-cont");
         const socialMediaSideCont = document.querySelector(".social-media-side-cont");
-        
         
         // ------------------------------------------------------------------- PARALLAX ELEMENTS VARIABLES
         
@@ -1490,7 +1448,7 @@
         let flyHooh = document.querySelector("#fly-hooh");
 
         
-        // ------------------------------------------------------------------- TOGGLE FUNCTIONS
+        //------------------------------------------------------------------- TOGGLE FUNCTIONS
         
         // Toggles hidden text
         const revealText = () => {
@@ -1512,13 +1470,6 @@
                 $("#thumb").replaceWith(`<i id="hashtag" class="fas fa-hashtag"></i>`);
             }
         }
-        
-        
-        // ------------------------------------------------------------------- HOVER FOOTER FUNCTION 
-
-        // Hides Social Media Side Button when hovering over Footer
-        footerElement.addEventListener("mouseenter", () => socialMediaBtn.classList.add("opacity"));
-        footerElement.addEventListener("mouseleave", () => socialMediaBtn.classList.remove("opacity"));
         
         
         // ------------------------------------------------------------------- PARALLAX FUNCTIONS
@@ -1569,27 +1520,13 @@
         // Toggles Newsletter Clip path animation effect
         const revealNewsletter = () => newsLetterCover.classList.toggle("revealed-newsletter");
         
-        const submitUserEmail = e => {
-            e.preventDefault;
-            if (validateEmail(emailInputField.value)) {
-                emailInputField.value = "Thank you my friend!";
-                setTimeout(() => emailInputField.value = "", 3000);
-            } else {
-                emailInputField.style.background = "red";
-                emailInputField.style.boxShadow = "inset 1px 2px 8px rgba(0, 0, 0, .2)";
-                setTimeout(() => emailInputField.style.background = "#fafafa", 1500);
-            }
-        }
-        
-        // Validates Email (Stack Overflow)
-        const validateEmail = email => {
-            var re = /\S+@\S+\.\S+/;
-            return re.test(email);
-        }
-    
-        
+        // Submit function
         // Whote PageTxt -> Lazy Load
-        // attach ash to road.png ?
+        // logo js - 
+        // attach ash to road.png
+        // comments css
+        // social button (toggle vertical open shows all socials) - checkbox to remove social btn
+        // js hover btn disappear when on footer
         
     </script>
 
