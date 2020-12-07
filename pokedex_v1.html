@@ -23,9 +23,15 @@
 
 /*------------------------------------------------------------ GENERAL */
         
+        a
+        {
+            color: #fafafa;
+        }
+        
         a:hover
         {
             text-decoration: none;
+            color: #fff;
         }
         
         .flex-center
@@ -614,7 +620,53 @@
             color: #fff;
         }
         
-        /*------------------------------------------------------------ NAVIGATION */
+        /* ------------------------------------------------------------ NAVIGATION */
+        
+        /* BUTTON - Mobile Menu */
+        .mobile-menu-btn
+        {
+            position: absolute;
+            right: 5%;
+            font-size: 2em;
+            color: #fafafa;
+            cursor: pointer;
+            z-index: 999;
+        }
+        
+        .nav-three-btns.just-visible-mobile
+        {
+            background: #333;
+        }
+
+        .mobile-menu-slider
+        {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #000 !important;
+            width: 100%;
+            min-height: 80px;
+            background: #fafafa;
+            transition: .3s;
+/*            z-index: -1;*/
+        }
+        
+        /* Mobile Menu - slides in */
+        .mobile-menu-slider.menu-open
+        {
+            top: 73px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.5),
+                        0 -10px #000;
+        }
+        
+        .mobile-nav a
+        {
+            color: #000;
+            font-size: .9em;
+            font-weight: bolder;
+            margin: .5em;
+        }
         
         .nav-three-btns
         {
@@ -626,26 +678,61 @@
             padding-left: 5%;
             justify-content: flex-start;
             border-bottom: solid;
+            padding-left: 0;
+            z-index: 2;
         }
         
-        /* Logo */
+        /* HOVER - Navigation Links opacity 1 */
+        .nav-three-btns:hover .nav a
+        {
+            color: rgba(255,255,255,1);
+        }
+        
+        /* LOGO */
+        
+        .logo-home-link
+        {
+            position: absolute;
+            width: 100%;
+            height: 150%;
+            background: transparent;
+            z-index: 999999999;
+        }
+        
         .logo
         {
-            margin-right: 1.5em;
+            position: relative;
+            margin-right: .8em;
             font-size: 1.1em;
             font-weight: bolder;
             color: #000;
+            color: #fafafa;
             cursor: pointer;
-            text-shadow: .5px 0px 3px rgba(255,255,255,.3),
-                         .5px 0px 3px rgba(255,255,255,.3);
+            text-shadow: .5px 0px 3px rgba(0,0,0,.3),
+                         .5px 0px 3px rgba(0,0,0,.5);
+            z-index: 2;
         }
         
+        .logo:before
+        {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: darkred;
+            background: rgba(139,0,0,.6);
+            z-index: 1;
+        }
+        
+        /* Navigation Links */
         .nav a
         {
             position: relative;
             margin: .5em;
             padding: .1em;
             color: #fafafa;
+            color: rgba(255,255,255,.8);
             font-weight: bold;
         }
         
@@ -668,6 +755,36 @@
         .nav:hover.nav a:before
         {
             width: 100%;
+        }
+        
+        
+        /* ------------------------------------------------------------ NAVIGATION FOR GAMES */
+        
+        #players-choice-checkbox
+        {
+            position: absolute;
+            top: 30px;
+            left: 335px;
+        }
+        
+        #players-choice-checkbox.mobile
+        {
+            top: 107px;
+            left:  45px;
+            z-index: 9999;
+        }
+        
+        .games-nav
+        {
+            margin: 0;
+            position: absolute;
+            right: 5%;
+        }
+        
+        /* Game nav - Underline */
+        .games-nav .nav a:before
+        {
+            background: #fafafa;
         }
         
         
@@ -794,12 +911,13 @@
         .p-dex-info-btn
         {
             position: absolute;
-            top: 5%;
+            top: 48px;
             font-size: 1.5em;
             color: #fafafa;
             transition: .2s;
             cursor: pointer;
             z-index: 101;
+            text-shadow: 0 0 15px rgba(0,0,0,.8)
         }
         
         .p-dex-info-btn:hover
@@ -823,6 +941,7 @@
         .p-dex-info-row
         {
             width: 100%;
+            padding: 0 5%;
             justify-content: flex-start;
             min-height: 50px;
         }
@@ -849,6 +968,159 @@
         }
         
         
+        
+        .ttc-socials-cont
+        {
+            position: absolute;
+            bottom: 0;
+            padding-right: 5%;
+            width: 100%;
+            height: 80px;
+            justify-content: flex-end;
+            background: rgba(0,0,0,.5);
+            transition: .3s;
+        }
+        
+        /* HOVER - Social Media Container (bg, box-shadow) */
+        .ttc-socials-cont:hover
+        {
+            background: #fafafa;
+            box-shadow: -.1px -1px 15px rgba(0,0,0,.5);
+        }
+        
+        /* HOVER - Social Media Circles (color, box-shadow) */
+        .ttc-socials-cont:hover .social-contact
+        {
+            background: rgba(139,0,0,1);
+            box-shadow: 1px 1px 15px rgba(0,0,0,.35);
+            color: rgba(255,255,255,1);
+        }
+        
+        /* HOVER - Footer Text (appear)*/
+        .ttc-socials-cont:hover.ttc-socials-cont p
+        {
+            opacity: 1;
+        }
+        
+        /* Footer Text */
+        .ttc-socials-cont p
+        {
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+            font-size: 1.3em;
+            font-size: 1.1em;
+            color: #000;
+            cursor: default;
+            transition: .5s;
+            opacity: 0;
+        }
+        
+        /* Social Circles*/
+        .social-contact 
+        {
+            position: relative;
+            margin-left: 5px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #8B0000;
+            background: rgba(139,0,0,.2);
+            cursor: pointer;
+            transition: .3s;
+        }
+        
+        /* Social Circle - circle (0%) */
+        .social-contact:before
+        {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #000;
+            border-radius: 50%;
+            width: 0;
+            height: 0; 
+            transition: .2s;
+        }
+        
+        /* HOVER - Social Circle - circle (width 100%) */
+        .social-contact:hover.social-contact:before
+        {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Social Media Icons */
+        .social-link
+        {
+            transition: .3s;
+            z-index: 5;
+        }
+        
+        /* HOVER - Social Media Icons*/
+        .social-contact:hover .social-link
+        {
+            transform: scale(1.3);
+        }
+        
+        
+        
+        
+        /*------------------------------------------------------------ MEDIA QUERIES */
+        
+/*        Tablet */
+        @media only screen and (max-width: 768px) 
+        {
+            .p-dex-info-cont
+            {
+                width: 90%;
+            }
+            
+            .ttc-socials-cont > p
+            {
+                font-size: .9em;
+            }
+        }
+        
+        /* Bigger then Mobile (>567px) */
+        @media only screen and (min-width: 576px) 
+        {
+            /* visible just on mobile */
+            .just-visible-mobile
+            {
+                display: none !important;
+            }
+            
+            .main-dex
+            {
+                transform: translateY(-3%);
+            }
+        }
+        
+        @media only screen and (max-width: 576px)
+        {
+            /* invisible on mobile */
+            .not-visible-mobile
+            {
+                display: none !important;
+            }
+            
+            .p-dex-info-cont
+            {
+                width: 100%;
+            }
+            
+            .main-dex
+            {
+                transform: scale(.7);
+            }
+        }
+        
+        
     </style>
     
     
@@ -857,15 +1129,49 @@
    
     <!-- Main Container -->
    <div class="p-dex-main-cont flex-center">
-        <!-- Navigation Bar -->
-        <nav class="nav-three-btns flex-center">
+        <!-- Navigation -->
+        <header>
+           <!-- Navigation -->
+           <nav class="nav-three-btns flex-center not-visible-mobile">
             <ul class="flex-center" style="margin: 0">
-                <div class="logo flex-center"><span class="logo-span">&#128187</span>DN</div>
+                <div class="logo flex-center">
+                    <a href="pokemile_about.html" class="logo-home-link"></a>
+                    <span class="logo-span" style="z-index: 3">&#128187DN</span>
+                </div>
                 <li class="nav"><a href="#">Home</a></li>
                 <li class="nav"><a href="#">Pokedex</a></li>
                 <li class="nav"><a href="#">Games</a></li>
             </ul>
-        </nav>
+            <!-- Games Navigation -->
+            <ul class="flex-center games-nav" style="margin: 0">                
+                <li class="nav"><a href="#">PokeTacToe</a></li>
+                <li class="nav"><a href="#">PokeLights</a></li>
+                <li class="nav"><a href="#">PokeQuiz</a></li>
+            </ul>
+        </nav> 
+       <!-- Mobile Navigation (invisible if not Mobile) -->
+           <nav class="nav-three-btns just-visible-mobile flex-center">
+              <ul class="flex-center" style="margin: 0; padding-left: 0; margin-left: 5%">
+                    <div class="logo flex-center">
+                        <a href="pokemile_about.html" class="logo-home-link"></a>
+                        <span class="logo-span" style="z-index: 3">&#128187DN</span>
+                    </div>
+                    <li class="nav"><a href="#">Home</a></li>
+                    <li class="nav"><a href="#">Pokedex</a></li>
+                    <li class="nav"><a href="#">Games</a></li>
+                </ul>
+                <div onclick="toggleMobileMenu()" class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+           </nav>
+           <div class="mobile-menu-slider just-visible-mobile">
+                <div class="flex-center games-nav" style="margin: 0; height: 100%">
+                    <div class="mobile-nav"><a href="#">PokeTacToe</a></div>
+                    <div class="mobile-nav"><a href="#">PokeLights</a></div>
+                    <div class="mobile-nav"><a href="#">PokeQuiz</a></div>
+                </div>
+            </div>
+       </header>
     <!-- Toggle Info Button -->
      <div onclick="toggleInfoCont()" class="p-dex-info-btn"><i class="fas fa-question-circle"></i></div>
      <!--  Information/Manual -->
@@ -972,6 +1278,44 @@
              </div>
           </div>
        </div>
+       <!-- Social Media Container (Footer) -->
+        <div class="ttc-socials-cont flex-center">
+           <p class="not-visible-mobile"><i class="fas fa-hashtag"></i> Follow me</p>
+           <p class="not-visible-mobile" style="left: 20%;"><i class="fas fa-laptop-code"></i> Code with me</p>
+            <!-- Social Media Circles - Links -->
+            <div class="flex-center">
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.facebook.com" target="_blank">
+                        <i class="social-fab fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.instagram.com" target="_blank">
+                        <i class="social-fab fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.twitter.com" target="_blank">
+                        <i class="social-fab fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.youtube.com" target="_blank">
+                        <i class="social-fab fab fa-youtube"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.pinterest.com" target="_blank">
+                        <i class="social-fab fab fa-pinterest-p"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.linkedin.com" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
    </div>
    
    <script>
@@ -1006,6 +1350,8 @@
        const pkmnTxtContainer = document.querySelector(".p-dex-txt");
        const pDexInfoBtn = document.querySelector(".p-dex-info-btn");
        const topDisplay = document.querySelector(".p-dex-start-screen");
+       const mobileMenu = document.querySelector('.mobile-menu-slider');
+       const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
        const bottomDisplay = document.querySelector(".p-dex-ctrl-screen");
        const dexInfoContainer = document.querySelector(".p-dex-info-cont");
        const pkmnDataContainer = document.querySelector(".p-dex-data-cont");
@@ -1026,6 +1372,7 @@
        let currentPkmnSet;
        let pkmnSetIndex;
     
+       let menuOpen = false;
        let loaded = false;
        let allPkmn = [];
        
@@ -1102,7 +1449,13 @@
        const toggleInfoCont = () => {
            dexInfoContainer.classList.toggle("opacity");
            
-           dexInfoContainer.classList.contains("opacity") ? pDexInfoBtn.style.color = "#fafafa" : pDexInfoBtn.style.color = "crimson";
+           if (dexInfoContainer.classList.contains("opacity")) {
+               pDexInfoBtn.style.textShadow = "0 0 15px rgba(0,0,0,.5)";
+               pDexInfoBtn.style.color = "#fafafa";
+           } else {
+               pDexInfoBtn.style.textShadow = "none";
+               pDexInfoBtn.style.color = "crimson";
+           }
        }
        
        
@@ -1114,6 +1467,15 @@
            backToFiltersBtn.classList.toggle("opacity");
        }
        
+       
+       // Toggles Mobile Menu & Checkbox
+        const toggleMobileMenu = () => {
+            menuOpen ? menuOpen = false : menuOpen = true;
+            menuOpen ? mobileMenuBtn.innerHTML = `<i class="fas fa-times"></i>` : mobileMenuBtn.innerHTML = `<i class="fas fa-bars"></i>`;
+            menuOpen ? mobileMenu.classList.add("menu-open") : mobileMenu.classList.remove("menu-open");
+            // toggles checkbox
+            menuOpen ? document.querySelector("#players-choice-checkbox").classList.add("mobile") : document.querySelector("#players-choice-checkbox").classList.remove("mobile");
+        }
        
        
        //------------------------------------------------------------------------------ (BOTTOM SCREEN) CHOOSE MODE
@@ -1385,8 +1747,7 @@
        // Gets all 150 Pkmn after site is loaded
        window.addEventListener("load", getAndModifyPkmn);
 
-    
-       // home btn (logo) - js -> direct to home (cursor)
+
                
    </script>
     
