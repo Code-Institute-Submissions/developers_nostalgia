@@ -54,6 +54,52 @@
         
         /* ------------------------------------------------------------ NAVIGATION */
         
+        /* BUTTON - Mobile Menu */
+        .mobile-menu-btn
+        {
+            position: absolute;
+            right: 5%;
+            font-size: 2em;
+            color: #fafafa;
+            cursor: pointer;
+            z-index: 999;
+        }
+        
+        .nav-three-btns.just-visible-mobile
+        {
+            background: #333;
+        }
+
+        .mobile-menu-slider
+        {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #000 !important;
+            width: 100%;
+            min-height: 80px;
+            background: #fafafa;
+            transition: .3s;
+/*            z-index: -1;*/
+        }
+        
+        /* Mobile Menu - slides in */
+        .mobile-menu-slider.menu-open
+        {
+            top: 73px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.5),
+                        0 -10px #000;
+        }
+        
+        .mobile-nav a
+        {
+            color: #000;
+            font-size: .9em;
+            font-weight: bolder;
+            margin: .5em;
+        }
+        
         .nav-three-btns
         {
             position: absolute;
@@ -65,6 +111,7 @@
             justify-content: flex-start;
             border-bottom: solid;
             padding-left: 0;
+            z-index: 2;
         }
         
         /* HOVER - Navigation Links opacity 1 */
@@ -74,6 +121,16 @@
         }
         
         /* LOGO */
+        
+        .logo-home-link
+        {
+            position: absolute;
+            width: 100%;
+            height: 150%;
+            background: transparent;
+            z-index: 999999999;
+        }
+        
         .logo
         {
             position: relative;
@@ -135,11 +192,19 @@
         
         /* ------------------------------------------------------------ NAVIGATION FOR GAMES */
         
-        #players-choice-checkbox,
-        #animation-checkbox
+        #players-choice-checkbox
         {
-            margin: .5em;
-            margin-right: 1em;
+            position: absolute;
+            top: 30px;
+            left: 335px;
+            z-index: 9999;
+        }
+        
+        #players-choice-checkbox.mobile
+        {
+            top: 107px;
+            left:  45px;
+            z-index: 9999 !important;
         }
         
         .games-nav
@@ -166,6 +231,7 @@
             background: #0a2a43;
             transition: .3s;
             transform: translateY(10%);
+            box-shadow: 0 .5px 10px rgba(0,0,0,.3);
         }
         
         /* Score */
@@ -231,6 +297,7 @@
             background: darkorange;
             border-radius: 15px;
             display: flex;
+            box-shadow: .5px .5px 15px rgba(0,0,0,.5);
         }
         
         /* HOVER - Start Ampel Game Btn */
@@ -277,7 +344,7 @@
         .players-field.disabled-btns
         {
             pointer-events: none;
-            filter: opacity(.8);
+            filter: opacity(.3);
         }
 
         /* BUTTONS - Selection red/blue/green */
@@ -291,6 +358,7 @@
             font-weight: bold;
             letter-spacing: .03em;
             background-color: darkred;
+            box-shadow: .5px .5px 15px rgba(0,0,0,.5);
             color: #fff;
             font-size: 1.1em;
             cursor: pointer;
@@ -341,25 +409,7 @@
             background-color: rgba(255,255,255,.5);
         }
         
-        /* ANIMATION - Rotates poke circle */
-        .poke-circle.animate
-        {
-            animation: rotate-ball infinite 6s linear;
-        }
-        
-        @keyframes rotate-ball 
-        {
-            from
-            {
-                transform: rotate(0);
-            }
-            to 
-            {
-                transform: rotate(360deg)
-            }
-        }
-        
-/*        Poke cirlce - inner lines l/r */
+        /* Poke cirlce - inner lines l/r */
         .poke-circle:before
         {
             content: '';
@@ -393,7 +443,6 @@
             width: 50%;
             border-radius: 50%;
             background-color: #000;
-            
         }
         
         /* Poke circle - inner inner (inner) circle */
@@ -423,7 +472,7 @@
             box-shadow: 1px 1px 15px rgba(0,0,0,.5);
             z-index: 3;
         }
-        
+
         
         /* ------------------------------------------------------------ BUTTON - Reload site */
         
@@ -549,13 +598,55 @@
         {
             transform: scale(1.3);
         }
+                
+        
+        /* ------------------------------------------------------------ ANIMATION - Rotates poke circle */
+        
+        .poke-circle.animate
+        {
+            animation: rotate-ball infinite 6s linear;
+        }
+        
+        @keyframes rotate-ball 
+        {
+            from
+            {
+                transform: rotate(0);
+            }
+            to 
+            {
+                transform: rotate(360deg)
+            }
+        }
         
         
         /* ------------------------------------------------------------ MEDIA QUERIES */
         
+        /* Bigger then Mobile (>567px) */
+        @media only screen and (min-width: 576px) 
+        {
+            /* visible just on mobile */
+            .just-visible-mobile
+            {
+                display: none !important;
+            }
+        }
+        
         /* Mobile */
         @media only screen and (max-width: 576px) 
         {
+            /* invisible on mobile */
+            .not-visible-mobile
+            {
+                display: none !important;
+            }
+            
+            /* makes checkbos invisible on mobile */
+            #players-choice-checkbox
+            {
+                z-index: -1;
+            }
+            
             .poke-circle
             {
                 transform: translateY(-10%) scale(.6);
@@ -563,8 +654,9 @@
             
             .ampel-cont
             {
-                width: 95%;
-                transform: scale(.9);
+                width: 100%;
+/*                transform: scale(.98);*/
+/*                !!! */
             }
             
             .ampel
@@ -572,6 +664,12 @@
                 margin: .5em;
             }
             
+            .reload-btn
+            {
+                transform: scale(.85) translateY(50%) translateX(-60%);
+            }
+            
+            /* Animation for poke-ball rotation */
             @keyframes rotate-ball 
             {
                 from
@@ -580,7 +678,7 @@
                 }
                 to 
                 {
-                    transform: translateY(-10%) scale(.6) rotate(360deg)
+                    transform: translateY(-10%) scale(.6) rotate(360deg);
                 }
             }
         }
@@ -596,10 +694,12 @@
     <div class="main-cont flex-center">
        <div class="poke-circle flex-center"><div class="poke-inner-circle"></div></div>
        <header>
+          <li class="nav"><input onclick="togglePlayersChoices()" id="players-choice-checkbox" type="checkbox"></li>
            <!-- Navigation -->
-           <nav class="nav-three-btns flex-center">
+           <nav class="nav-three-btns flex-center not-visible-mobile">
             <ul class="flex-center" style="margin: 0">
                 <div class="logo flex-center">
+                    <a href="pokemile_about.html" class="logo-home-link"></a>
                     <span class="logo-span" style="z-index: 3">&#128187DN</span>
                 </div>
                 <li class="nav"><a href="#">Home</a></li>
@@ -607,14 +707,34 @@
                 <li class="nav"><a href="#">Games</a></li>
             </ul>
             <!-- Games Navigation -->
-            <ul class="flex-center games-nav" style="margin: 0">
-                <li class="nav"><input onclick="toggleAnimationBall()" id="animation-checkbox" type="checkbox"></li>
-                <li class="nav"><input onclick="togglelPlayersChoices()" id="players-choice-checkbox" type="checkbox"></li>
+            <ul class="flex-center games-nav" style="margin: 0">                
                 <li class="nav"><a href="#">PokeTacToe</a></li>
                 <li class="nav"><a href="#">PokeLights</a></li>
                 <li class="nav"><a href="#">PokeQuiz</a></li>
             </ul>
-        </nav>
+        </nav> 
+       <!-- Mobile Navigation (invisible if not Mobile) -->
+           <nav class="nav-three-btns just-visible-mobile flex-center">
+              <ul class="flex-center" style="margin: 0; padding-left: 0; margin-left: 5%">
+                    <div class="logo flex-center">
+                        <a href="pokemile_about.html" class="logo-home-link"></a>
+                        <span class="logo-span" style="z-index: 3">&#128187DN</span>
+                    </div>
+                    <li class="nav"><a href="#">Home</a></li>
+                    <li class="nav"><a href="#">Pokedex</a></li>
+                    <li class="nav"><a href="#">Games</a></li>
+                </ul>
+                <div onclick="toggleMobileMenu()" class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+           </nav>
+           <div class="mobile-menu-slider just-visible-mobile">
+                <div class="flex-center games-nav" style="margin: 0; height: 100%">
+                    <div class="mobile-nav"><a href="#">PokeTacToe</a></div>
+                    <div class="mobile-nav"><a href="#">PokeLights</a></div>
+                    <div class="mobile-nav"><a href="#">PokeQuiz</a></div>
+                </div>
+            </div>
        </header>
        <!-- Ampel Container -->
        <div class="ampel-cont flex-center">
@@ -639,8 +759,8 @@
        <!-- Social Media Container (Footer) -->
         <div class="ttc-socials-cont flex-center">
            <button onclick="reloadSite()" class="reload-btn"><i class="fas fa-sync-alt"></i></button>
-           <p><i class="fas fa-hashtag"></i> Follow me</p>
-           <p style="left: 20%;"><i class="fas fa-laptop-code"></i> Code with me</p>
+           <p class="not-visible-mobile"><i class="fas fa-hashtag"></i> Follow me</p>
+           <p class="not-visible-mobile" style="left: 20%;"><i class="fas fa-laptop-code"></i> Code with me</p>
             <!-- Social Media Circles - Links -->
             <div class="flex-center">
                 <div class="social-contact flex-center">
@@ -690,14 +810,16 @@
         const ampelScore = document.querySelector("#ampel-score");
         const playersField = document.querySelector('.players-field');
         const gameStartBtn = document.querySelector('#start-game-btn');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu-slider');
         const allPlayersBtns = document.querySelectorAll('.players-btn');
-        const animatiionCheckBox = document.querySelector('#animation-checkbox');
         const playersChoicesCont = document.querySelector('.players-choices-cont');
-        const PlayersChoiceCheckBox = document.querySelector('#players-choice-checkbox');
+        const playersChoiceCheckBox = document.querySelector('#players-choice-checkbox');
 
         
         // --------------------------------------------------------------- GAME VARIABLES
         
+        let menuOpen = false;
         let playersChoices;
         let choiceCounter;
         let combination;
@@ -706,16 +828,32 @@
         let round = 0;
 
         
-        // --------------------------------------------------------------- TOGGLE FUNCTIONS - POKEBALL-/CIRCLE
+        // --------------------------------------------------------------- TOGGLE FUNCTIONS
         
-        // Toggles Animation (Circle)
+        // CHECKBOX - Toggles Animation (Circle)
+//        function toggleAnimationBall() {
+//            animatiionCheckBox.checked ? pokeBall.classList.add("animate") : pokeBall.classList.remove("animate");
+//        }
+        
+        
         function toggleAnimationBall() {
-            animatiionCheckBox.checked ? pokeBall.classList.add("animate") : pokeBall.classList.remove("animate");
-        }
-
+            animatiionCheckBox.forEach(c => c.checked ? c.checked = false : c.checked = true);
+            animatiionCheckBox[0].checked || animatiionCheckBox[1].checked ? pokeBall.classList.add("animate") : pokeBall.classList.remove("animate");
+        }  
         
-        function togglelPlayersChoices() {
-            PlayersChoiceCheckBox.checked ? playersChoicesCont.style.opacity = 0 : playersChoicesCont.style.opacity = 1;
+        // CHECKBOX - Toggles Players Choices Container
+        function togglePlayersChoices() {
+            playersChoiceCheckBox.checked ? playersChoicesCont.style.opacity = 0 : playersChoicesCont.style.opacity = 1;
+        }
+        
+        
+        // Toggles Mobile Menu & Checkbox
+        function toggleMobileMenu() {
+            menuOpen ? menuOpen = false : menuOpen = true;
+            menuOpen ? mobileMenuBtn.innerHTML = `<i class="fas fa-times"></i>` : mobileMenuBtn.innerHTML = `<i class="fas fa-bars"></i>`;
+            menuOpen ? mobileMenu.classList.add("menu-open") : mobileMenu.classList.remove("menu-open");
+            // toggles checkbox
+            menuOpen ? document.querySelector("#players-choice-checkbox").classList.add("mobile") : document.querySelector("#players-choice-checkbox").classList.remove("mobile");
         }
         
         
@@ -868,25 +1006,6 @@
         gameStartBtn.addEventListener('click', startGame);
         allPlayersBtns.forEach(b => b.addEventListener('click', playersBtn));
 
-        
-        
-        
-        
-        
-        
-        // Gives player possibility to erase last choice
-        function removeOneChoice() {
-            const allChoices = document.querySelectorAll(".players-choice");
-            
-            playersChoices.pop();
-            choiceCounter--;
-            allChoices[choiceCounter].classList.remove("red", "blue", "green");
-        }
-        
-        
-        
-                
-        
         
 
     </script>
