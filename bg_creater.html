@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <title>Developers Nostalgia</title>
+    
+    
+    
+    <style>
+        
+/*-------------------------------------------- GENERAL */
+        .flex-center
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .flex-colunm
+        {
+            flex-direction: column;
+        }
+        
+        .opacity
+        {
+            opacity: 0 !important;
+        }
+    
+        .bg-main-cont
+        {
+            width: 100vw;
+            height: 100vh;
+            background: lightblue;
+        }
+        
+        
+        
+        .bg-main-cont input
+        {
+            position: absolute;
+            opacity: 0;
+        }
+    
+        
+        
+        
+        .color-info-cont
+        {
+            position: relative;
+            background: rgba(255,255,255,.6);
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            margin-bottom: .5em;
+            cursor: default;
+            box-shadow: 0 0 15px rgba(0,0,0,.5);
+        }
+        
+        
+        
+        .full-css-cont
+        {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            font-weight: bold;
+            font-size: ;
+            color: #000;
+            cursor: default;
+            text-shadow: .1px .1px 15px rgba(255,255,255,.15);
+            z-index: 99999;
+            
+/*            background: #fff;*/
+        }
+    
+        #full-css-checkbox
+        {
+            
+        }
+        
+        .color
+        {
+            font-size: 1.3em;
+            font-weight: 500;
+            margin: .15em 0;
+            cursor: pointer;
+            transition: .1s;
+        }
+        
+        #color-name
+        {
+            font-size: 1.8em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .1s;
+        }
+        
+        #color-name:hover,
+        .color:hover
+        {
+            transform: scale(1.02);
+            color: #fff;
+            text-shadow: .1px .1px 3px rgba(0,0,0,.8);
+        }
+        
+        .color-underline
+        {
+            width: 80%;
+            height: 2px;
+            margin: 5px 0;
+            background-color: #fff;
+        }
+        
+        
+        #generateHexBtn
+        {
+            padding: 10px 15px;
+            margin-top: 1em;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            color: #000;
+            background: ;
+            cursor: pointer;
+            box-shadow: 0 .1px 10px rgba(0,0,0,.5);
+            transition: .3s;
+            outline: none;
+        }
+        
+        #generateHexBtn:hover
+        {
+            background: #333;
+            color: #fff;
+            box-shadow: 0 0px 15px rgba(0,0,0,.5);
+        }
+        
+        
+        
+        .copied-tooltip
+        {
+            position: absolute;
+            bottom: 12%;
+            font-size: .9em;
+            font-weight: bold;
+            color: #000;
+            text-shadow: .1px .1px 5px rgba(0,0,0,.1);
+            background: ;
+            padding-bottom: .2em;
+            border-bottom: solid 2px #000;
+            transition: .1s;
+        }
+        
+        .copied-tooltip i
+        {
+            margin-left: .3em;
+        }
+        
+        
+        #generateHexBtn:hover
+        {
+            background: ;
+            color: ;
+        }
+        
+        
+        .pulse-animation
+        {
+            animation: pulse .5s forwards ease-out;
+        }
+        
+        @keyframes pulse
+        {
+            0%
+            {
+                transform: scale(1);
+            }
+            50%
+            {
+                transform: scale(1.2);
+            }
+            100%
+            {
+                transform: scale(1);
+            }
+        }
+        
+        
+        
+        
+        
+        .toggle-hidden-txt-btn
+        {
+            margin: 0 .6em;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.3em;
+            transition: .3s;
+            text-shadow: 0 0 5px rgba(0,0,0,.5);
+            z-index: 999999999;
+        }
+        
+        .toggle-hidden-txt-btn:hover
+        {
+            color: #000;
+            transform: scale(1.3);
+        }
+        
+        .hidden-txt
+        {
+            text-shadow: .1px .1px 15px rgba(255,255,255,.15);
+            transform: translateX(-50%);
+            margin-left: .5em;
+            font-weight: 800;
+            transition: .3s;
+            color: #000;
+            opacity: 0;
+        }
+        
+        .appear
+        {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+    </style>
+    
+    
+</head>
+<body>
+  
+   <div class="bg-main-cont flex-center">
+       <!-- All Inputs -->
+       <input type="text" id="hex-input">
+       <input type="text" id="rgb-input">
+       <input type="text" id="rgba-input">
+
+       <div class="bg-info-cont flex-center flex-colunm">
+           <div class="color-info-cont flex-center flex-colunm">
+               <div onclick="copyColor('hex')" id="color-name"></div>
+               <span class="color-underline"></span>
+               <div onclick="copyColor('rgb')" class="color color-rgb"></div>
+               <div onclick="copyColor('rgba')" class="color color-rgba"></div>
+               <!-- Tooltip (Copied) -->
+               <div class="copied-tooltip flex-center opacity">
+                   <div class="copied-code"></div>
+                   <i class="fas fa-clipboard pulse-animation"></i>
+               </div>
+           </div>
+           <button id="generateHexBtn" onclick="createHex()">Create Random Color</button>
+       </div>
+       <div class="full-css-cont flex-center">
+          <input type="checkbox" id="full-css-checkbox" checked>
+          <div>Copy full css code</div>
+          <div onclick="toggleHiddenText()" class="toggle-hidden-txt-btn"><i class="fas fa-question-circle"></i></div>
+          <div class="hidden-txt">background: rgba(255,255,255,1);</div>
+      </div>
+   </div>
+    
+    <script>
+    
+        const hiddenText = document.querySelector(".hidden-txt");
+        const fullCssCheckBox = document.querySelector("#full-css-checkbox");
+        const copiedCode = document.querySelector(".copied-code");
+        const copiedTooltip = document.querySelector(".copied-tooltip");
+        const bgMainContainer = document.querySelector(".bg-main-cont");
+        const bgInfoContainer = document.querySelector(".bg-info-cont");
+        const colorName = document.querySelector("#color-name");
+        const rgbName = document.querySelector(".color-rgb");
+        const rgbaName = document.querySelector(".color-rgba");
+        const hexInput = document.querySelector("#hex-input");
+        const rgbInput = document.querySelector("#rgb-input");
+        const rgbaInput = document.querySelector("#rgba-input");
+        
+        // All hex color components
+        const hexColorComponents = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','F'];
+        
+        
+        // Toggles Hidden Text
+        const toggleHiddenText = () => hiddenText.classList.toggle("appear");
+        
+        
+        
+        // Creates a random hex value by picking random elements from hexColor array
+        const createHex = () => {
+            let hex = '';
+            
+            // fills empty hex variable with random elements to create hex color
+            for (let i = 0; i < 6; i++) {
+                let randomEl = Math.floor(Math.random() * hexColorComponents.length); 
+                
+                hex += hexColorComponents[randomEl];
+            }
+            // changes background and name (random hex color)
+            bgMainContainer.style.backgroundColor = `#${hex}`;
+            colorName.innerText = `#${hex}`;
+            // pastes hex into input
+            hexInput.value = fullCssCheckBox.checked ? `background: #${hex};` : `#${hex}`;
+            // calls rgb and rgba functions
+            toRgb(hex);
+        }
+        
+        
+        // Converts hex to rgb and rgba and displays them
+        const toRgb = (hex) => {
+            let hexSplit = hex.match(/.{1,2}/g);
+            let rgb = [
+                parseInt(hexSplit[0], 16),
+                parseInt(hexSplit[1], 16),
+                parseInt(hexSplit[2], 16)
+            ]
+            
+            // rgb & rgba code
+            let rgbCode = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+            let rgbaCode = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 1)`;
+            // results - depending if checked
+            let rgbResult = fullCssCheckBox.checked ? `background: ${rgbaCode};` : rgbaCode;
+            let rgbaResult = fullCssCheckBox.checked ? `background: ${rgbaCode};` : rgbaCode;
+            
+            rgbName.innerText = rgbCode;
+            rgbaName.innerText = rgbaCode;
+            
+            // pastes rgb and rgba into input
+            rgbInput.value = rgbResult;
+            rgbaInput.value = rgbaResult;
+            hiddenText.innerText = rgbaResult;
+        }
+
+        
+        // Copies slected color code to clipboard
+        const copyColor = code => {
+            let colorInput;
+            
+            switch(code) {
+                case "hex":
+                    colorInput = hexInput;
+                    break;
+                case "rgb":
+                    colorInput = rgbInput;
+                    break;
+                case "rgba":
+                    colorInput = rgbaInput;
+            }
+            colorInput.select();
+            /* for mobile */
+            colorInput.setSelectionRange(0, 99999); 
+            /* copies text inside  text field */
+            document.execCommand("copy");
+            
+            // copied mini animaiton
+            copiedAnimation(code);
+        }
+        
+        
+        // Makes Tooltip appear, pulse & disappear
+        const copiedAnimation = code => {
+            copiedCode.innerText = `copied: ${code}`;
+            copiedTooltip.classList.remove("opacity");
+            copiedTooltip.classList.add("pulse-animation");
+            setTimeout(() => {
+                copiedTooltip.classList.add("opacity");
+                copiedTooltip.classList.remove("pulse-animation");
+            }, 1000); 
+        }
+        
+        
+        // Call
+        createHex();
+        
+        
+    </script>
+    
+    
+</body>
+</html>
