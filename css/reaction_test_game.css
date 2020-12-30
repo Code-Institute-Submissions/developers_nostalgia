@@ -1,0 +1,338 @@
+/* ------------------------------------------------------ GENERAL */
+
+.flex-center
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-column
+{
+    flex-direction: column;
+}
+
+.invisible
+{
+    display: none !important;
+}
+
+.disabled
+{
+    pointer-events: none !important;
+}
+
+
+/* ------------------------------------------------------ MAIN CONTAINER */
+
+.reaction-main-cont
+{
+    width: 100vw;
+    height: 100vh;
+    background: #333;
+}
+
+/* Reaction Container & Start Screen */
+.reaction-cont,
+.reaction-start-screen
+{
+    position: relative;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background-color: midnightblue;
+    background-color: #620404;
+    background: #abbaab;
+    width: 80%;
+    height: 50vh;
+    
+}
+
+.reaction-cont
+{
+    z-index: 100;
+}
+
+
+/* ------------------------------------------------------ START SCREEN */
+
+.reaction-start-screen
+{
+    background-color: mediumpurple;
+}
+
+.reaction-headline
+{
+    font-size: 3em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: .3em;
+}
+
+.reaction-start-screen p
+{
+    font-weight: bolder;
+    font-size: 1.1em;
+    margin-bottom: 1em;
+}
+
+/* SPAN - highlights words */
+.space-txt
+{
+    color: deepskyblue;
+}
+
+#highscore-p
+{
+    color: #fafafa;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+/* Txt on Start Screen */
+.reaction-recent
+{
+    font-weight: 800;
+    font-size: 1.3em;
+    letter-spacing: .03em;
+}
+
+.recent-content
+{
+    font-size: 1.1em;
+    color: #fff;
+    margin-left: .3em;
+}
+
+/*------------------------------------------------------ BUTTONS        */
+
+button
+{
+    border: none;
+    outline: none;
+}
+
+.bttn
+{
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: .3s;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Start Test - BUTTON */
+.start-reaction-btn
+{
+    margin-top: 2em;
+    background-color: #fafafa;
+    color: #000;
+}
+
+/* HOVER - Start Test Btn */
+.start-reaction-btn:hover
+{
+    background-color: #000;
+    color: #fff
+}
+
+/* Exit Test - BUTTON */
+.reaction-exit-btn
+{
+    position: absolute;
+    top: 10%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    width: 50px;
+    height: 50px;
+    transition: .1s;
+    opacity: 0;
+}
+
+/* HOVER - Exit Test Btn */
+.reaction-exit-btn:hover
+{
+    background: #000;
+}
+
+/* ANIMATION - for Exit Test Btn (makes btn slide up) */
+.reaction-exit-btn.slide-up
+{
+    opacity: 1;
+    animation: slideup .3s ease-out forwards;
+}
+
+@keyframes slideup
+{
+    from
+    {
+        top: 10%;
+        opacity: 0;
+    }
+    to
+    {
+        top: -16%;
+        opacity: 1;
+    }
+}
+
+/* Exit Test Btn - Cross (lines) */
+.reaction-exit-btn:hover .line
+{
+    background-color: #fff;
+}
+
+.line
+{
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: #000;
+    transform: rotate(45deg);
+}
+
+.line:nth-child(2) 
+{
+    transform: rotate(-45deg);
+}
+
+
+/* Highscore - BUTTON */
+.reaction-highscore-btn
+{
+    margin-top: .5em;
+    background-color: #000;
+    color: #fff;
+}
+
+/* HOVER - Highscore Btn */
+.reaction-highscore-btn:hover
+{
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    background-color: #fafafa;
+    color: #000;
+}
+
+
+/*------------------------------------------------------ REACTION CONTENT (time, color)       */
+
+.reaction-content-wrapper
+{
+    width: 50%;
+    min-width: 300px;
+}
+
+/* Time/Stop Watch */
+.reaction-time
+{
+    font-weight: 500;
+    font-size: 5em;
+    text-shadow: 0 0 8px rgba(0,0,0,.3);
+    color: #fafafa;
+}
+
+/* Color (reaction) - BUTTON */
+.reaction-color
+{
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: solid 20px #000;
+    background-color: darkred;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+
+/* ------------------------------------------------------ REACTION HIGHSCORE */
+
+.reaction-highscore-cont
+{
+    position: absolute;
+    top: 0;  
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: darkorange;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+.players-reaction-score
+{
+    font-size: 2em;
+    color: #fafafa;
+    letter-spacing: .1em;
+    margin-bottom: 1em;
+    margin-bottom: .5em;
+    border-bottom: solid;
+    text-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.highscore-headline
+{
+    font-size: 2em;
+    font-weight: bolder;
+    color: #000;
+}
+
+.reaction-highscore-cont p
+{
+    font-weight: bold;
+    margin-bottom: 1.5em;
+/*            margin-bottom: 2em;*/
+}
+
+/* INPUT - Insert players highscore */
+#reaction-highscore-input
+{
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: .5em;
+    margin: .5em 0;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+
+/* ------------------------------------------------------ MEDIA QUERIES */
+
+/* Mobile */
+@media only screen and (max-width: 600px) 
+{
+    *
+    {
+        font-size: .9em;
+    }
+    
+    .reaction-start-screen
+    {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    
+    .reaction-headline
+    {
+        font-size: 2em;
+        margin-bottom: 2em
+    }
+    
+    .reaction-cont
+    {
+        width: 95%;
+        height: 75%;
+        margin-top: 1em;
+    }
+    
+    .reaction-color
+    {
+        width: 20em;
+        height: 20em;
+    }
+    
+    .reaction-highscore-cont
+    {
+        text-align: center;
+    }
+}
