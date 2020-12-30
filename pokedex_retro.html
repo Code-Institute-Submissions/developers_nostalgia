@@ -1,0 +1,210 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="pokedex_retro.css">
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <title>Pokedex Retro Version</title>
+</head>
+
+<body>
+    <!-- Main Container -->
+   <div class="p-dex-main-cont flex-center">
+        <!-- Navigation -->
+        <header>
+           <!-- Navigation -->
+           <nav class="nav-three-btns flex-center not-visible-mobile">
+            <ul class="flex-center" style="margin: 0">
+                <div class="logo flex-center">
+                    <a href="pokemile_about.html" class="logo-home-link"></a>
+                    <span class="logo-span" style="z-index: 3">&#128187DN</span>
+                </div>
+                <li class="nav"><a href="#">Home</a></li>
+                <li class="nav"><a href="#">Pokedex</a></li>
+                <li class="nav"><a href="#">Games</a></li>
+            </ul>
+            <!-- Games Navigation -->
+            <ul class="flex-center games-nav" style="margin: 0">                
+                <li class="nav"><a href="#">PokeTacToe</a></li>
+                <li class="nav"><a href="#">PokeLights</a></li>
+                <li class="nav"><a href="#">PokeQuiz</a></li>
+            </ul>
+        </nav> 
+       <!-- Mobile Navigation (invisible if not Mobile) -->
+           <nav class="nav-three-btns just-visible-mobile flex-center">
+              <ul class="flex-center" style="margin: 0; padding-left: 0; margin-left: 5%">
+                    <div class="logo flex-center">
+                        <a href="pokemile_about.html" class="logo-home-link"></a>
+                        <span class="logo-span" style="z-index: 3">&#128187DN</span>
+                    </div>
+                    <li class="nav"><a href="#">Home</a></li>
+                    <li class="nav"><a href="#">Pokedex</a></li>
+                    <li class="nav"><a href="#">Games</a></li>
+                </ul>
+                <div onclick="toggleMobileMenu()" class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+           </nav>
+           <div class="mobile-menu-slider just-visible-mobile">
+                <div class="flex-center games-nav" style="margin: 0; height: 100%">
+                    <div class="mobile-nav"><a href="#">PokeTacToe</a></div>
+                    <div class="mobile-nav"><a href="#">PokeLights</a></div>
+                    <div class="mobile-nav"><a href="#">PokeQuiz</a></div>
+                </div>
+            </div>
+       </header>
+    <!-- Toggle Info Button -->
+     <div onclick="toggleInfoCont()" class="p-dex-info-btn"><i class="fas fa-question-circle"></i></div>
+     <!--  Information/Manual -->
+      <div class="p-dex-info-cont opacity">
+          <div class="p-dex-info-row flex-center">
+              <div class="main-ctrl-btn flex-center"><i class="fas fa-power-off"></i></div>
+              <div class="main-ctrl-btn flex-center" style="color: crimson"><i class="fas fa-power-off"></i></div>
+              <p>Turn On / Turn Off The Pokedex</p>
+          </div>
+          <div class="p-dex-info-row flex-center">
+              <div class="main-ctrl-btn flex-center"><i class="fas fa-bars"></i></div> 
+              <p>Return To Main Menu - Select a Mode</p>
+          </div>
+          <div class="p-dex-info-row flex-center">
+              <div class="main-ctrl-btn flex-center"><i class="fas fa-arrow-left"></i></div>
+              <p>Go Back To Type Filter Mode - (Only After Clicking A Filtered Pokemon)</p>
+          </div>
+          <div class="p-dex-info-row flex-center">
+              <div class="main-ctrl-btn square-info flex-center"><i class=" fas fa-book-open"></i></div>
+              <p>Dexter Mode - A Pokemon Enzyclopedia - Click on any pokemon name (bottom display) to get the Data (top display). By clicking the button below the image (top Display) - Info Text and back sprite gets revealed.</p>
+          </div>
+          <div class="p-dex-info-row flex-center">
+              <div class="main-ctrl-btn square-info flex-center"><i class="fab fa-searchengin"></i></div>
+              <p>Type Filter Mode - Click on any pokemon Type (bottom display) to get a filtered list of pokemon names. Click on any pokemon name (bottom display) to get the Data (top display).</p>
+          </div>
+      </div>
+      <!-- Pokedex Container -->
+       <div class="main-dex">
+           <!-- Pokedex Top Part -->
+           <div class="p-dex-top flex-center">
+              <!-- Pokedex Lamp -->
+              <div class="p-dex-lamp"></div>
+               <div class="p-dex-screen-frame flex-center">
+                   <!-- Top Screen -->
+                   <div class="p-dex-screen">
+                       <!-- Start Screen -->
+                       <div class="p-dex-start-screen flex-center flex-column opacity">
+                           <h2 class="p-dex-start-headline">Online Pokedex</h2>
+                           <p>
+                               Choose between Dexter and Type Finder Mode.<br>
+                               Dexter Mode - List of all 150 Pokemon (1st Gen)<br>
+                               Type Finder Mode - Search Pokemon via Type<br>
+                           </p>
+                           <div class="flex-center">
+                               <div class="element-square flex-center"><i class="fas fa-tint"></i></div>
+                               <div class="element-square flex-center"><i class="fas fa-fire"></i></div>
+                               <div class="element-square flex-center"><i class="fas fa-seedling"></i></div>
+                           </div>
+                           <div class="p-dex-start-info">
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <!-- Pokedex Middle Part -->
+           <div class="p-dex-middle">
+               <div class="p-dex-middle-outer-joint-l"></div>
+               <div class="p-dex-middle-middle-joint flex-center">
+                   <!-- Main Control Buttons -->
+                   <div onclick="displayAllTypesBtns()" class="main-ctrl-btn flex-center btf-btn opacity disabl"><i class="fas fa-arrow-left"></i></div>
+                   <div onclick="turnOnDex()" class="main-ctrl-btn flex-center on-btn"><i class="fas fa-power-off"></i></div>
+                   <div onclick="turnOffDex()" class="main-ctrl-btn flex-center off-btn hidden"><i class="fas fa-power-off"></i></div>
+                   <div onclick="displayMenuScr()" class="main-ctrl-btn flex-center menu-btn opacity"><i class="fas fa-bars"></i></div>
+               </div>
+               <div class="p-dex-middle-outer-joint-r"></div>
+           </div>
+          <!-- Pokedex Bottom Part -->
+          <div class="p-dex-bottom flex-center">
+              <div class="p-dex-ctrl-frame flex-center">
+              <!-- Control Start Screen -->
+              <div class="pdex-ctrl-start-screen flex-center opacity">
+                  <div onclick="selectOptionMode(true)" class="p-dex-mode-options-btn flex-center">
+                      <i class="option-icons fas fa-book-open"></i>
+                      <p>Dexter Mode</p>
+                  </div>
+                  <div onclick="selectOptionMode(false)" class="p-dex-mode-options-btn flex-center">
+                      <i class="option-icons fab fa-searchengin"></i>
+                      <p>Type Finder</p>
+                  </div>
+              </div>
+              <!-- Type Finder Screen -->
+              <div class="p-dex-ctrl-type-finder-scr flex-center">
+                  <div id="type-finder-names-types" class="type-finder-types-box opacity"></div>
+              </div>
+                  <!-- Control Screen -->
+                  <div class="p-dex-ctrl-screen opacity"></div>
+              </div>
+             <!-- Controller Buttons (Cross) -->
+             <div class="p-dex-btn-cont flex-center">
+                <div class="p-dex-cross-btn-cont flex-center">
+                    <div class="p-dex-cross"></div>
+                    <div class="p-dex-cross"></div>
+                </div>
+                <!-- Navigation Buttons Next/Prev -->
+                <div class="p-dex-nav-btns-cont flex-center">
+                     <div onclick="paginationBtnFunc(event)" class="p-dex-nav-btn p-dex-prev-btn notactive">PREV</div>
+                     <div onclick="paginationBtnFunc(event)" class="p-dex-nav-btn p-dex-next-btn notactive">NEXT</div>
+                 </div>
+                <!-- A and B Buttons -->
+                <div class="p-dex-ab-btns-cont flex-center">
+                    <div class="p-dex-ab-btn flex-center">B</div>
+                    <div class="p-dex-ab-btn flex-center">A</div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <!-- Social Media Container (Footer) -->
+        <div class="ttc-socials-cont flex-center">
+           <p class="not-visible-mobile"><i class="fas fa-hashtag"></i> Follow me</p>
+           <p class="not-visible-mobile" style="left: 20%;"><i class="fas fa-laptop-code"></i> Code with me</p>
+            <!-- Social Media Circles - Links -->
+            <div class="flex-center">
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.facebook.com" target="_blank">
+                        <i class="social-fab fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.instagram.com" target="_blank">
+                        <i class="social-fab fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.twitter.com" target="_blank">
+                        <i class="social-fab fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.youtube.com" target="_blank">
+                        <i class="social-fab fab fa-youtube"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.pinterest.com" target="_blank">
+                        <i class="social-fab fab fa-pinterest-p"></i>
+                    </a>
+                </div>
+                <div class="social-contact flex-center">
+                    <a class="social-link" href="http://www.linkedin.com" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+   </div>
+   
+   <script src="pokedex_retro.js"></script>
+    
+</body>
+</html>

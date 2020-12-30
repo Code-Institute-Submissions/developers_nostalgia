@@ -1,0 +1,1167 @@
+/*------------------------------------------------------------ GENERAL */
+
+a
+{
+    color: #fafafa;
+}
+
+a:hover
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+.flex-center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column
+{
+    flex-direction: column;
+}
+
+/* Selected pkmn name */
+.selected
+{
+    color: #fff;
+    transform: scale(1.02);
+    text-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.hidden
+{
+    display: none !important;
+}
+
+.notactive
+{
+    pointer-events: none;
+    background-color: #535353 !important;
+    color: #f0f0f0;
+}
+
+/* Disabled prev/next buttons */
+.disabl
+{
+    pointer-events: none;
+    background-color: #525252 !important;
+    color: #000 !important;
+    box-shadow: inset 0 0 0 2.5px #000;
+}
+
+.opacity
+{
+    opacity: 0 !important;
+    z-index: -5 !important;
+}
+
+.wide
+{
+    width: 100% !important;
+}
+
+
+/*------------------------------------------------------------ MAIN CONTAINER */
+
+.p-dex-main-cont
+{
+    min-height: 100vh;
+    width: 100vw;
+    background: #333;
+}
+
+/*------------------------------------------------------------ POKEDEX PARTS TOP/MIDDLE/BOTTOM */
+
+/* Pdex Container */
+.main-dex
+{
+    background: crimson;
+    min-height: 650px;
+    min-width: 550px;
+    display: grid;
+    grid-template-rows: 47.5% auto 47.5%;
+    border: solid 6px #000;
+}
+
+/* Top Part Pdex */
+.p-dex-top
+{
+    position: relative;
+    border-bottom: solid 5px #000;
+}
+
+/* Middle Part */
+.p-dex-middle
+{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+/* Joints Pdex - L / R */
+.p-dex-middle-outer-joint-l
+{
+    box-shadow: inset 0 0 3px 1px #000;
+    border-right: solid 3px #000;
+}
+
+.p-dex-middle-outer-joint-r
+{
+    box-shadow: inset 0 0 3px 1px #000;
+    border-left: solid 3px #000;
+}
+
+/* Bottom Part Pdex */
+.p-dex-bottom
+{
+    border-top: solid 5px #000;
+    flex-direction: column;
+}
+
+
+/*------------------------------------------------------------ POKEDEX TOP SCREEN */
+
+/* Pdex Lamp (middle top) */
+.p-dex-lamp
+{
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #0066CC;
+    width: 25px;
+    height: 25px;
+    border: solid 3px #fff;
+}
+
+/* Inside Lamp - "shine" (white) */
+.p-dex-lamp:before
+{
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 2px #fff;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,.6);
+}
+
+/* Frame for the Top Screen */
+.p-dex-screen-frame
+{
+    width: 85%;
+    height: 80%;
+    background: #fafafa;
+    border: solid 3px #000;
+}
+
+/* Top Screen */
+.p-dex-screen
+{
+    position: relative;
+    width: 95%;
+    height: 90%;
+    background: #000;
+}
+
+/* Pdex Image */
+.p-dex-image-cont
+{
+    position: relative;
+    width: 30%;
+    background: rgba(255,255,255,.5);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin-right: 5%;
+    border-radius: 5px;
+}
+
+.p-dex-image-cont img 
+{
+    position: relative;
+    width: 100%;
+    transform: scale(1.2);
+    z-index: 10;
+}
+
+/* BUTTON - Turn sprite (show backside), toggle descr. txt */
+.turn-sprite-btn
+{
+    position: absolute;
+    bottom: -30%;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    font-size: .8em;
+    background-color: #000;
+    color: #fff;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.turn-sprite-btn .fas
+{
+    transform: scale(1.1);
+}
+
+/* HOVER - Turn sprite btn */
+.turn-sprite-btn:hover
+{
+    background-color: #fff;
+    color: #000;
+}
+
+/* Data Container - types, name, height, id, ... */
+.p-dex-data-cont
+{
+    position: relative;
+    width: 75%;
+    padding: 2%;
+    background: #333;
+    color: #fafafa;
+    border-radius: 5px;
+    font-size: .9em;
+    letter-spacing: .003em;
+    cursor: default;
+}
+
+.p-dex-data-row
+{
+    width: 130%;
+    margin: 2% 0;
+    justify-content: space-between;
+}
+
+/* Removes unwanted hover effect */
+.poke-id
+{
+    pointer-events: none;
+}
+
+/* Pkmn types */
+.p-dex-type
+{
+    padding: .1em .3em;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.p-dex-category
+{
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 5%;
+    margin-top: -3%;
+}
+
+/* Pkmn Descriptin Text */
+.p-dex-txt
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    color: #000;
+    border-radius: 5px;
+    padding: 5%;
+    font-size: .9em;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.p-dex-txt h6
+{
+    position: relative;
+    color: #fff;
+    margin-bottom: 2.5em;
+    z-index: 5;
+}
+
+/* Circle in background color (descr. txt) */
+.descr-circle
+{
+    content: '';
+    position: absolute;
+    top: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+/*------------------------------------------------------------ POKEDEX START SCREEN SECTION */
+
+.p-dex-start-screen
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3%;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+    font-weight: bold;
+    text-align: center;
+    background-color: mediumpurple;
+    border: solid 2px #000;
+    justify-content: space-between;
+    transition: .3s;
+    z-index: 15;
+    opacity: 1;
+}
+
+.p-dex-start-headline
+{
+    font-weight: bolder;
+}
+
+/* Pkmn element Icons */
+.element-square
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: .6em;
+    background-color: #000;
+    color: #fff;
+    margin: 0 .5em;
+}
+
+.d-arrows
+{
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0 1em;
+}
+
+/*------------------------------------------------------------ POKEDEX CONTROL SECTION (Btns - back, turn on/off, menu) */
+
+.p-dex-ctrl-frame
+{
+    position: relative;
+    width: 80%;
+    height: 70%;
+    background: #000;
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.p-dex-ctrl-frame:before
+{
+    content: ''; 
+    z-index: 1;
+}
+
+
+/* Start Screen with description (top screen) */
+.pdex-ctrl-start-screen
+{
+    position: absolute;
+    border-radius: 5px;
+    background: #4364F7;
+/*            background: #6dd5ed; !!! */
+    width: 95%;
+    height: 90%;
+    z-index: 15;
+}
+
+
+/*------------------------------------------------------------ POKEDEX MENU (Select between modes) */
+    
+/* Select Mode BUTTONS */
+.p-dex-mode-options-btn
+{
+    position: relative;
+    transform: translateY(30%);
+    opacity: 0;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    min-height: 40%;
+    margin: 0 5%;
+    font-weight: bold;
+    cursor: pointer;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.5);
+}
+
+.p-dex-mode-options-btn:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 50%;
+    transition: .3s;
+    background-color: red;
+    z-index: 1;
+}
+
+.p-dex-mode-options-btn:after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-radius: 5px 5px 0 0;
+    background-color: #fafafa;
+    z-index: 2;
+    transition: .5s;
+}
+
+.option-icons
+{
+    z-index: 3;
+    color: #fff;
+    font-size: 1.3em;
+    margin-top: .8em;
+    margin-bottom: .5em;
+    transition: .4s;
+}
+
+.p-dex-mode-options-btn p
+{
+    margin-top: .5em;
+    z-index: 5;
+}
+
+/* HOVER - Select Mode Button */
+.p-dex-mode-options-btn:hover.p-dex-mode-options-btn:before
+{
+    height: 100%;
+    border-radius: 5px;
+}
+
+.p-dex-mode-options-btn:hover.p-dex-mode-options-btn:after
+{
+    height: 50%;
+}
+
+.p-dex-mode-options-btn:hover.p-dex-mode-options-btn p
+{
+    color: #fff;
+}
+
+.p-dex-mode-options-btn:hover .option-icons
+{
+    color: #000;
+    transform: scale(1.3);
+}
+
+
+/*------------------------------------------------------------ POKEDEX BOTTOM SCRREEN */
+
+.p-dex-ctrl-screen
+{
+    width: 95%;
+    height: 90%;
+    border-radius: 5px;
+    background: lightblue;
+    padding: 5% 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, auto);
+    justify-items: start;
+    justify-content: center;
+    overflow: hidden;
+    font-weight: bolder;
+    z-index: 2;
+}
+
+/* Id next to name (bottom scr) */
+.bottom-pkmn-id
+{
+    font-size: .8em;
+    color: #fafafa;
+    pointer-events: none;
+    margin-right: 5px;
+    font-size: .75em;
+    font-weight: bolder;
+}
+
+/* Pkmn Name - Click to display pkmn in top disp. */
+.p-dex-data
+{
+    cursor: pointer;
+    transition: .1s;
+    margin-left: 15%;
+}
+
+/* HOVER - Pkmn Name*/
+.p-dex-data:hover
+{
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+
+/*------------------------------------------------------------ CONTROL BUTTONS */
+
+.p-dex-btn-cont
+{
+    position: relative;
+    width: 80%;
+    height: 20%;
+    justify-content: space-between;
+    padding: 0 5%;
+    padding-top: 3%;
+}
+
+
+/* Cross Button */
+.p-dex-cross-btn-cont
+{
+    position: absolute;
+    left: 10%;
+    background: #fafafa;
+    border-radius: 50%;
+}
+
+.p-dex-cross-btn-cont:before
+{
+    content: '';
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #525252;
+}
+
+.p-dex-cross
+{
+    position: absolute;
+    width: 17px;
+    height: 50px;
+    background: #000;
+    border-radius: 3px;
+}
+
+.p-dex-cross:nth-child(2)
+{
+    transform: rotate(90deg);
+}
+
+/* A/B Buttons */
+.p-dex-ab-btns-cont
+{
+    position: absolute;
+    right: 3%;
+}
+
+.p-dex-ab-btn
+{
+    width:45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #000;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1em;
+    transform: translateY(.3em);
+    border: solid 3px #525252;
+    cursor: default;
+}
+
+.p-dex-ab-btn:nth-child(2)
+{
+    margin-left: .3em;
+    transform: translateY(-.3em);
+}
+
+/* Nav Buttons */
+.p-dex-nav-btns-cont
+{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.p-dex-nav-btn
+{
+    border: solid 3px #000;
+    padding: 3px 8px;
+    font-weight: bold;
+    background: #fafafa;
+    border-radius: 3px;
+    margin-right: .5em;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.p-dex-nav-btn:hover
+{
+    background: #000;
+    color: #fff;
+}
+
+
+/* ------------------------------------------------------------ NAVIGATION */
+
+/* BUTTON - Mobile Menu */
+.mobile-menu-btn
+{
+    position: absolute;
+    right: 5%;
+    font-size: 2em;
+    color: #fafafa;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.nav-three-btns.just-visible-mobile
+{
+    background: #333;
+}
+
+.mobile-menu-slider
+{
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000 !important;
+    width: 100%;
+    min-height: 80px;
+    background: #fafafa;
+    transition: .3s;
+    z-index: 10;
+}
+
+/* Mobile Menu - slides in */
+.mobile-menu-slider.menu-open
+{
+    top: 73px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5),
+                0 -10px #000;
+}
+
+.mobile-nav a
+{
+    color: #000;
+    font-size: .9em;
+    font-weight: bolder;
+    margin: .5em;
+}
+
+.nav-three-btns
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    padding-left: 5%;
+    justify-content: flex-start;
+    border-bottom: solid;
+    padding-left: 0;
+    z-index: 20;
+}
+
+/* HOVER - Navigation Links opacity 1 */
+.nav-three-btns:hover .nav a
+{
+    color: rgba(255,255,255,1);
+}
+
+/* LOGO */
+
+.logo-home-link
+{
+    position: absolute;
+    width: 100%;
+    height: 150%;
+    background: transparent;
+    z-index: 999999999;
+}
+
+.logo
+{
+    position: relative;
+    margin-right: .8em;
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: #000;
+    color: #fafafa;
+    cursor: pointer;
+    text-shadow: .5px 0px 3px rgba(0,0,0,.3),
+                    .5px 0px 3px rgba(0,0,0,.5);
+    z-index: 2;
+}
+
+.logo:before
+{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: darkred;
+    background: rgba(139,0,0,.6);
+    z-index: 1;
+}
+
+/* Navigation Links */
+.nav a
+{
+    position: relative;
+    margin: .5em;
+    padding: .1em;
+    color: #fafafa;
+    color: rgba(255,255,255,.8);
+    font-weight: bold;
+}
+
+/* Nav - Underline */
+.nav a:before
+{
+    content: '';
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 1px;
+    background: crimson;
+    transform-origin: center;
+    transition: .3s;
+}
+
+/* HOVER - Underline */
+.nav:hover.nav a:before
+{
+    width: 100%;
+}
+
+
+/* ------------------------------------------------------------ NAVIGATION FOR GAMES */
+
+#players-choice-checkbox
+{
+    position: absolute;
+    top: 30px;
+    left: 335px;
+}
+
+#players-choice-checkbox.mobile
+{
+    top: 107px;
+    left:  45px;
+    z-index: 9999;
+}
+
+.games-nav
+{
+    margin: 0;
+    position: absolute;
+    right: 5%;
+}
+
+/* Game nav - Underline */
+.games-nav .nav a:before
+{
+    background: #fafafa;
+}
+
+
+/*------------------------------------------------------------ TYPE FINDER SCREEN */   
+
+.p-dex-ctrl-frame:before,
+.p-dex-ctrl-type-finder-scr
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    height: 90%;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    box-shadow: inset 0 0 5px rgba(255,255,255,.3);
+}
+
+.p-dex-ctrl-type-finder-scr
+{
+    z-index: 2;
+}
+
+.type-finder-types-box
+{
+    padding-top: 5%;
+    display: grid;
+    gap: 7px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.type-finder-types-box h6
+{
+    position: absolute; 
+    font-weight: 700;
+    cursor: default;
+    color: #fff;
+    left: 35%; 
+    top: 8%;
+    
+}
+
+/* Filter by type BUTTON */
+.type-finder-type-btn
+{
+    padding: .1em;
+    border-radius: 5px;
+    font-size: .9em;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: .1px 0 5px #000;
+    cursor: pointer;
+    z-index: 10;
+}
+    
+/* Names of filtered Pkmn */
+.type-finder-names-box
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: lightblue;
+    border-radius: 5px;
+    padding: 5px;
+    flex-wrap: wrap;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #fff;
+    z-index: 11;
+}
+
+.type-finder-name
+{
+    margin: 5px;
+    transition: .3s;
+    cursor: pointer;
+    text-shadow: .5px 0 6px #000;
+}
+
+/* HOVER - Filtered Names */
+.type-finder-name:hover
+{
+    color: #000;
+    text-shadow: none;
+    text-shadow: .5px .3px 8px #fff;
+}
+
+.type-finder-name.selected
+{
+    color: #000;
+    text-shadow: 0 0 10px rgba(255,255,255,.5);
+}
+
+.main-ctrl-btn
+{
+    background-color: #000;
+    color: #fafafa;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 0 3px;
+    padding: 11px;
+    font-size: .8em;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------ CONTROL BUTTONS */
+
+.off-btn
+{
+    color: red;
+}
+
+.square-info
+{
+    border-radius: 5px;
+    padding: 1em;
+    background-color: crimson;
+}
+
+
+/* ------------------------------------------------------------ POKEDEX INFO CONTAINER (Manual for using Pdex) */
+
+/* Information/Manual BUTTON */
+.p-dex-info-btn
+{
+    position: absolute;
+    top: 48px;
+    font-size: 1.5em;
+    color: #fafafa;
+    transition: .2s;
+    cursor: pointer;
+    z-index: 101;
+    text-shadow: 0 0 15px rgba(0,0,0,.8)
+}
+
+.p-dex-info-btn:hover
+{
+    color: crimson;
+    transform: scale(1.2);
+}
+
+.p-dex-info-cont
+{
+    position: absolute;
+    top: 1%;
+    width: 700px;
+    background-color: #fafafa;
+    border-radius: 5px;
+    padding: 1em;
+    z-index: 100;
+    font-weight: bold;
+}
+
+.p-dex-info-row
+{
+    width: 100%;
+    padding: 0 5%;
+    justify-content: flex-start;
+    min-height: 50px;
+}
+
+.p-dex-info-cont p
+{
+    margin-left: 3em;
+}
+
+
+/* ------------------------------------------------------------ ANIMATIONS */
+
+.slidein
+{
+    animation: slide 1s forwards;
+}
+
+@keyframes slide {
+    to
+    {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* ------------------------------------------------------------ FOOTER */
+
+.ttc-socials-cont
+{
+    position: absolute;
+    bottom: 0;
+    padding-right: 5%;
+    width: 100%;
+    height: 80px;
+    justify-content: flex-end;
+    background: rgba(0,0,0,.5);
+    transition: .3s;
+}
+
+/* HOVER - Social Media Container (bg, box-shadow) */
+.ttc-socials-cont:hover
+{
+    background: #fafafa;
+    box-shadow: -.1px -1px 15px rgba(0,0,0,.5);
+}
+
+/* HOVER - Social Media Circles (color, box-shadow) */
+.ttc-socials-cont:hover .social-contact
+{
+    background: rgba(139,0,0,1);
+    box-shadow: 1px 1px 15px rgba(0,0,0,.35);
+    color: rgba(255,255,255,1);
+}
+
+/* HOVER - Footer Text (appear)*/
+.ttc-socials-cont:hover.ttc-socials-cont p
+{
+    opacity: 1;
+}
+
+/* Footer Text */
+.ttc-socials-cont p
+{
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    font-size: .8em;
+    color: #000;
+    cursor: default;
+    transition: .5s;
+    opacity: 0;
+}
+
+/* Social Circles*/
+.social-contact 
+{
+    position: relative;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #8B0000;
+    background: rgba(139,0,0,.2);
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* Social Circle - circle (0%) */
+.social-contact:before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    border-radius: 50%;
+    width: 0;
+    height: 0; 
+    transition: .2s;
+}
+
+/* HOVER - Social Circle - circle (width 100%) */
+.social-contact:hover.social-contact:before
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* Social Media Icons */
+.social-link
+{
+    transition: .3s;
+    z-index: 5;
+}
+
+/* HOVER - Social Media Icons*/
+.social-contact:hover .social-link
+{
+    transform: scale(1.3);
+}
+
+
+/*------------------------------------------------------------ MEDIA QUERIES */
+
+/* Tablet */
+@media only screen and (max-width: 768px) 
+{
+    .p-dex-info-cont
+    {
+        width: 90%;
+    }
+}
+
+
+/* Bigger then Mobile (>567px) */
+@media only screen and (min-width: 576px) 
+{
+    /* visible only on mobile */
+    .just-visible-mobile
+    {
+        display: none !important;
+    }
+    
+    .main-dex
+    {
+        transform: translateY(-3%);
+    }
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 576px)
+{
+    /* invisible on mobile */
+    .not-visible-mobile
+    {
+        display: none !important;
+    }
+    
+    .p-dex-info-cont
+    {
+        width: 100%;
+    }
+    
+    .main-dex
+    {
+        transform: translateY(2%) scale(.7);
+    }
+}
+
+
+/* For Mobile like Iphone X */
+@media only screen and (max-width: 380px)
+{
+    .main-dex
+    {
+        transform: translateY(2%) scale(.65);
+    }
+}
+
+
+/* Iphone 5se */
+@media only screen and (max-width: 350px)
+{
+    /* because of scale down - page had a scroll -> removed with overflow */
+    html
+    {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .nav-three-btns
+    {
+        font-size: .8em;
+    }
+    
+    #players-choice-checkbox
+    {
+        left: 0px;
+    }
+    
+    .social-contact
+    {
+        transform: scale(.9);
+        margin-left: 0;
+    }
+    
+    .mobile-menu-slider
+    {
+        font-size: .8em;
+    }
+    
+    .p-dex-info-cont
+    {
+        font-size: .85em;
+        height: 100%;
+    }
+    
+    /* translates dexter up and scales it down */
+    .main-dex
+    {
+        transform: translateY(-5%) scale(.55);
+    }
+}
