@@ -1,0 +1,244 @@
+/* -------------------------------------------- GENERAL */
+
+.flex-center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-colunm
+{
+    flex-direction: column;
+}
+
+.opacity
+{
+    opacity: 0 !important;
+}
+
+
+/* -------------------------------------------- MAIN CONTAINER */
+
+.bg-main-cont
+{
+    width: 100vw;
+    height: 100vh;
+    background: lightblue;
+}
+
+/* Inputs for copying (invisible) */
+.bg-main-cont input[type=text]
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0 !important;
+}
+
+/* HOVER - Copied Icon */
+.color-info-cont:hover .clip
+{
+    opacity: 1;
+}
+
+
+/* -------------------------------------------- COLOR INFO/DATA CONTAINER */
+
+.color-info-cont
+{
+    position: relative;
+    background: rgba(255,255,255,.6);
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin-bottom: .5em;
+    cursor: default;
+    box-shadow: 0 0 15px rgba(0,0,0,.5);
+}
+
+/* Copy Icon (hover effect) */
+.clip
+{
+    position: absolute;
+    top: 15%;
+    font-size: 1.3em;
+    opacity: 0;
+    transition: .3s;
+    transition-delay: .3s;
+}
+
+/* Color Codes (rgb, rgba) */
+.color
+{
+    font-size: 1.3em;
+    font-weight: 500;
+    margin: .15em 0;
+    cursor: pointer;
+    transition: .1s;
+}
+
+/* Color Code (hex)*/
+#color-name
+{
+    font-size: 1.8em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .1s;
+}
+
+/* HOVER - Color Codes */
+#color-name:hover,
+.color:hover
+{
+    transform: scale(1.02);
+    color: #fff;
+    text-shadow: .1px .1px 3px rgba(0,0,0,.8);
+}
+
+.color-underline
+{
+    width: 80%;
+    height: 2px;
+    margin: 5px 0;
+    background-color: #fff;
+}
+
+
+/* -------------------------------------------- COPIED TOOLTIP */
+
+.copied-tooltip
+{
+    position: absolute;
+    bottom: 12%;
+    font-size: .9em;
+    font-weight: bold;
+    color: #000;
+    text-shadow: .1px .1px 5px rgba(0,0,0,.1);
+    padding-bottom: .2em;
+    border-bottom: solid 2px #000;
+    transition: .1s;
+}
+
+.copied-tooltip i
+{
+    margin-left: .3em;
+}
+
+/* -------------------------------------------- BUTTON */
+
+/* BUTTON - Generate Random Color */
+#generateHexBtn
+{
+    padding: 10px 15px;
+    margin-top: 1em;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    box-shadow: 0 .1px 10px rgba(0,0,0,.5);
+    transition: .3s;
+    outline: none;
+}
+
+/* HOVER - Generate Random Color Btn */
+#generateHexBtn:hover
+{
+    background: #333;
+    color: #fff;
+    box-shadow: 0 0px 15px rgba(0,0,0,.5);
+}
+
+
+/* -------------------------------------------- COPY FULL CSS CODE CONTAINER (BOTTOM OF SITE) */
+
+.full-css-cont
+{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-weight: bolder;
+    color: #000;
+    cursor: default;
+    text-shadow: .1px .1px 15px rgba(255,255,255,.15);
+    z-index: 99999;
+}
+
+/* Full css checkbox */
+#full-css-checkbox
+{
+    margin-right: .5em;
+}
+
+/* BUTTON - Toggle hidden text */
+.toggle-hidden-txt-btn
+{
+    margin: 0 .6em;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.3em;
+    transition: .3s;
+    text-shadow: 0 0 5px rgba(0,0,0,.5);
+    z-index: 999999999;
+}
+
+/* HOVER - Toggle hidden text btn */
+.toggle-hidden-txt-btn:hover
+{
+    color: #000;
+    transform: scale(1.3);
+}
+
+.hidden-txt
+{
+    text-shadow: .1px .1px 15px rgba(255,255,255,.15);
+    transform: translateX(-50%);
+    margin-left: .5em;
+    font-weight: 800;
+    transition: .3s;
+    color: #000;
+    opacity: 0;
+}
+
+/* Toggle class for hidden text */
+.appear
+{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+/* -------------------------------------------- ANIMATIONS */
+
+.pulse-animation
+{
+    animation: pulse .5s forwards ease-out;
+}
+
+@keyframes pulse
+{
+    0%
+    {
+        transform: scale(1);
+    }
+    50%
+    {
+        transform: scale(1.2);
+    }
+    100%
+    {
+        transform: scale(1);
+    }
+}
+
+
+
+/* Iphone 5se */
+@media only screen and (max-width: 600px)
+{
+    *
+    {
+        font-size: .95em;
+    }
+}

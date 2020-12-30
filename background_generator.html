@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="background_generator.css">
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <title>Developers Nostalgia</title>
+</head>
+
+<body>
+    <!--  Main Container -->
+    <div class="bg-main-cont flex-center">
+        <!-- All Inputs (invisible) -->
+        <input type="text" id="hex-input">
+        <input type="text" id="rgb-input">
+        <input type="text" id="rgba-input">
+        <!-- Color Info/Data Container -->
+        <div class="bg-info-cont flex-center flex-colunm">
+            <div class="color-info-cont flex-center flex-colunm">
+                <!-- Copy Icon -->
+                <i class="clip far fa-copy"></i>
+                <!-- Hex Code -->
+                <div onclick="copyColor('hex')" id="color-name"></div>
+                <span class="color-underline"></span>
+                <!-- Rgb Code -->
+                <div onclick="copyColor('rgb')" class="color color-rgb"></div>
+                <!-- Rgba Code -->
+                <div onclick="copyColor('rgba')" class="color color-rgba"></div>
+                <!-- Tooltip (Copied Icon) -->
+                <div class="copied-tooltip flex-center opacity">
+                    <div class="copied-code"></div>
+                    <i class="fas fa-copy"></i>
+                </div>
+            </div>
+            <!-- BUTTON - Geneate Random Color -->
+            <button id="generateHexBtn" onclick="createHex()">Create Random Color</button>
+        </div>
+        <!-- Copy Full Css (toggle) Container -->
+        <div class="full-css-cont flex-center">
+            <!-- Checkbox - toggle full css code -->
+            <input type="checkbox" id="full-css-checkbox">
+            <div>Copy full css code</div>
+            <!-- BUTTON - Toggle Hidden Text -->
+            <div onclick="toggleHiddenText()" class="toggle-hidden-txt-btn"><i class="fas fa-question-circle"></i></div>
+            <!-- Hidden Text -->
+            <div class="hidden-txt">background: rgba(255,255,255,1);</div>
+        </div>
+    </div>
+    
+    <script src="background_generator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,814 @@
+/* ------------------------------------------------------------ GENERAL */
+
+button
+{
+    border: none;
+    outline: none;
+}
+
+input
+{
+    cursor: pointer;
+}
+
+a
+{
+    color: #fafafa;
+}
+
+a:hover
+{
+    text-decoration: none !important;
+    color: #fff;
+}
+
+.flex-center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column
+{
+    flex-direction: column;
+}
+
+.disp-none
+{
+    display: none !important;
+}
+
+
+/* ------------------------------------------------------------ MAIN CONTAINER */
+
+.pokemory-main-cont
+{
+    min-height: 100vh;
+    width: 100vw;
+    background: #333;
+}
+
+/* ------------------------------------------------------------ NAVIGATION */
+
+/* Information/Manual BUTTON */
+.p-dex-info-btn
+{
+    position: absolute;
+    top: 48px;
+    font-size: 1.5em;
+    color: #fafafa;
+    transition: .2s;
+    cursor: pointer;
+    z-index: 101;
+    text-shadow: 0 0 15px rgba(0,0,0,.8)
+}
+
+/* BUTTON - Mobile Menu */
+.mobile-menu-btn
+{
+    position: absolute;
+    right: 5%;
+    font-size: 2em;
+    color: #fafafa;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.nav-three-btns.just-visible-mobile
+{
+    background: #333;
+}
+
+.mobile-menu-slider
+{
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000 !important;
+    width: 100%;
+    min-height: 80px;
+    background: #fafafa;
+    transition: .3s;
+    z-index: 20;
+}
+
+/* Mobile Menu - slides in */
+.mobile-menu-slider.menu-open
+{
+    top: 73px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5),
+                0 -10px #000;
+}
+
+.mobile-nav a
+{
+    color: #000;
+    font-size: .9em;
+    font-weight: bolder;
+    margin: .5em;
+}
+
+/* NAV */
+.nav-three-btns
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    padding-left: 5%;
+    justify-content: flex-start;
+    border-bottom: solid;
+    background: #333;
+    padding-left: 5%;
+    z-index: 30;
+}
+
+/* HOVER - Navigation Links opacity 1 */
+.nav-three-btns:hover .nav a
+{
+    color: rgba(255,255,255,1);
+}
+
+/* LOGO */
+.logo-home-link
+{
+    position: absolute;
+    width: 100%;
+    height: 150%;
+    background: transparent;
+    z-index: 999999999;
+}
+
+.logo
+{
+    position: relative;
+    margin-right: .8em;
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: #000;
+    color: #fafafa;
+    cursor: pointer;
+    text-shadow: .5px 0px 3px rgba(0,0,0,.3),
+                    .5px 0px 3px rgba(0,0,0,.5);
+    z-index: 2;
+}
+
+.logo:before
+{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: darkred;
+    background: rgba(139,0,0,.6);
+    z-index: 1;
+}
+
+/* Navigation Links */
+.nav a
+{
+    position: relative;
+    margin: .5em;
+    padding: .1em;
+    color: #fafafa;
+    color: rgba(255,255,255,.8);
+    font-weight: bold;
+}
+
+/* Nav - Underline */
+.nav a:before
+{
+    content: '';
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 1px;
+    background: crimson;
+    transform-origin: center;
+    transition: .3s;
+}
+
+/* HOVER - Underline */
+.nav:hover.nav a:before
+{
+    width: 100%;
+}
+
+
+/* ------------------------------------------------------------ NAVIGATION FOR GAMES */
+
+#players-choice-checkbox
+{
+    position: absolute;
+    top: 30px;
+    left: 335px;
+}
+
+#players-choice-checkbox.mobile
+{
+    top: 107px;
+    left:  45px;
+    z-index: 9999;
+}
+
+.games-nav
+{
+    margin: 0;
+    position: absolute;
+    right: 5%;
+}
+
+/* Game nav - Underline */
+.games-nav .nav a:before
+{
+    background: #fafafa;
+}
+
+
+/* ------------------------------------------------------------ START SCREEN */
+
+/* Headline */
+.start-headline
+{
+    margin-bottom: .5em;
+}
+
+/* BUTTON - Start Game */
+.start-game-btn
+{
+    padding: .1em .5em;
+    font-size: 1.3em;
+    margin-top: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    background: darkred;
+    color: #fff;
+    transition: .3s;
+}
+
+.start-game-btn:hover
+{
+    background: #eee;
+    color: #000;
+    box-shadow: inset 0 0 0 1px #000;
+}
+
+
+/* ------------------------------------------------------------ SCORE/TIME/FLIPS SECTION */
+
+.pokemory-score-section
+{
+    position: relative;
+    top: 70px;
+    height: 70px;
+    cursor: default;
+    background: #fafafa;
+    box-shadow: 0px 3px 15px rgba(0,0,0,.6);
+    justify-content: space-around;
+    z-index: 1;
+}
+
+/* Game Info Text */
+.game-info
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.score-section-txt
+{
+    font-weight: 600;
+    color: #000;
+    font-size: .85em;
+}
+
+.score-section-txt:nth-child(1)
+{
+    margin-right: 1.5em;
+}
+
+    .score-section-txt:nth-child(2)
+{
+    margin-left: 1.5em;
+}
+
+.game-info p 
+{
+    margin: 0;
+}        
+
+/* Timer Circle */
+.timer
+{
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: crimson;
+    width: 4em;
+    height: 4em;
+    box-shadow: .5px .5px 15px rgba(0,0,0,.4);
+}
+
+.timer p
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fafafa;
+    text-shadow: 0 0 5px rgba(0,0,0,.5);
+    margin: 0;
+}
+
+/* Reload - BUTTON */
+.reload-btn
+{
+    position: absolute;
+    top: 5%;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: .3s ease-out;
+}
+
+/* HOVER - Reload Btn */
+.reload-btn:hover
+{
+    color: crimson;
+    transform: rotate(180deg) scale(1.01);
+}
+
+/* ------------------------------------------------------------ POKEMORY CARD FIELD (CONTAINER) */
+
+.pokemory-cards-cont
+{
+    position: relative;
+    padding-top: .3em;
+    padding-bottom: 5%;
+    margin-top: 120px;
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    justify-content: center;
+    gap: 5px;
+}
+
+
+/* ------------------------------------------------------------ FOOTER */
+
+.ttc-socials-cont
+{
+    position: absolute;
+    bottom: 0;
+    padding-right: 5%;
+    width: 100%;
+    height: 80px;
+    justify-content: flex-end;
+    background: rgba(0,0,0,.8);
+    transition: .3s;
+    z-index: 3;
+    
+}
+
+/* HOVER - Social Media Container (bg, box-shadow) */
+.ttc-socials-cont:hover
+{
+    background: #fafafa;
+    box-shadow: -.1px -1px 15px rgba(0,0,0,.5);
+}
+
+/* HOVER - Social Media Circles (color, box-shadow) */
+.ttc-socials-cont:hover .social-contact
+{
+    background: rgba(139,0,0,1);
+    box-shadow: 1px 1px 15px rgba(0,0,0,.35);
+    color: rgba(255,255,255,1);
+}
+
+/* HOVER - Footer Text (appear)*/
+.ttc-socials-cont:hover.ttc-socials-cont p
+{
+    opacity: 1;
+}
+
+/* Footer Text */
+.ttc-socials-cont p
+{
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    font-size: .8em;
+    color: #000;
+    cursor: default;
+    transition: .5s;
+    opacity: 0;
+}
+
+/* Social Circles*/
+.social-contact 
+{
+    position: relative;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #8B0000;
+    background: rgba(139,0,0,.5);
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* Social Circle - circle (0%) */
+.social-contact:before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    border-radius: 50%;
+    width: 0;
+    height: 0; 
+    transition: .2s;
+}
+
+/* HOVER - Social Circle - circle (width 100%) */
+.social-contact:hover.social-contact:before
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* Social Media Icons */
+.social-link
+{
+    transition: .3s;
+    z-index: 5;
+}
+
+/* HOVER - Social Media Icons*/
+.social-contact:hover .social-link
+{
+    transform: scale(1.3);
+}
+
+
+/*------------------------------------------------------------ START SCREEN */
+
+.pokemory-start-screen
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #eee;
+    z-index: 3;
+    overflow: hidden;
+}
+
+
+/*------------------------------------------------------------ TIME IS UP CONTAINER */
+
+.time-up-cont
+{   
+    position: absolute;
+    top: 195px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 9em;
+    width: 50%;
+    background: #000;
+    font-size: 2.5em;
+    color: #fff;
+    opacity: 0;
+    z-index: -10;
+    transform: translate(-50%, 20%);
+}
+
+.time-up-animation
+{
+    animation: timeup .5s forwards ease-out;
+}
+
+@keyframes timeup
+{
+    to
+    {
+        opacity: 1;
+        z-index: 10;
+        transform: translate(-50%, 0);
+    }
+}
+
+/*------------------------------------------------------------ POKEMORY CARDS */
+
+/* Card Wrapper (invisible) */
+.pokemory-card
+{
+    position: relative;
+    height: 175px;
+    width: 125px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+/* Flippes Card when added to card */
+.card-flipped
+{
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+
+/* FLIPPED - Flips/Turns card 180deg */
+.flipped
+{
+    transform: rotateY(180deg);
+}
+
+/* Inner Card that flips (visible) */
+.pokemory-inner-card
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+/* Front/Back side of Card */
+.card-front,
+.card-back
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-shadow: .1px .1px 10px rgba(0,0,0,.3);
+}
+
+
+/* Front side of the card */
+.card-front
+{
+    background: #b89c50;
+}
+
+/* Pokeball on front side of the card */
+.card-ball
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: #fafafa;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,.3), 
+                0 0 0px 3px rgba(0,0,0,1);
+}
+
+.card-ball:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 50%;
+    width: 100%;
+    background: crimson;
+    z-index: 3;
+}
+
+.card-ball:after
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 7px;
+    background: #000;
+}
+
+.card-inner-ball
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    border-radius: 50%;
+    background: #fafafa;
+    border: solid 3px #000;
+    width: 30%;
+    height: 30%;
+    z-index: 4;
+}
+
+.card-inner-ball:before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.8);
+    width: 50%;
+    height: 50%;
+}
+
+/* Back side of Card */
+.card-back
+{
+/*            box-shadow: inset 0 0 0px 3px rgba(0,0,0,1);*/
+    position: relative;
+    padding-top: 10%;
+    background: #eee;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+.card-back-onclick
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.card-back-circle
+{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    width: 90px;
+    height: 100px;
+    height: 90px;
+    background: #fff;
+    background: rgba(0,0,0,.5);
+    background: darkred;
+    opacity: .2;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Pokemon Image */
+.card-back img
+{
+    position: relative;
+    height: 115px;
+    height: 105px;
+    object-fit: cover;
+    z-index: 2;
+}
+
+/* Pokemon Name (bottom of card) */
+.card-pkmn-name
+{
+    font-weight: bolder;
+    color: #fafafa;
+    color: #000;
+    font-size: 1.1em;
+    text-shadow: 0 0 15px rgba(0,0,0,.2);
+    margin: 7% 0;
+    text-align: center;
+    border-top: solid #000;
+    padding: 8%;
+    background: rgba(0,0,0,.1);
+}
+
+
+/*------------------------------------------------------------ MEDIA QUERIES */
+
+/* Bigger then Mobile (>567px) */
+@media only screen and (min-width: 576px) 
+{
+    /* visible only on mobile */
+    .just-visible-mobile
+    {
+        display: none !important;
+    }
+}
+
+
+/* 4 cards in one row */
+@media (max-width: 1100px) {
+    .pokemory-cards-cont
+    {
+        grid-template-columns: repeat(4, auto);
+    }
+}
+
+
+/*        Tablet */
+@media only screen and (max-width: 765px) 
+{
+    .time-up-cont
+    {
+        width: 80%;
+    }
+}
+
+/* 2 cards in one row */
+@media (max-width: 600px) {
+    .pokemory-cards-cont
+    {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 576px)
+{
+    /* invisible on mobile */
+    .not-visible-mobile
+    {
+        display: none !important;
+    }
+    
+    .timer
+    {
+        top: 35px;
+        width: 4em;
+        height: 4em;
+    }
+    
+    .nav-three-btns
+    {
+        font-size: .9em;
+    }
+    
+    .logo
+    {
+        transform: scale(.85);
+    }
+    
+    .pokemory-score-section
+    {
+        font-size: .9em;
+    }
+    
+    .time-up-cont
+    {
+        top: 180px;
+        width: 100%;
+    }
+}
+
+/* Iphone 5se */
+@media only screen and (max-width: 350px) 
+{
+    .nav-three-btns
+    {
+        padding: 0;
+        font-size: .8em;
+    }
+    
+    .mobile-menu-slider
+    {
+        font-size: .8em;
+    }
+    
+    .pokemory-score-section
+    {
+        font-size: .8em;
+    }
+    
+    .social-contact
+    {
+        transform: scale(.9);
+        margin-left: 0;
+    }
+    
+    .time-up-cont
+    {
+        top: 120px;
+    }
+    
+    @keyframes timeup
+    {
+        to
+        {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    }
+}
