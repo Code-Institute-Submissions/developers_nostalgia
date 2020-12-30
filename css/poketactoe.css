@@ -1,0 +1,603 @@
+/* ------------------------------------------------------------ GENERAL */
+
+a
+{
+    color: #fafafa;
+}
+
+a:hover
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+button
+{
+    outline: none;
+    border: none;
+}
+
+.flex-center 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ------------------------------------------------------------ MAIN CONTAIENR */
+
+.main-cont 
+{
+    width: 100vw;
+    height: 100vh;
+    background: #333;
+}
+
+
+/* ------------------------------------------------------------ NAVIGATION */
+
+/* BUTTON - Mobile Menu */
+.mobile-menu-btn
+{
+    position: absolute;
+    right: 5%;
+    font-size: 2em;
+    color: #fafafa;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.nav-three-btns.just-visible-mobile
+{
+    background: #333;
+}
+
+.mobile-menu-slider
+{
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000 !important;
+    width: 100%;
+    min-height: 80px;
+    background: #fafafa;
+    transition: .3s;
+/*            z-index: -1;*/
+}
+
+/* Mobile Menu - slides in */
+.mobile-menu-slider.menu-open
+{
+    top: 73px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5),
+                0 -10px #000;
+    z-index: 20;
+}
+
+.mobile-nav a
+{
+    color: #000;
+    font-size: .9em;
+    font-weight: bolder;
+    margin: .5em;
+}
+
+.nav-three-btns
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    padding-left: 5%;
+    justify-content: flex-start;
+    border-bottom: solid;
+    padding-left: 0;
+    z-index: 2;
+}
+
+/* HOVER - Navigation Links opacity 1 */
+.nav-three-btns:hover .nav a
+{
+    color: rgba(255,255,255,1);
+}
+
+/* LOGO */
+
+.logo-home-link
+{
+    position: absolute;
+    width: 100%;
+    height: 150%;
+    background: transparent;
+    z-index: 999999999;
+}
+
+.logo
+{
+    position: relative;
+    margin-right: .8em;
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: #000;
+    color: #fafafa;
+    cursor: pointer;
+    text-shadow: .5px 0px 3px rgba(0,0,0,.3),
+                    .5px 0px 3px rgba(0,0,0,.5);
+    z-index: 2;
+}
+
+.logo:before
+{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: darkred;
+    background: rgba(139,0,0,.6);
+    z-index: 1;
+}
+
+/* Navigation Links */
+.nav a
+{
+    position: relative;
+    margin: .5em;
+    padding: .1em;
+    color: #fafafa;
+    color: rgba(255,255,255,.8);
+    font-weight: bold;
+}
+
+/* Nav - Underline */
+.nav a:before
+{
+    content: '';
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 1px;
+    background: crimson;
+    transform-origin: center;
+    transition: .3s;
+}
+
+/* HOVER - Underline */
+.nav:hover.nav a:before
+{
+    width: 100%;
+}
+
+
+/* ------------------------------------------------------------ NAVIGATION FOR GAMES */
+
+#players-choice-checkbox
+{
+    position: absolute;
+    top: 30px;
+    left: 335px;
+    z-index: 9999;
+}
+
+#players-choice-checkbox.mobile
+{
+    top: 107px;
+    left:  45px;
+    z-index: 9999 !important;
+}
+
+.games-nav
+{
+    margin: 0;
+    position: absolute;
+    right: 5%;
+}
+
+/* Game nav - Underline */
+.games-nav .nav a:before
+{
+    background: #fafafa;
+}
+
+
+/* ------------------------------------------------------------ NAVIGATION FOR GAMES */
+
+.games-nav
+{
+    margin: 0;
+    position: absolute;
+    right: 5%;
+}
+
+/* Game nav - Underline */
+.games-nav .nav a:before
+{
+    background: #fafafa;
+}
+
+
+/* ------------------------------------------------------------ TIC TAC TOE CONTAINER */
+
+.ttc-cont 
+{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: .3em;
+    background: #fff;
+    box-shadow: 0 0 0 15px #fff;
+}
+
+/* Tic Tac Toe Squares */
+.ttc-square 
+{
+    width: calc(500px/3 * .98);
+    height: calc(500px/3 * .98);
+    background: lightblue;
+    background: black;
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* HOVER - Tic Tac Toe Square */
+.ttc-square:hover
+{
+    transform: scale(1.03);
+    background: rgba(0,0,0,.9);
+}
+
+/* DISABLED - Tic Tac Toe Square */
+.ttc-square.disabled 
+{
+    pointer-events: none;
+}
+
+
+/* ------------------------------------------------------------ TIC TAC TOE ICONS/TOKENS */
+
+/* Circle/Pokeball Token */
+.circle 
+{
+    position: relative;
+    height: calc(500px/3 * .98 * .6);
+    width: calc(500px/3 * .98 * .6);
+    border-radius: 50%;
+    border: solid 5px #fff;
+}
+
+.circle:before,
+.circle:after
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+}
+
+.circle:before
+{
+    width: 100%;
+    height: 5px;
+}
+
+.circle:after
+{
+    border-radius: 50%;
+    width: 30%;
+    height: 30%;
+}
+
+/* Cross Token */
+.cross 
+{
+    position: relative;
+    height: calc(500px/3 * .98 * .6);
+    width: calc(500px/3 * .98 * .6);
+    transform: scale(1.1);
+}
+
+.cross span 
+{
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    border: solid 8px #fff;
+    width: calc(500px/3 * .98 * .6);
+    background: #fff;
+    border-radius: 5px;
+}
+
+.cross .second 
+{
+    transform: rotate(-45deg);
+}
+
+/* Winning Row (green) */
+.winning-row 
+{
+    background: green !important;
+}
+
+/* ------------------------------------------------------------ START/MENU SCREEN */
+
+.menu-screen
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background: #333;
+    background: #000;
+    width: 500px;
+    height: 500px;
+    flex-direction: column;
+    display: none;
+    transition: .5s ease;
+}
+
+/* Start Screen in-/visible */
+.menu-screen.visible
+{
+    display: flex;
+}
+
+/* BUTTON - Start PokeTacToe Game */
+.start-ttc-game
+{
+    margin-top: 1em;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 1.2em;
+    transition: .5s;
+}
+
+/* HOVER - Start Game Btn */
+.start-ttc-game:hover
+{
+    background: #000;
+    color: #fff;
+    transform: scale(1.08);
+}
+
+/* Start Screen Headline  */
+.ttc-headline
+{
+    position: relative;
+    font-size: 3em;
+    font-weight: bolder;
+    color: #fafafa;
+    margin-bottom: .8em;
+}
+
+/* Underline */
+.ttc-headline:before
+{
+    content: '';
+    position: absolute;
+    bottom: -.3em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 5px;
+    background-color: #fff;
+}
+
+/* Txt declare winner */
+.winning-txt
+{
+    font-size: 1.8em;
+    font-weight: bold;
+    color: aqua;
+    margin-bottom: .5em;
+}
+
+/*  Label for Checkbox */
+label
+{
+    font-weight: bolder;
+    margin-bottom: 1em;
+    color: #fafafa;
+}
+
+/* Checkbox for Random Player2 */
+input[type="checkbox"]
+{
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 100px;
+}
+
+
+/* ------------------------------------------------------------ SOCIAL MEDIA LINKS CONTAINER */
+
+.ttc-socials-cont
+{
+    position: absolute;
+    bottom: 0;
+    padding-right: 5%;
+    width: 100%;
+    height: 80px;
+    justify-content: flex-end;
+    background: rgba(0,0,0,.5);
+    transition: .3s;
+}
+
+/* HOVER - Social Media Container (bg, box-shadow) */
+.ttc-socials-cont:hover
+{
+    background: #fafafa;
+    box-shadow: -.1px -1px 15px rgba(0,0,0,.5);
+}
+
+/* HOVER - Social Media Circles (color, box-shadow) */
+.ttc-socials-cont:hover .social-contact
+{
+    background: rgba(139,0,0,1);
+    box-shadow: 1px 1px 15px rgba(0,0,0,.35);
+    color: rgba(255,255,255,1);
+}
+
+/* HOVER - Footer Text (appear)*/
+.ttc-socials-cont:hover.ttc-socials-cont p
+{
+    opacity: 1;
+}
+
+/* Footer Text */
+.ttc-socials-cont p
+{
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    font-size: 1.3em;
+    font-size: 1.1em;
+    color: #000;
+    cursor: default;
+    transition: .5s;
+    opacity: 0;
+}
+
+/* Social Circles*/
+.social-contact 
+{
+    position: relative;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #8B0000;
+    background: rgba(139,0,0,.2);
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* Social Circle - circle (0%) */
+.social-contact:before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    border-radius: 50%;
+    width: 0;
+    height: 0; 
+    transition: .2s;
+}
+
+/* HOVER - Social Circle - circle (width 100%) */
+.social-contact:hover.social-contact:before
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* Social Media Icons */
+.social-link
+{
+    transition: .3s;
+    z-index: 5;
+}
+
+/* HOVER - Social Media Icons*/
+.social-contact:hover .social-link
+{
+    transform: scale(1.3);
+}
+
+
+/* ------------------------------------------------------------ BUTTON - Reload site */
+
+.reload-btn
+{
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    color: #fff;
+    width: 50px;
+    opacity: .6;
+    height: 50px;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 1.25em;
+    border-radius: 50%;
+    background: rgba(0,0,0,.5);
+    transform: translateX(-50%);
+}
+
+.reload-btn:hover
+{
+    opacity: 1;
+    font-size: 1.4em;
+}
+
+
+/* ------------------------------------------------------------ MEDIA QUERIES */
+
+/* Mobile */
+@media only screen and (max-width: 576px) 
+{
+    .menu-screen,
+    .ttc-cont
+    {
+        transform: scale(.65);
+    }
+    
+    .menu-screen
+    {
+        transform: translate(-50%, -50%) scale(.65);
+    }
+    
+    .nav-three-btns,
+    .mobile-menu-slider
+    {
+        font-size: .8em
+    }
+    
+    .nav-three-btns
+    {
+        z-index: 30;
+    }
+}
+
+/* Iphone 5se */
+@media only screen and (max-width: 350px) 
+{
+    .ttc-cont
+    {
+        transform: scale(.55);
+    }
+    
+    .reload-btn
+    {
+        top: -70%;
+    }
+    
+    .social-contact
+    {
+        transform: scale(.9);
+        margin-left: 0;
+    }
+    
+    .reload-btn
+    {
+        transform: scale(.75) translateX(-50%);
+    }
+}
