@@ -1,0 +1,679 @@
+/* ------------------------------------------------------------ GENERAL */
+
+* 
+{
+    cursor: default;
+}
+
+button
+{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.invisible
+{
+    display: none !important;
+}
+
+.flex-center 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column
+{
+    flex-direction: column;
+}
+
+/* Disabled class for Answers */
+.disabled-quiz 
+{
+    pointer-events: none;
+    color: #000 !important;
+/*            maybe colorchange or whatever !!!   */
+}
+
+/* correct and wrong classes (for answers) */
+.answer.correct 
+{
+    background: green !important;
+    border-color: #333 !important;
+    color: #fff !important;
+}
+
+.answer.wrong 
+{
+    background: red !important;
+    border-color: #333;
+}
+
+
+/* ------------------------------------------------------------ MAIN CONTAINER */
+
+.main-cont 
+{
+    width: 100vw;
+    height: 100vh;
+    background: #525252;
+    background: #333;
+}
+
+
+/* ------------------------------------------------------------ BUTTONS */
+
+/* Reload Site - BUTTON */
+/*
+.reload-btn
+{
+    position: absolute;
+    top: -1.6em;
+    color: #fff;
+    width: 50px;
+    opacity: .6;
+    height: 50px;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 1.25em;
+    border-radius: 50%;
+    background: rgba(0,0,0,.5);
+}
+*/
+
+/* HOVER - Reload Btn */
+/*
+.reload-btn:hover
+{
+    opacity: 1;
+    transform: scale(1.1);
+}
+*/
+
+/* Reload - BUTTON */
+.reload-btn
+{
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    font-size: 1.6em;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s ease-out;
+    z-index: 999;
+}
+
+.reload-btn i
+{
+    cursor: pointer;
+}
+
+/* HOVER - Reload Btn */
+.reload-btn:hover
+{
+    color: crimson;
+    transform: translateX(-50%) rotate(180deg) scale(1.01);
+}
+
+/* BUTTON - Start/Restart Quiz */
+.start-quiz-btn,
+.restart-quiz-btn
+{
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-weight: bolder;
+    transition: .5s;
+    outline: none;
+}
+
+.start-quiz-btn
+{
+
+    font-size: 1.3em;
+}
+
+.restart-quiz-btn
+{
+    margin-top: 1em;
+}
+
+/* HOVER - Start/Restart Quiz Btn */
+.start-quiz-btn:hover,
+.restart-quiz-btn:hover
+{
+    background: #000;
+    color: #fff;
+    box-shadow: none;
+}
+    
+
+/* ------------------------------------------------------------ START SCREEN / MENU SCREEN */
+
+.start-screen-quiz 
+{
+    position: absolute;
+    min-width: 500px;
+    height: 400px;
+    background: #6441A5;
+    box-shadow: 0 0 15px rgba(0,0,0,.5);
+    flex-direction: column;
+    border-radius: 15px;
+    display: none;
+}
+
+.quiz-headline
+{
+    margin-bottom: .5em;
+    font-size: 3em;
+    color: #fff;
+    font-weight: bold;
+}
+
+.fa-question-circle
+{
+    color: #fafafa;
+    background-color: #000;
+    border-radius: 50%;
+    font-size: 2.5em;
+    margin-bottom: .6em;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.fa-question-circle:hover
+{
+    color: green;
+    transform: scale(1.1);
+}
+
+/* Link to General knowledge quiz */
+.link-to-other-quiz
+{
+    color: #eee;
+    margin-bottom: 1.5em;
+    font-size: smaller;
+    font-weight: bold;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.link-to-other-quiz:hover
+{
+    color: #000;
+    transform: scale(1.05)
+}
+
+/* ------------------------------------------------------------ RULES/INFO SCREEN */  
+
+.quiz-info-screen
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    border-radius: 15px;
+    z-index: 3;
+}
+
+.quiz-info-screen p,
+.quiz-info-screen li
+{
+    font-weight: 600;
+    line-height: 1.6em;
+    color: #000;
+}
+
+.quiz-info-screen ul
+{
+    list-style: none;
+}
+
+/* Span for Joker description */
+.joker-descr
+{
+    color: crimson;
+}
+
+.info-headline
+{
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+/* Close Info Screen - BUTTON */
+.close-info-screen-btn
+{
+    position: absolute;
+    top: 1%;
+    left: 3%;;
+    width: 30px;
+    height: 30px;
+    color: #333;
+    border-radius: 50%;
+    font-size: 2em;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.close-info-screen-btn:hover
+{
+    color: crimson;
+    transform: scale(1.1);
+}
+
+/*---------------------------------------------------------------- SCORE SCREEN */        
+
+.score-screen-quiz 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+    color: #fafafa;
+    font-size: 1.5em;
+    width: 800px;
+    height: 500px;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    border-radius: 5px;
+}
+
+/* Visible class for Score Screen */
+.visible 
+{
+    display: flex;
+}
+
+.score-screen-txt
+{
+    margin-bottom: .3em;
+}
+
+.score-screen-score-txt
+{
+    font-weight: bolder;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+/*---------------------------------------------------------------- CURRENT QUESTION CONTAINER */                
+.current-question-cont 
+{
+    right: 5%;
+    background: #0a2a43;
+    padding: .5em;
+    flex-direction: column;
+    font-size: 2em;
+    font-weight: bolder;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.current-question 
+{
+    width: 45px;
+    height: 45px;
+    background: #fafafa;
+    border-radius: 50%;
+    margin: 1px 0;
+    font-size: .6em;
+    font-weight: bold;
+}
+
+/* Current Question Checkpoint (5, 10) */
+.current-question.checkpoint 
+{
+    background: crimson;
+}
+
+/* Correctly answered current question */
+.current-question.selected 
+{
+    background: lightgreen;
+}
+
+/* Correctly answered checkpoint - current question */
+.current-question.checkpoint.selected {
+    background: #0a2a43;
+}
+
+
+/*---------------------------------------------------------------- JOKER BTNS */
+
+.joker-cont 
+{
+    border-radius: 25px;
+    position: absolute;
+    bottom: -5em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+.joker 
+{
+    position: relative;
+    background: crimson;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: #fafafa;
+    font-weight: bolder;
+    font-size: .8em;
+    margin: .3em;
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+    transition: .3s;
+}
+
+.joker:hover
+{
+    background: red;
+}
+
+.disabled-joker
+{
+    position: relative;
+    pointer-events: none;
+    background: #525252;
+}
+
+.disabled-joker:before
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.revive-joker-btn
+{
+    cursor: default;
+}
+
+.revive-joker-btn:hover
+{
+    background: #525252;
+}
+
+/*---------------------------------------------------------------- QUIZ CONTAINER + TIMER/CLOCK */
+
+.quiz
+{
+    position: relative;
+}
+
+/* Timer/Clock */
+.quiz-clock
+{
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    background-color: #fafafa;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0,0,0,.6);
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.quiz-clock > p
+{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Quiz Container */
+.quiz-container 
+{
+    display: grid;
+    width: 800px;
+    height: 500px;
+    border-right: 10px solid #333;
+    border-radius: 15px;
+}
+
+
+/*---------------------------------------------------------------- QUESTION CONTAINER */        
+
+.question-cont 
+{
+    position: relative;
+    background: #0a2a43;
+    text-align: center;
+    padding: 0 3.5em;
+    border-radius: 5px 5px 0 0;
+}
+
+.question 
+{
+    padding-top: 3em;
+    font-size: 1.4em;
+/*            font-size: 1.6em;*/
+    font-weight: bolder;
+    color: #fff;
+}
+
+
+/*---------------------------------------------------------------- ANSWERS CONTAINER */        
+
+.answers-cont 
+{
+    background: #fafafa;
+    border: 20px solid #0a2a43;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    padding: 1em;
+    border-radius: 0 0 5px 5px;
+}
+
+/* BUTTON - Answer */
+.answer 
+{
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: 100%;
+    background: crimson;
+    border: solid crimson 2px;
+    text-transform: capitalize;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1em;
+    color: #fafafa;
+    cursor: pointer;
+    transition: .2s;
+    border-radius: 5px;
+}
+
+/* HOVER - Answer Btn */
+.answer:hover 
+{
+    background: #fafafa;
+    color: crimson;
+}
+
+
+/*------------------------------------------------------------ MEDIA QUERIES */
+
+/* Tablet */
+@media only screen and (max-width: 768px) 
+{
+    .current-question-cont
+    {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row-reverse;
+        width: 85%;
+    }
+    
+    
+    .current-question
+    {
+        transform: scale(.9);
+    }
+    
+    .joker-cont
+    {
+        width: 70%;
+        left: 50%;
+        bottom: -8em;
+        transform: translateX(-50%);
+    }
+    
+    .joker
+    {
+        transform: scale(1.3);
+        margin: 0 1em;
+    }
+    
+    .answers-cont
+    {
+        border: none;
+    }
+
+    .quiz-container
+    {
+        border-right: none;
+    }
+    
+    .quiz,
+    .quiz-container,
+    .score-screen-quiz
+    {
+        width: 100%;
+    }
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 576px)
+{
+    /* reduces font size */
+    *
+    {
+        font-size: .95em;
+    }
+    
+    .reload-btn
+    {
+        top: 2%;
+    }
+    
+    /* Start Screen */
+    .start-screen-quiz
+    {
+        min-width: 100%;
+    }
+    
+    /* Current Question Cont */
+    .current-question-cont
+    {
+        top: 0;
+        width: 100%;
+        flex-wrap: wrap;
+        font-size: 1.5em;
+    }
+    
+    .current-question
+    {
+        width: 30px;
+        height: 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,.3)
+    }
+    
+    /* Quiz Clock */
+    .quiz-clock
+    {
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        top: 10%;
+        box-shadow: 0 0 15px rgba(0,0,0,.6),
+                    0 0 0 1px #000;
+    }
+
+    .quiz-clock > p
+    {
+        font-size: 1.5em;
+    }
+    
+    /* Quiz Container */
+    .quiz-container
+    {
+        height: 75vh;
+        width: 100%;
+    }
+    
+    /* Answers Container */
+    .answers-cont
+    {
+        grid-template-columns: 1fr;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .answer
+    {
+        font-size: 1.3em;
+    }
+    
+/*            Jokers Container */
+    .joker-cont
+    {
+        width: 100%;
+        bottom: -4.5em;
+        padding: 0 1%;
+    }
+    
+    .joker
+    {
+        margin: 0 .8em;
+        height: 40px;
+        width: 40px;
+    }
+}
+
+
+/* Iphone 5se */
+@media only screen and (max-width: 576px)
+{
+    .joker
+    {
+        font-size: .67em;
+        margin: 0 1em;
+    }
+}
+
+@media only screen and (max-width: 350px)
+{
+    .question
+    {
+        font-size: 1.2em;
+    }
+    
+    .answer
+    {
+        font-size: 1em;
+    }
+}
