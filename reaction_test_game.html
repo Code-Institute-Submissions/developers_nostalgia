@@ -14,49 +14,47 @@
 </head>
 
 <body>
-   <div class="reaction-main-cont flex-center">
-<!-- Start Screen -->
-      <div class="reaction-start-screen flex-center flex-column">
-         <h2 class="reaction-headline">Test Your Reaction!</h2>
-         <p>
-             - hit the <span class="space-txt">Space Key</span> as soon as the color changes -
-         </p>
-         <p>- or click on the <span class="space-txt">circle</span>  -</p>
-         <div>
-            <p id="highscore-p">- Highscore -</p>
-             <div class="reaction-recent">Player: <span class="recent-content" id="recent-player"></span></div>
-             <div class="reaction-recent">Score: <span class="recent-content" id="recent-hscore"></span></div>
-         </div>
-          <button onclick="standbyReactionTest()" class="bttn start-reaction-btn">Start Reaction Test</button>
-      </div>
-<!-- Reaction Test Container -->
-       <div class="reaction-cont flex-center invisible">
-          <button onclick="exitGame()" class="bttn reaction-exit-btn flex-center">
-              <span class="line"></span>
-              <span class="line"></span>
-          </button>
-<!-- Reaction Highscore Container -->
-          <div class="reaction-highscore-cont flex-center flex-column invisible">
-            <div class="players-reaction-score"></div>
-             <h3 class="highscore-headline">Congratulation - New Highscore!</h3>
-             <p>- Enter Your N ame -</p>
-              <input type="text" id="reaction-highscore-input" name="reaction-highscore-input" placeholder="Your Name">
-              <button onclick="safePlayersScore(event)" type="submit" class="bttn reaction-highscore-btn">Submit Highscore</button>
-          </div>
-          <!-- Reaction Content -->
-           <div class="reaction-content-wrapper flex-center">
-               <p class="reaction-time"></p>
-           </div>
-           <div class="reaction-content-wrapper flex-center">
-               <div class="reaction-color"></div>
-           </div>
-       </div>
-       
-   </div>
-    
-    
+    <!-- Main Container -->
+    <div class="reaction-main-cont flex-center">
+        <!-- Start Screen -->
+        <div class="reaction-start-screen flex-center flex-column">
+            <h2 class="reaction-headline">Test Your Reaction!</h2>
+            <p>
+                - hit the <span class="space-txt">Space Key</span> as soon as the color changes -
+            </p>
+            <p>- or click on the <span class="space-txt">circle</span> -</p>
+            <div>
+                <p id="highscore-p">- Highscore -</p>
+                <div class="reaction-recent">Player: <span class="recent-content" id="recent-player"></span></div>
+                <div class="reaction-recent">Score: <span class="recent-content" id="recent-hscore"></span></div>
+            </div>
+            <button onclick="standbyReactionTest()" class="bttn start-reaction-btn">Start Reaction Test</button>
+        </div>
+        <!-- Reaction Test Container -->
+        <div class="reaction-cont flex-center invisible">
+            <button onclick="exitGame()" class="bttn reaction-exit-btn flex-center">
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <!-- Reaction Highscore Container -->
+            <div class="reaction-highscore-cont flex-center flex-column invisible">
+                <div class="players-reaction-score"></div>
+                <h3 class="highscore-headline">Congratulation - New Highscore!</h3>
+                <p>- Enter Your N ame -</p>
+                <input type="text" id="reaction-highscore-input" name="reaction-highscore-input" placeholder="Your Name">
+                <button onclick="safePlayersScore(event)" type="submit" class="bttn reaction-highscore-btn">Submit Highscore</button>
+            </div>
+            <!-- Reaction Content -->
+            <div class="reaction-content-wrapper flex-center">
+                <p class="reaction-time"></p>
+            </div>
+            <div class="reaction-content-wrapper flex-center">
+                <div class="reaction-color"></div>
+            </div>
+        </div>
+    </div>
+
     <script src="reaction_test_game.js"></script>
-    
     
 </body>
 </html>
