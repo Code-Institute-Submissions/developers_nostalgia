@@ -1,0 +1,638 @@
+
+
+/*------------------------------------------------------ GENERAL  */
+
+html
+{
+    background: #333;
+    cursor: default;
+}
+
+button
+{
+    padding: 10px 15px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.disabled
+{
+    pointer-events: none !important;
+    opacity: .6;
+}
+
+.disabled-answer
+{
+    pointer-events: none !important;
+}
+
+.flex-center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column
+{
+    flex-direction: column;
+}
+
+/* Avoids text marking */
+.noselect 
+{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+/*------------------------------------------------------ TOGGLE CLASSES  */
+
+.invisible
+{
+    display: none !important;
+}
+
+.correct-answer
+{
+    background-color: green !important;
+    color: #fff !important;
+    box-shadow: none;
+    box-shadow: inset 0 0 0 3px #fff !important;
+}     
+
+.wrong-answer
+{
+    background-color: red !important;
+    color: #fff !important;
+    box-shadow: none;
+    box-shadow: inset 0 0 0 3px #fff !important;
+}
+
+.easy
+{
+    background-color: forestgreen !important;
+}
+
+.medium
+{
+    background-color: deepskyblue !important;
+}
+
+.hard
+{
+    background-color: darkred !important;
+}
+
+
+
+/*------------------------------------------------------ MAIN CONTAINER  */
+
+
+.api-quiz-main-cont
+{
+    width: 100vw;
+    min-height: 100vh;
+    background: #333;
+}
+
+/*------------------------------------------------------ BUTTONS  */
+
+/*        START/RESTART QUIZ BUTTONS */
+
+.start-quiz-btn
+{
+    background: none;
+    border: solid 2px #fafafa;
+    border-radius: 70px;
+    padding: 1em;
+    min-width: 20%;
+    height: 2.5em;
+    margin-top: 1em;
+    font-size: 2em;
+    font-weight: 600;
+    color: #fff;
+    transition: .3s;
+    outline: none;
+}
+
+.start-quiz-btn:hover
+{
+    background-color: #fafafa;
+    color: rebeccapurple;
+}
+
+.restart-api-quiz-btn
+{
+    font-weight: 600;
+    font-size: 1.1em;
+    background: #000;
+    margin-top: 2em;
+    color: #fff;
+}
+
+.restart-api-quiz-btn:hover
+{
+    background-color: #fafafa;
+    box-shadow: 0 0 0 3px #000;
+    color: #000;
+}
+
+
+/*        COIN FLIP BUTTONS */
+.coin-flip-btn
+{
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    margin: 0 1em;
+    background-size: cover;
+    background-color: #fff;
+}
+
+.coin-flip-btn:hover
+{
+    transform: translateY(-5%);
+}
+
+.head
+{
+    background-image: url(coinhead.png);
+}
+
+.tails
+{
+    background-image: url(cointails.png);
+}
+
+
+
+/*------------------------------------------------------ START SCREEN  */
+
+.start-screen-apiquiz
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rebeccapurple;
+    z-index: 100;
+}
+
+.api-quiz-headline
+{
+    text-align: center;
+    font-size: 2.3em;
+    font-weight: bolder;
+    color: #fff;
+    margin-bottom: 1em;
+    pointer-events: none;
+}
+
+.fa-question-circle
+{
+    margin-bottom: .8em;
+    font-size: 2.5em;
+    color: darkorange;
+}
+
+.api-quiz-start-txt
+{
+    font-size: 1.2em;
+    color: #fff;
+}
+
+
+/*        DIFFICULTY COLORS */      
+.difficulty-colors span
+{
+    border-radius: 10px;
+    padding: .3em;
+    border: solid 1px #fff;
+}
+
+.link-to-other-quiz
+{
+    color: red;
+    font-size: smaller;
+    font-weight: bold;
+    transition: .1s;
+}
+
+.link-to-other-quiz:hover
+{
+    color: #fff;
+}
+
+/*------------------------------------------------------ API QUIZ CONTAINER  */
+
+#api-quiz
+{
+    position: relative;
+}
+
+.api-quiz-cont
+{
+    position: relative;
+    text-align: center;
+    padding: 1em;
+    border-radius: 10px;
+    width: 600px;
+    height: 650px;
+/*            min-height: 700px;*/
+    z-index: 5;
+    background: darkorange;
+    background: #c04848;
+}
+
+
+.api-quiz-diffs
+{
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: .1em;
+    margin: .5em .3em;
+}
+
+/*        CURRENT SCORE */
+.api-curr-score
+{
+    margin: .5em 0;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: #fff;
+    border: solid 2px #fafafa;
+    padding: .1em 1em;
+    border-radius: 25px
+}
+
+
+/*        QUIZ LETTER */
+
+
+
+/*        API QUESTION CONTAINER */
+.api-quiz-question-cont
+{
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    background-color: #525252;
+    width: 100%;
+    height: 100px;
+}
+
+.api-question
+{
+    pointer-events: none;
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+
+/*        API ANSWERS CONTAINER */
+.api-answers-cont
+{
+    position: relative;
+    width: 80%;
+}
+
+
+.question-letter-span
+{
+    color: #fff;
+    color: #525252;
+    color: #000;
+    font-size: 1.1em;
+    font-weight: bolder;
+    margin-right: .3em;
+}
+
+
+.api-answer
+{
+    position: relative;
+    margin: 5px 0;
+    width: 100%;
+    height: 65px;
+    font-size: 1.2em;
+    font-weight: bold;
+/*            background-color: #ED4264;*/
+    background-color: #39CBD1;
+/*            background-color: #F18BA8;*/
+    border-radius: 5px;
+    color: #fff;
+}
+
+.api-answer:hover
+{
+    background-color: #fafafa;
+    color: #ED4264;
+}
+
+/*------------------------------------------------------ COIN FLIP CONTAINER */
+
+
+.coin-flip-cont
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    border-radius: 10px;
+    z-index: 5;
+}
+
+
+/*------------------------------------------------------ PLAYERS LIFE & JOKERS  */
+
+/*        SLIDER TOGGLE CLASS */
+.quiz-slidera
+{
+    transform: translateY(0) !important;
+    transition-delay: .5s;
+}
+
+.quiz-sliderb 
+{
+    transform: translate(-50%, 50%) !important;
+    
+}
+
+/*        PLAYERS LIFE CONTAINER */
+.player-lifes-cont
+{
+    margin-bottom: 1em;
+    z-index: 4;
+    transition: .3s;
+    transition: .5s;
+    transform: translateY(150%);
+}
+
+
+.players-life
+{
+    margin: 0 .3em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #000;
+    font-weight: 500;
+    color: #fff;
+    background-image: url(upmushroom.png);
+    background-size: cover;
+    transition: .5s;
+}
+
+/*        PLAYERS JOKERS CONTAINER */
+.api-joker-cont
+{
+    position: absolute;
+    bottom: -2.3em;
+    left: 50%;
+    transition: .5s;
+    transform: translate(-50%, -180%);
+    z-index: 4;
+    width: 100%;
+}
+
+.api-joker
+{
+    padding: .5em;
+    margin-right: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #fafafa;
+    color: #000;
+}
+
+.api-joker:hover
+{
+    background: #333;
+    color: #fff;
+}
+
+/*------------------------------------------------------ SCORE SCREEN  */ 
+
+.api-quiz-score-screen
+{
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: #fafafa;
+    z-index: 10;
+}
+
+.api-quiz-score-headline
+{
+    font-size: 2.2em;
+
+}
+
+.api-quiz-score-data span
+{
+    margin-left: .5em;
+    margin-right: .1em;
+}
+
+.wrong-bonus
+{
+    color: crimson;
+    font-size: 1.1em;
+}
+
+.score-bonus
+{
+    margin: .3em .1em;
+}
+
+.score-bonus:nth-child(4)
+{
+    margin-top: 1.5em;
+}
+
+.score-bonus:nth-child(7)
+{
+    margin-bottom: 1.5em;
+}
+
+
+.score-diff
+{
+    color: #fff;
+    min-width: 40px;
+    min-height: 40px;
+    margin: 10px;
+    font-weight: 600;
+    border-radius: 50%;
+}
+
+.api-score-data
+{
+    margin: 10px;
+}
+
+
+/*------------------------------------------------------ PROGRESS BAR  */ 
+
+
+.api-quiz-progress-bar
+{
+    box-shadow: 0 0 0 2px rgba(0,0,0,.8);
+    position: relative;
+    border-radius: 25px;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1em;
+    margin-top: 1.5em;
+    overflow: hidden;
+    background: #333;
+    display: flex;
+    height: 30px;
+    width: 80%; 
+}
+
+.api-quiz-progress
+{ 
+    width: 0%;
+    height: 100%;
+    transition: 1s;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+
+.api-current-qstn
+{
+    left: -10%;
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #fff;
+}
+
+.api-maximal-question-index
+{
+    left: 105%;
+}
+
+
+
+@media only screen and (max-width: 600px) 
+{
+    .api-quiz-main-cont
+    {
+        align-items: flex-start;
+    }
+    
+    .start-screen-apiquiz
+    {
+        font-size: .7em;
+        text-align: center;
+    }
+    
+    .player-lifes-cont
+    {
+        margin-bottom: .1em;
+    }
+    
+    .players-life
+    {
+        transform: scale(.7);
+        margin: 0;
+    }
+
+    .api-quiz-cont
+    {
+        font-size: .7em;
+        padding: 1em;
+        padding-bottom: 1em;
+        width: 100vw;
+        height: 85vh;
+    }
+    
+    .api-quiz-diffs
+    {
+        transform: scale(.8);
+        margin: 0 .1em;
+    }
+    
+    .api-quiz-question-cont
+    {
+        font-size: .8em;
+        height: 8em;
+/*                width: 90%;*/
+    }
+    
+    .api-answer
+    {
+        height: 4em;
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+/*                width*/
+    }
+    
+    .api-joker-cont
+    {
+        font-size: .8em;
+    }
+    
+    .api-quiz-progress-bar
+    {
+        height: 15px;
+    }
+    
+    .api-quiz-score-screen
+    {
+        height: 100vh;
+        top: 0%;
+        padding-bottom: .5em;
+    }
+}
+
+.stop-quiz-btn
+{
+    position: absolute;
+    top: 1%;
+    left: 3%;
+    font-size: 1.5em;
+    transition: .3s;
+    cursor: pointer;
+    padding: .5em;
+}
+
+.reload-quiz-btn
+{
+    position: absolute;
+    top: 1%;
+    right: 3%;
+    font-size: 1.3em;
+    transition: .3s;
+    cursor: pointer;
+    padding: .5em;
+}
+
+.reload-quiz-btn:hover,
+.stop-quiz-btn:hover
+{
+    color: #fff;
+}

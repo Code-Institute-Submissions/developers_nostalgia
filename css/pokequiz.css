@@ -651,20 +651,14 @@ button
         margin: 0 .8em;
         height: 40px;
         width: 40px;
+        font-size: .67em;
+        margin: 0 1em;
+        /* !!! */
     }
 }
 
 
 /* Iphone 5se */
-@media only screen and (max-width: 576px)
-{
-    .joker
-    {
-        font-size: .67em;
-        margin: 0 1em;
-    }
-}
-
 @media only screen and (max-width: 350px)
 {
     .question

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="gn_quiz.css">
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>Developers Nostalgia</title>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="api-quiz-main-cont flex-center">
+        <!-- Start Screen -->
+        <div class="start-screen-apiquiz flex-center flex-column">
+            <h1 class="api-quiz-headline">General Knowladge Quiz</h1>
+                <i class="fas fa-question-circle"></i>
+            <p class="api-quiz-start-txt">
+                This Quiz runs in a kind of "Survival Mode".<br>
+                You will have 5 Lifes (max). You will loose 1 Life<br>
+                for a wrong answered question but gain 1 Life<br>
+                for every correctly answered question.<br>
+                <br>
+                Maximum Questions - 50<br>
+                Maximum Jokers - 5<br>
+                Maximum Lifes - 5<br>
+                <br>
+                <span class="difficulty-colors">
+                    <span class="easy">Easy</span>
+                    <span class="medium">Med</span>
+                    <span class="hard">Hard</span>
+                </span>
+                <br><br>
+                You win by "surviving" all 50 questions.<br>
+                You loose if you have no Lives left. <br><br>
+                <a href="#" class="link-to-other-quiz">Back to PokeQuiz &rarr;</a>
+            </p>
+            <button onclick="fetchApiQuestions()" class="start-quiz-btn flex-center">Start Quiz</button>
+        </div>
+        <!-- Game Container -->
+        <div id="api-quiz">
+            <!-- Jokers Container -->
+            <div class="api-joker-cont flex-center invisible">
+                <button onclick="apiFiftyJoker(event)" class="api-joker api-fifty-joker-btn">50/50</button>
+                <button onclick="apiGoogleJoker(event)" class="api-joker api-google-joker-btn">Google</button>
+                <button onclick="apiSkipItJoker(event)" class="api-joker api-skip-joker-btn">Skip-It</button>
+                <button onclick="apiCoinFlipJoker(event)" class="api-joker api-skip-joker-btn">CoinFlip</button>
+                <button onclick="apiReviveJoker(event)" class="api-joker api-restore-joker-btn">Restore</button>
+            </div>
+            <!-- Lifes Container -->
+            <div class="player-lifes-cont flex-center invisible">
+                <div class="players-life flex-center"></div>
+                <div class="players-life flex-center"></div>
+                <div class="players-life flex-center"></div>
+                <div class="players-life flex-center"></div>
+                <div class="players-life flex-center"></div>
+            </div>
+            <!-- Score Screen Container -->
+            <div class="api-quiz-score-screen flex-center flex-column ">
+                <h2 class="api-quiz-score-headline">Game Over</h2>
+                <p>- Your Score -</p>
+                <div class="api-quiz-score-data flex-center flex-column">
+                    <div class="score-questions"></div>
+                    <div class="flex-center">
+                        <div class="score-diff easy flex-center"></div>
+                        <div class="score-diff medium flex-center"></div>
+                        <div class="score-diff hard flex-center"></div>
+                    </div>
+                    <div class="flex-center">
+                        <div class="api-score-data">x100</div>
+                        <div class="api-score-data">x200</div>
+                        <div class="api-score-data">x300</div>
+                    </div>
+                    <div class="score-bonus">Wrong Answers: <span class="wrong-bonus"></span></div>
+                    <div class="score-bonus">Jokers Used: <span class="jokers-used"></span>p</div>
+                    <div class="score-bonus">Joker Bonus: <span class="joker-bonus"></span>p</div>
+                    <div class="score-bonus">Lifes Bonus: <span class="lifes-bonus"></span>p</div>
+                    <div class="api-quiz-player-score">Total Score: <span class="api-total-score"></span>p</div>
+                </div>
+                <button onclick="restartApiQuiz()" class="restart-api-quiz-btn">Restart Quiz</button>
+            </div>
+            <!-- Quiz Container -->
+            <div class="api-quiz-cont flex-center flex-column invisible"></div>
+        </div>
+    </div>
+    
+    <script src="gn_quiz.js"></script>
+
+</body>
+</html>
