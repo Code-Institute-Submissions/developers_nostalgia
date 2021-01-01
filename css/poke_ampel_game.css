@@ -588,7 +588,13 @@ button
 {
     transform: scale(1.3);
 }
-        
+ 
+/* Makes Github icon's font bigger in footer section  */
+footer .social-contact .social-link .fa-github
+{
+    font-size: 1.5em;
+}
+
 
 /* ------------------------------------------------------------ ANIMATION - Rotates poke circle */
 
