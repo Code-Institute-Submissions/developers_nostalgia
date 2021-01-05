@@ -59,7 +59,7 @@
             border: none;
             border-radius: 5px;
         }
-
+        
 
         /*----------------------------------------------- MAIN CONTAINER */
         
@@ -106,14 +106,14 @@
             font-weight: bolder;
             text-shadow: .5px .3px 1px #fafafa;
             font-size: 1.5em;
+            cursor: default;
+            z-index: -1;
         }
 
         .pdl-header-search-cont
         {
             position: absolute;
             right: 10%;
-/*            justify-content: space-between;*/
-/*            margin-right: .3em;*/
         }
         
         
@@ -158,12 +158,6 @@
             z-index: 999;
         }
         
-        /* HOVER - Menu Button */
-        .header-menu-btn:hover .fas
-        {
-            transform: scale(1.04);
-        }
-        
         /* SELECTED - Menu Button */
         .header-menu-btn.selected-menu
         {
@@ -195,18 +189,25 @@
         }
         
         
-        /* Logo */
+        /* NAVIGATION */
+        
+        /* LINK to home - Logo */
         .logo
         {
             margin-right: 1.5em;
             font-weight: bolder;
             color: #f3f3f3;
-            cursor: default;
+            cursor: pointer;
             text-shadow: .5px 0px 3px rgba(0,0,0,.8),
                          .5px 0px 3px rgba(0,0,0,.8);
         }
         
-        /* NAVIGATION */
+        /* HOVER - Logo */
+        .logo:hover
+        {
+            color: #fff !important;
+        }
+        
         .nav a
         {
             position: relative;
@@ -271,6 +272,24 @@
             border: solid 1px #000;
         }
         
+        .toggle-search-btn
+        {
+            position: absolute;
+            right: 8%;
+            font-size: 1.3em;
+            color: #fff;
+            border-radius: 50%;
+            padding: .5em;
+            transition: .3s;
+            display: none;
+        }
+        
+        .toggle-search-btn:hover
+        {
+            color: #000;
+            background: rgba(255,255,255,.6);
+        }
+        
         
         /*----------------------------------------------- POKEDEX LIST CONTAINER */
         
@@ -319,8 +338,7 @@
             right: 0;
             bottom: 0;
             width: 100%;
-            height;
-            100%;
+            height: 100%;
             z-index: 3200;
         }
 
@@ -343,13 +361,13 @@
             color: #fff;
             letter-spacing: .01em;
             margin-left: 5%;
+            text-shadow: 0 0 5px rgba(0,0,0,.3);
         }
 
 /*        !!! */
         #popup-pkmn-headline 
         {
-/*                        font-size: 2.5em;*/
-            text-shadow: 0 0 .5px rgba(0, 0, 0.3);
+            text-shadow: 0 0 5px rgba(0,0,0,.2);
         }
 
         .poke-card-wide-type 
@@ -364,7 +382,8 @@
             font-size: small;
             letter-spacing: .15em;
             background-color: rgba(255, 255, 255, .3);
-            text-shadow: 0 0 .5px rgba(0, 0, 0, .5);
+            text-shadow: 0 0 1px rgba(0, 0, 0, .8);
+            box-shadow: 0 0 3px rgba(0,0,0,.1);
         }
 
         .poke-card-wide-right 
@@ -494,7 +513,6 @@
             border-radius: 20px;
             padding: .3em 1em;
             margin: .3em .1em;
-            font-size: ;
             color: #fff;
             font-weight: bold;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
@@ -530,6 +548,7 @@
             cursor: pointer;
             transition: .3s;
             background-color: rgba(255, 255, 255, .5);
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
             z-index: 30000;
         }
         
@@ -560,7 +579,7 @@
             background: #333;
             background: #fff;
             border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+            box-shadow: 0 0 3px rgba(0, 0, 0, .5);
             transition: .3s;
         }
 
@@ -590,12 +609,13 @@
         .pdl-popup-id 
         {
             margin-top: 3%;
-            margin-left: 70%;
+            margin-left: 90%;
             font-size: 1.8em;
             letter-spacing: .05em;
             font-size: 1.5em;
             font-weight: bold;
             color: #F0FBF9;
+            text-shadow: 0 0 5px rgba(0,0,0,.3);
         }
 
         .popup-type 
@@ -604,10 +624,9 @@
             font-size: .8em;
             color: #F0FBF9;
             font-weight: bold;
-/*            ??? */
-/*            font-weight: 600;*/
             min-width: 6.9em;
             text-shadow: 0 0 5px rgba(0,0,0,.3);
+            box-shadow: 0 0 3px rgba(0,0,0,.2);
         }
 
 
@@ -1077,6 +1096,7 @@
             border-radius: 25px;
             background-color: rgba(55, 55, 55, .4);
             height: 1em;
+            overflow: hidden;
             box-shadow: .5px .5px .5px rgba(0, 0, 0, .5);
             transition: .3s;
         }
@@ -1092,13 +1112,11 @@
             transition: width 1s;
         }
 
-/*
+        /* For progress bars animation (remove for animation effect) */
         .progress-zero 
         {
             width: 0 !important;
         }
-*/
-
 
         /* PROGRESS BARS FILLING COLORS (Hp, Def, Attack, etc.) */
         .hp-stat-filling 
@@ -1141,7 +1159,7 @@
         }
 
 
-        /*----------------------------------------------- BASE STATS CONTAINER TAB */
+        /*----------------------------------------------- EVOLUTIONS CONTAINER TAB */
         
         #evolutions-tab-cont 
         {
@@ -1196,12 +1214,12 @@
 
         .popup-evolution-arrow:before 
         {
-            transform: rotate(35deg) translateY(-75%);
+            transform: rotate(40deg) translateY(-65%);
         }
 
         .popup-evolution-arrow:after 
         {
-            transform: rotate(-35deg) translateY(75%);
+            transform: rotate(-40deg) translateY(65%);
         }
 
         .evolution-trigger,
@@ -1225,6 +1243,13 @@
             bottom: -500%;
             color: blue;
             transform: translateX(-50%);
+        }
+        
+        /* IMG - for Mega evolution (below arrow) */
+        .mega-stone-img
+        {
+            transform: translateY(5px);
+            width: 25px;
         }
 
         .evolution-name 
@@ -1651,7 +1676,7 @@
             z-index: 1000;
         }
 
-        .slider>.track 
+        .slider > .track 
         {
             position: absolute;
             top: 0;
@@ -1664,7 +1689,7 @@
             z-index: 1000;
         }
 
-        .slider>.range 
+        .slider > .range
         {
             position: absolute;
             left: 25%;
@@ -1672,31 +1697,31 @@
             top: 0;
             bottom: 0;
             border-radius: 5px;
-            background-color: #6200ee;
+            background-color: #fff;
+            z-index: 1000;
         }
 
-        .slider>.thumb 
+        .slider > .thumb 
         {
             position: absolute;
             width: 30px;
             height: 30px;
             background-color: #9EB7B8;
             border-radius: 50%;
-            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(255,255,255,.1);
+        	transition: box-shadow .3s ease-in-out;
             z-index: 3000;
         }
 
-        .slider>.thumb.left 
+        .slider > .thumb.left 
         {
             left: 25%;
-            cursor: pointer;
             transform: translate(-15px, -10px);
         }
 
-        .slider>.thumb.right 
+        .slider > .thumb.right 
         {
             right: 25%;
-            cursor: pointer;
             transform: translate(15px, -10px);
         }
 
@@ -1720,6 +1745,18 @@
             border: none;
             -webkit-appearance: none;
         }
+        
+        /* HOVER and Active classes when hovering over 'thumbs' or clicking them */
+        .slider > .thumb.hover 
+        {
+            box-shadow: 0 0 0 20px rgba(255,255,255,.1);
+        }
+        
+        .slider > .thumb.active 
+        {
+            box-shadow: 0 0 0 25px rgba(255,255,255,.2);
+        }
+        
 
         /* From - To Values (Id/Weight/Height - Range) (right and left of slider) */
         .range-nr 
@@ -1751,6 +1788,7 @@
             color: #333;
             transform: translateY(-50%);
             cursor: pointer;
+            z-index: 30000;
         }
 
         .prev-next-pkmn-btn:before 
@@ -1909,6 +1947,16 @@
             cursor: pointer;
         }
         
+        .clear-favs-btn p
+        {
+            position: absolute;
+            bottom: 10%;
+            font-size: small;
+            color: #333;
+            transition: .3s;
+            transform: translateY(80%);
+        }
+        
         .clear-favs-btn:before
         {
             content: '';
@@ -1921,6 +1969,12 @@
         }
         
         /* HOVERS - Clear Favs Button  */
+        .fa-trash-alt:hover
+        {
+            color: red;
+            background: blue;
+        }
+        
         .clear-favs-btn:hover .fa-trash-alt
         {
             transform: scale(1.1);
@@ -1934,8 +1988,14 @@
         
         .clear-favs-btn:hover
         {
-            color: red;
+/*            color: red;*/
             background: rgba(255,255,255,.1);
+        }
+        
+        .clear-favs-btn:hover.clear-favs-btn p
+        {
+            color: #fff;
+            transform: translateY(0);
         }
         
         /* Favorite Pkmn Heart Btn */
@@ -2023,6 +2083,7 @@
         
         /*----------------------------------------------- MEDIA QUERIES */
 
+        /*  */
         @media only screen and (min-width: 1500px) 
         {
             .pdl-cont 
@@ -2031,6 +2092,7 @@
             }
         }
 
+        /*  */
         @media only screen and (max-width: 1250px) 
         {
             .pdl-popup-content 
@@ -2039,7 +2101,16 @@
             }
         }
 
-
+        /* Header Headline font size becomes smaller */
+        @media only screen and (max-width: 940px) 
+        {
+            .pdl-header-headline
+            {
+                font-size: 1em;
+            }
+        }
+        
+        /* Tablet */
         @media only screen and (max-width: 768px) 
         {
             .pdl-header
@@ -2055,6 +2126,32 @@
             .pdl-header-search-cont
             {
                 right: 3%;
+            }
+            
+            .pdl-popup-tabs
+            {
+                font-size: .9em;
+            }
+            
+            .pdl-popup-bg
+            {
+                height: 23%;
+                font-size: .9em
+            }
+            
+            .pdl-popup-img
+            {
+                transform: scale(.8) translate(-50%);
+            }
+            
+            .pdl-popup-content
+            {
+                padding-top: 3.5em;
+            }
+            
+            .popup-content-tab-cont
+            {
+                font-size: .9em;
             }
             
             .general-data-cont,
@@ -2074,42 +2171,257 @@
                 width: 90%;
                 font-size: .75em;
             }
-
-            .move-name 
-            {
-                /*                margin: 5px;*/
-            }
         }
 
 
-        @media only screen and (max-width: 576px) 
+        /* Mobile */
+        @media only screen and (max-width: 600px) 
         {
+/* Invisible on Mobile */
+            .not-visible-on-mobile
+            {
+                display: none !important;
+            }
+            
+            .only-visible-on-mobile
+            {
+                display: block;
+            }
+            
+            
+            /* Header Section */
+            .pdl-header
+            {
+                font-size: .8em;
+            }
+            
+            .header-menu-btn
+            {
+                height: 40px;
+                width: 40px;
+                bottom: -30%;
+            }
+            
+            .header-menu-cont
+            {
+                top: -150px;
+                justify-content: center;
+                height: 150px;
+                font-size: .8em;
+                padding: .5em;
+            }
+            
+            .pdl-header-search-cont
+            {
+                left: 10%;
+                right: auto;
+            }
+            
+/*            center every row, box shadow, fontsize evtl smaller */
+/*            specific search font size smaller*/
+/*            maybe center every column element/row ; margin/space between them ; search input    
+              grayish or smth. ; maybe font smaller of specific search btn. ; check padding
+              maybe padding 0 */
+            
+/*            TOP: search invisible ; headline invisible ; maybe logo in the left & gen btns */
+            
+/*            JS: solve height issue (200px); */
+            
+            
+/*            RESP: headline disappears by ca 970px widht*/
+            
+            .pdl-complexer-filter-cont
+            {
+                top: 0;
+                padding-left: 5%;
+                padding-right: 5%;
+                height: 100%;
+                width: 100%;
+            }
+            
+            .close-specific-filter-btn
+            {
+                top: 3%;
+            }
+            
+            /* Filter Type BUTTONS */
+            .poke-type-filter-btn
+            {
+                font-size: .9em;
+            }
+            
             .pdl-cont 
             {
                 width: 95%;
-                /*                grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));*/
+/*                               grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));*/
+            }
+            
+            .popup-content-tab-cont
+            {
+                min-height: 350px;
+            }
+            
+            .pdl-popup-tabs
+            {
+                font-size: .8em;
             }
 
+            .pdl-popup-bg
+            {
+                font-size: .7em;
+            }
+            
+            .popup-close-btn
+            {
+                top: 1em;
+                
+            }
+            
+            .favorite-pkmn-cont
+            {
+                top: 1em;
+            }
+            
+            #popup-pkmn-headline
+            {
+                font-size: 2.5em;
+                margin-top: .5em;
+                text-shadow: 0 0 5px rgba(0,0,0,.3);
+            }
+            
+            .pdl-popup-id
+            {
+                margin-left: 80%;
+            }
+            
+            .pdl-popup-img
+            {
+                top: 7%;
+                transform: scale(.7) translateX(-70%);
+            }
+            
+            .prev-next-pkmn-btn
+            {
+                top: 90%;
+            }
+            
+            .about-to-txt-btn
+            {
+                right: 3%;
+            }
+            
             .pdl-popup-cont 
             {
+/*                !!! */
+                width: 100%;
                 width: 106%;
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
                 border-radius: 0;
+                font-size: .8em;
+            }
+            
+            #evolutions-tab-cont
+            {
+                justify-content: flex-start;
+                padding-top: 5em;
             }
 
+/* Base Stats */
+            #base-stats-cont p
+            {
+                padding: 3% 5%;
+                width: 80%;
+            }
+            
+            #type-adv-tab
+            {
+                padding-bottom: 5em;
+            }
+            
+            /* Moves Container */
+            #moves-tab-cont
+            {
+                min-height: 350px;
+            }
+            
             .pdex-card 
             {
                 height: 200px;
             }
-
-            .move-name 
+            
+            /* creates space/margin to pkmn-cards */
+            #scroll-top-btn 
             {
-                margin: 5px;
+                left: 3%
             }
         }
 
+        
+/*        Iphone 5se */
+        @media only screen and (max-width: 350px)
+        {
+            .pdl-header-search-cont
+            {
+                left: 5%;
+            }
+            
+            #popup-pkmn-headline
+            {
+                margin: 0;
+            }
+            
+            .pdl-popup-id
+            {
+                margin-left: 80%;
+            }
+            
+            .pdl-popup-img
+            {
+                transform: scale(.6) translateX(-80%);
+            }
+                        
+            .pdl-popup-tabs
+            {
+                margin-bottom: .5em;
+            }
+            
+            .popup-tab
+            {
+                font-size: 1.1em;
+            }
+            
+            .general-data-cont
+            {
+                font-size: .9em;
+            }
+            
+            /* Base Stats Container */
+            #base-stats-cont p
+            {
+                width: 85%;
+                font-size: .9em;
+            }
+            
+            /* Evolution Container */
+            #evolutions-tab-cont
+            {
+                padding-top: 3em;
+            }
+            
+            .popup-move
+            {
+                margin: 1px;
+            }
+            
+            #scroll-bottom-btn,
+            #scroll-top-btn 
+            {
+                width: 30px;
+                height: 30px;
+            }
+        }
         
         
     </style>
@@ -2145,8 +2457,8 @@
                         <input oninput="setLeftValue()" type="range" id="range-left" min="0" max="151" value="37">
                         <input oninput="setRightValue()" type="range" id="range-right" min="0" max="151" value="113">
                         <!-- Range Values - they change if slider are moved -->
-                        <div class="range-nr">1</div>
-                        <div class="range-nr to">150</div>
+                        <div class="range-nr"></div>
+                        <div class="range-nr to"></div>
                         <!-- Sliders / Thumbs -->
                         <div class="slider">
                             <div class="track"></div>
@@ -2181,7 +2493,6 @@
                 <button onclick="specPokeFilterWeight(event)" class="specific-filter-btn">Filter By Weight</button>
             </div>
         </div>
-        
         <!-- HEADER -->
         <header class="pdl-header flex-center">
             <!-- Choose Generation Buttons (Click to load/displ. all Pkmn of selected Generaion) -->
@@ -2192,21 +2503,25 @@
                 <button onclick="displayGen(genThrPkmn, genFourPkmn, event)" class="display-gen-btn">Gen 4</button>
                 <button onclick="displFavoritePkmn(event)" class="display-gen-btn">Fav <i class="far fa-heart"></i></button>
             </div>
-            <h2 class="pdl-header-headline">Online Pokedex</h2>
+            <h2 class="pdl-header-headline not-visible-on-mobile">Online Pokedex</h2>
             <!-- MENU BTN -->
             <div onclick="toggleHeaderMenu()" class="header-menu-btn flex-center"><i class="fas fa-bars"></i></div>
             <!-- Search Pokemon Input -->
-            <div class="pdl-header-search-cont flex-center">
+            <div class="pdl-header-search-cont flex-center not-visible-on-mobile">
                 <i class="fas fa-search"></i>
                 <input type="text" id="poke-search" aria-label="search">
                 <div onclick="searchForPkmn()" class="pdex-list-search-btn flex-center">Search</div>
             </div>
+<!-- TOGGLE SEARCH BAR - BUTTON -->
+            <i onclick="toggleSearchGenBtns()" class="toggle-search-btn only-visible-on-mobile fas fa-search"></i>
         </header>
         <!-- MENU (Navigations, Checkboxes, etc.) -->
         <div class="header-menu-cont flex-center">
             <nav class="nav-three-btns">
                 <ul class="flex-center" style="margin: 0">
-                    <div class="logo flex-center"><span class="logo-span">&#128187</span>DN</div>
+                    <a href="#" class="logo flex-center">
+                        <span class="logo-span">&#128187</span>DN
+                    </a>
                     <li class="nav"><a href="#">Home</a></li>
                     <li class="nav"><a href="#">Pokedex</a></li>
                     <li class="nav"><a href="#">Games</a></li>
@@ -2313,6 +2628,8 @@
     <script>
         
         // DOM Elements
+        const searchContainer = document.querySelector(".pdl-header-search-cont");
+        const genButtonsContainer = document.querySelector(".pdl-gen-btns-cont");
         const pDexMainContainer = document.querySelector(".pdex-list-main-cont");
         const pDexListContainer = document.querySelector(".pdl-cont");
         const typeButtonContainer = document.querySelector(".poke-type-btn-cont");
@@ -2334,6 +2651,7 @@
         const popupTypes = document.querySelectorAll(".popup-type");
         const popupBgColor = document.querySelector(".pdl-popup-bg");
         const popupId = document.querySelector(".pdl-popup-id");
+        const rangeBtns = document.querySelectorAll(".range-btn");
         const popupSpecies = document.querySelector(".pdl-popup-category");
         const popupTabBtns = document.querySelectorAll(".popup-tab");
         const filterRangeBtns = document.querySelectorAll(".weight-range-btn");
@@ -2343,21 +2661,24 @@
         const headerMenu = document.querySelector(".header-menu-cont");
         const headerMenuBtn = document.querySelector(".header-menu-btn");
         const pDexListHeader = document.querySelector(".pdl-header");
+        
 
         // All Mega Evolution Names
         const allMegaEvolutions = ["venusaur", "charizard", "blastoise", "beedrill", "pidgeot", "alakazam", "slowbro", "steelix", "gengar", "kangaskhan", "pinsir", "gyarados", "aerodactyl", "mewtwo", "ampharos", "scizor", "heracross", "houndoom", "tyranitar", "sceptile", "blaziken", "swampert", "gardevoir", "sableye", "mawile", "aggron", "medicham", "manectric", "sharpedo", "camerupt", "altaria", "glalie", "banette", "absol", "salamence", "metagross", "latias", "latios", "rayquaza", "lopunny", "garchomp", "lucario", "abomasnow", "gallade"];
 
-
-        //           https://www.pinclipart.com/
-        //           https://www.kindpng.com/
-        //           https://www.pngkit.com/
-        //           https://www.clipartmax.com/
-        //           https://www.pngitem.com/
-        //           https://www.pngfind.com/
+        // WEBSITES I GOT THE PNG's FROM - (Above):
+        // https://www.pinclipart.com/
+        // https://www.kindpng.com/
+        // https://www.pngkit.com/
+        // https://www.clipartmax.com/
+        // https://www.pngitem.com/
+        // https://www.pngfind.com/
 
 
         // List of all pkmn
         let allPokemon = [];
+        let currentPkmn = [];
+        let filteredPkmn = [];
 
         // Pkmn Generation indexes
         const genOnePkmn = 151;
@@ -2372,10 +2693,11 @@
         // Counts fav pkmn
         let favoritePkmnCounter = 0;
 
-        // Toggeling vars
+        // Toggeling & Boolean variables
         let clearFavsBtnActive = false;
         let typeAdvWeakness = true;
         let menuOpen = false;
+        let filtered = false;
         let weaknessAdv;
 
         // Type Adv. vars
@@ -2437,6 +2759,7 @@
             menuOpen ? menuOpen = false : menuOpen = true;
             
             // adds selected class to header, menu & btn
+            specificSearch.classList.add("hidden");
             headerMenu.classList.toggle("selected-menu");
             pDexListHeader.classList.toggle("selected-menu");
             headerMenuBtn.classList.toggle("selected-menu");
@@ -2454,31 +2777,55 @@
             typeButtonContainer.innerHTML = ""
             Object.keys(types).forEach(type => {
                 typeButtonContainer.insertAdjacentHTML("beforeend", `
-                        <button class="poke-type-filter-btn bttn" style="background-color: ${Object.values(types)[Object.keys(types).indexOf(type)]}" onclick="filterPokemonType(event)">${capitalize(type)}</button>
-                    `);
+                    <button class="poke-type-filter-btn bttn" style="background-color: ${Object.values(types)[Object.keys(types).indexOf(type)]}" onclick="filterPokemonType(event)">${capitalize(type)}</button>
+                `);
             });
         }
 
+        
+        // Toggles Search Bar/Gen Buttons on Mobie
+        const toggleSearchGenBtns = () => {
+            searchContainer.classList.toggle("not-visible-on-mobile");
+            genButtonsContainer.classList.toggle("not-visible-on-mobile");
+        }
+        
 
         // 
         const searchForPkmn = () => {
+            filtered = true;
+            
+            remClearFilterBtn();
+            // closes Menu if open
             closeMenuIfOpen();
-            // regExp for just numbers in a sting
-            const reg = /^[0-9]+$/;
-            const inputToSearch = pokeSearchInput.value.toLowerCase();
+            if (allPokemon.length > 0) {
+                // regExp for just numbers in a sting
+                const reg = /^[0-9]+$/;
+                const inputToSearch = pokeSearchInput.value.toLowerCase();
 
-            // 2 FUNCTIONS - Fitlers all Pokemon Array for either 1. a pkmn name or 2. a pkmn Id
-            const searchByName = str => allPokemon.filter(ap => ap.name.toLowerCase().includes(str));
-            const searchById = num => allPokemon.filter(ap => ap.id == num);
+                // 2 FUNCTIONS - Fitlers all Pokemon Array for either 1. a pkmn name or 2. a pkmn Id
+                const searchByName = str => allPokemon.filter(ap => ap.name.toLowerCase().includes(str));
+                const searchById = num => allPokemon.filter(ap => ap.id == num);
 
-            // if input is a number -> search by Id, if string -> search by name
-            const pkmnToSearch = reg.test(inputToSearch) ? searchById(inputToSearch) : searchByName(inputToSearch);
+                // if input is a number -> search by Id, if string -> search by name
+                filteredPkmn = reg.test(inputToSearch) ? searchById(inputToSearch) : searchByName(inputToSearch);
+                
 
-            pDexListContainer.innerHTML = "";
-            fillPokemon(pkmnToSearch);
+                // displays clear filter BUTTON
+                pDexListContainer.insertAdjacentHTML("beforebegin", `
+                    <div onclick="removePkmnTypeFilter()" class="clear-favs-btn flex-center" style="border-radius: 0">
+                        <i class="fas fa-trash-alt"></i>
+                        <p>Remove Filter</p>
+                    </div>
+                `);
+                // clears & fills Pokedex Container
+                pDexListContainer.innerHTML = "";
+                fillPokemon(filteredPkmn);
+            } else {
+                alert("Please choose a Pokemon Generation first (Gen1/Gen2/Gen3/Gen4/Fav)");
+            }
         }
 
-
+        
         // 
         const dispRemCardIds = () => {
             const cardIdCheck = document.querySelector("#card-id-check");
@@ -2506,12 +2853,22 @@
             target.classList.add("selected-gen-btn");
         }
         
+        
+        // Removes 'remove filter' - BUTTON if in DOM
+        const remClearFilterBtn = () => {
+            if (document.body.contains(document.querySelector(".clear-favs-btn"))) {
+                pDexMainContainer.removeChild(document.querySelector(".clear-favs-btn"));
+            }
+        }
+        
 
         // Gets all pokemon via API
         const displayGen = (fromGen, toGen, e) => {
+            filtered = false;
             // removes trash icon
             clearFavsBtnActive = false;
             assignSelectedGenBtn(e.target);
+            remClearFilterBtn();
             closeMenuIfOpen();
             
             pkmnListLength = toGen - (fromGen + 1)
@@ -2585,6 +2942,10 @@
                         fetch(`${data.evolution_chain.url}`).then(res => res.json()).then(data => {
                             // adds first evolution name to formattet pokemon
                             formattetPokemon.firstEvolution = data.chain.species.name;
+                            
+                            formattetPokemon.isMega = isMegaPkmn(data.chain.species.name);
+                            (data.chain.evolves_to.length > 0) ? formattetPokemon.finalEvolution = data.chain.evolves_to[0].species.name : formattetPokemon.finalEvolution = data.chain.species.name;
+                            formattetPokemon.isMega = isMegaPkmn(data.chain.evolves_to[0].species.name);
 
                             // adds second evolution pokemon data, to formattet pokemon if its there
                             (data.chain.evolves_to.length > 0) ? formattetPokemon.secndEvolution = {
@@ -2597,6 +2958,7 @@
                             // adds third evolution pokemon data if there is one
                             if (data.chain.evolves_to.length > 0) {
                                 if (data.chain.evolves_to[0].evolves_to.length > 0) {
+                                    formattetPokemon.finalEvolution = data.chain.evolves_to[0].evolves_to[0].species.name;
                                     formattetPokemon.isMega = isMegaPkmn(data.chain.evolves_to[0].evolves_to[0].species.name);
 
                                     formattetPokemon.thirdEvolution = {
@@ -2609,6 +2971,9 @@
                                     // otherwise returns false
                                     formattetPokemon.thirdEvolution = false;
                                 }
+//                                if (isMegaPkmn(data.chain.evolves_to[0].evolves_to[0].species.name) || isMegaPkmn(data.chain.evolves_to[0].evolves_to[1].species.name)) {
+//                                        formattetPokemon.isMega = true;
+//                                    }
                             } else {
                                 formattetPokemon.thirdEvolution = false;
                             }
@@ -2717,19 +3082,48 @@
         // -------------------------------------------------------------------------------------  CLICK ON PKMN CARD FUNCTIONS
 
 
-        // Filters and displ. pkmn Btn - Type
+        // Filters and displays selected Pkmn type (Type BUTTONS)
         const filterPokemonType = (e) => {
+            filtered = true;
+            
+            // removes remove filter BUTTON if in DOM
+            remClearFilterBtn();
+            // clears Pokedex List & displays 'Remove Filter BUTTON' over/before Pokedex List
             pDexListContainer.innerHTML = "";
-            fillPokemon(allPokemon.filter(pokemon => pokemon.type1 == e.target.innerHTML || pokemon.type2 == e.target.innerHTML));
+            pDexListContainer.insertAdjacentHTML("beforebegin", `
+                <div onclick="removePkmnTypeFilter()" class="clear-favs-btn flex-center" style="border-radius: 0">
+                    <i class="fas fa-trash-alt"></i>
+                    <p>Remove Filter</p>
+                </div>
+            `);
+            
+            filteredPkmn = allPokemon.filter(pokemon => pokemon.type1 == e.target.innerHTML || pokemon.type2 == e.target.innerHTML);
+            currentPkmn = allPokemon;
+            // filters/displays all pkmn with selected type (type1 or type2)
+            allPokemon = allPokemon.filter(pokemon => pokemon.type1 == e.target.innerHTML || pokemon.type2 == e.target.innerHTML);
+            // displays new/filtered pkmn if Pokedex List
+            fillPokemon(allPokemon);
+            // changes allPokemon-array back (unfiltered)
+            allPokemon = currentPkmn;
         }
-
+        
+        
+        // Removes type filter & displays all pkmn again
+        const removePkmnTypeFilter = () => {
+//            allPokemon = currentPkmn;
+            filtered = false;
+            fillPokemon(allPokemon);
+            // removes clear favs/filters BUTTON
+            pDexMainContainer.removeChild(document.querySelector(".clear-favs-btn"));
+        }
+        
 
         // Displays Popup with pokemon data
         const displayClickedPokemon = (e) => {
             closeMenuIfOpen();
             // makes popup container appear
             popUpContainer.classList.remove("hidden");
-
+            
             displayClickedPkmn(e.target.dataset.clickedpkmn);
         }
 
@@ -2756,20 +3150,34 @@
         }
 
 
-        // 
+        // Previous/Next pkmn BUTTONS - For switching pokemon without having to close the popup container
         const prevNextPkmn = (clPkmn, num) => {
-            if (clPkmn.id === 1 && num < 0) {
-                clickedPkmn = allPokemon[allPokemon.length - 1];
-            } else if (clPkmn.id === allPokemon.length && num > 0) {
-                clickedPkmn = allPokemon[0];
-            } else {
-                clickedPkmn = allPokemon.filter(p => p.id === parseInt(clPkmn.id) + num)[0];
+            
+            const returnPrevNextPkmn = (list, clPkmn, num) => {
+                clPkmnIndex = list.indexOf(clPkmn);
+                
+                if (clPkmnIndex < 1 && num < 0) {
+                    return list[list.length - 1];
+                    
+                } else if (clPkmnIndex === list.length - 1 && num > 0) {
+                    return list[0];
+                } else {
+                    return list[clPkmnIndex + num];
+                }
             }
+            
+            // 
+            if (filtered) {
+                clickedPkmn = returnPrevNextPkmn(filteredPkmn, clPkmn, num);
+            } else if (!filtered) {
+                clickedPkmn = returnPrevNextPkmn(allPokemon, clPkmn, num);
+            }
+            console.log(clickedPkmn)
+            // 
             displayClickedPkmn(clickedPkmn.name);
         }
 
-        //allPokemon.filter(p => p.id === parseInt(clickedPkmn.id)+ 1)
-
+        
         // 
         const displPkmnId = id => {
             let resId = id;
@@ -2896,15 +3304,15 @@
         }
 
 
-        // Removes all ↵ from p.dex text
-        const modifyDescrTxt = (txt) => {
-            let res = "";
+        // Removes all 
 
-            for (let i of txt) {
-                (i == `↵`) ? res += " ": res += i;
-            }
-            return res;
-        }
+        
+      // Filters non letters out(e.g. '↵') from p.dex text, but keeps 'é'   
+       const modifyDescrTxt = (txt) => {
+           const checkIfLetter = (char) => (/[a-zA-Z]/).test(char);  // coderrocketfuel.com
+           
+           return txt.split("").map(char => (checkIfLetter(char) || char == "é" || char === " " || char === ".") ? char : " ").join("");
+       }
 
 
         const fetchPkmnEncounters = pkmn => {
@@ -3001,7 +3409,17 @@
         // Toggles the specific search window
         const toggleSpecificSearch = () => {
             closeMenuIfOpen();
-            specificSearch.classList.toggle("hidden");
+            if (allPokemon.length > 0) {
+                specificSearch.classList.toggle("hidden");
+                // removes all selected classes from Range BUTTONS & adds to id btn
+                if ([...rangeBtns].some(rb => rb.classList.contains("selected-range-tab"))) {
+                    return
+                } else {
+                    rangeBtns[1].classList.add("selected-range-tab");
+                }
+            } else {
+                alert("Please choose a Pokemon Generation first (Gen1/Gen2/Gen3/Gen4/Fav)");
+            } // !!! some / every -> check if one of range btns has class active - if not, give id class active else - keep it 
         } 
 
 
@@ -3100,7 +3518,7 @@
             }
 
 
-            // 
+            // Fetches missing sprite (if pkmn evolution is not in selected/current generation) - should avoid TypeError
             const fetchMissingSprite = (name) => {
                 console.log("fetching missing spritre")
                 let pSprite;
@@ -3155,7 +3573,9 @@
                    </div>        
                 `);
             }
-
+            
+                
+            // 
             const addThirdEvolution = pkmn => {
                 const thirdPkmnSprite = filterEvolution(clickedPkmn.thirdEvolution.thirdName).sprite;
                 //                let thirdPkmnSprite = lookForSprite(clickedPkmn.thirdEvolution.thirdName); 
@@ -3174,30 +3594,51 @@
                    </div>        
                 `);
             }
+            
 
-            //
+            // 
             const addMegaEvolution = () => {
-                const thirdPkmnSprite = filterEvolution(clickedPkmn.thirdEvolution.thirdName).sprite;
+                const thirdPkmnSprite = filterEvolution(clickedPkmn.finalEvolution).sprite;
                 document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
                     <div class="mega-evolution-cont flex-center">
                        <div class="flex-center flex-column">
                            <div class="popup-evolution flex-center first-evolution"><img src="${thirdPkmnSprite}" alt="evolution"></div>
-                           <div class="evolution-name">${capitalize(clickedPkmn.thirdEvolution.thirdName)}</div>
+                           <div class="evolution-name">${capitalize(clickedPkmn.finalEvolution)}</div>
                        </div>
                        <div class="popup-evolution-box flex-center">
                        <div class="popup-evolution-arrow first-evolution-arrow">
                            <div class="evolution-trigger">Mega Stone</div>
-                           <div class="evolution-level"></div>
+                           <div class="evolution-level"><img class="mega-stone-img" src="megastone.png"></div>
                        </div>
                        <div class="flex-center flex-column">
-                           <div class="popup-evolution flex-center second-evolution"><img src="mega_${clickedPkmn.thirdEvolution.thirdName}.png" alt="mega evolution"></div>
-                           <div class="evolution-name">Mega ${capitalize(clickedPkmn.thirdEvolution.thirdName)}</div>
+                           <div class="popup-evolution flex-center second-evolution"><img src="mega_${clickedPkmn.finalEvolution}.png" alt="mega evolution"></div>
+                           <div class="evolution-name">Mega ${capitalize(clickedPkmn.finalEvolution)}</div>
                        </div>
                        </div>
                    </div>
                 `);
             }
 
+//                            const thirdPkmnSprite = filterEvolution(clickedPkmn.thirdEvolution.thirdName).sprite;
+//                document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
+//                    <div class="mega-evolution-cont flex-center">
+//                       <div class="flex-center flex-column">
+//                           <div class="popup-evolution flex-center first-evolution"><img src="${thirdPkmnSprite}" alt="evolution"></div>
+//                           <div class="evolution-name">${capitalize(clickedPkmn.thirdEvolution.thirdName)}</div>
+//                       </div>
+//                       <div class="popup-evolution-box flex-center">
+//                       <div class="popup-evolution-arrow first-evolution-arrow">
+//                           <div class="evolution-trigger">Mega Stone</div>
+//                           <div class="evolution-level"><img class="mega-stone-img" src="megastone.png"></div>
+//                       </div>
+//                       <div class="flex-center flex-column">
+//                           <div class="popup-evolution flex-center second-evolution"><img src="mega_${clickedPkmn.thirdEvolution.thirdName}.png" alt="mega evolution"></div>
+//                           <div class="evolution-name">Mega ${capitalize(clickedPkmn.thirdEvolution.thirdName)}</div>
+//                       </div>
+//                       </div>
+//                   </div>
+//                `);
+//            
             // 
             addFirstEvolution();
 
@@ -3584,28 +4025,33 @@
         }
 
 
-        // 
-        //        const 
 
 
         // ----------------------------------------------------------------------------- NORMAL AND SPECIFIC FILTERS
 
-        // Changes Values on Slider depending on range-btn
+        // Changes Values on Slider depending on range-btn (From: Youtube, url: https://www.youtube.com/watch?v=pTlsnFLiK6c)
         const displRangeSlider = sliderCategory => {
             let currentCategory;
             let allSorted;
+            
+            // removes all selected classes from Range BUTTONS
+            rangeBtns.forEach(rb => rb.classList.remove("selected-range-tab"));
 
+            // depending on clicked btn - 
             switch (sliderCategory) {
                 case "id":
                     allSorted = allPokemon.map(p => p.id).sort((a, b) => a - b);
+                    rangeBtns[1].classList.add("selected-range-tab");
                     currentCategory = "";
                     break;
                 case "height":
                     allSorted = allPokemon.map(p => p.height / 10).sort((a, b) => a - b);
+                    rangeBtns[0].classList.add("selected-range-tab");
                     currentCategory = "m";
                     break;
                 case "weight":
                     allSorted = allPokemon.map(p => p.weight).sort((a, b) => a - b);
+                    rangeBtns[2].classList.add("selected-range-tab");
                     currentCategory = "kg";
             }
             sliderCat = sliderCategory;
@@ -3632,6 +4078,8 @@
             rangeNumbers[1].innerText = minMax[1] + currentCategory;
             
         }
+        
+         
             //            !!!!!
 
 
@@ -3651,7 +4099,7 @@
                     filteredRange = allPokemon.filter(p => p.id >= firstRangeSlider && p.id <= secndRangeSlider);
                     break;
                 case "height":
-                    filteredRange = allPokemon.filter(p => p.height >= firstRangeSlider && p.height <= secndRangeSlider);
+                    filteredRange = allPokemon.filter(p => (p.height * 10) / 100 >= firstRangeSlider && (p.height * 10) / 100 <= secndRangeSlider);
                     break;
                 case "weight":
                     filteredRange = allPokemon.filter(p => p.weight >= firstRangeSlider && p.weight <= secndRangeSlider);
@@ -3782,6 +4230,32 @@
         }
         setRightValue();
 
+        
+        inputLeft.addEventListener("mouseover", () => {
+            thumbLeft.classList.add("hover");
+        });
+        inputLeft.addEventListener("mouseout", () => {
+            thumbLeft.classList.remove("hover");
+        });
+        inputLeft.addEventListener("mousedown", () => {
+            thumbLeft.classList.add("active");
+        });
+        inputLeft.addEventListener("mouseup", () => {
+            thumbLeft.classList.remove("active");
+        });
+
+        inputRight.addEventListener("mouseover", () => {
+            thumbRight.classList.add("hover");
+        });
+        inputRight.addEventListener("mouseout", () => {
+            thumbRight.classList.remove("hover");
+        });
+        inputRight.addEventListener("mousedown", () => {
+            thumbRight.classList.add("active");
+        });
+        inputRight.addEventListener("mouseup", () => {
+            thumbRight.classList.remove("active");
+        });
 
         // ----------------------------------------------------------------------------- SCROLL TO TOP / BOTTOM BUTTONS
 
@@ -3798,7 +4272,7 @@
             $("html, body").animate({
                 scrollTop: $(document).height()
             }, {
-                duration: 1000,
+                duration: 300,
                 specialEasing: {
                     width: "linear",
                     height: "easeOutBounce"
@@ -3863,35 +4337,22 @@
 
 
 
-        // SLIDERS        
-
  
-        // STYLE CSS
-        // RESPONSIVE
-            // bei PDL -cont padding keiner when tablet so 3 cards can be 
-            // bei mobile maybe scale down cards to make 2 next to each other
-            // Mobile - Header - extra header for mobile
-            // Mobile - clicked pkmn -> fontsize, scroll, img scale down, Specific F. -> top0 - l, r, b, 0 evtl 
-        // moves color
+        // moves color 
         
-
-
-        // BUGS
-        // Height filter 
-        // evolution !!!!! GEN 
-        // Gen 4 images not leading
-        // Prev / Next button - maybe define new ver -> allCards zb (CURRENT PKMN LIST var global -> btn for currentPkmn = allPkmn to displ all again - function prev/next -> takes current pkmn)
-
-
-
-        // Maybe -
-        // add circle ball animated to popup
-
-
-
-
-
-
+        //  double range slider 
+        
+         // evolution BUG !!!!! GEN + Gen 4 images not loading
+        // make sure also pkmn with 2 evolutions get mega ev. displayed in evolution cont
+        // if pkmn 2 evolutions -> second + mega (displayed) ; else if pkmn 3 evolutions -> thirdEvoluion + mega
+        
+        
+        // animation - change gens (btn) "pokeball closes" - white (#eee) closes bottom area below header and displays little loading animation, opens up / slides down
+        
+      // loading ani: Loading... - 
+        
+        // maybe - start screen (white) - instead animation - rulez of da dex
+        // when clicking on gen btn - add class 'disp-none' to ruulez of da dex and reveal loading animation
         
         
         
@@ -3901,328 +4362,36 @@
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //         
-
-
-
-        
+        // loading animation behind pdexList cont, either change z-index or disp none / opacity
         
         
         
 //        
-//                // 
-//        const scrollBtnFunc = () => {
-//            document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? $(".scroll-top-btn").hide() : $(".scroll-top-btn").show();
-//        }
+//.box
+//{
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    min-height: 100vh;
+//    width: 100vw;
+//    z-index: 100;
+//}
 //
-//
-//        // 
-//        window.onscroll = function() {
-//            scrollBtnFunc()
-//        };
+//.element
+//{
+//    position: absolute;
+//    top: 0;
+//    background: pink;
+//    color: #eee;
+//    z-index: 10000;
+//}
+//        
 
-        
-        
+        // put popup window in box to scroll
 
 
 
-        //                console.log("double damage to", data.damage_relations.double_damage_to.map(dd => dd.name));
-        //                console.log("double damage from", data.damage_relations.double_damage_from.map(dd => dd.name));
-        //                console.log("half damage to", data.damage_relations.half_damage_to.map(hd => hd.name));
-        //                console.log("no damage to", data.damage_relations.no_damage_to.map(nd => nd.name));
-        //                console.log("no damage from", data.damage_relations.no_damage_from.map(nd => nd.name));
-
-
-
-
-        //            const getAllTmMoves = moves => moves.filter(move => move.version_group_details[0].move_learn_method.name === "machine");
-        //            
-        //            const getAllTutMoves = moves => moves.filter(move => move.version_group_details[0].move_learn_method.name === "tutor");
-        //            
-        //            const getAllEggMoves = moves => moves.filter(move => move.version_group_details[0].move_learn_method.name === "level-up" "egg");
-
-
-
-
-
-        //        //        
-        //        const fetchPkmnLocation = pkmn => {
-        //            fetch(`https://pokeapi.co/api/v2/pokemon-habitat/${pkmn.toLowerCase()}/`).then(res => res.json()).then(location => {
-        //                return location.name;
-        //            }).catch(err => console.error(err));
-        //        }
-
-
-
-
-        //        1, 1.5, 2, >2
-
-        //        fetch(`https://pokeapi.co/api/v2/pokemon-species/1`).then(res => res.json()).then(data => {
-        ////            console.log(data.genera[7].genus)
-        //        });
-
-
-        //         Api for moves
-        //        fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json()).then(data => {
-        //            console.log(data.moves.filter(move => move));
-        //            console.log("lvUp moves filtered", data.moves.filter(move => move.version_group_details[0].level_learned_at));
-        //        });
-
-
-        // Api for moves 
-        //        fetch(`https://pokeapi.co/api/v2/move/200`).then(res => res.json()).then(data => {
-        //            console.log("damage class", data.damage_class.name);
-        //            console.log("type", data.type.name);
-        //        });
-
-
-
-        // Api for Type
-        //                        fetch(`https://pokeapi.co/api/v2/type/1`).then(res => res.json()).then(data => {
-        //                            console.log("double damage to", data.damage_relations.double_damage_to.map(dd => dd.name));
-        //                            console.log("double damage from", data.damage_relations.double_damage_from.map(dd => dd.name));
-        //                            console.log("half damage to", data.damage_relations.half_damage_to.map(hd => hd.name));
-        //                            console.log("no damage to", data.damage_relations.no_damage_to.map(nd => nd.name));
-        //                            console.log("no damage from", data.damage_relations.no_damage_from.map(nd => nd.name));
-        //                        }).catch(err => console.error(err));
-        //        
-
-
-
-
-        // Moves Timeline kinda - type, lv, moveName (evtl physical/spedial) 
-
-
-
-
-
-
-
-        //                       <div class="pdl-popup-pkmn-name">Lizardon</div>
-        //                       <div class="pdex-card-types-cont popup-type-cont flex-center">
-        //                           <div class="pdex-card-type flex-center">Fire</div>
-        //                           <div class="pdex-card-type flex-center">Flying</div>
-        //                       </div>
-        //        
-
-
-
-
-        //         fetch(`https://pokeapi.co/api/v2/pokemon-species/1/`).then(res => res.json()).then(data => {
-        //                    console.log(data.evolution_chain.url);
-        //            });
-
-        //            
-        //        fetch(`https://pokeapi.co/api/v2/pokemon/1/`).then(res => res.json()).then(data => {
-        //                    console.log(data.abilities);
-        //            });
-
-
-
-        //        pkmnAbilities.forEach(ability => document.querySelector("#abilities").innerText += capitalize(ability.ability.name))
-
-        // !
-
-                
-                // fethcing evolution data
-                fetch(`https://pokeapi.co/api/v2/evolution-chain/1/`).then(res => res.json()).then(data => {  
-                   // 1. evolution
-                    console.log(data.chain.species.name);
-                    // 2. evolution
-                    // level null if other evolution forms
-                   console.log(data.chain.evolves_to[0].evolution_details[0].min_level);
-//                   console.log(data.chain.evolves_to[0].evolution_details[0].trigger.name);
-                    // if needs item (item name)
-        //           console.log(data.chain.evolves_to[0].evolution_details[0].item.name);
-//                   console.log(data.chain.evolves_to[0].species.name);
-                    
-                   // 3. evolution - needs if statement or something like that if less then 3 evolutions
-//                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name);
-                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level);
-//                   console.log(data.chain.evolves_to[0].evolves_to[0].species.name);
-                });
-                
-
-
-
-        // displ. abilities.forEach -> display if there 
-
-
-
-
-
-
-
-
-        //        for (let i = 1; i <= 150; i++) {
-        //            pDexListContainer.insertAdjacentHTML("beforeend", `
-        //                <div class="poke-card-wide">
-        //                   <div class="poke-card-wide-left flex-column">
-        //                       <h3 class="poke-card-wide-headline">Charizard</h3>
-        //                       <div class="poke-card-wide-type flex-center">Fire</div>
-        //                       <div class="poke-card-wide-type flex-center">Flying</div>
-        //                   </div>
-        //                   <div class="poke-card-wide-right">
-        //                       <img src="charizard.png" alt="charizard">
-        //                   </div>
-        //               </div>
-        //            `)
-        //        }
-        //    
-
-
-
-
-
-        //        const getAllPokemon = () => {
-        //            for (let i = 1; i <= 150; i++) {
-        //                fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then(res => res.json()).then(data => {
-        //                    const formattetPokemon = {
-        //                        id : data.id,
-        //                        name : capitalize(data.name),
-        //                        weight: data.weight,
-        //                        height: data.height,                                      
-        //                        type1: data.types[0].type.name,                          // [0].type.name  
-        //                        type2: checkForSecondType(data.types),
-        //                        abilities: data.abilities,                  // [0].ability.name
-        //                        stats: [
-        //                            { hpStat : [data.stats[0].stat.name, data.stats[0].base_stat ] },
-        //                            { attStat : [data.stats[1].stat.name, data.stats[1].base_stat ] },
-        //                            { defStat : [data.stats[2].stat.name, data.stats[2].base_stat ] },
-        //                            { spAttStat : [data.stats[3].stat.name, data.stats[3].base_stat ] },
-        //                            { spDefStat : [data.stats[4].stat.name, data.stats[4].base_stat ] },
-        //                            { speedStat : [data.stats[5].stat.name, data.stats[5].base_stat ] },
-        //                        ]
-        //                    }
-        //                    
-        //                    formattetPokemon.color = Object.values(allColors)[Object.keys(allColors).indexOf(formattetPokemon.type1)];
-        //            }).then(fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}/`).then(res => res.json()).then(data => {
-        //    //                    console.log(data);
-        //                        formattetPokemon.text = data.flavor_text_entries[1].flavor_text;
-        //
-        //        }
-        //        
-
-
-
-        //        
-        //        const displayAllPokemon = (pokeIndex) => {
-        //            console.log(allPokemon[pokeIndex])
-        //               pDexListContainer.insertAdjacentHTML("beforeend", `
-        //                 <div class="poke-card-wide" style="background-color: ${allPokemon[pokeIndex].color}">
-        //                   <div class="poke-card-wide-left flex-column">
-        //                       <h3 class="poke-card-wide-headline">${allPokemon[pokeIndex].name}</h3>
-        //                       <div class="poke-card-wide-type flex-center">${allPokemon[pokeIndex].type1}</div>
-        //                       <div class="poke-card-wide-type flex-center ${allPokemon[pokeIndex].type2}">${allPokemon[pokeIndex].type2}</div>
-        //                   </div>
-        //                   <div class="poke-card-wide-right">
-        //                       <img src="${allPokemon[pokeIndex].sprite}" alt="${allPokemon[pokeIndex].name}-image">
-        //                   </div>
-        //               </div>`); 
-        //        }
-        //                   
-
-
-
-
-
-
-
-        //        fetch(`https://pokeapi.co/api/v2/pokemon/2/`).then(res => res.json()).then(data => {
-        ////           console.log(data);
-        ////            let pokemonWeight = data.weight;
-        //            fetch(`https://pokeapi.co/api/v2/pokemon-species/1/`).then(res => res.json()).then(data => {
-        ////                console.log();
-        //            })
-        //        });
-        //        
-        //         fetch(`https://pokeres.bastionbot.org/images/pokemon/1.png`).then(image => {
-        ////                    console.log(image)
-        //                }).catch(err => console.error(err));
-        //
-        //        
-        //        
-        //        
-
-
-
-
-        // cards wide - circle a bit to left
-        // another div in right side - white bg circle -> absolute, feste groesse, img z-index, absolute
-
-
-
-
-
-
-
-        //            console.log(allPokemon[pokeIndex].color, allPokemon[pokeIndex].id)
-        //            console.log(allPokemon, allPokemon.length);
-
-        //            console.log(allPokemon[pokeIndex].name);
-
-        //            for (let i = 1; i <= 150; i++) {
-        //                pDexListContainer.insertAdjacentHTML("beforeend", `
-        //                 <div class="pdex-card flex-center flex-column"> 
-        //                    <div class="pdex-card-bg-color"></div>
-        //                    <div class="popup-pkmn-nr flex-center">#6</div>
-        //                    <div class="pdl-card-img">
-        //                      <img src="charizard.png">  
-        //                  </div>
-        //                     <h3 class="pdex-card-name">${allPokemon[i - 1].name}</h3>
-        //                       <div class="pdex-card-types-cont flex-center">
-        //                            <span class="pdex-card-type flex-center fire">Fire</span>
-        //                            <span class="pdex-card-type flex-center flying">Flying</span>
-        //                       </div>
-        //               </div>`);
-        //            }
-
-
-
-        //            allPokemon.forEach(pokemon => {
-        //                console.log(pokemon.types.length);
-        //               pDexListContainer.insertAdjacentHTML("beforeend", `
-        //                 <div class="pdex-card flex-center flex-column"> 
-        //                    <div class="pdex-card-bg-color"></div>
-        //                    <div class="popup-pkmn-nr flex-center">#${pokemon.id}</div>
-        //                    <div class="pdl-card-img">
-        //                      <img src="charizard.png">  
-        //                  </div>
-        //                     <h3 class="pdex-card-name">${pokemon.name}</h3>
-        //                       <div class="pdex-card-types-cont flex-center">
-        //                            <span class="pdex-card-type flex-center ${pokemon.types[0].type.name}">${ pokemon.types[0].type.name }</span>
-        //                            <span class="pdex-card-type flex-center ${ pokemon.types.length > 1 ? pokemon.types[0].type.name : "hidden" }">${pokemon.types[0].type.name }</span>
-        //                       </div>
-        //               </div>`); 
-        //            });
-        //            
-
+  
     </script>
 
 </body>
