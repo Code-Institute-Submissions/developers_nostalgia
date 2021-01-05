@@ -513,6 +513,7 @@
             border-radius: 20px;
             padding: .3em 1em;
             margin: .3em .1em;
+            font-size: ;
             color: #fff;
             font-weight: bold;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
@@ -2171,6 +2172,11 @@
                 width: 90%;
                 font-size: .75em;
             }
+
+            .move-name 
+            {
+                /*                margin: 5px;*/
+            }
         }
 
 
@@ -2935,7 +2941,7 @@
                         formattetPokemon.category = data.genera[7].genus;
                         formattetPokemon.habitat = data.habitat ? data.habitat.name : "No Data";
                         formattetPokemon.dexColor = data.color.name,
-                            formattetPokemon.catchRate = [data.capture_rate, Math.round((data.capture_rate / 255) * 100) + "%"];
+                        formattetPokemon.catchRate = [data.capture_rate, Math.round((data.capture_rate / 255) * 100) + "%"];
 
 
                         // fetches evolution data and adds to formattet pokemon                   
@@ -2945,7 +2951,7 @@
                             
                             formattetPokemon.isMega = isMegaPkmn(data.chain.species.name);
                             (data.chain.evolves_to.length > 0) ? formattetPokemon.finalEvolution = data.chain.evolves_to[0].species.name : formattetPokemon.finalEvolution = data.chain.species.name;
-                            formattetPokemon.isMega = isMegaPkmn(data.chain.evolves_to[0].species.name);
+                            (data.chain.evolves_to.length > 0) ? formattetPokemon.isMega = isMegaPkmn(data.chain.evolves_to[0].species.name) : false;
 
                             // adds second evolution pokemon data, to formattet pokemon if its there
                             (data.chain.evolves_to.length > 0) ? formattetPokemon.secndEvolution = {
@@ -4388,6 +4394,93 @@
 //        
 
         // put popup window in box to scroll
+
+
+        
+    
+
+
+
+
+        //        //        
+        //        const fetchPkmnLocation = pkmn => {
+        //            fetch(`https://pokeapi.co/api/v2/pokemon-habitat/${pkmn.toLowerCase()}/`).then(res => res.json()).then(location => {
+        //                return location.name;
+        //            }).catch(err => console.error(err));
+        //        }
+
+
+
+
+        //        1, 1.5, 2, >2
+
+        //        fetch(`https://pokeapi.co/api/v2/pokemon-species/1`).then(res => res.json()).then(data => {
+        ////            console.log(data.genera[7].genus)
+        //        });
+
+
+        //         Api for moves
+        //        fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json()).then(data => {
+        //            console.log(data.moves.filter(move => move));
+        //            console.log("lvUp moves filtered", data.moves.filter(move => move.version_group_details[0].level_learned_at));
+        //        });
+
+
+        // Api for moves 
+        //        fetch(`https://pokeapi.co/api/v2/move/200`).then(res => res.json()).then(data => {
+        //            console.log("damage class", data.damage_class.name);
+        //            console.log("type", data.type.name);
+        //        });
+
+
+
+        // Api for Type
+        //                        fetch(`https://pokeapi.co/api/v2/type/1`).then(res => res.json()).then(data => {
+        //                            console.log("double damage to", data.damage_relations.double_damage_to.map(dd => dd.name));
+        //                            console.log("double damage from", data.damage_relations.double_damage_from.map(dd => dd.name));
+        //                            console.log("half damage to", data.damage_relations.half_damage_to.map(hd => hd.name));
+        //                            console.log("no damage to", data.damage_relations.no_damage_to.map(nd => nd.name));
+        //                            console.log("no damage from", data.damage_relations.no_damage_from.map(nd => nd.name));
+        //                        }).catch(err => console.error(err));
+        //        
+
+
+
+
+        //         fetch(`https://pokeapi.co/api/v2/pokemon-species/1/`).then(res => res.json()).then(data => {
+        //                    console.log(data.evolution_chain.url);
+        //            });
+
+        //            
+        //        fetch(`https://pokeapi.co/api/v2/pokemon/1/`).then(res => res.json()).then(data => {
+        //                    console.log(data.abilities);
+        //            });
+
+
+
+        //        pkmnAbilities.forEach(ability => document.querySelector("#abilities").innerText += capitalize(ability.ability.name))
+
+        // !
+
+                
+                // fethcing evolution data
+//                fetch(`https://pokeapi.co/api/v2/evolution-chain/1/`).then(res => res.json()).then(data => {  
+                   // 1. evolution
+//                    console.log(data.chain.species.name);
+                    // 2. evolution
+                    // level null if other evolution forms
+//                   console.log(data.chain.evolves_to[0].evolution_details[0].min_level);
+//                   console.log(data.chain.evolves_to[0].evolution_details[0].trigger.name);
+                    // if needs item (item name)
+        //           console.log(data.chain.evolves_to[0].evolution_details[0].item.name);
+//                   console.log(data.chain.evolves_to[0].species.name);
+                    
+                   // 3. evolution - needs if statement or something like that if less then 3 evolutions
+//                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name);
+//                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level);
+//                   console.log(data.chain.evolves_to[0].evolves_to[0].species.name);
+//                });
+                
 
 
 
