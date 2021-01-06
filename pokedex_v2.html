@@ -513,7 +513,6 @@
             border-radius: 20px;
             padding: .3em 1em;
             margin: .3em .1em;
-            font-size: ;
             color: #fff;
             font-weight: bold;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
@@ -531,7 +530,7 @@
             height: 100vh;
             background-color: #333;
             cursor: default;
-            z-index: 6000;
+            z-index: 6001;
         }
         
         /* POPUP TOP SECTION (BG) --------- */
@@ -1241,7 +1240,8 @@
 
         .evolution-level 
         {
-            bottom: -500%;
+/*            bottom: -2em;*/
+            margin-top: .8em;
             color: blue;
             transform: translateX(-50%);
         }
@@ -2129,6 +2129,15 @@
                 right: 3%;
             }
             
+            /* To make it possible to scroll */
+            .pdl-popup-cont
+            {
+                top: 0;
+                bottom: 0;
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+            
             .pdl-popup-tabs
             {
                 font-size: .9em;
@@ -2171,11 +2180,6 @@
             {
                 width: 90%;
                 font-size: .75em;
-            }
-
-            .move-name 
-            {
-                /*                margin: 5px;*/
             }
         }
 
@@ -2430,6 +2434,7 @@
         }
         
         
+        
     </style>
 
 
@@ -2550,77 +2555,77 @@
         <button onclick="scrollToBottom()" id="scroll-bottom-btn" class="to-bottom-btn"><i class="fas fa-arrow-down"></i></button>
         
         <!-- POPUP CONTAINER  -->
-        <div class="pdl-popup-cont hidden">
-            <div class="large-img-screen flex-center flex-column hidden"></div>
-            <div onclick="closePopup()" class="popup-close-btn flex-center">
-                <span class="cross"></span>
-                <span class="cross cross2"></span>
-            </div>
-            <!-- Favorite Pkmn Container -->
-            <div onclick="favoritePkmn()" class="favorite-pkmn-cont flex-center">
-                <i class="far fa-heart"></i>
-            </div>
-            
-            <!-- POPUP CONTAINER - BACKGROUND / TOP SECTION (name, sprite, id, category, ...) -->
-            <div class="pdl-popup-bg flex-center">
-                <div onclick="prevNextPkmn(clickedPkmn, -1)" class="prev-next-pkmn-btn">
-                    <i class="fas fa-caret-left"></i>
+            <div class="pdl-popup-cont hidden">
+                <div class="large-img-screen flex-center flex-column hidden"></div>
+                <div onclick="closePopup()" class="popup-close-btn flex-center">
+                    <span class="cross"></span>
+                    <span class="cross cross2"></span>
                 </div>
-                <div onclick="prevNextPkmn(clickedPkmn, 1)" class="prev-next-pkmn-btn">
-                    <i class="fas fa-caret-right"></i>
+                <!-- Favorite Pkmn Container -->
+                <div onclick="favoritePkmn()" class="favorite-pkmn-cont flex-center">
+                    <i class="far fa-heart"></i>
                 </div>
-                <div class="flex-center flex-column">
-                    <h3 id="popup-pkmn-headline" class="poke-card-wide-headline pdl-popup-pokemon-name"></h3>
-                    <div class="flex-center">
-                        <div class="poke-card-wide-type flex-center popup-type"></div>
-                        <div class="poke-card-wide-type flex-center popup-type"></div>
+
+                <!-- POPUP CONTAINER - BACKGROUND / TOP SECTION (name, sprite, id, category, ...) -->
+                <div class="pdl-popup-bg flex-center">
+                    <div onclick="prevNextPkmn(clickedPkmn, -1)" class="prev-next-pkmn-btn">
+                        <i class="fas fa-caret-left"></i>
                     </div>
-                </div>
-                <div class="pdl-popup-id">
-                    #000 <br>
-                    <div class="pdl-popup-category">Pokemon Category</div>
-                </div>
-            </div>
-            
-            <!-- POPUP CONTAINER - CONTENT / BOTTOM SECTION (tabs, all data) -->
-            <div class="pdl-popup-content-cont flex-center flex-column">
-                <div class="pdl-popup-content flex-center flex-column">
-                    <div onclick="enlargeImage(event)" id="popup-pkmn-img" class="pdl-popup-img"></div>
-                    <!-- POPUP CONTAINER - TABS (switch between data categorys) -->
-                    <ul class="pdl-popup-tabs flex-center">
-                        <li onclick="fillAboutTab()" class="popup-tab">About</li>
-                        <li onclick="fillBaseStatsTab()" class="popup-tab">Base Stats</li>
-                        <li onclick="fillEvolutionsTab()" class="popup-tab">Evolutions</li>
-                        <li onclick="getTypeAdv(clickedPkmn.type1.toLowerCase())" class="popup-tab">Type Adv</li>
-                        <li onclick="displayMoves(clickedPkmn)" class="popup-tab">Moves</li>
-                    </ul>
-                    
-                    <!-- POPUP CONTAINER - ABOUT SECTION (genrel data) -->
-                    <div id="about-tab-cont" class="popup-content-tab-cont poke-data flex-center hidde"></div>
-                    
-                    <!-- POPUP CONTAINER - BASE STATS SECTION -->
-                    <div id="base-stats-cont" class="popup-content-tab-cont poke-data flex-center hidden"></div>
-                    
-                    <!-- POPUP CONTAINER - EVOLUTIONS SECTION -->
-                    <div id="evolutions-tab-cont" class="popup-content-tab-cont poke-data flex-center flex-column hidde"></div>
-                    
-                    <!-- POPUP CONTAINER - TYPE ADVANTAGES / WEAKNESSES SECTION -->
-                    <div id="type-adv-tab" class="popup-content-tab-cont poke-data flex-center hidden">
-                        <!-- Btns to switch between advantages/weaknesses -->
-                        <div class="switch-weakn-adv-btn-cont flex-center">
-                            <button onclick="changeWeaknessAdv(event)" class="swich-to-weakn-adv-btn">Weaknesses</button>
-                            <button onclick="changeWeaknessAdv(event)" class="swich-to-weakn-adv-btn">Advantages</button>
+                    <div onclick="prevNextPkmn(clickedPkmn, 1)" class="prev-next-pkmn-btn">
+                        <i class="fas fa-caret-right"></i>
+                    </div>
+                    <div class="flex-center flex-column">
+                        <h3 id="popup-pkmn-headline" class="poke-card-wide-headline pdl-popup-pokemon-name"></h3>
+                        <div class="flex-center">
+                            <div class="poke-card-wide-type flex-center popup-type"></div>
+                            <div class="poke-card-wide-type flex-center popup-type"></div>
                         </div>
                     </div>
-            
-                    <!-- POPUP CONTAINER - MOVES SECTION (click on moves to get more data/info)-->
-                    <div id="moves-tab-cont" class="popup-content-tab-cont poke-data flex-center hidden">
-                        <div class="popup-moves flex-center" style="flex-wrap: wrap"></div>
-                        <div class="popup-move-descr-cont flex-center flex-column opacity"></div>
+                    <div class="pdl-popup-id">
+                        #000 <br>
+                        <div class="pdl-popup-category">Pokemon Category</div>
+                    </div>
+                </div>
+
+                <!-- POPUP CONTAINER - CONTENT / BOTTOM SECTION (tabs, all data) -->
+                <div class="pdl-popup-content-cont flex-center flex-column">
+                    <div class="pdl-popup-content flex-center flex-column">
+                        <div onclick="enlargeImage(event)" id="popup-pkmn-img" class="pdl-popup-img"></div>
+                        <!-- POPUP CONTAINER - TABS (switch between data categorys) -->
+                        <ul class="pdl-popup-tabs flex-center">
+                            <li onclick="fillAboutTab()" class="popup-tab">About</li>
+                            <li onclick="fillBaseStatsTab()" class="popup-tab">Base Stats</li>
+                            <li onclick="fillEvolutionsTab()" class="popup-tab">Evolutions</li>
+                            <li onclick="getTypeAdv(clickedPkmn.type1.toLowerCase())" class="popup-tab">Type Adv</li>
+                            <li onclick="displayMoves(clickedPkmn)" class="popup-tab">Moves</li>
+                        </ul>
+
+                        <!-- POPUP CONTAINER - ABOUT SECTION (genrel data) -->
+                        <div id="about-tab-cont" class="popup-content-tab-cont poke-data flex-center hidde"></div>
+
+                        <!-- POPUP CONTAINER - BASE STATS SECTION -->
+                        <div id="base-stats-cont" class="popup-content-tab-cont poke-data flex-center hidden"></div>
+
+                        <!-- POPUP CONTAINER - EVOLUTIONS SECTION -->
+                        <div id="evolutions-tab-cont" class="popup-content-tab-cont poke-data flex-center flex-column hidde"></div>
+
+                        <!-- POPUP CONTAINER - TYPE ADVANTAGES / WEAKNESSES SECTION -->
+                        <div id="type-adv-tab" class="popup-content-tab-cont poke-data flex-center hidden">
+                            <!-- Btns to switch between advantages/weaknesses -->
+                            <div class="switch-weakn-adv-btn-cont flex-center">
+                                <button onclick="changeWeaknessAdv(event)" class="swich-to-weakn-adv-btn">Weaknesses</button>
+                                <button onclick="changeWeaknessAdv(event)" class="swich-to-weakn-adv-btn">Advantages</button>
+                            </div>
+                        </div>
+
+                        <!-- POPUP CONTAINER - MOVES SECTION (click on moves to get more data/info)-->
+                        <div id="moves-tab-cont" class="popup-content-tab-cont poke-data flex-center hidden">
+                            <div class="popup-moves flex-center" style="flex-wrap: wrap"></div>
+                            <div class="popup-move-descr-cont flex-center flex-column opacity"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         
         <!-- TYPE FILTER BTNS (filter by type) -->
         <div class="poke-type-btn-cont"></div>
@@ -2732,28 +2737,22 @@
             rock: '#C9B98B',
             fairy: '#FEBAEA',
             poison: '#54B564',
-            //            poison: '#40244A',
-            //            poison: '#98d7a5',
             bug: '#2CDAB1',
             dragon: '#0875C8',
-            //            dragon: '#97b3e6',
             psychic: '#9758AD',
-            //            psychic: '#F366B9',
             flying: '#AEC5EF',
             fighting: '#DA475C',
             fighting: '#E4476E',
             fighting: '#EB4971',
-            //            fighting: '#C27E6E',
-            //            fighting: '#D56723',
-            //            normal: '#5B5F68',
             normal: '#B4A3A7',
-            //            normal: '#F8C06E',
             ice: '#51C4E7',
             ghost: '#7B62A3',
-            //            dark: '#707070',
             dark: '#9D9EA0',
             steel: '#9EB7B8'
         }
+        
+        // Sprite of last Evolution
+        let finalEvolutionSprite;
 
 
         // -------------------------------------------------------------------------------------------- FUNCTIONS -
@@ -2818,7 +2817,7 @@
 
                 // displays clear filter BUTTON
                 pDexListContainer.insertAdjacentHTML("beforebegin", `
-                    <div onclick="removePkmnTypeFilter()" class="clear-favs-btn flex-center" style="border-radius: 0">
+                    <div onclick="removePkmnTypeFilter()" class="clear-favs-btn clear-filter-btn flex-center" style="border-radius: 0">
                         <i class="fas fa-trash-alt"></i>
                         <p>Remove Filter</p>
                     </div>
@@ -2862,8 +2861,8 @@
         
         // Removes 'remove filter' - BUTTON if in DOM
         const remClearFilterBtn = () => {
-            if (document.body.contains(document.querySelector(".clear-favs-btn"))) {
-                pDexMainContainer.removeChild(document.querySelector(".clear-favs-btn"));
+            if (document.body.contains(document.querySelector(".clear-filter-btn"))) {
+                pDexMainContainer.removeChild(document.querySelector(".clear-filter-btn"));
             }
         }
         
@@ -2958,8 +2957,8 @@
                                 levelup: data.chain.evolves_to[0].evolution_details[0] ? "Lv. " + data.chain.evolves_to[0].evolution_details[0].min_level : "Lv. ?",
                                 secndName: data.chain.evolves_to[0].species.name,
                                 trigger: data.chain.evolves_to[0].evolution_details[0] ? data.chain.evolves_to[0].evolution_details[0].trigger.name : "",
-                                item: data.chain.evolves_to[0].evolution_details[0].item ? capitalize(data.chain.evolves_to[0].evolution_details[0].item.name) : false
-                            }: formattetPokemon.secndEvolution = false;
+                                item: data.chain.evolves_to[0].evolution_details[0] ? (data.chain.evolves_to[0].evolution_details[0].item ? capitalize(data.chain.evolves_to[0].evolution_details[0].item.name) : false) : false
+                            } : formattetPokemon.secndEvolution = false;
 
                             // adds third evolution pokemon data if there is one
                             if (data.chain.evolves_to.length > 0) {
@@ -3097,7 +3096,7 @@
             // clears Pokedex List & displays 'Remove Filter BUTTON' over/before Pokedex List
             pDexListContainer.innerHTML = "";
             pDexListContainer.insertAdjacentHTML("beforebegin", `
-                <div onclick="removePkmnTypeFilter()" class="clear-favs-btn flex-center" style="border-radius: 0">
+                <div onclick="removePkmnTypeFilter()" class="clear-favs-btn clear-filter-btn flex-center" style="border-radius: 0">
                     <i class="fas fa-trash-alt"></i>
                     <p>Remove Filter</p>
                 </div>
@@ -3526,24 +3525,35 @@
 
             // Fetches missing sprite (if pkmn evolution is not in selected/current generation) - should avoid TypeError
             const fetchMissingSprite = (name) => {
-                console.log("fetching missing spritre")
                 let pSprite;
 
                 fetch(`https://pokeapi.co/api/v2/pokemon/${name}`).then(res => res.json()).then(pkmn => {
                     fetch(`https://pokeres.bastionbot.org/images/pokemon/${pkmn.id}.png`).then(sprite => {
+                        finalEvolutionSprite = sprite.url;
                         pSprite = sprite.url;
-                        console.log(pSprite)
+                        return pSprite;
+                        console.log(pSprite);
 
-
-                    }).catch(err => console.error(err));
-                }).catch(err => console.error(err));
+                    }).catch(err => console.error(err))
+                    
+                }).catch(err => console.error(err));     
             }
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ !!!!!
 
+            
+            // Returns all Pokemon Names in chosen generation
+            const getAllGenPkmnNames = (gen) => gen.map(pkmn => pkmn.name.toLowerCase());
 
+            
             // 
             const addFirstEvolution = () => {
-                const firstPkmnSprite = filterEvolution(clickedPkmn.firstEvolution).sprite;
+                let firstPkmnSprite;
+                
+                if (getAllGenPkmnNames(allPokemon).includes(clickedPkmn.firstEvolution)) {
+                    firstPkmnSprite = filterEvolution(clickedPkmn.firstEvolution).sprite;
+                } else {
+                    firstPkmnSprite = fetchMissingSprite(clickedPkmn.firstEvolution);
+                }
                 //                let firstPkmnSprite = lookForSprite(clickedPkmn.firstEvolution); 
 
                 evolutionsTab.innerHTML = `
@@ -3561,16 +3571,23 @@
 
             // 
             const addSecndEvolution = pkmn => { // pkmn instead!
-                const secndPkmnSprite = filterEvolution(clickedPkmn.secndEvolution.secndName).sprite;
+                let secndPkmnSprite;
+                
+                if (getAllGenPkmnNames(allPokemon).includes(clickedPkmn.secndEvolution.secndName)) {
+                    secndPkmnSprite = filterEvolution(clickedPkmn.secndEvolution.secndName).sprite;
+                } else {
+                    secndPkmnSprite = fetchMissingSprite(clickedPkmn.secndEvolution.secndName); 
+                }
+                
                 //                let secndPkmnSprite = lookForSprite(clickedPkmn.secndEvolution.secndName); !!!!!!
 
 
-                console.log(secndPkmnSprite)
+//                console.log(secndPkmnSprite)
                 document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
                     <div class="popup-evolution-box flex-center">
                        <div class="popup-evolution-arrow second-evolution-arrow">
                            <div class="evolution-trigger">${capitalize(clickedPkmn.secndEvolution.trigger)}</div>
-                           <div class="evolution-level">${clickedPkmn.secndEvolution.levelup.includes("null") ?  capitalize(clickedPkmn.secndEvolution.item) : returnIfTrue(clickedPkmn.secndEvolution.levelup)}</div>
+                           <div class="evolution-level">${clickedPkmn.secndEvolution.levelup.includes("null") ?  capitalize(clickedPkmn.secndEvolution.item ? clickedPkmn.secndEvolution.item : "") : returnIfTrue(clickedPkmn.secndEvolution.levelup)}</div>
                        </div>
                        <div class="flex-center flex-column">
                            <div class="popup-evolution flex-center third-evolution"><img src="${secndPkmnSprite}" alt="evolution"></div>
@@ -3583,10 +3600,14 @@
                 
             // 
             const addThirdEvolution = pkmn => {
-                const thirdPkmnSprite = filterEvolution(clickedPkmn.thirdEvolution.thirdName).sprite;
-                //                let thirdPkmnSprite = lookForSprite(clickedPkmn.thirdEvolution.thirdName); 
+                let thirdPkmnSprite;
+                
+                if (getAllGenPkmnNames(allPokemon).includes((clickedPkmn.thirdEvolution.thirdName) || (clickedPkmn.secndEvolution.secndName) || (clickedPkmn.firstEvolution))) {
+                    thirdPkmnSprite = filterEvolution(clickedPkmn.thirdEvolution.thirdName).sprite;
+                } else {
+                    thirdPkmnSprite = fetchMissingSprite(clickedPkmn.thirdEvolution.thirdName); 
+                }
 
-                console.log(thirdPkmnSprite)
                 document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
                     <div class="popup-evolution-box flex-center">
                        <div class="popup-evolution-arrow second-evolution-arrow">
@@ -3604,7 +3625,15 @@
 
             // 
             const addMegaEvolution = () => {
-                const thirdPkmnSprite = filterEvolution(clickedPkmn.finalEvolution).sprite;
+                let thirdPkmnSprite;
+                
+                if (getAllGenPkmnNames(allPokemon).includes((clickedPkmn.thirdEvolution.thirdName) || (clickedPkmn.secndEvolution.secndName) || (clickedPkmn.firstEvolution))) {
+                    thirdPkmnSprite = filterEvolution(clickedPkmn.finalEvolution).sprite;
+                } else {
+                    thirdPkmnSprite =  finalEvolutionSprite;
+                }
+                
+                // selects 'evolution container' in DOM & inserts Mega Evolution HTML-block
                 document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
                     <div class="mega-evolution-cont flex-center">
                        <div class="flex-center flex-column">
@@ -3656,7 +3685,7 @@
                 }
             }
             if (clickedPkmn.isMega) {
-                console.log(clickedPkmn, clickedPkmn.isMega)
+//                console.log(clickedPkmn, clickedPkmn.isMega)
                 addMegaEvolution();
             }
         }
@@ -3849,7 +3878,6 @@
 
         //
         const moveElementSize = moves => {
-            console.log(moves.length);
             if (moves.length <= 13) {
                 return "1.3em";
             } else if (moves.length > 13 && moves.length < 45) {
@@ -4022,7 +4050,7 @@
                               ${formattedMove.moveDescrTxt}
                           </div>
                         `;
-                    console.log(formattedMove)
+//                    console.log(formattedMove)
                 }
                 toggleMoveDescrCont();
                 fillMovesDescrCont();
@@ -4369,120 +4397,6 @@
         
         
         // loading animation behind pdexList cont, either change z-index or disp none / opacity
-        
-        
-        
-//        
-//.box
-//{
-//    position: absolute;
-//    top: 0;
-//    left: 0;
-//    min-height: 100vh;
-//    width: 100vw;
-//    z-index: 100;
-//}
-//
-//.element
-//{
-//    position: absolute;
-//    top: 0;
-//    background: pink;
-//    color: #eee;
-//    z-index: 10000;
-//}
-//        
-
-        // put popup window in box to scroll
-
-
-        
-    
-
-
-
-
-        //        //        
-        //        const fetchPkmnLocation = pkmn => {
-        //            fetch(`https://pokeapi.co/api/v2/pokemon-habitat/${pkmn.toLowerCase()}/`).then(res => res.json()).then(location => {
-        //                return location.name;
-        //            }).catch(err => console.error(err));
-        //        }
-
-
-
-
-        //        1, 1.5, 2, >2
-
-        //        fetch(`https://pokeapi.co/api/v2/pokemon-species/1`).then(res => res.json()).then(data => {
-        ////            console.log(data.genera[7].genus)
-        //        });
-
-
-        //         Api for moves
-        //        fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json()).then(data => {
-        //            console.log(data.moves.filter(move => move));
-        //            console.log("lvUp moves filtered", data.moves.filter(move => move.version_group_details[0].level_learned_at));
-        //        });
-
-
-        // Api for moves 
-        //        fetch(`https://pokeapi.co/api/v2/move/200`).then(res => res.json()).then(data => {
-        //            console.log("damage class", data.damage_class.name);
-        //            console.log("type", data.type.name);
-        //        });
-
-
-
-        // Api for Type
-        //                        fetch(`https://pokeapi.co/api/v2/type/1`).then(res => res.json()).then(data => {
-        //                            console.log("double damage to", data.damage_relations.double_damage_to.map(dd => dd.name));
-        //                            console.log("double damage from", data.damage_relations.double_damage_from.map(dd => dd.name));
-        //                            console.log("half damage to", data.damage_relations.half_damage_to.map(hd => hd.name));
-        //                            console.log("no damage to", data.damage_relations.no_damage_to.map(nd => nd.name));
-        //                            console.log("no damage from", data.damage_relations.no_damage_from.map(nd => nd.name));
-        //                        }).catch(err => console.error(err));
-        //        
-
-
-
-
-        //         fetch(`https://pokeapi.co/api/v2/pokemon-species/1/`).then(res => res.json()).then(data => {
-        //                    console.log(data.evolution_chain.url);
-        //            });
-
-        //            
-        //        fetch(`https://pokeapi.co/api/v2/pokemon/1/`).then(res => res.json()).then(data => {
-        //                    console.log(data.abilities);
-        //            });
-
-
-
-        //        pkmnAbilities.forEach(ability => document.querySelector("#abilities").innerText += capitalize(ability.ability.name))
-
-        // !
-
-                
-                // fethcing evolution data
-//                fetch(`https://pokeapi.co/api/v2/evolution-chain/1/`).then(res => res.json()).then(data => {  
-                   // 1. evolution
-//                    console.log(data.chain.species.name);
-                    // 2. evolution
-                    // level null if other evolution forms
-//                   console.log(data.chain.evolves_to[0].evolution_details[0].min_level);
-//                   console.log(data.chain.evolves_to[0].evolution_details[0].trigger.name);
-                    // if needs item (item name)
-        //           console.log(data.chain.evolves_to[0].evolution_details[0].item.name);
-//                   console.log(data.chain.evolves_to[0].species.name);
-                    
-                   // 3. evolution - needs if statement or something like that if less then 3 evolutions
-//                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name);
-//                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level);
-//                   console.log(data.chain.evolves_to[0].evolves_to[0].species.name);
-//                });
-                
-
-
 
   
     </script>
