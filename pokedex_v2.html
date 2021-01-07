@@ -178,6 +178,8 @@
             height: 75px;
             width: 100%;
             background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,.5),
+                            0 -10px #000;
             z-index: 1;
         }
         
@@ -2434,6 +2436,25 @@
         }
         
         
+        .pdl-start-screen
+        {
+/*            width: 100vw;*/
+            position: absolute;
+            top: -55%;
+            left: 0;
+            padding: 5em 15%;
+            background: #eee;
+            text-align: center;
+            min-height: 90vh;
+        }
+        
+        .pdl-start-screen .pdl-gen-btns-cont
+        {
+            margin: 1em 25%; 
+            background: crimson; 
+            padding: .5em; 
+            border-radius: 5px;
+        }
         
     </style>
 
@@ -2631,7 +2652,37 @@
         <div class="poke-type-btn-cont"></div>
         
         <!-- POKEMON CARD CONTAINER (all pokemon - click on them to open the Popup window) -->
-        <div class="pdl-cont"></div>
+        <div class="pdl-cont">
+            <div class="pdl-start-screen">
+                <h1>Online Pokedex</h1>
+                <p>- A Pokemon Encyclopedia -</p>
+                <p>
+                    This is an online pokedex - also called a pokemon ecyclopedia. You're new to the pokemon 
+                    universe? No problem at all! You're very welcome to brose around and find all the information you need. Eiher you want 
+                    to impress your kids your friends or anybody who thinks you're a "pokenoob" with some nice nerdy and detailed knowledge - come and find all the 
+                    info you'll need for that right here! <br>
+                    You're not a noobie? Great! Welcome home my friend. There's not much more to say, except have fun and I hope this Dexter can be useful to you in any way...
+                </p>
+                <div class="social-txt flex-center">
+                    <span class="just-visible-on-mobile">I you like it, you are very welcome to</span> Follow me on:
+                    <div class="social-txt-icon"><i class="fab fa-facebook-square"></i></div>
+                    <div class="social-txt-icon"><i class="fab fa-instagram-square"></i></div>
+                    <div class="social-txt-icon"><i class="fab fa-twitter-square"></i></div>
+                    <div class="social-txt-icon"><i class="fab fa-youtube-square"></i></div>
+                    <div class="social-txt-icon"><i class="fab fa-pinterest-square"></i></div>
+                    <div class="social-txt-icon"><i class="fab fa-github-square"></i></div>
+                </div>
+                <h4>How To Get Started?</h4>
+                <p>Simply choose a Generation you want your data from</p>
+                <div class="pdl-gen-btns-cont">
+                <button class="display-gen-btn">Gen 1</button>
+                <button class="display-gen-btn">Gen 2</button>
+                <button class="display-gen-btn">Gen 3</button>
+                <button class="display-gen-btn">Gen 4</button>
+                <button class="display-gen-btn">Fav <i class="far fa-heart"></i></button>
+            </div>
+            </div>
+        </div>
     </div>
 
 
@@ -4385,18 +4436,142 @@
         
       // loading ani: Loading... - 
         
-        // maybe - start screen (white) - instead animation - rulez of da dex
         // when clicking on gen btn - add class 'disp-none' to ruulez of da dex and reveal loading animation
         
         
+        // maybe how to get started slides up (overflow) gen-btns pop up
+        // maybe create animation how to click a card - choose a tab! take lizardons card and click it - tabs slide up (opacity)from below - info from every tab appears -!! press btns to create tabs with info about tabs:) -
+                                                // - SEE IT AGAIN BTN
+                // delay - wait for first lil ani - then start descr.ani
+                    // 1. pkmn card (pointer slights diagonally on card - both dipappear ( pointer smaller(click)))
+        // less txt, smaller font for txt (su)
+        // box-shadow - gen-btns cont
+        // start scr... socials middle - space around, below txt line follow me...
+        // maybe animation - cursor pointer / pnmn checks /clicks btns - hin und her 
+            // or cursor pointer upside down stops just on every btn (pos. 100/6 %)
+            // clicking on gen btn triggers function - info about gen (Total pkmn: 151, Nr: 1# Bulbasaur - 150# Mew, Editions: Red/Blue/Yellow)
+                // toolpick overflow hidden ani trick- slide down try with arrow (maybe content in toolpick pops up delayed.../ pop-bounce)
         
         
         
-        
-        
+        // animation class for start screen - diisappear a bit slower or slide down
         
         
         // loading animation behind pdexList cont, either change z-index or disp none / opacity
+        
+        
+        
+//        
+//.box
+//{
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    min-height: 100vh;
+//    width: 100vw;
+//    z-index: 100;
+//}
+//
+//.element
+//{
+//    position: absolute;
+//    top: 0;
+//    background: pink;
+//    color: #eee;
+//    z-index: 10000;
+//}
+//        
+
+        // put popup window in box to scroll
+
+
+        
+    
+
+
+
+
+        //        //        
+        //        const fetchPkmnLocation = pkmn => {
+        //            fetch(`https://pokeapi.co/api/v2/pokemon-habitat/${pkmn.toLowerCase()}/`).then(res => res.json()).then(location => {
+        //                return location.name;
+        //            }).catch(err => console.error(err));
+        //        }
+
+
+
+
+        //        1, 1.5, 2, >2
+
+        //        fetch(`https://pokeapi.co/api/v2/pokemon-species/1`).then(res => res.json()).then(data => {
+        ////            console.log(data.genera[7].genus)
+        //        });
+
+
+        //         Api for moves
+        //        fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json()).then(data => {
+        //            console.log(data.moves.filter(move => move));
+        //            console.log("lvUp moves filtered", data.moves.filter(move => move.version_group_details[0].level_learned_at));
+        //        });
+
+
+        // Api for moves 
+        //        fetch(`https://pokeapi.co/api/v2/move/200`).then(res => res.json()).then(data => {
+        //            console.log("damage class", data.damage_class.name);
+        //            console.log("type", data.type.name);
+        //        });
+
+
+
+        // Api for Type
+        //                        fetch(`https://pokeapi.co/api/v2/type/1`).then(res => res.json()).then(data => {
+        //                            console.log("double damage to", data.damage_relations.double_damage_to.map(dd => dd.name));
+        //                            console.log("double damage from", data.damage_relations.double_damage_from.map(dd => dd.name));
+        //                            console.log("half damage to", data.damage_relations.half_damage_to.map(hd => hd.name));
+        //                            console.log("no damage to", data.damage_relations.no_damage_to.map(nd => nd.name));
+        //                            console.log("no damage from", data.damage_relations.no_damage_from.map(nd => nd.name));
+        //                        }).catch(err => console.error(err));
+        //        
+
+
+
+
+        //         fetch(`https://pokeapi.co/api/v2/pokemon-species/1/`).then(res => res.json()).then(data => {
+        //                    console.log(data.evolution_chain.url);
+        //            });
+
+        //            
+        //        fetch(`https://pokeapi.co/api/v2/pokemon/1/`).then(res => res.json()).then(data => {
+        //                    console.log(data.abilities);
+        //            });
+
+
+
+        //        pkmnAbilities.forEach(ability => document.querySelector("#abilities").innerText += capitalize(ability.ability.name))
+
+        // !
+
+                
+                // fethcing evolution data
+//                fetch(`https://pokeapi.co/api/v2/evolution-chain/1/`).then(res => res.json()).then(data => {  
+                   // 1. evolution
+//                    console.log(data.chain.species.name);
+                    // 2. evolution
+                    // level null if other evolution forms
+//                   console.log(data.chain.evolves_to[0].evolution_details[0].min_level);
+//                   console.log(data.chain.evolves_to[0].evolution_details[0].trigger.name);
+                    // if needs item (item name)
+        //           console.log(data.chain.evolves_to[0].evolution_details[0].item.name);
+//                   console.log(data.chain.evolves_to[0].species.name);
+                    
+                   // 3. evolution - needs if statement or something like that if less then 3 evolutions
+//                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name);
+//                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level);
+//                   console.log(data.chain.evolves_to[0].evolves_to[0].species.name);
+//                });
+                
+
+
 
   
     </script>
