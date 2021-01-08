@@ -20,6 +20,7 @@
 
         .html 
         {
+            background: #333;
             scroll-behavior: smooth;
         }
 
@@ -515,6 +516,7 @@
             border-radius: 20px;
             padding: .3em 1em;
             margin: .3em .1em;
+            font-size: ;
             color: #fff;
             font-weight: bold;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
@@ -1777,7 +1779,7 @@
         }
 
 
-        /*----------------------------------------------- PREVIOUS AND NEXT POKEMON BUTTONS (Arrows to navigate without closing Popup Window)  */
+        /* ----------------------------------------------- PREVIOUS AND NEXT POKEMON BUTTONS (Arrows to navigate without closing Popup Window)  */
 
         .prev-next-pkmn-btn 
         {
@@ -2183,6 +2185,11 @@
                 width: 90%;
                 font-size: .75em;
             }
+
+            .move-name 
+            {
+                /*                margin: 5px;*/
+            }
         }
 
 
@@ -2448,12 +2455,127 @@
             min-height: 90vh;
         }
         
+        .gen-btns-wrapper
+        {
+            width: 100%;
+        }
+        
         .pdl-start-screen .pdl-gen-btns-cont
         {
-            margin: 1em 25%; 
+            position: relative;
+            left: auto;
+            margin: 1em 0; 
             background: crimson; 
             padding: .5em; 
             border-radius: 5px;
+        }
+        
+        .animated-descr-cont
+        {
+            width: 400px;
+            height: 230px;
+            background: #333;
+            padding: 3em;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 5em;
+        }
+        
+        .pdl-start-screen .poke-card-wide
+        {
+            padding-top: 3.5%;
+            min-height: 150px;
+            width: 250px;   
+            animation: clicked 1.3s ease-out forwards;
+            animation-delay: 8s;
+        }
+        
+        .pdl-start-screen .poke-card-wide:hover
+        {
+            transform: none;
+            cursor: default;
+        }
+        
+        .social-txt
+        {
+            font-weight: 500;
+        }
+        
+        .cursor
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 35px;
+            background: #fff;
+            border-radius: 50%;
+            padding: .3em;
+            z-index: 200;
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
+            transform: rotate(-20deg) translate(18em, 15em);
+            transition: .5s ease-out;
+            animation: cursorAni forwards 2.5s;
+            animation-delay: 5s;
+        }
+        
+        .tabs-animation-cont
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            justify-content: space-between;
+        }
+        
+        .tabs-animation-cont .pdl-popup-tabs
+        {
+            font-size: .8em;
+            overflow: hidden; 
+            padding: 1.5em .5em;
+        }
+        
+        /*----------------------------------------------- ANIMATION - STARTING SCREEN - DESCRIPTION */
+        
+        /* ANIMATION - Cursor Animation (gets visible & slides in) */
+        .cursor-animation
+        {
+            animation: cursorAni forwards 5s;
+            animation-delay: 5s;
+        }
+        
+        @keyframes cursorAni
+        {
+            to 
+            {
+                transform: rotate(-20deg) translate(-1.5em, 1.3em);
+            }
+        }
+        
+        /* ANIMATION - For Pkmn Card (click effect and dispappers) */
+        .pkmn-card-animation
+        {
+            animation: clicked 1.3s ease-out forwards;
+            animation-delay: 8s;
+        }
+        
+        @keyframes clicked
+        {
+            35%
+            {
+                transform: scale(.9);
+            }
+            70%
+            {
+                transform: scale(1);
+            }
+            90%
+            {
+                opacity: 1;
+            }
+            100%
+            {
+                opacity: 0;
+            }
         }
         
     </style>
@@ -2503,7 +2625,7 @@
             </div>
             <button onclick="filterIdRange()" id="filter-range-btn" class="range-btn specific-filter-btn">Filter By Range</button>
             <!-- Filter by height/weight category btns -->
-            <div class="line" style="width: 40%; height: 2px; background: #fff; margin: 2em 0;"></div>
+            <div class="line" style="width: 40%; height: 2px; background: #fff; margin: 2em 0"></div>
             <div class="filter-btn-cont flex-center flex-column">
                 <div class="flex-center" style="justify-content: space-around; width: 100%">
                     <button onclick="filterHeight(19, event)" class="weight-range-btn">Small</button>
@@ -2674,13 +2796,53 @@
                 </div>
                 <h4>How To Get Started?</h4>
                 <p>Simply choose a Generation you want your data from</p>
-                <div class="pdl-gen-btns-cont">
-                <button class="display-gen-btn">Gen 1</button>
-                <button class="display-gen-btn">Gen 2</button>
-                <button class="display-gen-btn">Gen 3</button>
-                <button class="display-gen-btn">Gen 4</button>
-                <button class="display-gen-btn">Fav <i class="far fa-heart"></i></button>
-            </div>
+                    <div class="gen-btns-wrapper flex-center">
+                        <div class="pdl-gen-btns-cont">
+                        <button class="display-gen-btn">Gen 1</button>
+                        <button class="display-gen-btn">Gen 2</button>
+                        <button class="display-gen-btn">Gen 3</button>
+                        <button class="display-gen-btn">Gen 4</button>
+                        <button class="display-gen-btn">Fav <i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="animated-descr-cont flex-center">
+                    <div class="poke-card-wide">
+                       <div class="poke-card-wide-id"></div>
+                       <div class="poke-card-wide-left flex-column">
+                           <h3 class="poke-card-wide-headline" style="margin-left: -1.5em; margin-bottom: 1em">Charizard</h3>
+                           <div class="poke-card-wide-type flex-center">Fire</div>
+                           <div class="poke-card-wide-type flex-center ${pokemon.type2}">Flying</div>
+                       </div>
+                       <div class="poke-card-wide-right">
+                           <div class="poke-card-wide-img flex-center">
+                               <div class="poke-circle poke-circle-animation flex-center" style="background-color:#FB6C6C;">
+                                    <div class="circle-left" style="background-color:#FB6C6C;"></div>
+                                    <div class="circle-right" style="background-color:#FB6C6C;"></div>
+                                    <div class="poke-inner-circle"></div>
+                                 </div>
+                               <img src="mlizardon.png" alt="Charizard">
+                            </div>
+                       </div>
+                   </div>
+                   <div class="cursor">
+                       <img src="cursor.png">
+                   </div>
+                   <div class="tabs-animation-cont flex-center flex-column">
+                       <div class="tabs-descr">
+                           Here you have some basic info about the pokemon you've clicked on.
+                           Info like lskdjfl
+                           kjsldfjlka sjdfljalsdkjfl;aj sdf;lasd;l fjal;jsdf lajs dl;fjal;sdjf lajsl
+                       </div>
+                       <ul class="pdl-popup-tabs flex-center">
+                            <li onclick="" class="popup-tab">About</li>
+                            <li onclick="" class="popup-tab">Base Stats</li>
+                            <li onclick="" class="popup-tab">Evolutions</li>
+                            <li onclick="" class="popup-tab">Type Adv</li>
+                            <li onclick="" class="popup-tab">Moves</li>
+                        </ul>
+
+                   </div>
+                </div>
             </div>
         </div>
     </div>
@@ -3582,8 +3744,9 @@
                     fetch(`https://pokeres.bastionbot.org/images/pokemon/${pkmn.id}.png`).then(sprite => {
                         finalEvolutionSprite = sprite.url;
                         pSprite = sprite.url;
-                        return pSprite;
                         console.log(pSprite);
+                        return pSprite;
+                        
 
                     }).catch(err => console.error(err))
                     
@@ -4453,6 +4616,8 @@
                 // toolpick overflow hidden ani trick- slide down try with arrow (maybe content in toolpick pops up delayed.../ pop-bounce)
         
         
+        // cursor opointer from right to gen1 btn -> add selected class/active to btn - mouse goes off - left or fades (opacity); 
+        // mouse comes from right bottom, clicks - turns upside down on tab btn - gets class of activated/active, txt slides up
         
         // animation class for start screen - diisappear a bit slower or slide down
         
