@@ -2515,8 +2515,6 @@
             box-shadow: 0 0 10px rgba(0,0,0,.5);
             transform: rotate(-20deg) translate(18em, 15em);
             transition: .5s ease-out;
-            animation: cursorAni forwards 2.5s;
-            animation-delay: 5s;
         }
         
         .tabs-animation-cont
@@ -2534,13 +2532,38 @@
             padding: 1.5em .5em;
         }
         
+				.tabs-animation-cont .pdl-popup-tabs .popup-tab
+			{
+					transition: .2s;
+					transform: translateY(3em);
+			}
+			
+			.tabs-animation-cont .pdl-popup-tabs .popup-tab.slided-up
+			{
+					transform: translateY(0);
+			}
+			
+			.animation-txt
+			{
+/*					opacity: 0;*/
+					color: #fff;
+					padding: 0 1.5em;
+					transition: .2s ease-out;
+					transform: translateY(2em);
+			}
+			
+			.txt-animated
+			{
+					opacity: 1;
+					transform: translateY(0);
+			}
+			
         /*----------------------------------------------- ANIMATION - STARTING SCREEN - DESCRIPTION */
         
         /* ANIMATION - Cursor Animation (gets visible & slides in) */
         .cursor-animation
         {
-            animation: cursorAni forwards 5s;
-            animation-delay: 5s;
+            animation: cursorAni forwards 2.8s;
         }
         
         @keyframes cursorAni
@@ -2555,7 +2578,6 @@
         .pkmn-card-animation
         {
             animation: clicked 1.3s ease-out forwards;
-            animation-delay: 8s;
         }
         
         @keyframes clicked
@@ -2828,7 +2850,7 @@
                        <img src="cursor.png">
                    </div>
                    <div class="tabs-animation-cont flex-center flex-column">
-                       <div class="tabs-descr">
+                       <div class="animation-txt">
                            Here you have some basic info about the pokemon you've clicked on.
                            Info like lskdjfl
                            kjsldfjlka sjdfljalsdkjfl;aj sdf;lasd;l fjal;jsdf lajs dl;fjal;sdjf lajsl
@@ -2966,8 +2988,39 @@
         
         // Sprite of last Evolution
         let finalEvolutionSprite;
+			
+				
+				// ----------------------------------------------------------------------------- START SCREEN ANIMATION
+			
+				const startAnimationTabs = () => {
+						const cursor = document.querySelector(".cursor");
+						const pkmnCard = document.querySelector(".pdl-start-screen .poke-card-wide");
+						const animationTxt = document.querySelector(".animation-txt");
+						const allTabs = document.querySelectorAll(".tabs-animation-cont .pdl-popup-tabs .popup-tab");
+					
+						// removes all animation classes to restart animations (if clicking the button)
+					
+					
+						// ANIMATION - Cursor (slides in and clicks pkmn card)
+						setTimeout(() => cursor.classList.add("cursor-animation"), 5000);
+						
+						// ANIMATION - Pkmn Card (getting clicked / "pulses")
+						setTimeout(() => pkmnCard.classList.add("pkmn-card-animation"), 8000);
+					
+						// ANIMATION - All Tabs (sliding up / appear)
+						setTimeout(() => [...allTabs].forEach(tab => tab.classList.add("slided-up")), 10500);
+					
+						// ANIMATION - Cursor (disappears)
+						setTimeout(() => cursor.classList.add("opacity"), 10000);
+					
+						// ANIMATION - Tab Description Txt (appears)
+					setTimeout(() => animationTxt.classList.add("txt-animation"), 12000);
+				}
 
+				// Calls animation function immediately
+				startAnimationTabs();
 
+				
         // -------------------------------------------------------------------------------------------- FUNCTIONS -
 
         
