@@ -54,21 +54,22 @@
   
   - Color Scheme
     - It has a lot of different colors to not bore the user with just one color scheme.
-    - The color #333 is often for a nice dark but not too dark background (since dark/night mode is liked by many).
+    - The color #333 is often for a nice dark but not too dark background (since dark/night mode is liked by many people nowadays).
     - An .
-    - Fonts are normally either #fafafa (white) or simply #000 (black) to have a contrast to the colorful of dark backgrounds.
+    - Font colors are normally either #fafafa (white) or simply #000 (black) to have a contrast to the colorful of dark backgrounds.
     - Font awesome icons and buttons are dark orange to make them pop out a little and keep them visible on colorful and on dark backgrounds (and for a nice contrast).
 
   - Typography
     - The - Helvetica Neue - is the font family of the blog with Arial and Sans Serif as the fallback fonts in case for any reason the font isn't being imported into the site correctly. Helvetica Neue is the default font when using bootstrap. It is frequently used and recognizable and looks very clean and appropriate.
 
   - Imagery
-    - Imagery is key for presenting and visualizing all products and/or services. The background picture in every section/page gives them more depth and makes them more appealing to the user. All the product/service (etc.) pictures have the goal to inform the user without much text and make the purpose more obvious.
-    - .
+    - Immages are used for a parallax effect
+    - PNGs are used to display Pokemon or Pokemon Items
+
 
 - Wireframes
   - Home/Landing Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/landing_page.pdf">- here</a>
-  - Courses Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/courses.pdf">- here</a>
+  - Ampel Game Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/courses.pdf">- here</a>
   - Locations Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/locations.pdf">- here</a>
   - Membership Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/member.pdf">- here</a>
   - About Us Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/about.pdf">- here</a>
@@ -80,17 +81,20 @@
 
 ## Features
 
-- Responsive on all device sizes
-- Interactive elements (e.g. hover, click)
-- effects like parallax of scrollmagic
-- links to social media
-- expanding content for more information by clicking
+- Responsive on all device sizes (except 'Pokeman Game')
+- Interactive elements (e.g. hover, click, etc.)
+- Effects like parallax of scrollmagic
+- Links to social media
+- Expanding content for more information by clicking
+- Interactive Games
+
 
 ### Technologies Used
 
 - <a href="https://en.wikipedia.org/wiki/HTML5">HTML5</a>
 - <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</a>
 - <a href="https://en.wikipedia.org/wiki/JavaScript">Javascript</a>
+- <a href="https://en.wikipedia.org/wiki/Jquery">JQuery</a>
 
 ### Frameworks, Libraries & Programs Used
 
@@ -110,9 +114,9 @@
     - Autoprefixer was used to make sure that no prefixes are missing.
 8. <a href="https://www.freeformatter.com/html-formatter.html#ad-output">Freeformatter:</a> 
     - Freeformatter was used for testing the HTML-format.
-8. <a href="https://www.freeformatter.com/html-formatter.html#ad-output">Freeformatter:</a> 
+8. <a href="https://www.freeformatter.com/html-formatter.html#ad-output">Scroll Magic:</a> 
     - Scroll Magic was used to make content appear while scrolling.
-8. <a href="https://www.freeformatter.com/html-formatter.html#ad-output">Freeformatter:</a> 
+8. <a href="https://www.freeformatter.com/html-formatter.html#ad-output">Jquery:</a> 
     - JQuery was used a bit to get elements easier.
 
 
@@ -186,9 +190,8 @@ The Freeformatter, W3C CSS Validator Services, and Autoprefixer and were used to
 
 ## Known Bugs
 
-  - Images are loading slowly - I used <a href="https://squoosh.app/index.html">Squoosh</a> to compress the images - most of them are below 300kb now -> it's faster now but still a little slow.
-    - As I was searching for solutions I consitered "Lazy Loading" i.e. <a href="https://www.sitepoint.com/five-techniques-lazy-load-images-website-performance/">here</a> but the Images are background images - not `<img>`. Apperently JavaScript is needed to solve this problem.
-    - I added an animation to solve the problem with the main background images (main containers).
+  - Pokedex Version 2 is slow
+
 
 # Deployment
 
