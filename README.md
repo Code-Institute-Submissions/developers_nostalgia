@@ -7,7 +7,7 @@
   This is a little blog called "Developer's Nostalgia". This blog shows my current html/css/js skills and is a bouquet of beginner projects (most of them in a pokemon theme). I chose the form of a blog to fit all these little project to one biggrt one and since a lot of people in my generation become nostalgic when they see pokemmon the I found the name appealing. Visitors can see how much fun they can have creating games or thigs like a pokedex. This project 
 
 <p align="center">
-  <a href="https://robertmachamud.github.io/brand_gym/">
+  <a href="https://robertmachamud.github.io/developers_nostalgia/">
    View the live project here
   </a>
   <br>

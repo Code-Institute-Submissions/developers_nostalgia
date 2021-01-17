@@ -16,7 +16,7 @@
 
 
     <style>
-        /*----------------------------------------------- GENERAL */
+        /* ----------------------------------------------- GENERAL */
 
         .html 
         {
@@ -24,6 +24,7 @@
             scroll-behavior: smooth;
         }
 
+        /* HOVER For Links */
         a:hover
         {
             text-decoration: none !important;
@@ -42,17 +43,26 @@
             flex-direction: column;
         }
 
+        /* Hidden class - display: none */
         .hidden 
         {
             display: none !important;
         }
 
+        /* Opacity class */
         .opacity 
         {
             opacity: 0 !important;
             z-index: -100 !important;
         }
+        
+        /* Just visible on mobile */
+        .visible-on-mobile
+        {
+            opacity: 0;
+        }
 
+        /* Buttons */
         button 
         {
             cursor: pointer;
@@ -62,7 +72,7 @@
         }
         
 
-        /*----------------------------------------------- MAIN CONTAINER */
+        /* ----------------------------------------------- MAIN CONTAINER */
         
         .pdex-list-main-cont 
         {
@@ -75,7 +85,7 @@
         }
 
 
-        /*----------------------------------------------- HEADER */
+        /* ----------------------------------------------- HEADER */
         
         .pdl-header 
         {
@@ -86,7 +96,6 @@
             width: 100%;
             justify-content: space-between;
             background: crimson;
-/*            background: red; !!! */
             border-bottom: solid 5px #fafafa;
             box-shadow: 0 0px 35px rgba(0,0,0,.6);
             z-index: 2;
@@ -99,6 +108,7 @@
             box-shadow: 0 0px 25px rgba(0,0,0,.5);
         }
         
+/* Header Headline */
         .pdl-header-headline
         {
             position: absolute;
@@ -111,6 +121,7 @@
             z-index: -1;
         }
 
+/* Search Container (Header) */
         .pdl-header-search-cont
         {
             position: absolute;
@@ -140,7 +151,7 @@
         }
 
         
-        /*----------------------------------------------- HEADER - MENU */
+        /* ----------------------------------------------- HEADER - MENU */
         
         /* HEADER MENU BTN */
         .header-menu-btn
@@ -192,7 +203,7 @@
         }
         
         
-        /* NAVIGATION */
+        /* ----------------------------------------------- NAVIGATION */
         
         /* LINK to home - Logo */
         .logo
@@ -268,6 +279,7 @@
             border: solid 1px #000;
         }
         
+        /* HOVER - Specific Search Btn */
         .specific-search-btn:hover
         {
             background: #fafafa;
@@ -294,14 +306,13 @@
         }
         
         
-        /*----------------------------------------------- POKEDEX LIST CONTAINER */
+        /* ----------------------------------------------- POKEDEX LIST CONTAINER */
         
         .pdl-cont 
         {
             position: relative;
             padding-top: 10px;
             width: 80%;
-/*            min-height: vh;*/
             padding-bottom: 5em;
             display: grid;
             justify-content: center;
@@ -310,7 +321,7 @@
         }
 
         
-        /*----------------------------------------------- POKEDEX CARDS WIDE */
+        /* ----------------------------------------------- POKEDEX CARDS WIDE */
         
         .poke-card-wide 
         {
@@ -325,7 +336,8 @@
             transition: .3s;
             cursor: pointer;
         }
-        /* Card wide - Hover*/
+        
+        /* HOVER - Card wide */
         .poke-card-wide:hover 
         {
             transform: scale(1.05);
@@ -345,6 +357,7 @@
             z-index: 3200;
         }
 
+/* Pokemon ID (right corner) */
         .poke-card-wide-id 
         {
             position: absolute;
@@ -357,6 +370,7 @@
             z-index: 1;
         }
 
+/* Pkmn Name */
         .poke-card-wide-headline 
         {
             font-size: 1.3em;
@@ -367,12 +381,13 @@
             text-shadow: 0 0 5px rgba(0,0,0,.3);
         }
 
-/*        !!! */
+
         #popup-pkmn-headline 
         {
             text-shadow: 0 0 5px rgba(0,0,0,.2);
         }
 
+/* Pokemon Type/s */
         .poke-card-wide-type 
         {
             width: 50%;
@@ -389,6 +404,7 @@
             box-shadow: 0 0 3px rgba(0,0,0,.1);
         }
 
+/* Pkmn Card right side (image) */
         .poke-card-wide-right 
         {
             position: absolute;
@@ -398,6 +414,7 @@
             text-shadow: 0 0 .5px rgba(0, 0, 0, .3);
         }
 
+/* Pokemon Img */
         .poke-card-wide-img 
         {
             position: absolute;
@@ -423,7 +440,8 @@
         }
         
 
-        /*----------------------------------------------- Pokemon Circle / Pokeball */
+        /* ----------------------------------------------- Pokemon Circle / Pokeball (rotating) */
+        
         .poke-circle,
         .poke-inner-circle 
         {
@@ -434,7 +452,7 @@
         }
         
         
-        /* Animation for Poke Circle */
+        /* ANIMATION for Poke Circle (rotation 360deg) */
         .poke-circle-animation
         {
             animation: rotate-ball infinite 10s linear;
@@ -500,7 +518,7 @@
 
 
 
-        /*----------------------------------------------- FILTETR BY TYPE BUTTONS */
+        /* ----------------------------------------------- FILTETR BY TYPE BUTTONS */
 
         .poke-type-btn-cont 
         {
@@ -511,19 +529,19 @@
             margin-top: 3em;
         }
 
+        /* Type Filter BUTTONS (filter by type) */
         .poke-type-filter-btn 
         {
             border-radius: 20px;
             padding: .3em 1em;
             margin: .3em .1em;
-            font-size: ;
             color: #fff;
             font-weight: bold;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
         }
 
 
-        /*----------------------------------------------- POPUP CONTAINER */
+        /* ----------------------------------------------- POPUP CONTAINER */
         
         .pdl-popup-cont 
         {
@@ -537,7 +555,7 @@
             z-index: 6001;
         }
         
-        /* POPUP TOP SECTION (BG) --------- */
+        /* ----------------------------------------------- POPUP TOP SECTION (BG) */
 
         /* Close Popup window btn */
         .popup-close-btn 
@@ -570,7 +588,6 @@
             background: #000;
         }
 
-
         /* Close Popup Btn Cross X */
         .cross 
         {
@@ -591,25 +608,21 @@
         {
             transform: translate(-50%, -50%) rotate(-45deg);
         }
-
         
         /* Popup Sprite / Image */
         .pdl-popup-img 
         {
             position: fixed;
-            /*            top: 10%;*/
-            /*            top: 15%;*/
             top: 9%;
             left: 50%;
             transform: translateX(-50%);
             width: 13em;
-            /*            width: 8em;*/
-/*                        height: 12em;*/
             background-size: cover;
             cursor: pointer;
             transition: .3s;
         }
 
+/* Pokemon Id */
         .pdl-popup-id 
         {
             margin-top: 3%;
@@ -622,6 +635,7 @@
             text-shadow: 0 0 5px rgba(0,0,0,.3);
         }
 
+/* Pokemon Type/s */
         .popup-type 
         {
             padding: .5em 2em;
@@ -633,7 +647,7 @@
             box-shadow: 0 0 3px rgba(0,0,0,.2);
         }
 
-
+/* Pokemon Name */
         .pdl-popup-pokemon-name 
         {
             font-size: 3em;
@@ -643,7 +657,7 @@
         }
 
         
-        /*----------------------------------------------- POPUP TOP SECTION - BACKGROUND/BG */
+        /* ----------------------------------------------- POPUP TOP SECTION - BACKGROUND/BG */
         
         .pdl-popup-bg 
         {
@@ -656,9 +670,10 @@
         }
         
 
-        /*----------------------------------------------- POPUP TABS BUTTONS */
+        /* ----------------------------------------------- POPUP TABS BUTTONS */
         
-        .pdl-popup-tabs {
+        .pdl-popup-tabs 
+        {
             padding-left: 0;
             list-style: none;
             justify-content: space-between;
@@ -668,7 +683,9 @@
             z-index: 6000;
         }
 
-        .popup-tab {
+/* Tab BUTTON */
+        .popup-tab 
+        {
             font-weight: bold;
             color: #fff;
             font-size: 1.2em;
@@ -679,9 +696,10 @@
             padding: .5em;
         }
 
-        /* Popup tabs btn HOVER */
+        /* HOVER - Popup tabs Btn */
         .popup-tab.selected-tab,
-        .popup-tab:hover {
+        .popup-tab:hover 
+        {
             color: #333;
             background: #fafafa;
         }
@@ -693,8 +711,9 @@
         }
 
 
-        /*----------------------------------------------- POPUP BOTTOM SECTION / CONTENT CONTAINER */
+        /* ----------------------------------------------- POPUP BOTTOM SECTION / CONTENT CONTAINER */
         
+/* Content Section (bottom) */
         .pdl-popup-content 
         {
             padding-top: 5em;
@@ -713,8 +732,9 @@
         }
 
         
-        /*----------------------------------------------- POPUP ABOUT TAB (General data, locations, etc.) */
+        /* ----------------------------------------------- POPUP ABOUT TAB (General data, locations, etc.) */
         
+        /* About Tab */
         #about-tab-cont 
         {
             padding: 2% 0;
@@ -723,7 +743,8 @@
         }
         
         /* Data Atrributes */
-        .poke-data-attr {
+        .poke-data-attr 
+        {
             font-weight: 600;
             width: 40%;
             margin-right: 5em;
@@ -731,7 +752,8 @@
         }
 
         /* Data Values */
-        .poke-data-attr-val {
+        .poke-data-attr-val 
+        {
             width: 60%;
             font-weight: bold;
             color: #333;
@@ -745,7 +767,7 @@
             z-index: 1;
         }
 
-        /* Buttons that open Locations/Versions and Description Window */
+        /* BUTTONS that open Locations/Versions and Description Window */
         .location-list-btn,
         .about-to-txt-btn 
         {
@@ -757,7 +779,7 @@
             transition: .3s;
         }
 
-        /* Hover for Buttons above */
+        /* HOVER - for Buttons above */
         .about-to-txt-btn:hover,
         .location-list-btn:hover 
         {
@@ -773,8 +795,9 @@
             margin-right: .3em;
         }
 
-        /* DESCRIPTION WINDOW */
-        .about-pkmn-descr-txt-cont {
+        /* ----------------------------------------------- DESCRIPTION WINDOW */
+        .about-pkmn-descr-txt-cont 
+        {
             position: absolute;
             top: 0;
             left: 0;
@@ -789,6 +812,7 @@
             z-index: 3;
         }
 
+/* Sprites */
         .about-sprites-cont 
         {
             flex-wrap: wrap;
@@ -832,6 +856,7 @@
             transform: scale(1.1);
         }
 
+/* Description Text (About Tab) */
         .about-descr-txt 
         {
             font-size: 1.3em;
@@ -843,6 +868,7 @@
             text-align: center;
         }
 
+/* Descrition Text little headlines */
         .about-descr-txt h3 
         {
             border-bottom: solid;
@@ -850,7 +876,7 @@
             margin-bottom: .5em;
         }
 
-        /* LOCATION LIST WINDOW */
+        /* ----------------------------------------------- LOCATION LIST WINDOW */
         .location-list-cont 
         {
             position: absolute;
@@ -872,7 +898,7 @@
             z-index: 2;
         }
 
-        /* Button to open Versions Window */
+        /* BUTTON to open Versions Window */
         .to-versions-btn 
         {
             position: absolute;
@@ -889,6 +915,7 @@
             transition: .3s;
         }
 
+/* HOVER - Versions Btn */
         .to-versions-btn:hover {
             padding: .5em 1.1em;
         }
@@ -915,7 +942,7 @@
 
         /*        bei responsive : colulmn margin : 15px 0;*/
 
-        /* BREEDING DATA CONTAINER */
+        /* ----------------------------------------------- BREEDING DATA CONTAINER */
         .general-data-cont,
         .breed-data-cont 
         {
@@ -927,7 +954,8 @@
             flex-direction: column;
             justify-content: space-around;
         }
-
+        
+/* Gender Icons */
         .fa-mars 
         {
             color: dodgerblue;
@@ -944,7 +972,7 @@
             margin-right: 1em;
         }
 
-        /* BREED / TRAINING / LOCATION HEADLINE */
+        /* ----------------------------------------------- BREED / TRAINING / LOCATION HEADLINE */
         .breed-data-headline 
         {
             font-size: 1.3em;
@@ -973,7 +1001,7 @@
         }
 
 
-        /*----------------------------------------------- LARGE IMAGE CONTAINER (WHEN CLICKING PKMN SPRITE) */
+        /* ----------------------------------------------- LARGE IMAGE CONTAINER (WHEN CLICKING PKMN SPRITE) */
 
         .large-img-screen 
         {
@@ -986,6 +1014,7 @@
             z-index: 9999999;
         }
 
+/* Pokemon Image (Large) */
         .large-img 
         {
             width: 25em;
@@ -1002,6 +1031,7 @@
             margin-bottom: 3%;
         }
 
+        /* Sprites */
         .large-img-sprite 
         {
             width: 100px;
@@ -1014,7 +1044,7 @@
         }
 
 
-        /* Large Image Close Button */
+        /* Large Image Close BUTTON */
         .large-img-close-btn 
         {
             position: absolute;
@@ -1027,6 +1057,7 @@
             transition: .3s;
         }
 
+/* Cross Close Btn */
         .large-img-close-btn .cross 
         {
             height: 2px;
@@ -1039,6 +1070,7 @@
             background: #fafafa;
         }
 
+/* HOVER - Close Btn Cross */
         .large-img-close-btn:hover .cross 
         {
             background: #333;
@@ -1046,7 +1078,7 @@
         }
 
         
-        /*----------------------------------------------- BASE STATS CONTAINER TAB */
+        /* ----------------------------------------------- BASE STATS CONTAINER TAB */
 
         .poke-stats-cont 
         {
@@ -1126,12 +1158,10 @@
         .hp-stat-filling 
         {
             background-color: #C01F1C;
-/*            background-color: #D70A2C;*/
         }
 
         .att-stat-filling 
         {
-/*            background-color: #04358B;*/
             background-color: #009AAF;
         }
 
@@ -1152,8 +1182,6 @@
 
         .speed-stat-filling 
         {
-/*            background-color: #328F38;*/
-/*            background-color: #034E2E;*/
             background-color: #F2C92E;
         }
 
@@ -1163,7 +1191,7 @@
         }
 
 
-        /*----------------------------------------------- EVOLUTIONS CONTAINER TAB */
+        /* ----------------------------------------------- EVOLUTIONS CONTAINER TAB */
         
         #evolutions-tab-cont 
         {
@@ -1171,6 +1199,7 @@
             cursor: default;
         }
 
+/* Headline */
         .popup-evolution-headline 
         {
             margin-bottom: 1.5em;
@@ -1184,7 +1213,8 @@
             height: 7em;
             background-color: rgba(0, 0, 0, .1);
         }
-
+        
+/* Evolution Image */
         .popup-evolution img 
         {
             object-fit: cover;
@@ -1205,7 +1235,6 @@
 
         .popup-evolution-arrow:before,
         .popup-evolution-arrow:after 
-        
         {
             content: '';
             position: absolute;
@@ -1236,15 +1265,16 @@
             font-size: .8em;
         }
 
+        /* Trigger for evolution */
         .evolution-trigger 
         {
             top: -500%;
             color: #333;
         }
 
+/* Lover for evolution */
         .evolution-level 
         {
-/*            bottom: -2em;*/
             margin-top: .8em;
             color: blue;
             transform: translateX(-50%);
@@ -1257,6 +1287,7 @@
             width: 25px;
         }
 
+/* Evolution names */
         .evolution-name 
         {
             font-weight: bold;
@@ -1274,7 +1305,7 @@
         }
 
 
-        /*----------------------------------------------- TYPE ADVANTAGE TAB */
+        /* ----------------------------------------------- TYPE ADVANTAGE TAB */
 
         #type-adv-tab 
         {
@@ -1287,7 +1318,7 @@
             cursor: default;
         }
 
-        /* Buttons to switch between Advatages & Weaknesses */
+        /* BUTTONS to switch between Advatages & Weaknesses */
         .switch-weakn-adv-btn-cont 
         {
             position: absolute;
@@ -1296,7 +1327,6 @@
             height: 15px;
             padding: 2.5em 30%;
             justify-content: space-around;
-            /*            background: khaki;*/
         }
 
         .swich-to-weakn-adv-btn 
@@ -1310,7 +1340,7 @@
             font-weight: 600;
         }
 
-        /* Switch Buttons (Adv/Weakn.) HOVER & SELECTED */
+        /* Switch BUTTONS (Adv/Weakn.) HOVER & SELECTED */
         .swich-to-weakn-adv-btn.selected-adv,
         .swich-to-weakn-adv-btn:hover 
         {
@@ -1323,7 +1353,7 @@
             pointer-events: none;
         }
 
-/*        Type Adv/Weakn. Container & Types */
+/* Type Adv/Weakn. Container & Types */
         .adv-type-cont 
         {
             background: rgba(0, 0, 0, .1);
@@ -1354,7 +1384,7 @@
         }
 
 
-        /*----------------------------------------------- MOVES CONTAINER TAB */
+        /* ----------------------------------------------- MOVES CONTAINER TAB */
 
         #moves-tab-cont 
         {
@@ -1363,7 +1393,7 @@
             min-height: 500px;
         }
         
-        /* MOVE CATEGORY BUTTONS (TABS) (Change move categories - Lv, Tm, Tutor, Egg Moves) */
+        /* Move Category BUTTONS (TABS) (Change move categories - Lv, Tm, Tutor, Egg Moves) */
         .moves-category-btn-cont 
         {
             position: absolute;
@@ -1392,7 +1422,7 @@
             font-weight: 700
         }
 
-        /* Move Buttons */
+        /* Move BUTTONS */
         .popup-moves 
         {
             position: absolute;
@@ -1428,7 +1458,7 @@
             cursor: pointer;
         }
 
-        /* Move Button HOVER */
+        /* Move Button - HOVER */
         .move-name:hover 
         {
             color: #000;
@@ -1437,7 +1467,7 @@
         }
 
         
-        /*----------------------------------------------- MOVE DESCRIPTION WINDOW */
+        /* ----------------------------------------------- MOVE DESCRIPTION WINDOW */
         
         .popup-move-descr-cont 
         {
@@ -1455,7 +1485,7 @@
             z-index: 6000;
         }
 
-        /* Button to close Move Descr. Window */
+        /* BUTTON to close Move Descr. Window */
         .popup-move-descr-back-btn 
         {
             position: absolute;
@@ -1471,7 +1501,7 @@
             transition: .3s;
         }
         
-        /* HOVER for button Above */
+        /* HOVER - for button Above */
         .popup-move-descr-back-btn:hover 
         {
             padding: .1em 1em;
@@ -1507,12 +1537,14 @@
             color: #fff;
         }
 
+/* Description Text for Moves */
         .move-descr-cont p 
         {
             margin: 0;
             text-shadow: 0 0 3px rgba(0, 0, 0, .5);
         }
 
+/* Label for Move */
         .move-descr-label 
         {
             font-weight: 600;
@@ -1526,15 +1558,13 @@
             font-size: 1.05em;
             font-weight: bold;
             background: #fafafa;
-            /*            background: #000;*/
             border-radius: 5px;
             margin-bottom: 1%;
             padding: 1% 2%;
-            /*            color: #fff;*/
         }
 
-
-        /*-----------------------------------------------  HEADER - SEARCH POKEMON (Input - filters pkmn by name/id)  */
+/*!!!!!!!!!!!!!!!!!!!!!!*/
+        /* -----------------------------------------------  HEADER - SEARCH POKEMON (Input - filters pkmn by name/id)  */
         
         #poke-search 
         {
@@ -1547,11 +1577,12 @@
             width: 150px;
         }
         
-/*        DISPLAY PKMN GENERATION BTNS */
+/* Display Pkmn-Generation BUTTONS */
         .pdl-gen-btns-cont
         {
             position: absolute;
             left: 10%;
+            cursor: default;
         }
         
         .display-gen-btn
@@ -1559,19 +1590,18 @@
             background: #000;
             background: #333;
             color: #fff;
-/*            font-weight: 500; !!! */
             outline: none;
         }
 
+/* SELECTED - Generation Btns */
         .display-gen-btn.selected-gen-btn
         {
             background: #fff;
             color: #000;
-/*            pointer-events: none; !!! */
             box-shadow: 0 0 0 3px #000;
         }
 
-        /*----------------------------------------------- SPECIFIC FILTER */
+        /* ----------------------------------------------- SPECIFIC FILTER CONTAINER */
 
         .pdl-complexer-filter-cont 
         {
@@ -1590,12 +1620,13 @@
             z-index: 7000;
         }
 
-        /* Button for closing Specific Filter (and Cross) */
+        /* BUTTON for closing Specific Filter (and Cross) */
         .pdl-complexer-filter-cont .close-specific-filter-btn 
         {
             background-color: rgba(255, 255, 255, .5);
         }
 
+/* Cross for Specific Filter Btn */
         .pdl-complexer-filter-cont .close-specific-filter-btn .cross 
         {
             background-color: #333;
@@ -1615,6 +1646,7 @@
             width: 75%;
         }
         
+/* Range BUTTONS round (weight/height) */
         .weight-range-btn 
         {
             width: 70px;
@@ -1645,7 +1677,7 @@
         }
 
          
-        /*----------------------------------------------- DOUBLE RANGE SLIDER FOR FILTERING POKEMON (YouTube) */
+        /* ----------------------------------------------- DOUBLE RANGE SLIDER FOR FILTERING POKEMON (YouTube) */
         
         /* Range Values (Change when moving Sliders) */
         .range-values-cont 
@@ -1681,6 +1713,7 @@
             z-index: 1000;
         }
 
+/* Slider Track */
         .slider > .track 
         {
             position: absolute;
@@ -1706,6 +1739,7 @@
             z-index: 1000;
         }
 
+/* Slider Thumbs */
         .slider > .thumb 
         {
             position: absolute;
@@ -1777,7 +1811,7 @@
             left: auto;
             right: 1%;
         }
-
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
         /* ----------------------------------------------- PREVIOUS AND NEXT POKEMON BUTTONS (Arrows to navigate without closing Popup Window)  */
 
@@ -1796,6 +1830,7 @@
             z-index: 30000;
         }
 
+/* White circle around Prev/Next Btns */
         .prev-next-pkmn-btn:before 
         {
             content: '';
@@ -1821,6 +1856,7 @@
             right: 5%;
         }
 
+        /* Arrow Icons */
         .prev-next-pkmn-btn .fas 
         {
             position: relative;
@@ -1862,6 +1898,7 @@
             color: #000;
         }
 
+/* SELECTED - Range Tab Btn*/
         .range-btn.selected-range-tab
         {
             transform: scale(1.1);
@@ -1928,7 +1965,7 @@
         }
 
 
-        /*----------------------------------------------- FAVORITE PKMN CONTAINER (TO ADD/REMOVE FAV. PKMN) */
+        /* ----------------------------------------------- FAVORITE PKMN CONTAINER (TO ADD/REMOVE FAV. PKMN) */
         
         /* BUTTON - For clearing favs */
         .clear-favs-btn,
@@ -1987,13 +2024,11 @@
         
         .clear-favs-btn:hover.clear-favs-btn:before
         {
-/*            background: transparent;*/
             transform: scale(1.1);
         }
         
         .clear-favs-btn:hover
         {
-/*            color: red;*/
             background: rgba(255,255,255,.1);
         }
         
@@ -2003,7 +2038,7 @@
             transform: translateY(0);
         }
         
-        /* Favorite Pkmn Heart Btn */
+        /* Favorite Pkmn Heart BUTTON */
         .favorite-pkmn-cont 
         {
             position: absolute;
@@ -2044,7 +2079,7 @@
         }
 
         
-        /*----------------------------------------------- SCROLL UP/DOWN BUTTONS (TOP/BOTTOM OF SITE) */
+        /* ----------------------------------------------- SCROLL UP/DOWN BUTTONS (TOP/BOTTOM OF SITE) */
 
         #scroll-bottom-btn,
         #scroll-top-btn 
@@ -2062,6 +2097,7 @@
             z-index: 6000;
         }
 
+/* Scroll Btn Icons */
         #scroll-bottom-btn .fas,
         #scroll-top-btn .fas 
         {
@@ -2086,9 +2122,9 @@
         }
         
         
-        /*----------------------------------------------- MEDIA QUERIES */
+        /* ----------------------------------------------- MEDIA QUERIES */
 
-        /*  */
+        /* 1500px */
         @media only screen and (min-width: 1500px) 
         {
             .pdl-cont 
@@ -2097,7 +2133,7 @@
             }
         }
 
-        /*  */
+        /* 1250px */
         @media only screen and (max-width: 1250px) 
         {
             .pdl-popup-content 
@@ -2106,7 +2142,7 @@
             }
         }
 
-        /* Header Headline font size becomes smaller */
+        /* 940 - Header Headline font size becomes smaller */
         @media only screen and (max-width: 940px) 
         {
             .pdl-header-headline
@@ -2114,6 +2150,8 @@
                 font-size: 1em;
             }
         }
+        
+        
         
         /* Tablet */
         @media only screen and (max-width: 768px) 
@@ -2177,7 +2215,6 @@
             .pdl-cont 
             {
                 width: 90%;
-                /*                grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));*/
             }
             
             .poke-type-btn-cont
@@ -2185,29 +2222,125 @@
                 width: 90%;
                 font-size: .75em;
             }
-
-            .move-name 
-            {
-                /*                margin: 5px;*/
-            }
         }
 
+        
+/* Mobile with heiger Screen Height (Iphone X etc) */
+        @media only screen and (min-height: 700px)
+        {
+            .pdl-start-screen .pdl-start-screen-txt
+            {
+                margin-bottom: 2.3em;
+            }
+        }
+        
+        @media only screen and (max-height: 700px)
+        {
+            .pdl-start-screen .pdl-start-screen-txt
+            {
+                margin-bottom: 1.8em;
+            }
+        }
+        
 
         /* Mobile */
         @media only screen and (max-width: 600px) 
         {
-/* Invisible on Mobile */
+            /* Invisible on Mobile */
             .not-visible-on-mobile
             {
                 display: none !important;
             }
             
+/* Just visible on Mobile */
             .only-visible-on-mobile
             {
                 display: block;
             }
             
+/* Visible on Mobile */
+            .visible-on-mobile
+            {
+                opacity: 1;
+                pointer-events: auto;
+            }
             
+            
+            /* Start Screen */
+            .pdl-start-screen h1
+            {
+                font-size: 2em;
+            }
+            
+            .pdl-start-screen-txt
+            {
+                width: 85%;
+/*                margin: 0 auto;*/
+                margin-bottom: 1.8em;
+                cursor: pointer;
+            }
+            
+            .read-more
+            {
+                display: contents !important;
+            }
+            
+            .pdl-start-screen h4
+            {
+                font-size: 1.4em;
+            }
+            
+            .pdl-start-screen .pdl-gen-btns-cont,
+            .gen-btn-descr-cont
+            {
+                transform: scale(.95);
+            }
+            
+            .social-txt
+            {
+                font-size: .8em;
+            }
+            
+            .tabs-animation-cont
+            {
+                transform: scale(.9);
+            }
+            
+/* Animation 2 */
+            .animation-wrapper-two
+            {
+                 width: 100vw;
+            }
+            
+            .animation-wrapper-two .weight-btn-cont
+            {
+                padding: 0 1.5em;
+                margin: 3em 0 !important;
+            }
+            
+            .animation-wrapper-two .range-btns-cont,
+            .animation-wrapper-two .weight-btn-cont
+            {
+                transform: scale(.8);
+            }
+            
+            .animation-wrapper-two .range-btns-cont
+            {
+                margin-bottom: 2.5em !important;
+            }
+            
+            .animation-wrapper-two .weight-btn-cont
+            {
+                padding: 0 10%;
+                font-size: .8em;
+                font-weight: bolder;
+            }
+            
+            .range-descr-txt
+            {
+                padding: 0 10%;
+            }
+                        
             /* Header Section */
             .pdl-header
             {
@@ -2236,18 +2369,7 @@
                 right: auto;
             }
             
-/*            center every row, box shadow, fontsize evtl smaller */
-/*            specific search font size smaller*/
-/*            maybe center every column element/row ; margin/space between them ; search input    
-              grayish or smth. ; maybe font smaller of specific search btn. ; check padding
-              maybe padding 0 */
-            
-/*            TOP: search invisible ; headline invisible ; maybe logo in the left & gen btns */
-            
-/*            JS: solve height issue (200px); */
-            
-            
-/*            RESP: headline disappears by ca 970px widht*/
+/*            RESP: headline disappears by ca 970px widht !!!!!!!!!!!!!!*/
             
             .pdl-complexer-filter-cont
             {
@@ -2269,10 +2391,10 @@
                 font-size: .9em;
             }
             
+            /* Pokedex List Container */
             .pdl-cont 
             {
                 width: 95%;
-/*                               grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));*/
             }
             
             .popup-content-tab-cont
@@ -2293,7 +2415,6 @@
             .popup-close-btn
             {
                 top: 1em;
-                
             }
             
             .favorite-pkmn-cont
@@ -2308,6 +2429,7 @@
                 text-shadow: 0 0 5px rgba(0,0,0,.3);
             }
             
+            /* Popup Window Container */
             .pdl-popup-id
             {
                 margin-left: 80%;
@@ -2331,7 +2453,7 @@
             
             .pdl-popup-cont 
             {
-/*                !!! */
+/*  !!!!!!!!!!!! */
                 width: 100%;
                 width: 106%;
                 top: 0;
@@ -2347,7 +2469,13 @@
                 padding-top: 5em;
             }
 
-/* Base Stats */
+            /* Base Stats */
+            .poke-stat-attr
+            {
+                font-size: 1em;
+                font-weight: bolder;
+            }
+            
             #base-stats-cont p
             {
                 padding: 3% 5%;
@@ -2378,9 +2506,85 @@
         }
 
         
-/*        Iphone 5se */
+        /* Iphone 5se */
         @media only screen and (max-width: 350px)
         {
+            /* Start Screen */
+            .pdl-start-screen h1
+            {
+                font-size: 1.8em;
+            }
+            
+            .pdl-start-screen p
+            {
+                font-size: .8em;
+            }
+            
+            .pdl-start-screen-txt
+            {
+                width: 75%;
+            }
+            
+            .pdl-start-screen h4
+            {
+                font-size: 1.25em;
+            }
+            
+            .social-txt
+            {
+                font-size: .75em;
+            }
+            
+            .top-cursor
+            {
+                width: 38px !important;
+            }
+            
+            .pdl-start-screen .pdl-gen-btns-cont,
+            .gen-btn-descr-cont
+            {
+                transform: scale(.8);
+            }
+
+            .gen-btn-descr-cont p
+            {
+                font-size: 1em;
+            }
+            
+            .tabs-animation-cont
+            {
+                transform: scale(.75);
+                font-size: 1.1em;
+            }
+            
+/* Animation 2 */
+            .animation-wrapper-two .top-cursor
+            {
+                display: none;
+            }
+            
+            .animation-wrapper-two .range-btns-cont
+            {
+                font-size: .9em;
+            }
+            
+            .animation-wrapper-two .weight-range-btn
+            {
+                transform: scale(.9);
+                font-size: 1em;
+            }
+            
+            .animation-wrapper-two .weight-btn-cont
+            {
+                padding: 0 12%;
+            }
+            
+            .range-descr-txt
+            {
+                padding: 0 10%;
+            }
+            
+            /* Header Section / Popup Window */
             .pdl-header-search-cont
             {
                 left: 5%;
@@ -2443,21 +2647,101 @@
         }
         
         
+        
+/* ----------------------------------------------- START SCREEN (Animations) */
+        
         .pdl-start-screen
         {
-/*            width: 100vw;*/
             position: absolute;
-            top: -55%;
-            left: 0;
-            padding: 5em 15%;
+            top: 0;
+            opacity: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 2em 15%;
+            padding-bottom: .5em;
             background: #eee;
             text-align: center;
             min-height: 90vh;
+            cursor: default;
+            animation: appearStartScreen .3s forwards ease-out;
         }
         
+/* ANIMATION - Start Screen Slide up (appear) */
+        @keyframes appearStartScreen
+        {
+            to
+            {
+                top: -55%;
+                opacity: 1;
+            }
+        }
+        
+/* Social Media Icons */
+        .social-txt-icon
+        {
+            font-size: 1.5em;
+            color: #FB6C6C;
+            margin: .1em;
+        }
+        
+/* Follow me span */
+        .follow-span
+        {
+            font-size: small;
+            font-weight: bolder;
+            margin-right: .5em;
+            color: #333;
+        }
+        
+/* Text */
+        .pdl-start-screen-txt
+        {
+            font-size: .9em; 
+            font-weight: 500;
+            cursor: default;
+            margin: 0 auto;
+        }
+        
+        .slide-cont
+        {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 2.3em;
+        }
+        
+/* Sliding up Headline */
+        .pdl-start-screen h4
+        {
+            position: absolute;
+            margin-bottom: .8em;
+            transform: translateY(200%);
+            animation: headlineSlide .15s ease-out forwards;
+            animation-delay: 1.5s;
+        }
+        
+/* Wrapper red bg around Generation Btns */
         .gen-btns-wrapper
         {
             width: 100%;
+        }
+        
+        .gen-btn-txt
+        {
+            color: #000; 
+            font-size: small;
+            font-weight: 500;
+            margin-bottom: 0em;
+            transition-delay: .25s;
+        }
+        
+/* Read more span */
+        .read-more
+        {
+            margin-left: .1em;
+            color: blue;
+            font-family: italic;
+            display: none;
         }
         
         .pdl-start-screen .pdl-gen-btns-cont
@@ -2470,6 +2754,58 @@
             border-radius: 5px;
         }
         
+/* Gen Button Description Container */
+        .gen-btn-descr-cont
+        {
+            position: relative;
+            width: 18.8em;
+            height: 3em;
+            margin: 0 auto;
+            padding: .5em;
+            border-radius: 5px;
+            margin-top: -.3em;
+            margin-bottom: 1.5em;
+            box-shadow: 0 0 0 1px rgba(55,55,55,.2);
+        }
+/* http://www.menucool.com/tooltip/css-tooltip*/
+        
+        .gen-btn-descr-cont.gen-box-shadow
+        {
+            box-shadow: none;
+            box-shadow: 0 0 0 1px rgba(55,55,55,1);
+        }
+        
+        .pdl-start-screen .gen-btn-descr-cont .gen-btn-descr
+        {
+            font-size: .7em;
+            font-weight: bolder;
+        }
+        
+        .gen-btn-descr p
+        {
+            transition: .2s ease-out;
+        }
+        
+        .gen-btn-descr
+        {
+            justify-content: space-around;
+        }
+        
+/* Triangle Arrow */
+        .arrow-up 
+        {
+            position: absolute;
+            top: -.35em;
+            left: 10%;
+            width: 0; 
+            height: 0; 
+            transition: .3s;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid black;
+        }
+
+/* Animated Tutorial Container */
         .animated-descr-cont
         {
             width: 400px;
@@ -2479,16 +2815,14 @@
             border-radius: 5px;
             overflow: hidden;
             margin: 0 auto;
-            margin-top: 5em;
         }
         
+/* Animated Pkmn Card (Start Screen) */
         .pdl-start-screen .poke-card-wide
         {
             padding-top: 3.5%;
             min-height: 150px;
             width: 250px;   
-            animation: clicked 1.3s ease-out forwards;
-            animation-delay: 8s;
         }
         
         .pdl-start-screen .poke-card-wide:hover
@@ -2496,12 +2830,38 @@
             transform: none;
             cursor: default;
         }
+                
+        .vertical-line
+        {
+            height: 1.3em;
+            width: 2px;
+            background: #333;
+            margin: 0 .2em;
+        }
         
         .social-txt
         {
             font-weight: 500;
+            margin-bottom: 1em;
         }
         
+/* Mouse Pointer (top - generation btns) */
+        .top-cursor
+        {
+            position: absolute;
+            top: 4.5em;
+            left: 50%;
+            width: 30px;
+            padding: .25em;
+            transition: .2;
+            background: transparent;
+            transform: rotate(-20deg) translateX(-50%);
+            z-index: 200;
+            opacity: .3;
+            animation-delay: 2s;
+        }
+        
+/* Mouse Poiner (bottom - animated descr cont) */
         .cursor
         {
             position: absolute;
@@ -2516,54 +2876,129 @@
             transform: rotate(-20deg) translate(18em, 15em);
             transition: .5s ease-out;
         }
-        
+
+/* Animated Bottom Tabs */
         .tabs-animation-cont
         {
             position: absolute;
             width: 100%;
             height: 100%;
+            padding-top: 2em;
             justify-content: space-between;
+        }
+        
+        /* Line over Tabs Container */
+        .tabs-animation-cont .line
+        {
+            content: '';
+            position: absolute;
+            bottom: 4.5em;
+            width: 80%;
+            height: 3px;
+            background: #fff;
+            transition: .2s;
         }
         
         .tabs-animation-cont .pdl-popup-tabs
         {
-            font-size: .8em;
+            font-size: .75em;
             overflow: hidden; 
             padding: 1.5em .5em;
         }
         
-				.tabs-animation-cont .pdl-popup-tabs .popup-tab
-			{
-					transition: .2s;
-					transform: translateY(3em);
-			}
-			
-			.tabs-animation-cont .pdl-popup-tabs .popup-tab.slided-up
-			{
-					transform: translateY(0);
-			}
-			
-			.animation-txt
-			{
-/*					opacity: 0;*/
-					color: #fff;
-					padding: 0 1.5em;
-					transition: .2s ease-out;
-					transform: translateY(2em);
-			}
-			
-			.txt-animated
-			{
-					opacity: 1;
-					transform: translateY(0);
-			}
-			
-        /*----------------------------------------------- ANIMATION - STARTING SCREEN - DESCRIPTION */
+        .tabs-animation-cont .pdl-popup-tabs .popup-tab
+        {
+            transition: .2s;
+            transform: translateY(3em);
+        }
+
+/* Slided up - Tabs */
+        .tabs-animation-cont .pdl-popup-tabs .popup-tab.slided-up
+        {
+            transform: translateY(0);
+        }
+
+/* Animated Text */
+        .animation-txt
+        {
+            opacity: 0;
+            color: #fff;
+            font-size: .9em;
+            padding: 0 1.5em;
+            transition: .2s ease-out;
+            transform: translateY(2.5em);
+        }
+
+        .txt-animation
+        {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*----------------------------------------------- ANIMATION CLASSES - STARTING SCREEN DESCRIPTION */
+        
+        /* ANIMATION - Onload */
+        @keyframes headlineSlide
+        {
+            to
+            {
+                transform: translateY(0);
+            }
+        }
+        
+        .main-animation-wrapper
+        {
+            position: relative;
+            min-width: 400px;
+        }
+        
+        .main-animation-wrapper .animation-wrapper-one,
+        .main-animation-wrapper .animation-wrapper-two
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        /* ANIMATION - Top cursor moves to gen Button & clicks */
+        .top-cursor.move-top-cursor
+        {
+            animation: moveTopCursor 2s forwards;
+        }
+        
+        @keyframes moveTopCursor
+        {
+            0%
+            {
+                opacity: 1;
+            }
+            60%
+            {
+                opacity: 1;
+                top: 2.3em;
+                left: 1em;
+                transform: rotate(90deg) translateX(-50%);
+            }
+            80%
+            {
+                opacity: 1;
+                top: 2.3em;
+                left: 1.5em;
+                transform: rotate(90deg) translateX(-50%);
+            }
+            100%
+            {
+                opacity: 1;
+                top: 2.3em;
+                left: 1em;
+                transform: rotate(90deg) translateX(-50%);
+            }
+        }
         
         /* ANIMATION - Cursor Animation (gets visible & slides in) */
         .cursor-animation
         {
-            animation: cursorAni forwards 2.8s;
+            animation: cursorAni forwards 2s;
         }
         
         @keyframes cursorAni
@@ -2577,7 +3012,7 @@
         /* ANIMATION - For Pkmn Card (click effect and dispappers) */
         .pkmn-card-animation
         {
-            animation: clicked 1.3s ease-out forwards;
+            animation: clicked 1.5s ease-out forwards;
         }
         
         @keyframes clicked
@@ -2600,6 +3035,91 @@
             }
         }
         
+        
+        /* Starter Screen Range Buttons Container */
+        .starter-screen-filter-tabs .range-btns-cont:before
+        {
+            background: #000;
+        }
+        
+        .starter-screen-filter-tabs .range-btns-cont .range-btn
+        {
+            box-shadow: 0 0 5px rgba(0,0,0,.2);
+        }
+        
+        /* Wrapper for 2. Animation */
+        .animation-wrapper-two
+        {
+            width: 400px;
+        }
+        
+        .animation-wrapper-two .weight-range-btn,
+        .starter-screen-filter-tabs .range-btns-cont .range-btn
+        {
+            cursor: default;
+        }
+        
+        .starter-screen-filter-tabs .range-btns-cont .range-btn
+        {
+            pointer-events: none;
+        }
+
+/* 2. Animation - Range Buttons */
+        .animation-wrapper-two .range-btns-cont
+        {
+            opacity: 0;
+            margin-top: 2.5em;
+            margin-bottom: -.5em;
+            transition: .2s ease-out;
+            transform: translateY(2em);
+        }
+        
+/* Slided up (both) */
+        .animation-wrapper-two .weight-btn-cont.slide-up,
+        .animation-wrapper-two .range-btns-cont.slide-up
+        {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+/* 2. Animation - Mouse Pointer (top) */
+        .animation-wrapper-two .top-cursor
+        {
+            top: 2em;
+            transform: rotate(0deg) translateX(-50%)
+        }
+        
+        .animation-wrapper-two .weight-btn-cont
+        {
+            justify-content: space-around;
+            transform: translateY(2em);
+            transition: .2s ease-out;
+            margin: 5em 0;
+            width: 100%; 
+            opacity: 0;
+        }
+        
+/* 2. Animation - Animated Text over Range Btns */
+        .range-descr-txt
+        {
+            position: absolute;
+            top: -2em;
+            left: 50%;
+            transform: translateX(-50%) translateY(2.5em);
+            opacity: 0;
+            font-size: smaller;
+            font-weight: bolder;
+            width: 100%;
+            justify-content: space-around;
+            transition: .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .range-descr-txt.bounce-up
+        {
+            transform: translateX(-50%) translateY(0) !important;
+            opacity: 1 !important; 
+        }
+        
     </style>
 
 
@@ -2608,7 +3128,6 @@
 <body>
     <!-- MAIN CONTAINER -->
     <div class="pdex-list-main-cont flex-center flex-column">
-       
         <!-- SPECIFIC FILTER -->
         <div class="pdl-complexer-filter-cont flex-center flex-column hidden">
             <div onclick="toggleSpecificSearch()" class="close-specific-filter-btn">
@@ -2707,18 +3226,14 @@
             <div class="flex-center">
                 <input onclick="dispRemCardIds()" id="card-id-check" class="toggle-check" type="checkbox">
                 <span class="check-label">Hide ID's</span>
-<!--                <label for="card-id-check">Toggle IDs</label>-->
                 <input onclick="toggleCircleAnimation()" id="circle-animation-check" class="toggle-check" type="checkbox">
                 <span class="check-label">Stop Animation</span>
-<!--                <label for="circle-animation-check">Toggle Animation</label>-->
                 <button onclick="toggleSpecificSearch()" class="specific-search-btn flex-center">Specific Search</button>
             </div>
         </div>
-        
         <!-- SCROLL TOP/BOTTOM BTNS -->
-        <button onclick="scrollToTop()" id="scroll-top-btn"><i class="fas fa-arrow-up"></i></button>
-        <button onclick="scrollToBottom()" id="scroll-bottom-btn" class="to-bottom-btn"><i class="fas fa-arrow-down"></i></button>
-        
+        <button onclick="scrollToTop()" id="scroll-top-btn" class="opacity"><i class="fas fa-arrow-up"></i></button>
+        <button onclick="scrollToBottom()" id="scroll-bottom-btn" class="to-bottom-btn opacity"><i class="fas fa-arrow-down"></i></button>
         <!-- POPUP CONTAINER  -->
             <div class="pdl-popup-cont hidden">
                 <div class="large-img-screen flex-center flex-column hidden"></div>
@@ -2746,12 +3261,13 @@
                             <div class="poke-card-wide-type flex-center popup-type"></div>
                         </div>
                     </div>
+<!-- Pokemon Id -->
                     <div class="pdl-popup-id">
                         #000 <br>
+<!-- Pokemon Category -->
                         <div class="pdl-popup-category">Pokemon Category</div>
                     </div>
                 </div>
-
                 <!-- POPUP CONTAINER - CONTENT / BOTTOM SECTION (tabs, all data) -->
                 <div class="pdl-popup-content-cont flex-center flex-column">
                     <div class="pdl-popup-content flex-center flex-column">
@@ -2764,7 +3280,6 @@
                             <li onclick="getTypeAdv(clickedPkmn.type1.toLowerCase())" class="popup-tab">Type Adv</li>
                             <li onclick="displayMoves(clickedPkmn)" class="popup-tab">Moves</li>
                         </ul>
-
                         <!-- POPUP CONTAINER - ABOUT SECTION (genrel data) -->
                         <div id="about-tab-cont" class="popup-content-tab-cont poke-data flex-center hidde"></div>
 
@@ -2800,33 +3315,61 @@
             <div class="pdl-start-screen">
                 <h1>Online Pokedex</h1>
                 <p>- A Pokemon Encyclopedia -</p>
-                <p>
-                    This is an online pokedex - also called a pokemon ecyclopedia. You're new to the pokemon 
-                    universe? No problem at all! You're very welcome to brose around and find all the information you need. Eiher you want 
-                    to impress your kids your friends or anybody who thinks you're a "pokenoob" with some nice nerdy and detailed knowledge - come and find all the 
-                    info you'll need for that right here! <br>
-                    You're not a noobie? Great! Welcome home my friend. There's not much more to say, except have fun and I hope this Dexter can be useful to you in any way...
+<!-- Hidden Text - Click Finction to reveal/hide text -->
+                <p onclick="toggleStatScreenTxt()" class="pdl-start-screen-txt">
+                    Hello there...You're new to the Pokemon 
+                    universe? No problem at all! <span class="hidden-txt not-visible-on-mobile ">You're very welcome to brose around and find all the information you need.  Eiher you want
+                    to impress your kids your friends or anybody who thinks you're a "pokenoob"  with some nerdy and detailed knowledge - proof them wrong.
+                    You're not a noobie? Sweet! Welcome home my friend. There's not much more to say except of: have fun and may this Dexter be helpful to you...
+                    </span>
+                    <span class="read-more visible-on-mobile">Read more...</span>
                 </p>
+                <!-- Social Media Icons -->
                 <div class="social-txt flex-center">
-                    <span class="just-visible-on-mobile">I you like it, you are very welcome to</span> Follow me on:
+                    <div class="follow-span"> Follow me :</div>
                     <div class="social-txt-icon"><i class="fab fa-facebook-square"></i></div>
                     <div class="social-txt-icon"><i class="fab fa-instagram-square"></i></div>
                     <div class="social-txt-icon"><i class="fab fa-twitter-square"></i></div>
                     <div class="social-txt-icon"><i class="fab fa-youtube-square"></i></div>
                     <div class="social-txt-icon"><i class="fab fa-pinterest-square"></i></div>
                     <div class="social-txt-icon"><i class="fab fa-github-square"></i></div>
+                    <div class="vertical-line"></div>
+                    <div class="social-txt-icon"><i class="fas fa-envelope-square"></i></div>
                 </div>
-                <h4>How To Get Started?</h4>
-                <p>Simply choose a Generation you want your data from</p>
+            <!-- Animated Headline (Slides up) -->
+                <div class="slide-cont flex-center">
+                     <h4>How To Get Started?</h4>
+                </div>
+<!-- Main Animation Container -->
+                   <div class="main-animation-wrapper">
+                   
+                    <!-- Animation Wrapper For Animation Part 1 -->
+                   <div class="animation-wrapper-one ">
+                    <p class="gen-btn-txt">Choose a Generation you want your data from</p>
                     <div class="gen-btns-wrapper flex-center">
+                        <div class="top-cursor">
+                            <img src="cursor.png">
+                        </div>
+<!-- Generation (description) BUTTONS -->
                         <div class="pdl-gen-btns-cont">
-                        <button class="display-gen-btn">Gen 1</button>
-                        <button class="display-gen-btn">Gen 2</button>
-                        <button class="display-gen-btn">Gen 3</button>
-                        <button class="display-gen-btn">Gen 4</button>
-                        <button class="display-gen-btn">Fav <i class="far fa-heart"></i></button>
+                        <button onclick="displayGenBtnDescr(event)" data-index ="1" class="display-gen-btn">Gen 1</button>
+                        <button onclick="displayGenBtnDescr(event)" data-index ="2" class="display-gen-btn">Gen 2</button>
+                        <button onclick="displayGenBtnDescr(event)" data-index ="3" class="display-gen-btn">Gen 3</button>
+                        <button onclick="displayGenBtnDescr(event)" data-index ="4" class="display-gen-btn">Gen 4</button>
+                        <button onclick="displayGenBtnDescr(event)" data-index ="5" class="display-gen-btn">Fav <i class="far fa-heart"></i></button>
                     </div>
                 </div>
+<!--  Gen Buttons Description Container -->
+                <div class="gen-btn-descr-cont">
+                    <div class="arrow-up opacity"></div>
+                    <div class="gen-btn-descr flex-center">
+                        <p class="opacity">Total: 151</p>
+                        <p class="opacity">#001 Bulbasaur</p>
+                        <p class="opacity">#151 Mew</p>
+                        <p class="opacity">Versions: Red/Blue/Yellow</p>
+                    </div>
+                </div>
+                <!-- Animated Desription Conatainer -->
                 <div class="animated-descr-cont flex-center">
                     <div class="poke-card-wide">
                        <div class="poke-card-wide-id"></div>
@@ -2835,6 +3378,7 @@
                            <div class="poke-card-wide-type flex-center">Fire</div>
                            <div class="poke-card-wide-type flex-center ${pokemon.type2}">Flying</div>
                        </div>
+                        <!-- Right Side -->
                        <div class="poke-card-wide-right">
                            <div class="poke-card-wide-img flex-center">
                                <div class="poke-circle poke-circle-animation flex-center" style="background-color:#FB6C6C;">
@@ -2846,15 +3390,13 @@
                             </div>
                        </div>
                    </div>
+                    <!-- Mouse Pointer (bottom) -->
                    <div class="cursor">
                        <img src="cursor.png">
                    </div>
                    <div class="tabs-animation-cont flex-center flex-column">
-                       <div class="animation-txt">
-                           Here you have some basic info about the pokemon you've clicked on.
-                           Info like lskdjfl
-                           kjsldfjlka sjdfljalsdkjfl;aj sdf;lasd;l fjal;jsdf lajs dl;fjal;sdjf lajsl
-                       </div>
+                       <div class="animation-txt"></div>
+                       <div class="line opacity"></div>
                        <ul class="pdl-popup-tabs flex-center">
                             <li onclick="" class="popup-tab">About</li>
                             <li onclick="" class="popup-tab">Base Stats</li>
@@ -2862,19 +3404,70 @@
                             <li onclick="" class="popup-tab">Type Adv</li>
                             <li onclick="" class="popup-tab">Moves</li>
                         </ul>
-
                    </div>
                 </div>
+                </div>
+                
+                
+                
+<!-- Animation Wrapper For Animation Part 2 -->
+                <div class="animation-wrapper-two opacity">
+                    <!-- Filter Tabs (Weight/Id/Height) -->
+                    <div class="starter-screen-filter-tabs"> 
+                       <div class="range-descr-txt flex-center" style="top: -3em">
+                           <span>Choose a category & choose your range <span class="not-visible-on-mobile">(use sliders)</span></span>
+                       </div>
+                        <div class="range-btns-cont flex-center">
+                            <button class="range-btn" onclick="">Height</button>
+                            <button class="range-btn" onclick="">Id</button>
+                            <button class="range-btn" onclick="">Weight</button>
+                        </div>
+                    </div>
+                    <!-- Mouse Pointer (Top) -->
+                    <div class="top-cursor">
+                            <img src="cursor.png">
+                        </div>
+                    <div class="flex-center weight-btn-cont"> 
+                       <div class="range-descr-txt flex-center">
+                           <span>0m - 0.5m</span>
+                           <span>0m - 0.5m</span>
+                           <span>0m - 0.5m</span>
+                           <span>6.2m - 8m</span>
+                       </div>
+                        <button class="weight-range-btn">Small</button>
+                        <button class="weight-range-btn">Medium</button>
+                        <button class="weight-range-btn">Large</button>
+                        <button class="weight-range-btn">X-Large</button>
+                    </div>
+                   <div class="flex-center weight-btn-cont"> 
+                       <div class="range-descr-txt flex-center">
+                           <span>0kg - 20kg</span>
+                           <span>23kg - 146kg</span>
+                           <span>349kg - 460kg</span>
+                           <span>460kg - 800kg</span>
+                       </div>
+                        <button class="weight-range-btn">Light</button>
+                        <button class="weight-range-btn">Medium</button>
+                        <button class="weight-range-btn">Heavy</button>
+                        <button class="weight-range-btn">X-Heavy</button>
+                    </div>
+                </div>
+                
+                
+                </div>
+                
             </div>
         </div>
     </div>
 
-
-
     <script>
         
         // DOM Elements
+        
         const searchContainer = document.querySelector(".pdl-header-search-cont");
+        const animationWrapper1 = document.querySelector(".animation-wrapper-one");
+        const animationWrapper2 = document.querySelector(".animation-wrapper-two");
+        const animationContainer = document.querySelector(".animated-descr-cont");
         const genButtonsContainer = document.querySelector(".pdl-gen-btns-cont");
         const pDexMainContainer = document.querySelector(".pdex-list-main-cont");
         const pDexListContainer = document.querySelector(".pdl-cont");
@@ -2907,6 +3500,8 @@
         const headerMenu = document.querySelector(".header-menu-cont");
         const headerMenuBtn = document.querySelector(".header-menu-btn");
         const pDexListHeader = document.querySelector(".pdl-header");
+        const scrollTopBtn = document.querySelector("#scroll-top-btn");
+        const scrollBottonBtn = document.querySelector("#scroll-bottom-btn");
         
 
         // All Mega Evolution Names
@@ -2991,39 +3586,250 @@
 			
 				
 				// ----------------------------------------------------------------------------- START SCREEN ANIMATION
+        
+                // ANIMATION - For Gen Buttons Description Container
+                const genDescrContAnimation = () => {
+                    const arrow = document.querySelector(".arrow-up");
+                    const gensDescrCont = document.querySelector(".gen-btn-descr-cont");
+                    const genParagraphs = document.querySelectorAll(".gen-btn-descr p");
+                    const allGenBtns = document.querySelectorAll(".gen-btns-wrapper .pdl-gen-btns-cont .display-gen-btn");
+        
+                    if (arrow.classList.contains("opacity")) arrow.classList.remove("opacity");
+                    gensDescrCont.classList.add("gen-box-shadow");
+                    allGenBtns[0].classList.add("selected-gen-btn");
+
+                    setTimeout(() => {
+                        genParagraphs.forEach(p => p.classList.remove("opacity"));
+                    }, 300);
+                }
+        
+
+                // Fills Gen Button Description depending on Gen Btn
+                const fillGenBtnDescr = (num) => {
+                    const arrow = document.querySelector(".arrow-up");
+                    const gensDescrCont = document.querySelector(".gen-btn-descr");
+                    
+                    if (num == 1) {
+                        arrow.style.left = "10%";
+                        gensDescrCont.innerHTML = `
+                            <p>Total: 151</p>
+                            <p>#001 Bulbasaur</p>
+                            <p>#151 Mew</p>
+                            <p>Versions: Red/Blue/Yellow</p>
+                        `;
+                    } else if (num == 2) {
+                        arrow.style.left = "29%";
+                        gensDescrCont.innerHTML = `
+                            <p>Total: 100</p>
+                            <p>#152 Chikorita</p>
+                            <p>#251 Celebie</p>
+                            <p>Versions: Gold/Silver/Crystal</p>
+                        `;
+                    } else if (num == 3) {
+                        arrow.style.left = "48%";
+                        gensDescrCont.innerHTML = `
+                            <p>Total: 135</p>
+                            <p>#252 Treeko</p>
+                            <p>#386 Deoxys</p>
+                            <p>Versions: Ruby/Sapphire/Emerald</p>
+                        `;
+                    } else if (num == 4) {
+                        arrow.style.left = "68%";
+                        gensDescrCont.innerHTML = `
+                            <p>Total: 107</p>
+                            <p>#387 Turtwig</p>
+                            <p>#493 Arceus</p>
+                            <p>Versions: Diamant/Pearl/Platinum</p>
+                        `;
+                    } else if (num == 5) {
+                        arrow.style.left = "87%";
+                        gensDescrCont.innerHTML = `
+                            <p style="margin-top: .7em">Here You can see all your saved/favorite Pokemon</p>
+                        `;
+                    }
+                }
 			
-				const startAnimationTabs = () => {
-						const cursor = document.querySelector(".cursor");
-						const pkmnCard = document.querySelector(".pdl-start-screen .poke-card-wide");
-						const animationTxt = document.querySelector(".animation-txt");
-						const allTabs = document.querySelectorAll(".tabs-animation-cont .pdl-popup-tabs .popup-tab");
-					
-						// removes all animation classes to restart animations (if clicking the button)
-					
-					
-						// ANIMATION - Cursor (slides in and clicks pkmn card)
-						setTimeout(() => cursor.classList.add("cursor-animation"), 5000);
-						
-						// ANIMATION - Pkmn Card (getting clicked / "pulses")
-						setTimeout(() => pkmnCard.classList.add("pkmn-card-animation"), 8000);
-					
-						// ANIMATION - All Tabs (sliding up / appear)
-						setTimeout(() => [...allTabs].forEach(tab => tab.classList.add("slided-up")), 10500);
-					
-						// ANIMATION - Cursor (disappears)
-						setTimeout(() => cursor.classList.add("opacity"), 10000);
-					
-						// ANIMATION - Tab Description Txt (appears)
-					setTimeout(() => animationTxt.classList.add("txt-animation"), 12000);
+                
+                //                    General Information about the pokemon you clicked on.
+//                               A variaty of different and relevant data about each Pokemon.
+//                               Their images/Sprites, phyisique, locations, pokedex entry, training, breeding etc.
+                    
+                    // All Pokemon Base Stats of the Pokemon you clicked on.
+                    // 
+                    
+                    // inserts content
+//                    animationContainer.innerHTML = "";
+//                    animationContainer.insertAdjacentHTML("beforeend", animationContInnerHTML);
+                
+                
+//                                    const animationContInnerHTML = `
+//                        <div class="poke-card-wide">
+//                           <div class="poke-card-wide-id"></div>
+//                           <div class="poke-card-wide-left flex-column">
+//                               <h3 class="poke-card-wide-headline" style="margin-left: -1.5em; margin-bottom: 1em">Charizard</h3>
+//                               <div class="poke-card-wide-type flex-center">Fire</div>
+//                               <div class="poke-card-wide-type flex-center">Flying</div>
+//                           </div>
+//                           <div class="poke-card-wide-right">
+//                               <div class="poke-card-wide-img flex-center">
+//                                   <div class="poke-circle poke-circle-animation flex-center" style="background-color:#FB6C6C;">
+//                                        <div class="circle-left" style="background-color:#FB6C6C;"></div>
+//                                        <div class="circle-right" style="background-color:#FB6C6C;"></div>
+//                                        <div class="poke-inner-circle"></div>
+//                                     </div>
+//                                   <img src="mlizardon.png" alt="Charizard">
+//                                </div>
+//                           </div>
+//                       </div>
+//                       <div class="cursor">
+//                           <img src="cursor.png">
+//                       </div>
+//                       <div class="tabs-animation-cont flex-center flex-column">
+//                           <div class="animation-txt">
+//                               All 
+//                           </div>
+//                           <div class="line opacity"></div>
+//                           <ul class="pdl-popup-tabs flex-center">
+//                                <li onclick="" class="popup-tab">About</li>
+//                                <li onclick="" class="popup-tab">Base Stats</li>
+//                                <li onclick="" class="popup-tab">Evolutions</li>
+//                                <li onclick="" class="popup-tab">Type Adv</li>
+//                                <li onclick="" class="popup-tab">Moves</li>
+//                            </ul>
+//                       </div>
+//                    `;
+                
+                // Changes selected-tab class & fills (click)
+                const displayGenBtnDescr = (e) => {
+                    const allGenBtns = document.querySelectorAll(".gen-btns-wrapper .pdl-gen-btns-cont .display-gen-btn");
+                    const topCursor = document.querySelector(".top-cursor");
+                    
+                    if (!topCursor.classList.contains("opacity")) {
+                        topCursor.classList.add("opacity");
+                    }
+                    
+                    allGenBtns.forEach(tab => tab.classList.remove("selected-gen-btn"));
+                    e.target.classList.add("selected-gen-btn");
+                    
+                    fillGenBtnDescr(e.target.dataset.index);
+                }
+                
+                
+                // Firat 
+				const firstAnimation = (repeat = false) => {
+                    // Assigns selected/active class to Tabs/Gen-Buttons
+//                    const activeBtn = (target) => {
+//                        document.querySelectorAll(".display-gen-btn").forEach(btn => btn.classList.remove("selected-gen-btn"));
+//                        target.classList.add("selected-gen-btn");
+//                    }
+                    
+                    const repeatAnimation1 = () => {
+                        line.classList.add("opacity");
+                        arrow.classList.add("opacity");
+                        cursor.classList.remove("opacity");
+                        topCursor.classList.remove("opacity");
+                        cursor.classList.remove("cursor-animation");
+                        gensDescrCont.classList.add("gen-box-shadow");
+                        topCursor.classList.remove("move-top-cursor");
+                        animationTxt.classList.remove("txt-animation");
+                        pkmnCard.classList.remove("pkmn-card-animation");
+                        genParagraphs.forEach(p => p.classList.add("opacity"));
+                        [...allTabs].forEach(tab => tab.classList.remove("slided-up"));
+                        [...allTabs].forEach(tab => tab.classList.remove("selected-tab"));
+                        allGenBtns.forEach(tab => tab.classList.remove("selected-gen-btn"));
+                    }
+
+                    const cursor = document.querySelector(".cursor");
+                    const arrow = document.querySelector(".arrow-up");
+                    const topCursor = document.querySelector(".top-cursor");
+                    const animationTxt = document.querySelector(".animation-txt");
+                    const gensDescrCont = document.querySelector(".gen-btn-descr");
+                    const line = document.querySelector(".tabs-animation-cont .line");
+                    const genParagraphs = document.querySelectorAll(".gen-btn-descr p");
+                    const pkmnCard = document.querySelector(".pdl-start-screen .poke-card-wide");
+                    const allTabs = document.querySelectorAll(".tabs-animation-cont .pdl-popup-tabs .popup-tab");
+                    const allGenBtns = document.querySelectorAll(".gen-btns-wrapper .pdl-gen-btns-cont .display-gen-btn");
+                    
+                    if (animationWrapper1.classList.contains("opacity")) {
+                        animationWrapper2.classList.remove("opacity");
+                        animationWrapper1.classList.add("opacity");
+                    } else {
+                        animationWrapper1.classList.add("opacity");
+                        animationWrapper2.classList.remove("opacity");
+                    }
+                    
+                    // resets classes to animate again 
+                    if (repeat) repeatAnimation1();
+
+                    // ANIMATION - Cursor (moves to gen. button & clicks it)
+                    setTimeout(() => topCursor.classList.add("move-top-cursor"), 2000);
+                    
+                    // ANIMATION - Gen Description cont (opacity, selected-gen-bn class, content appear)
+                    setTimeout(genDescrContAnimation, 3500);
+
+                    // ANIMATION - Cursor (slides in and clicks pkmn card)
+                    setTimeout(() => cursor.classList.add("cursor-animation"), 4500);
+
+                    // ANIMATION - Pkmn Card (getting clicked / "pulses")
+                    setTimeout(() => pkmnCard.classList.add("pkmn-card-animation"), 6500);
+
+                    // ANIMATION - Cursor (disappears)
+                    setTimeout(() => cursor.classList.add("opacity"), 8000);
+                    
+                    // ANIMATION - All Tabs (sliding up / appear)
+                    setTimeout(() => [...allTabs].forEach(tab => tab.classList.add("slided-up")), 8500);
+
+                    // ANIMATION - Tab Description Txt + line + active-tab (appear) 
+                    setTimeout(() => {
+                        animationTxt.classList.add("txt-animation");
+                        allTabs[0].classList.add("selected-tab");
+                        line.classList.remove("opacity");
+                    }, 8800);
 				}
 
 				// Calls animation function immediately
-				startAnimationTabs();
-
-				
-        // -------------------------------------------------------------------------------------------- FUNCTIONS -
+//                genDescrContAnimation();
+                
+                // window.onLoad() - if local storage num === 3 dann no animation
+                // -> screen done (innerHTML or all classes there with selected classes) 
+				firstAnimation();
 
         
+        // Toggles Hidden Text in Start Screen
+        const toggleStatScreenTxt = () => {
+            const hidenTxt = document.querySelector(".hidden-txt");
+            const readMore = document.querySelector(".read-more");
+            
+            hidenTxt.classList.toggle("not-visible-on-mobile");
+            readMore.innerText === "Read more..." ? readMore.innerText = "Read less" : readMore.innerText = "Read more...";
+        }
+        
+        
+        // ANIMATION 2. Specific Search
+        const animationTwo = () => {
+            const rangeBtnTabs = document.querySelector(".starter-screen-filter-tabs .range-btns-cont");
+            const rangeBtns = document.querySelectorAll(".animation-wrapper-two .weight-btn-cont");
+            const aboveBtnsTxt = document.querySelectorAll(".range-descr-txt");
+            
+            let animatedElements = [rangeBtnTabs, rangeBtns[0], rangeBtns[1]];
+            let time = 300;
+            
+            animationWrapper1.classList.add("opacity");
+            animationWrapper2.classList.remove("opacity");
+            
+            // makes range tabs/btns slide up one after an other
+            animatedElements.forEach(element => {
+                time += 150;
+                setTimeout(() => element.classList.add("slide-up"), time) 
+            });
+            
+            // makes txt slide up with a little delay(after btns)
+            setTimeout(() => aboveBtnsTxt.forEach(txt => txt.classList.add("bounce-up")), time + 400);
+        }
+        
+				
+        // -------------------------------------------------------------------------------------------- FUNCTIONS 
+
         // Toggles the Header Menu
         const toggleHeaderMenu = () => {
             // changes var menuOpen - depending true/false
@@ -3061,7 +3867,7 @@
         }
         
 
-        // 
+        // Searches for Pkmn Name or Id and displays it
         const searchForPkmn = () => {
             filtered = true;
             
@@ -3092,12 +3898,13 @@
                 pDexListContainer.innerHTML = "";
                 fillPokemon(filteredPkmn);
             } else {
+                // Informs the user to click on any Generation Btn before using this filter
                 alert("Please choose a Pokemon Generation first (Gen1/Gen2/Gen3/Gen4/Fav)");
             }
         }
 
         
-        // 
+        // Menu - Checkbox toggles Id nr. on Pkmn Cards (top right #001)
         const dispRemCardIds = () => {
             const cardIdCheck = document.querySelector("#card-id-check");
             const allCards = document.querySelectorAll(".poke-card-wide");
@@ -3106,6 +3913,7 @@
         }
         
         
+        // Menu - Checkbox toggles Animation in Pkmn Cards (rotating pokeball behind image)
         const toggleCircleAnimation = () => {
             const circleAniCheck = document.querySelector("#circle-animation-check");
             const allCircles = document.querySelectorAll(".poke-circle"); 
@@ -3118,7 +3926,7 @@
         const getVersions = versionData => versionData.map(v => v.version.name);
 
         
-        // assigns selected class (gen-btns)
+        // Assigns selected class (gen-btns)
         const assignSelectedGenBtn = (target) => {
             document.querySelectorAll(".display-gen-btn").forEach(btn => btn.classList.remove("selected-gen-btn"));
             target.classList.add("selected-gen-btn");
@@ -3133,7 +3941,7 @@
         }
         
 
-        // Gets all pokemon via API
+        // Gets all pokemon via API - returns formatted pkmn obj array
         const displayGen = (fromGen, toGen, e) => {
             filtered = false;
             // removes trash icon
@@ -3142,15 +3950,26 @@
             remClearFilterBtn();
             closeMenuIfOpen();
             
-            pkmnListLength = toGen - (fromGen + 1)
+            pkmnListLength = toGen - (fromGen + 1);
+            if (scrollBottonBtn.classList.contains("opacity")) {
+                scrollTopBtn.classList.remove("opacity");
+                scrollBottonBtn.classList.remove("opacity");
+            }
 
+            
+            // Get all moves from a category (lv-up, tutor, machine, egg)
             const getMovesByCat = (moves, category) => moves.filter(move => move.version_group_details[0].move_learn_method.name === category);
 
+            
+            // Checks if Pkmn has a Mega Evolution - returns boolean
             const isMegaPkmn = name => allMegaEvolutions.includes(name) ? true : false;
 
+            
+            // Clears Pokedex List Container & All Pkmn Array
             pDexListContainer.innerHTML = "";
             allPokemon = [];
 
+            // Loop trough first pkmn - last pkmn from the chosen Generation
             for (let i = (fromGen + 1); i <= toGen; i++) {
                 fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then(res => res.json()).then(data => {
                     // formats every pokemon
@@ -3242,14 +4061,10 @@
                                     // otherwise returns false
                                     formattetPokemon.thirdEvolution = false;
                                 }
-//                                if (isMegaPkmn(data.chain.evolves_to[0].evolves_to[0].species.name) || isMegaPkmn(data.chain.evolves_to[0].evolves_to[1].species.name)) {
-//                                        formattetPokemon.isMega = true;
-//                                    }
                             } else {
                                 formattetPokemon.thirdEvolution = false;
                             }
                         });
-
                         // fetching api for images
                         fetch(`https://pokeres.bastionbot.org/images/pokemon/${i}.png`).then(image => {
                             formattetPokemon.sprite = image ? image.url : "https://res.cloudinary.com/dxcrd5sos/image/upload/v1606776295/SeekPng.com_missingno-png_3434964_qtefqm.png";
@@ -3274,7 +4089,7 @@
         // ------------------------------------------------------------------------------------------ GENERAL FUNCTIONS
 
 
-        // Capitalizes a string
+        // Capitalizes a string / every word in a string
         const capitalize = (str) => {
             // capitalizes one string
             const capitalizeOne = (str) => str.charAt(0).toUpperCase() + str.slice(1);
@@ -3283,14 +4098,13 @@
             if (str.includes("-")) {
                 return str.split("-").map(s => capitalizeOne(s)).join("-");
             }
+            // if str includes whitespace - capitalize words after it
             if (str.includes(" ")) {
                 return str.split(" ").map(s => capitalizeOne(s)).join(" ");
             } else {
                 return capitalizeOne(str);
             }
         }
-
-
 
 
         // Checks if pokemon has a second type
@@ -3381,7 +4195,6 @@
         
         // Removes type filter & displays all pkmn again
         const removePkmnTypeFilter = () => {
-//            allPokemon = currentPkmn;
             filtered = false;
             fillPokemon(allPokemon);
             // removes clear favs/filters BUTTON
@@ -3399,7 +4212,7 @@
         }
 
 
-        // 
+        // Makes Popup Window appear and fills it with pkmn data
         const displayClickedPkmn = pkmn => {
             // clicked pokemon card data & made up gender percentages
             popupTypes[1].classList.remove("hidden");
@@ -3424,6 +4237,7 @@
         // Previous/Next pkmn BUTTONS - For switching pokemon without having to close the popup container
         const prevNextPkmn = (clPkmn, num) => {
             
+            // returns previous/next pokemon
             const returnPrevNextPkmn = (list, clPkmn, num) => {
                 clPkmnIndex = list.indexOf(clPkmn);
                 
@@ -3437,23 +4251,23 @@
                 }
             }
             
-            // 
+            // if user clicks trough a filtered list -> use filtered array as argument
             if (filtered) {
                 clickedPkmn = returnPrevNextPkmn(filteredPkmn, clPkmn, num);
+            // if user clicks trough the 'default' array -> use allPokemon array as argument
             } else if (!filtered) {
                 clickedPkmn = returnPrevNextPkmn(allPokemon, clPkmn, num);
             }
-            console.log(clickedPkmn)
-            // 
+            // displyas pkmn
             displayClickedPkmn(clickedPkmn.name);
         }
 
         
-        // 
+        // Displays Id of a displayed Pkmn (#023)
         const displPkmnId = id => {
             let resId = id;
 
-            // 
+            // If pkmn Id has less then 3 characters they get replaced by 0. (1 -> 001)
             const addZero = id => id.toString().split("").length < 3 ? resId = "0" + id : resId;
 
             addZero(resId);
@@ -3465,14 +4279,14 @@
         }
 
 
-        //
+        // Hides all Tab Container & removes all selected classes from them
         const addHiddenToTabs = () => {
             allPopupTabs.forEach(tab => tab.classList.add("hidden"));
             popupTabBtns.forEach(btn => btn.classList.remove("selected-tab"));
         }
 
 
-        //
+        // Toggles and fills Large Image & Sprites window (by clicking on the image)
         const enlargeImage = e => {
             toggleLargeImg();
 
@@ -3492,21 +4306,22 @@
             `;
         }
 
-
+        
+        // Toggles Large Image window/screen
+        const toggleLargeImg = () => largeImageScreen.classList.toggle("hidden");
+        
 
         // Converts lbs to kilos
         const convertKilosToLbs = (num) => Math.round(num / 0.45359237) + "lbs";
 
-        // 
-        const toggleLargeImg = () => largeImageScreen.classList.toggle("hidden");
 
-
-        //
+        // ------------------------------------------------------------------------------------- ABOUT TAB CONTAINER
+        
+        // Fills About Tab Container with data
         const fillAboutTab = () => {
             addHiddenToTabs();
             aboutTab.classList.remove("hidden");
             popupTabBtns[0].classList.add("selected-tab");
-
 
             const genderPercentages = displayGenderPercentage();
 
@@ -3568,15 +4383,13 @@
                    <div onclick="toggleOpacityLocList()" class="popup-move-descr-back-btn">&larr;</div>
                </div>
             `;
+            // gets data for encounters of clicked pokemon
             fetchPkmnEncounters((clickedPkmn.name).toLowerCase());
 
             const locationList = document.querySelector(".location-list-cont");
             locationList.classList.add("opacity");
         }
-
-
-        // Removes all 
-
+        
         
       // Filters non letters out(e.g. '↵') from p.dex text, but keeps 'é'   
        const modifyDescrTxt = (txt) => {
@@ -3585,18 +4398,21 @@
            return txt.split("").map(char => (checkIfLetter(char) || char == "é" || char === " " || char === ".") ? char : " ").join("");
        }
 
-
+       
+        // Gets Encounter Data of a Pkmn
         const fetchPkmnEncounters = pkmn => {
             const locationList = document.querySelector(".location-list-cont");
-
+            
+            // toggles encounter window
             locationList.classList.remove("opacity");
             locationList.innerHTML = `
                 <div onclick="toggleOpacityLocList()" class="popup-move-descr-back-btn">&larr;</div>
                 <div onclick="displAllVersions()" class="to-versions-btn">Versions &rarr;</div>
             `;
 
-            // 
+            // api call for encounters
             fetch(`https://pokeapi.co/api/v2/pokemon/${pkmn}/encounters`).then(res => res.json()).then(e => {
+                // if there are no encounters - displays 'No Encounters'
                 if (e.length < 1) {
                     locationList.innerHTML = `
                         <div onclick="toggleOpacityLocList()" class="popup-move-descr-back-btn">&larr;</div>
@@ -3631,6 +4447,8 @@
         // Toggles the opacity of Description Text and Location List (apper/dissappear)
         const toggleOpacityDescrTxt = () => document.querySelector(".about-pkmn-descr-txt-cont").classList.toggle("opacity");
 
+        
+        // Toggles Location List window
         const toggleOpacityLocList = () => document.querySelector(".location-list-cont").classList.toggle("opacity");
 
 
@@ -3651,9 +4469,11 @@
         }
 
 
+        // Adds whitespace after a comma (string) 
         const addWhiteSpace = str = str => str.includes(",") ? str.substr(0, str.indexOf(",") + 1) + " " + str.substr(str.indexOf(",") + 1) : str;
 
-        // Displays Genders in %                                // Couldn't find the data so I'm making some up
+        
+        // Displays Genders in %                         // Couldn't find the data for it so I'm making some up. 
         const displayGenderPercentage = () => {
             let female = Math.floor(Math.random() * 54) + 17;
             let male = 100 - female;
@@ -3661,6 +4481,7 @@
             return [male, female];
         }
 
+        
         // Displays a stat depending on index to ui
         const displayStat = (statIndex) => clickedPkmn.baseStats[statIndex].stat[1];
 
@@ -3676,7 +4497,9 @@
         // Closes Popup Window
         const closePopup = () => popUpContainer.classList.add("hidden");
 
-
+        
+        // ------------------------------------------------------------------------------------- SPECIFIC SEARCH
+        
         // Toggles the specific search window
         const toggleSpecificSearch = () => {
             closeMenuIfOpen();
@@ -3698,6 +4521,7 @@
         const toggleMoveDescrCont = () => movesDescrContainer.classList.toggle("opacity");
 
 
+        // ------------------------------------------------------------------------------------- BASE STATS TAB CONTAINER
 
         const fillBaseStatsTab = () => {
             addHiddenToTabs();
@@ -3764,40 +4588,44 @@
         }
 
 
-        // ----------------------------------------------------------------------------------------------- EVOLUTIONS TAB
+        // ----------------------------------------------------------------------------------------------- EVOLUTIONS TAB CONTAINER
 
 
-        // 
+        // Toggles & fills Evolution Tab
         const fillEvolutionsTab = () => {
             addHiddenToTabs();
             evolutionsTab.classList.remove("hidden");
             popupTabBtns[2].classList.add("selected-tab");
 
 
-            // 
+            // Filters for evolution (pokemon name argument)
             const filterEvolution = pkmn => allPokemon.filter(p => p.name === capitalize(pkmn))[0];
 
+            
+            // Returns Item if true
             const returnIfTrue = item => capitalize(item) ? item : "";
 
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ !!!!!
-            //
-            const lookForSprite = name => {
-                let namesList = allPokemon.map(p => (p.name).toLowerCase());
-
-                namesList.includes(name) ? filterEvolution(name).sprite : fetchMissingSprite(name);
-            }
+            // If pokemon image not in current generation -> 
+//            const lookForSprite = name => {
+//                let namesList = allPokemon.map(p => (p.name).toLowerCase());
+//
+//                namesList.includes(name) ? filterEvolution(name).sprite : fetchMissingSprite(name);
+//            }
 
 
             // Fetches missing sprite (if pkmn evolution is not in selected/current generation) - should avoid TypeError
             const fetchMissingSprite = (name) => {
-                let pSprite;
-
+//                let pSprite;
+                
                 fetch(`https://pokeapi.co/api/v2/pokemon/${name}`).then(res => res.json()).then(pkmn => {
                     fetch(`https://pokeres.bastionbot.org/images/pokemon/${pkmn.id}.png`).then(sprite => {
                         finalEvolutionSprite = sprite.url;
-                        pSprite = sprite.url;
+                        let pSprite = sprite.url;
+                        
                         console.log(pSprite);
+                        
                         return pSprite;
                         
 
@@ -3811,32 +4639,31 @@
             // Returns all Pokemon Names in chosen generation
             const getAllGenPkmnNames = (gen) => gen.map(pkmn => pkmn.name.toLowerCase());
 
-            
-            // 
+            // Displays First Evolution of clicked Pkmn
             const addFirstEvolution = () => {
-                let firstPkmnSprite;
-                
-                if (getAllGenPkmnNames(allPokemon).includes(clickedPkmn.firstEvolution)) {
-                    firstPkmnSprite = filterEvolution(clickedPkmn.firstEvolution).sprite;
-                } else {
-                    firstPkmnSprite = fetchMissingSprite(clickedPkmn.firstEvolution);
-                }
-                //                let firstPkmnSprite = lookForSprite(clickedPkmn.firstEvolution); 
+            let firstPkmnSprite;
 
-                evolutionsTab.innerHTML = `
-                    <div  class="flex-center flex-column">
-                       <h3 class="popup-evolution-headline">Evolution Chain</h3>
-                   </div>
-                   <div id="evolutions-cont" class="flex-center flex-colum" style="flex-wrap: wrap">
-                       <div class="flex-center flex-column">
-                           <div class="popup-evolution flex-center first-evolution"><img src="${firstPkmnSprite}" alt="evolution"></div>
-                           <div class="evolution-name">${capitalize(clickedPkmn.firstEvolution)}</div>
-                       </div>
-                   </div>
-                `;
+            if (getAllGenPkmnNames(allPokemon).includes(clickedPkmn.firstEvolution)) {
+                firstPkmnSprite = filterEvolution(clickedPkmn.firstEvolution).sprite;
+            } else {
+                firstPkmnSprite = fetchMissingSprite(clickedPkmn.firstEvolution);
             }
 
-            // 
+            evolutionsTab.innerHTML = `
+            <div class="flex-center flex-column">
+                <h3 class="popup-evolution-headline">Evolution Chain</h3>
+            </div>
+            <div id="evolutions-cont" class="flex-center flex-colum" style="flex-wrap: wrap">
+                <div class="flex-center flex-column">
+                    <div class="popup-evolution flex-center first-evolution"><img src="${firstPkmnSprite}" alt="evolution"></div>
+                    <div class="evolution-name">${capitalize(clickedPkmn.firstEvolution)}</div>
+                </div>
+            </div>
+            `;
+            }
+            
+
+            // Displays Second Evolution of clicked Pkmn if existent
             const addSecndEvolution = pkmn => { // pkmn instead!
                 let secndPkmnSprite;
                 
@@ -3846,10 +4673,6 @@
                     secndPkmnSprite = fetchMissingSprite(clickedPkmn.secndEvolution.secndName); 
                 }
                 
-                //                let secndPkmnSprite = lookForSprite(clickedPkmn.secndEvolution.secndName); !!!!!!
-
-
-//                console.log(secndPkmnSprite)
                 document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
                     <div class="popup-evolution-box flex-center">
                        <div class="popup-evolution-arrow second-evolution-arrow">
@@ -3865,7 +4688,7 @@
             }
             
                 
-            // 
+            // Displays Third Evolution of clicked Pkmn if existent
             const addThirdEvolution = pkmn => {
                 let thirdPkmnSprite;
                 
@@ -3890,7 +4713,7 @@
             }
             
 
-            // 
+            // Displays Mega Evolution of clicked Pkmn if existent
             const addMegaEvolution = () => {
                 let thirdPkmnSprite;
                 
@@ -3921,29 +4744,8 @@
                 `);
             }
 
-//                            const thirdPkmnSprite = filterEvolution(clickedPkmn.thirdEvolution.thirdName).sprite;
-//                document.querySelector("#evolutions-cont").insertAdjacentHTML("beforeend", `
-//                    <div class="mega-evolution-cont flex-center">
-//                       <div class="flex-center flex-column">
-//                           <div class="popup-evolution flex-center first-evolution"><img src="${thirdPkmnSprite}" alt="evolution"></div>
-//                           <div class="evolution-name">${capitalize(clickedPkmn.thirdEvolution.thirdName)}</div>
-//                       </div>
-//                       <div class="popup-evolution-box flex-center">
-//                       <div class="popup-evolution-arrow first-evolution-arrow">
-//                           <div class="evolution-trigger">Mega Stone</div>
-//                           <div class="evolution-level"><img class="mega-stone-img" src="megastone.png"></div>
-//                       </div>
-//                       <div class="flex-center flex-column">
-//                           <div class="popup-evolution flex-center second-evolution"><img src="mega_${clickedPkmn.thirdEvolution.thirdName}.png" alt="mega evolution"></div>
-//                           <div class="evolution-name">Mega ${capitalize(clickedPkmn.thirdEvolution.thirdName)}</div>
-//                       </div>
-//                       </div>
-//                   </div>
-//                `);
-//            
-            // 
-            addFirstEvolution();
 
+            addFirstEvolution();
             if (clickedPkmn.secndEvolution) {
                 addSecndEvolution(clickedPkmn.secndEvolution.secndName);
 
@@ -3952,18 +4754,12 @@
                 }
             }
             if (clickedPkmn.isMega) {
-//                console.log(clickedPkmn, clickedPkmn.isMega)
                 addMegaEvolution();
             }
         }
 
 
-
-
-
-
-        // Type Adv Api call
-        // ----------------------------------------------------------------------------- TYPE ADVANTAGES API CALL
+        // ----------------------------------------------------------------------------- TYPE ADVANTAGES (API CALL)
 
         // Takes current type as input and fetches and modifies the api (pokemon api -type- endpoint)
         const getTypeAdv = type => {
@@ -3973,8 +4769,8 @@
             typeAdvWeakness = true;
             weaknessAdv = true;
 
+            // Type Adv Api call
             fetch(`https://pokeapi.co/api/v2/type/${type}`).then(res => res.json()).then(data => {
-
                 // Creates array with normal Demage
                 const calculateNormalD = (all, full) => {
                     let normalDmg = [];
@@ -4010,8 +4806,6 @@
 
         // Btns - switches between weaknesses/advs.
         const changeWeaknessAdv = (e) => {
-            //            document.querySelectorAll(".swich-to-weakn-adv-btn").forEach(b => b.classList.remove("selected-adv"));
-            //            e.target.classList.add("selected-adv");
             const AdvBtns = document.querySelectorAll(".swich-to-weakn-adv-btn");
 
             weaknessAdv = weaknessAdv ? false : true;
@@ -4055,14 +4849,10 @@
             }
         }
 
-        // !!!!!!!!!!!!
-
-        //                typeAdvTab         
-
-
+        
         // ----------------------------------------------------------------------------- MOVE TAB
 
-        //
+        // Displays Moves of clicked Pokemon
         const displayMoves = pkmn => {
             addHiddenToTabs();
             movesTab.classList.remove("hidden");
@@ -4070,23 +4860,23 @@
 
             displayLvMoves(pkmn);
         }
-        //            style="background-color:${movesBg(m)}
 
 
-        const resetMovesContainer = () => { // opacity maybe...
+        // Resets Moves Container
+        const resetMovesContainer = () => {
             displMovesContainer.innerHTML = `
-                    <div class="popup-move-descr-cont flex-center flex-column opacity"></div>
-                    <div class="moves-category-btn-cont flex-center">
-                        <div onclick="displayLvMoves(clickedPkmn)" class="moves-category-btn">Level</div>
-                        <div onclick="displayTmMoves(clickedPkmn)" class="moves-category-btn">Tm/Vm</div>
-                        <div onclick="displayTutMoves(clickedPkmn)" class="moves-category-btn">Tutor</div>
-                        <div onclick="displayEggMoves(clickedPkmn)" class="moves-category-btn">Egg</div>
-                    </div> 
-               `;
+                <div class="popup-move-descr-cont flex-center flex-column opacity"></div>
+                <div class="moves-category-btn-cont flex-center">
+                    <div onclick="displayLvMoves(clickedPkmn)" class="moves-category-btn">Level</div>
+                    <div onclick="displayTmMoves(clickedPkmn)" class="moves-category-btn">Tm/Vm</div>
+                    <div onclick="displayTutMoves(clickedPkmn)" class="moves-category-btn">Tutor</div>
+                    <div onclick="displayEggMoves(clickedPkmn)" class="moves-category-btn">Egg</div>
+                </div> 
+           `;
         }
 
 
-        //
+        // Removes all Selected classes from Btns
         const remSelectedClassesBtns = btnIndex => {
             const movesCatBtns = document.querySelectorAll(".moves-category-btn");
 
@@ -4095,7 +4885,7 @@
         }
 
 
-        //
+        // Displays all Moves a pkmn learns via Lv-Up
         const displayLvMoves = pkmn => {
             resetMovesContainer();
             remSelectedClassesBtns(0);
@@ -4104,31 +4894,31 @@
 
             sortedLvMoves.forEach(m => {
                 displMovesContainer.insertAdjacentHTML("beforeend", `
-                        <div class="popup-move flex-center flex-column">
-                           <div class="move-lv">Lv. ${m.version_group_details[0].level_learned_at}</div>
-                           <div onclick="getMoveData(event)" class="move-name" style="background-color:crimson; font-size: ${moveElementSize(pkmn.movesLv)}">${capitalize(m.move.name)}</div>
-                        </div>
-                    `);
+                    <div class="popup-move flex-center flex-column">
+                       <div class="move-lv">Lv. ${m.version_group_details[0].level_learned_at}</div>
+                       <div onclick="getMoveData(event)" class="move-name" style="background-color:crimson; font-size: ${moveElementSize(pkmn.movesLv)}">${capitalize(m.move.name)}</div>
+                    </div>
+                `);
             });
         }
 
 
-        //
+        // Displays all Moves a pkmn learns via Tutor
         const displayTutMoves = pkmn => {
             resetMovesContainer();
             remSelectedClassesBtns(2);
 
             pkmn.movesTut.forEach(m => {
                 displMovesContainer.insertAdjacentHTML("beforeend", `
-                        <div class="popup-move flex-center flex-column">
-                           <div onclick="getMoveData(event)" class="move-name" style="background-color:crimson; font-size: ${moveElementSize(pkmn.movesTut)}">${capitalize(m.move.name)}</div>
-                        </div>
-                   `);
+                    <div class="popup-move flex-center flex-column">
+                       <div onclick="getMoveData(event)" class="move-name" style="background-color:crimson; font-size: ${moveElementSize(pkmn.movesTut)}">${capitalize(m.move.name)}</div>
+                    </div>
+               `);
             });
         }
 
 
-        //
+        // Displays all Moves a pkmn learns via Egg moves
         const displayEggMoves = pkmn => {
             resetMovesContainer();
             remSelectedClassesBtns(3);
@@ -4143,7 +4933,7 @@
         }
 
 
-        //
+        // Changes font size depending of amout of moves (the more moves are getting displayed - smaller font size)
         const moveElementSize = moves => {
             if (moves.length <= 13) {
                 return "1.3em";
@@ -4159,29 +4949,28 @@
         }
 
 
-        //
+        // Displays all Moves a pkmn learns via Machine (Tm)
         const displayTmMoves = pkmn => {
             resetMovesContainer();
             remSelectedClassesBtns(1);
 
             pkmn.movesTm.forEach(m => {
                 displMovesContainer.insertAdjacentHTML("beforeend", `
-                        <div class="popup-move flex-center flex-column">
-                           <div onclick="getMoveData(event)" class="move-name" style="background-color:crimson; font-size: ${moveElementSize(pkmn.movesTm)};">${capitalize(m.move.name)}</div>
-                        </div>
-                   `);
+                    <div class="popup-move flex-center flex-column">
+                       <div onclick="getMoveData(event)" class="move-name" style="background-color:crimson; font-size: ${moveElementSize(pkmn.movesTm)};">${capitalize(m.move.name)}</div>
+                    </div>
+               `);
             });
-
         }
+        
 
-        //
+        // Gets Machine Move (Tm) data
         const fetchTmData = move => {
             const addSpaceTmName = name => capitalize(name.charAt(0)) + capitalize(name.slice(1, 2)) + name.substring(2);
 
+            // Api call for Tm Move
             fetch(move.url).then(res => res.json()).then(data => {
                 fetch(data.machines[0].machine.url).then(res => res.json()).then(tm => {
-                    //                           allTmNames.push(addSpaceTmName(tm.item.name));
-                    //                           console.log(addSpaceTmName(tm.item.name))
 
                 }).catch(err => console.error(err));
 
@@ -4189,22 +4978,18 @@
         }
 
 
-        // 
-        const displayAllMoves = pkmn => {
-            const lv = "#333";
-            const tm = "#999";
-            const other = "777";
-            const sortedMoves = pkmn.movesTm;
-            //               const changeMoveBg = () => {
-            //                   if ()
-            //               }
-
-            sortedMoves.forEach(m => {
-                displMovesContainer.insertAdjacentHTML("beforeend", `
-                           <div onclick="getMoveData(event)" class="move-name" style="background-color: changeMoveBg()">${capitalize(m.move.name)}</div>
-                  `);
-            });
-        }
+//        const displayAllMoves = pkmn => {
+//            const lv = "#333";
+//            const tm = "#999";
+//            const other = "777";
+//            const sortedMoves = pkmn.movesTm;
+//
+//            sortedMoves.forEach(m => {
+//                displMovesContainer.insertAdjacentHTML("beforeend", `
+//                           <div onclick="getMoveData(event)" class="move-name" style="background-color: changeMoveBg()">${capitalize(m.move.name)}</div>
+//                  `);
+//            });
+//        }
 
 
         // ----------------------------------------------------------------------------- MOVE API CALL
@@ -4213,8 +4998,7 @@
         const getMoveData = e => {
             let move = e.target.innerText.toLowerCase();
 
-            // !!! 2nd effChance bug replace
-            // 
+            // Displays Effect chance of move
             const insertEffectChance = (txt, data) => {
                 if (txt.includes("$effect_chance%")) {
                     return txt.replace("$effect_chance", (data).toString());
@@ -4254,7 +5038,7 @@
                 }
 
                     
-                // 
+                // Fills Moves Description Container
                 const fillMovesDescrCont = () => {
                     movesDescrContainer.style.backgroundColor = allColors[formattedMove.type];
                     movesDescrContainer.innerHTML = `
@@ -4317,15 +5101,12 @@
                               ${formattedMove.moveDescrTxt}
                           </div>
                         `;
-//                    console.log(formattedMove)
                 }
                 toggleMoveDescrCont();
                 fillMovesDescrCont();
 
             }).catch(err => console.error(err));
         }
-
-
 
 
         // ----------------------------------------------------------------------------- NORMAL AND SPECIFIC FILTERS
@@ -4357,6 +5138,7 @@
             }
             sliderCat = sliderCategory;
 
+            // minimum/maximum values
             let minMax = [Math.min(...allSorted), Math.max(...allSorted)];
             let values = [Math.floor(25 * minMax[1] / 100), Math.round(75 * minMax[1] / 100)];
             
@@ -4380,11 +5162,8 @@
             
         }
         
-         
-            //            !!!!!
 
-
-        // Vars for R/L slider   // maybe not global
+        // Vars for R/L slider (Global)
         let firstRangeSlider;
         let secndRangeSlider;
         let sliderCat;
@@ -4484,10 +5263,9 @@
         }
 
 
-
         // ----------------------------------------------------------------------------- RANGE SLIDER
 
-        // Range Sliders
+        // Range Sliders (Global)
         let inputLeft = document.querySelector("#range-left");
         let inputRight = document.querySelector("#range-right");
 
@@ -4496,7 +5274,7 @@
         let range = document.querySelector(".slider > .range");
 
 
-        // 
+        // Sets the value of left Slider
         const setLeftValue = () => {
             let _this = inputLeft;
             let min = parseInt(_this.min);
@@ -4514,7 +5292,7 @@
         setLeftValue();
 
 
-        //
+        // Sets the value of right Slider
         const setRightValue = () => {
             let _this = inputRight;
             let min = parseInt(_this.min);
@@ -4532,6 +5310,7 @@
         setRightValue();
 
         
+        // HOVER / Mouseover functions for Slider Thumbs
         inputLeft.addEventListener("mouseover", () => {
             thumbLeft.classList.add("hover");
         });
@@ -4558,6 +5337,7 @@
             thumbRight.classList.remove("active");
         });
 
+        
         // ----------------------------------------------------------------------------- SCROLL TO TOP / BOTTOM BUTTONS
 
         // Scroll to top Button
@@ -4638,156 +5418,22 @@
 
 
 
- 
+        
+        // Mouseover hover - when hover over wheight -> all weight range btns color change bg / height -> color change all height range btns
+        // maybe as start ani - shine over all btns - steel:) after shine effect , add box shadow & remove / enable hover effect
+        
+
         // moves color 
-        
-        //  double range slider 
-        
-         // evolution BUG !!!!! GEN + Gen 4 images not loading
-        // make sure also pkmn with 2 evolutions get mega ev. displayed in evolution cont
-        // if pkmn 2 evolutions -> second + mega (displayed) ; else if pkmn 3 evolutions -> thirdEvoluion + mega
-        
-        
-        // animation - change gens (btn) "pokeball closes" - white (#eee) closes bottom area below header and displays little loading animation, opens up / slides down
-        
-      // loading ani: Loading... - 
-        
-        // when clicking on gen btn - add class 'disp-none' to ruulez of da dex and reveal loading animation
-        
-        
-        // maybe how to get started slides up (overflow) gen-btns pop up
-        // maybe create animation how to click a card - choose a tab! take lizardons card and click it - tabs slide up (opacity)from below - info from every tab appears -!! press btns to create tabs with info about tabs:) -
-                                                // - SEE IT AGAIN BTN
-                // delay - wait for first lil ani - then start descr.ani
-                    // 1. pkmn card (pointer slights diagonally on card - both dipappear ( pointer smaller(click)))
-        // less txt, smaller font for txt (su)
-        // box-shadow - gen-btns cont
-        // start scr... socials middle - space around, below txt line follow me...
-        // maybe animation - cursor pointer / pnmn checks /clicks btns - hin und her 
-            // or cursor pointer upside down stops just on every btn (pos. 100/6 %)
-            // clicking on gen btn triggers function - info about gen (Total pkmn: 151, Nr: 1# Bulbasaur - 150# Mew, Editions: Red/Blue/Yellow)
-                // toolpick overflow hidden ani trick- slide down try with arrow (maybe content in toolpick pops up delayed.../ pop-bounce)
-        
-        
-        // cursor opointer from right to gen1 btn -> add selected class/active to btn - mouse goes off - left or fades (opacity); 
-        // mouse comes from right bottom, clicks - turns upside down on tab btn - gets class of activated/active, txt slides up
-        
-        // animation class for start screen - diisappear a bit slower or slide down
-        
-        
-        // loading animation behind pdexList cont, either change z-index or disp none / opacity
-        
-        
-        
-//        
-//.box
-//{
-//    position: absolute;
-//    top: 0;
-//    left: 0;
-//    min-height: 100vh;
-//    width: 100vw;
-//    z-index: 100;
-//}
-//
-//.element
-//{
-//    position: absolute;
-//    top: 0;
-//    background: pink;
-//    color: #eee;
-//    z-index: 10000;
-//}
-//        
-
-        // put popup window in box to scroll
 
 
-        
-    
+        // maybe first time visitors full animation - local storage (firstTimeVisitor: false) - btn -> show tutorial
+        // add window 0nload function in jquery
 
-
-
-
-        //        //        
-        //        const fetchPkmnLocation = pkmn => {
-        //            fetch(`https://pokeapi.co/api/v2/pokemon-habitat/${pkmn.toLowerCase()}/`).then(res => res.json()).then(location => {
-        //                return location.name;
-        //            }).catch(err => console.error(err));
-        //        }
-
-
-
-
-        //        1, 1.5, 2, >2
 
         //        fetch(`https://pokeapi.co/api/v2/pokemon-species/1`).then(res => res.json()).then(data => {
         ////            console.log(data.genera[7].genus)
         //        });
 
-
-        //         Api for moves
-        //        fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json()).then(data => {
-        //            console.log(data.moves.filter(move => move));
-        //            console.log("lvUp moves filtered", data.moves.filter(move => move.version_group_details[0].level_learned_at));
-        //        });
-
-
-        // Api for moves 
-        //        fetch(`https://pokeapi.co/api/v2/move/200`).then(res => res.json()).then(data => {
-        //            console.log("damage class", data.damage_class.name);
-        //            console.log("type", data.type.name);
-        //        });
-
-
-
-        // Api for Type
-        //                        fetch(`https://pokeapi.co/api/v2/type/1`).then(res => res.json()).then(data => {
-        //                            console.log("double damage to", data.damage_relations.double_damage_to.map(dd => dd.name));
-        //                            console.log("double damage from", data.damage_relations.double_damage_from.map(dd => dd.name));
-        //                            console.log("half damage to", data.damage_relations.half_damage_to.map(hd => hd.name));
-        //                            console.log("no damage to", data.damage_relations.no_damage_to.map(nd => nd.name));
-        //                            console.log("no damage from", data.damage_relations.no_damage_from.map(nd => nd.name));
-        //                        }).catch(err => console.error(err));
-        //        
-
-
-
-
-        //         fetch(`https://pokeapi.co/api/v2/pokemon-species/1/`).then(res => res.json()).then(data => {
-        //                    console.log(data.evolution_chain.url);
-        //            });
-
-        //            
-        //        fetch(`https://pokeapi.co/api/v2/pokemon/1/`).then(res => res.json()).then(data => {
-        //                    console.log(data.abilities);
-        //            });
-
-
-
-        //        pkmnAbilities.forEach(ability => document.querySelector("#abilities").innerText += capitalize(ability.ability.name))
-
-        // !
-
-                
-                // fethcing evolution data
-//                fetch(`https://pokeapi.co/api/v2/evolution-chain/1/`).then(res => res.json()).then(data => {  
-                   // 1. evolution
-//                    console.log(data.chain.species.name);
-                    // 2. evolution
-                    // level null if other evolution forms
-//                   console.log(data.chain.evolves_to[0].evolution_details[0].min_level);
-//                   console.log(data.chain.evolves_to[0].evolution_details[0].trigger.name);
-                    // if needs item (item name)
-        //           console.log(data.chain.evolves_to[0].evolution_details[0].item.name);
-//                   console.log(data.chain.evolves_to[0].species.name);
-                    
-                   // 3. evolution - needs if statement or something like that if less then 3 evolutions
-//                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].trigger.name);
-//                   console.log(data.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level);
-//                   console.log(data.chain.evolves_to[0].evolves_to[0].species.name);
-//                });
-                
 
 
 
