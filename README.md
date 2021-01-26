@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <img width="600" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1593398280/three-woman-in-assorted-color-sport-bras-holding-and-905336_cyyoyf.jpg">
+  <img width="600" src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1611634261/Adventure_Full_HD_Wallpaper_and_Background_2500x1500_iyjkqq.jpg">
 </p>
 
 # 
@@ -256,8 +256,7 @@ Click <a href="https://help.github.com/en/github/creating-cloning-and-archiving-
   - Images downloaded from <a href="https://www.pexels.com/">Pexels</a>
 
 ## Acknowledgements
-  - My Mentor for his awesome help (tips, links, etc.), the long skype calls, and his great energy! :sunglasses:
-  - Tutor support at Code Institute for their support.
+  - Michael from Tutor support at Code Institute for his help and for answering to my many questions!
 
 
 

@@ -324,7 +324,7 @@ input
     border: solid 1px #000;
 }
 
-.toggle-search-btn
+header .toggle-search-btn
 {
     position: absolute;
     right: 8%;
@@ -2231,7 +2231,29 @@ input[type=range]::-webkit-slider-thumb
 }
 
 
-/* Landscape */
+/* Landscape for Tablet */
+@media (orientation: landscape) and (min-width: 1000px) and (max-width: 1300px)
+{
+    .pdl-complexer-filter-cont
+    {
+        top: 70px;
+    }
+    
+    .pdl-popup-cont
+    {
+        overflow-x: hidden;
+    }
+    
+    .pdl-popup-img
+    {
+        position: absolute;
+        top: -7.5em;
+        width: 11em;
+    }
+}
+
+
+/* Landscape for Mobile */
 @media (orientation: landscape) and (max-width: 850px)
 {
     .pdl-complexer-filter-cont
@@ -2395,7 +2417,7 @@ input[type=range]::-webkit-slider-thumb
     /* Just visible on Mobile */
     .only-visible-on-mobile
     {
-        display: block;
+        display: block !important;
     }
     
     /* Visible on Mobile */

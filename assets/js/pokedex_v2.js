@@ -350,8 +350,12 @@ firstAnimation();
 
 
 // Changes the Description Text for Tabs
-const changeDescrTabTxt = (tab) => {
+const changeDescrTabTxt = (e, tab) => {
+    const allTabs = document.querySelectorAll(".tabs-animation-cont .pdl-popup-tabs .popup-tab");
     const animationTxt = document.querySelector(".animation-txt");
+
+    allTabs.forEach(tab => tab.classList.remove("selected-tab"));
+    e.target.classList.add("selected-tab");
 
     if (animationTxt.classList.contains("txt-animation")) {
         animationTxt.classList.remove("txt-animation")
