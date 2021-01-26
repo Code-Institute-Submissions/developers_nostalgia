@@ -555,7 +555,7 @@ img
     content: '- Bonus Projects -';
     position: absolute;
     top: 3em;
-    font-size: .9em;
+    font-size: .8em;
     left: 50%;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
@@ -1405,12 +1405,17 @@ footer .social-contact .social-link .fa-github
 /* Mobile */
 @media only screen and (max-width: 600px) 
 {
-    /* invisible */
+    /* invisible on mobile */
     .not-visible-mobile
     {
         display: none !important;
     }
-    
+
+    .parr-card-headline:before
+    {
+        top: 5em;
+    }
+  
     #social-media-btn
     {
         -webkit-transform: scale(.6);
@@ -1573,6 +1578,12 @@ footer .social-contact .social-link .fa-github
                 transform: scale(.7) translateY(200px);
     }
     
+    .parr-card-headline:before
+    {
+        top: 6em;
+        font-size: .6em;
+    }
+
     .white-section-headline
     {
         font-size: 1.6em;

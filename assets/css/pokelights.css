@@ -45,7 +45,7 @@ a:hover
 
 button 
 {
-    outline: none;
+    outline: none !important;
     border: none;
     cursor: pointer;
 }
@@ -778,9 +778,9 @@ footer .social-contact .social-link .fa-github
     
     .reload-btn
     {
-        -webkit-transform: scale(.85) translateY(50%) translateX(-60%);
-            -ms-transform: scale(.85) translateY(50%) translateX(-60%);
-                transform: scale(.85) translateY(50%) translateX(-60%);
+        -webkit-transform: scale(.85) translateX(-60%);
+            -ms-transform: scale(.85) translateX(-60%);
+                transform: scale(.85) translateX(-60%);
     }
     
     /* Animation for poke-ball rotation */
