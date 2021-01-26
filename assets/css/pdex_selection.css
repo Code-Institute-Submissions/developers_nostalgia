@@ -1,0 +1,219 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+
+/* ---------------------------------------------------------- GENERAL */
+
+/* Avoids text marking */
+*
+{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+a
+{
+    color: #fff;
+}
+
+a:hover
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+html
+{
+    background: #000;
+}
+
+
+/* ---------------------------------------------------------- MAIN CONTAINER */
+
+.pdex-menu-main-cont
+{
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #000;
+    background-size: cover;
+    overflow-x: hidden 
+}
+
+/* Go to previous site BUTTON */
+.go-to-prev-site-btn
+{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: #fff;
+    border-radius: 5px;
+    padding: .3em;
+    padding-right: .5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    z-index: 999;
+}
+
+.go-to-prev-site-btn:hover
+{
+    background: rgba(55,55,55,.5);
+}
+
+
+/* ---------------------------------------------------------- IMAGE BACKGROUND */
+
+.pdex-menu-bg-cont img
+{
+    -webkit-filter: grayscale(.3);
+            filter: grayscale(.3);
+}
+
+.pdex-menu-bg-cont,
+.pdex-menu-bg-cont img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pdex-menu-bg-cont img
+{
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------- GAMES SELECTION CONTAINER */
+
+.pdex-selection-cont
+{
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 10%;
+    width: 250px;
+    height: 400px;
+    margin-bottom: 1em;
+    z-index: 99;
+}
+
+/* Headline */
+.pdex-selection-headline
+{
+    position: absolute;
+    top: -30%;
+    left: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Pokedex BUTTONS */
+.pdex
+{
+    position: relative;
+    width: 100%;
+    height: calc(100% / 3);
+    background: #fafafa;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-weight: bolder;
+    font-size: 1.3em;
+    color: #fff;
+    -webkit-box-shadow: 1px 1px 10px rgba(0,0,0,.5);
+            box-shadow: 1px 1px 10px rgba(0,0,0,.5);
+    margin-bottom: 1em;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#E3B5A4));
+    background: -o-linear-gradient(#000, #E3B5A4);
+    background: linear-gradient(#000, #E3B5A4); 
+}
+
+.pdex.first
+{
+    margin-bottom: 1.5em;
+}
+
+/* HOVER - Pokedex Btns */
+.pdex:hover
+{
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+}
+
+/* Link to Games */
+.pdex a
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ---------------------------------------------------------- MEDIA QUERIES */
+
+/* Mobile */
+@media only screen and (max-width: 576px)
+{
+    html
+    {
+        background: #000;
+    }
+
+    .pdex-menu-main-cont
+    {
+        background: #000;
+    }
+    
+    .pdex-menu-bg-cont
+    {
+        position: absolute;
+        height: 35%
+    }
+    
+    .pdex-selection-cont
+    {
+        top: 45%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        height: 300px;
+        width: 80%;
+    }
+    
+    .pdex-selection-headline
+    {
+        width: 100%;
+        text-align: center;
+    }
+}

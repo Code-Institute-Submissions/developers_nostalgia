@@ -754,3 +754,7 @@ function calculateEndscore() {
     }
     return endscore - wrongAnsScore - jokersUsedScore;
 }
+
+
+// Goes to previous page
+const goBack = () => window.history.back();

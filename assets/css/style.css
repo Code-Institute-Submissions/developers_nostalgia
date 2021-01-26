@@ -1,0 +1,1593 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/* --------------------------------------------------- FONT (Poppins) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+
+
+/* --------------------------------------------------- GENERAL */
+
+* 
+{
+    font-family: 'Poppins', sans-serif;
+}
+
+a 
+{
+    color: #fafafa;
+}
+
+a:hover 
+{
+    text-decoration: none;
+    color: #fafafa;
+}
+
+ul 
+{
+    list-style: none;
+}
+
+h2, h3
+{
+    cursor: default;
+}
+
+img 
+{
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.flex-center 
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.flex-column
+{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.opacity
+{
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Visible on Tablet and smaller */
+.visible-on-tablet
+{
+    display: none;
+}
+
+
+/* ---------------------------------------------------------- SOCIAL MEDIA (SIDE) BTN/CONTAINER */
+
+/* BUTTON - Social Media Side Button */
+#social-media-btn
+{
+    position: fixed;
+    bottom: 3%;
+    left: 2%;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,.8);
+    -webkit-box-shadow: 1px 1px 15px rgba(0,0,0,.6);
+            box-shadow: 1px 1px 15px rgba(0,0,0,.6);
+    -webkit-transform: scale(.8);
+        -ms-transform: scale(.8);
+            transform: scale(.8);
+    font-size: 1.5em;
+    opacity: .5;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+    z-index: 9999999;
+}
+
+/* HOVER & ACTIVE - Social Media Side Btn */
+#social-media-btn:hover,
+#social-media-btn.active
+{
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+/* Social Media Container with all Links (hidden) */
+.social-media-side-cont
+{
+    position: absolute;
+    top: -535%;
+    left: 45%;
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    z-index: -1000;
+}
+
+/* ACTIVE - Social Media Container (visible) */
+.social-media-side-cont.active
+{
+    opacity: 1;
+    z-index: 999;
+    pointer-events: auto;
+}
+
+/* Social Media Links */
+.social-media-side-cont .social-contact
+{
+    width: 30px;
+    height: 30px;
+    margin-top: .18em;
+    background: #fafafa;
+    -webkit-box-shadow: 1px 1px 15px rgba(0,0,0,.8);
+            box-shadow: 1px 1px 15px rgba(0,0,0,.8);
+}
+
+.social-media-side-cont .social-contact i
+{
+    color: #000;
+    -webkit-transform: scale(.8);
+        -ms-transform: scale(.8);
+            transform: scale(.8);
+}
+
+/* HOVER - Social Media Icons */
+.social-media-side-cont .social-contact:hover.social-contact i
+{
+    color: #fff;
+    -webkit-transform: scale(.6);
+        -ms-transform: scale(.6);
+            transform: scale(.6);
+}
+
+
+/* ---------------------------------------------------------- LOGO */
+
+/* LINK - index.html */
+.logo-home-link
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+/* Logo */
+.logo 
+{
+    margin-right: 15px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(139,0,0,.8);
+    font-size: 2.5em;
+    font-weight: bolder;
+    color: #fafafa;
+    cursor: pointer;
+    -webkit-transform: scale(.6);
+        -ms-transform: scale(.6);
+            transform: scale(.6);
+    -webkit-box-shadow: .5px 0px 15px rgba(0,0,0,.3),
+                .5px 0px 15px rgba(0,0,0,.5);
+            box-shadow: .5px 0px 15px rgba(0,0,0,.3),
+                .5px 0px 15px rgba(0,0,0,.5);
+    text-shadow: .5px 0px 10px rgba(0,0,0,.8);
+    z-index: 100000;
+}
+
+.logo-span 
+{
+    color: #fafafa;
+    font-size: 1em;
+    text-shadow: .5px 0px 10px rgba(0,0,0,.8);
+}
+
+
+/* ---------------------------------------------------------- NAVIGATION*/
+
+.nav-three-btns ul 
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-right: 5%;
+    height: 150px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 9999999999;
+}
+
+/* Navigation links */
+.nav-three-btns ul li
+{
+    position: relative;
+    margin-left: 1em;
+    font-size: 1.2em;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.nav-three-btns ul li a 
+{
+    color: #fff;
+}
+
+/* BARS UNDER THE NAVS not sure to keep them*/
+.nav-three-btns ul li:before 
+{
+    content: '';
+    position: absolute;
+    bottom: -.3em;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    width: 15%;
+    height: 2px;
+    background: crimson;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+/* HOVER - Bars under Navs - 100% width */
+.nav-three-btns ul li:hover:before 
+{
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------- FOOTER NAVS */
+
+.footer-nav-cont ul li a
+{
+    margin: 0 .3em;
+    cursor: pointer;
+    font-weight: 700;
+    text-shadow: .5px .5px 5px rgba(0,0,0,.2);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+/* HOVER - Footer Navs */
+.footer-nav-cont ul li a:hover
+{
+    color: #0a2a43;
+    text-shadow: .5px .5px 5px rgba(255,255,255,.5);
+}
+
+
+/* ---------------------------------------------------------- PARALLAX MAIN CONTAINER */
+
+.parallax-main-cont 
+{
+    position: relative;
+    background: #0a2a43;
+    min-height: 1000px;
+}
+
+/* Parallax Section */
+.parallax-main-cont section 
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Parallax Filters */
+.parallax-main-cont section:before 
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8%;
+    background: -webkit-gradient(linear, left bottom, left top, from(#0a2a43), to(transparent));
+    background: -o-linear-gradient(bottom, #0a2a43, transparent);
+    background: linear-gradient(to top, #0a2a43, transparent);
+    z-index: 10000;
+}
+
+.parallax-main-cont section:after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: color;
+    background: rgba(10, 42, 67, .3);
+    z-index: 10000;
+}
+
+/* Parallax Headlines (first & second) */
+.parallax-headline 
+{
+    position: relative;
+    text-align: center;
+    font-size: 7em;
+    color: #fff;
+    z-index: 1;
+}
+
+/* PARALLAX IMAGES */
+.parallax-main-cont section img 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    pointer-events: none;
+}
+
+/* ROAD - IMG */
+#road 
+{
+    z-index: 2;
+}
+
+/* Ash Ketchum - IMG  */
+#ash-ketchum 
+{
+    position: absolute;
+    bottom: 250px;
+    left: auto;
+    top: auto;
+    right: 80%;
+    width: 60px;
+    height: auto;
+    z-index: 3;
+    -webkit-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+            transform: translateY(50px);
+    border-radius: 50%;
+}
+
+/* HO-OH - IMG - Flying Pkmn (top-left, moves left to right parallax effect) */
+#fly-hooh 
+{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 210px;
+    height: 230px;
+    z-index: 3;
+}
+
+
+/* ---------------------------------------------------------- MAIN CONTAINER */
+
+.main-cont-about
+{
+    min-height: 100vh;
+    background: #0a2a43;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow-x: hidden;
+}
+
+
+/* ---------------------------------------------------------- ABOUT CONTAINER BELOW PARALLAX CONT */
+
+/* Second Parallax Headline */
+#second-parr-headline 
+{
+    top: 400px;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+/* All Text in main container (except cards etc) */
+.about-txt 
+{
+    color: #fff;
+    width: 60%;
+    padding-top: 150px;
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    cursor: default;
+}
+
+/* Check it out BUTTON - link to projects */
+.go-to-btn
+{
+    margin-top: .5em;
+    font-size: .8em;
+    background: #eee;
+    border: none;
+    padding: .5em;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+    -webkit-box-shadow: .1px .1px 15px rgba(0,0,0,.3);
+            box-shadow: .1px .1px 15px rgba(0,0,0,.3);
+}
+
+.go-to-btn a
+{
+    color: #000;
+}
+
+/* HOVER - Check it out Btn */
+.go-to-btn:hover
+{
+    background: #333;
+    color: #fff;
+}
+
+.go-to-btn:hover a
+{
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------- FADE IN EFFECT TXT (SCROLL MAGIC) */
+
+/* Container with txt inside (opacity) */
+.fade-in
+{
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+        -ms-transform: translateY(100px);
+            transform: translateY(100px);
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+/* Makes Txt apper/fade in */
+.fade-in.show-txt
+{
+    opacity: 1;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+}
+
+.fade-in-txt
+{
+    padding-top: 130px
+}
+
+
+/* ---------------------------------------------------------- PARRALAX CARDS CONTAINER */
+
+.parr-card-cont 
+{
+    margin: 3em 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.parr-card-cont:nth-child(2) 
+{
+    -webkit-transform: translateY(100px);
+        -ms-transform: translateY(100px);
+            transform: translateY(100px);
+}
+
+/* Parralax Card */
+.parr-card 
+{
+    height: 200px;
+    width: 200px;
+    background: white;
+    margin: 5px 50px;
+    padding: 0 1%;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    cursor: default;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+/* Parallax Card Headline */
+.parr-card-headline 
+{
+    position: relative;
+    color: #fafafa;
+    font-size: 1.6em;
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+.parr-card-headline:before
+{
+    content: '- Bonus Projects -';
+    position: absolute;
+    top: 3em;
+    font-size: .9em;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+.parr-card-cont .parr-card p 
+{
+    color: black;
+    font-size: .8em;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.parr-card-cont .parr-card .fas 
+{
+    color: darkgoldenrod;
+    font-size: 2em;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.parr-card-underline-headline 
+{
+    width: 50px;
+    height: 2px;
+    background: crimson;
+    margin-bottom: 50px;
+}
+
+.parr-card-underline 
+{
+    width: 50px;
+    height: 1px;
+    background: crimson;
+}
+
+
+/* ---------------------------------------------------------- HOVER - Parralax Cards */
+
+/* HOVER - Parralax Cards */
+.parr-card:hover
+{
+    background-color: #333;
+    -webkit-box-shadow: 1px 1px 15px rgba(255, 255, 255, .4);
+            box-shadow: 1px 1px 15px rgba(255, 255, 255, .4);
+}
+
+.parr-card:hover.parr-card p
+{
+    color: #fafafa;
+}
+
+.parr-card:hover.parr-card .fa-seedling
+{
+    color: limegreen;
+}
+
+.parr-card:hover.parr-card .fa-fire
+{
+    color: crimson;
+}
+
+.parr-card:hover.parr-card .fa-tint
+{
+    color: #69B9E3;
+}
+
+
+/* ---------------------------------------------------------- DOUBLE CONTAINER (IMAGE/TEXT) */
+
+.parr-double-cont 
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0 5em;
+    height: 300px;
+    margin: 5em auto;
+    width: 90%;
+}
+
+/* Image (left/top) */
+.parr-double-cont img 
+{
+    -o-object-fit: cover;
+       object-fit: cover;
+    padding: 0;
+}
+
+/* Text (right/bottom) */
+.parr-right-txt 
+{
+    background: crimson;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    color: #fff;
+    padding: 1em;
+    padding-left: 2em;
+    cursor: default;
+}
+
+/* Hidden Text */
+#revealedTxt
+{
+    display: none;
+}
+
+/* BUTTON - About (toggles hidden text) */
+.about-btn 
+{
+    background: #fff;
+    color: crimson;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 1px;
+    font-size: .8em;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+/* HOVER - About Button */
+.about-btn:hover 
+{
+    background: crimson;
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------- WHITE SECTION */
+
+.white-section 
+{
+    background-color: #fafafa;
+    padding: 3em 0;
+    margin: 10em 0;
+    cursor: default;
+}
+
+.row-white-section 
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    font-size: .8em;
+}
+
+
+/* White Section Card */
+.white-section-card 
+{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    cursor: default;
+    padding: 2.5em;
+    text-align: center;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+/* HOVER - White Section Card */
+.white-section-card:hover 
+{
+    -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, .4);
+            box-shadow: 1px 1px 15px rgba(0, 0, 0, .4);
+}
+
+/* Icon - White Section Card */
+.white-section-card-icon 
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+    background-image: url("../img/pocketpikachu.png");
+    background-size: cover;
+}
+
+.white-section-card p 
+{
+    padding: 0 2em;
+}
+
+.white-section-headline 
+{
+    text-align: center;
+    margin: 3em;
+    margin: 2em;
+}
+
+
+/* ---------------------------------------------------------- NIGHT MODE WHITE SECTION */
+
+.white-section-night-mode
+{
+    background-color: #2B292C !important;
+    color: #fff !important;
+}
+
+.white-section-card.white-section-night-mode:hover
+{
+    -webkit-box-shadow: 1px 1px 15px rgba(255,255,255,.4);
+            box-shadow: 1px 1px 15px rgba(255,255,255,.4);
+}
+
+
+/* ---------------------------------------------------------- NIGHT MODE TOGGLE CHECKBOX  */
+
+/* Title: "CSS Custom Checkbox | Day Night Mode" -> From: Online Tutorials; On: Youtube (most of the checkbox) */
+#night-toggle
+{
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translateY(1em);
+        -ms-transform: translateY(1em);
+            transform: translateY(1em);
+}
+
+input[type="checkbox"]
+{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+
+.check
+{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: crimson;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    -webkit-transition: ease-in .5s;
+    -o-transition: ease-in .5s;
+    transition: ease-in .5s;
+}
+
+input[type="checkbox"]:checked ~ .check
+{
+    background: #fafafa;
+}
+
+.check:before,
+.check:after
+{
+    position: absolute;
+    width: 16px; 
+    height: 16px;
+    border-radius: 50%;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    top: 2px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: .5em;
+}
+
+.check:before
+{
+    content: '\f186';
+    color: #fff;
+    left: 2px;
+    background: #333;
+}
+
+input[type="checkbox"]:checked ~ .check:before
+{
+    -webkit-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+            transform: translateX(-50px);
+}
+
+.check:after
+{
+    content: '\f0eb';
+    right: 2px;
+    background: red;
+    font-size: .73em;
+    color: #fafafa;
+    -webkit-transform: translateX(50px);
+        -ms-transform: translateX(50px);
+            transform: translateX(50px);
+}
+
+input[type="checkbox"]:checked ~ .check:after
+{
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+}
+
+
+/*---------------------------------------------------------- FOOTER */
+
+footer.flex-center 
+{
+    position: relative;
+    width: 100vw;
+    height: 250px;
+    margin: 0;
+    padding: 0 5%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background: darkorange;
+}
+
+/* Scroll To Top - BUTTON */
+.scroll-to-top-btn
+{
+    position: absolute;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+    top: -10%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    color: #fafafa;
+    border-radius: 50%;
+    background: darkorange;
+    -webkit-transform: translateX(-50%) scale(1);
+        -ms-transform: translateX(-50%) scale(1);
+            transform: translateX(-50%) scale(1);
+}
+
+/* Scroll To Top - Icon */
+.scroll-to-top-btn .fas
+{
+    -webkit-transform: translateY(-55%);
+        -ms-transform: translateY(-55%);
+            transform: translateY(-55%);
+}
+
+/* HOVER - Scroll to top btn */
+.scroll-to-top-btn:hover
+{
+    -webkit-transform: translateX(-50%) scale(1.3);
+        -ms-transform: translateX(-50%) scale(1.3);
+            transform: translateX(-50%) scale(1.3);
+}
+
+
+/* ---------------------------------------------------------- FOOTER NAVIGATION */
+
+.footer-nav-cont ul 
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 5%;
+}
+
+.footer-nav 
+{
+    margin-right: 1em;
+}
+
+/* Footer Social Icons */
+.social-contact-cont 
+{
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 5%;
+}
+
+/* LINK/BUTTON - To social media sites */
+.social-contact 
+{
+    position: relative;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: darkred;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px rgba(0,0,0,.2);
+            box-shadow: 0px 0px 15px rgba(0,0,0,.2);
+}
+
+.social-contact:before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background: #000;
+    border-radius: 50%;
+    width: 0;
+    height: 0; 
+    -webkit-transition: .2s; 
+    -o-transition: .2s; 
+    transition: .2s;
+}
+
+/* HOVER - Circle (Social Media Btns) */
+.social-contact:hover.social-contact:before
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* Social Media Icons */
+.social-link
+{
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    z-index: 5;
+}
+
+/* HOVER - Social Media Icons*/
+.social-contact:hover .social-link
+{
+    -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+            transform: scale(1.3);
+}       
+
+/* Makes Github icon's font bigger in footer section  */
+footer .social-contact .social-link .fa-github
+{
+    font-size: 1.5em;
+}
+
+/* ---------------------------------------------------------- NEWSLETTER COVER (clip art effect) */
+
+.newsletter-cover
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+    border-radius: 5px;
+    background: #fafafa;
+    
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    z-index: 3;
+}
+
+/* Class for revealing with clip art effect */
+.newsletter-cover.revealed-newsletter
+{
+    -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+}
+
+/* Headline in Newsletter Cover */
+.newsletter-cover-headline
+{
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    left: -20%;
+    font-weight: 700;
+    color: #000;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    -webkit-transition-delay: .3s;
+         -o-transition-delay: .3s;
+            transition-delay: .3s;
+    opacity: 0;
+}
+
+/* HOVER - Newsletter Cover - Headline*/
+.newsletter-cover:hover .newsletter-cover-headline
+{
+    left: 5%;
+}
+
+/* Icon Conatiner in Newsletter Cover */
+.newsletter-cover-icon-cont
+{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    font-size: 1.1em;
+    color: crimson;
+    text-shadow: 0 0 3px rgba(55,55,55,.2);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    -webkit-transition-delay: .5s;
+         -o-transition-delay: .5s;
+            transition-delay: .5s;
+    opacity: 0;
+}
+
+/* Icons - Newsletter Cover */
+.newsletter-cover-icon-cont .fas
+{
+    margin-left: .7em;
+}
+
+/* DELAYED HOVER - Makes Icons/Text appear when hovered */
+.newsletter-cover:hover .newsletter-cover-icon-cont,
+.newsletter-cover:hover .newsletter-cover-headline,
+.newsletter-cover:hover .newsletter-cover-txt
+{
+    opacity: 1;
+}
+
+/* Pokeball line in newsletter cover */
+.newsletter-cover-line
+{
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100%;
+    height: 5px;
+    background: #333;
+}
+
+/* Pokeball circles in newsletter cover */
+.newsletter-cover-line:before,
+.newsletter-cover-line:after
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background: #fafafa;
+    border-radius: 50%;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    -webkit-transition-delay: .3s;
+         -o-transition-delay: .3s;
+            transition-delay: .3s;
+}
+
+.newsletter-cover-line:before
+{
+    border: solid 5px #333;
+    width: 50px;
+    height: 50px;
+}
+
+.newsletter-cover-line:after
+{
+    border: solid 3px #333;
+    width: 20px;
+    height: 20px;
+}
+
+/* HOVER - Newsletter Continer - Pokeball inner circle -> red */
+.newsletter-cover:hover .newsletter-cover-line:after
+{
+    background: crimson;
+}
+
+/* Text in Newsletter Cover */
+.newsletter-cover-txt
+{
+    position: absolute;
+    bottom: -.5em;
+    left: 5%;
+    color: #333;
+    width: 45%;
+    color: #525252;
+    font-size: .75em;
+    font-weight: 600;
+    line-height: 1.35em;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    -webkit-transition-delay: .5s;
+         -o-transition-delay: .5s;
+            transition-delay: .5s;
+    opacity: 0;
+}
+
+/* BUTTON - Arrow to activate clip art effect */
+.cover-arrow-btn
+{
+    position: absolute;
+    bottom: -5%;
+    right: 5%;
+    font-size: 2em;
+    color: #000;
+    cursor: pointer;
+}
+
+.cover-arrow-btn:hover .arrow-btn-span
+{
+    -webkit-transform: scale(1.03);
+        -ms-transform: scale(1.03);
+            transform: scale(1.03);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    color: #0a2a43;
+}
+
+.cover-arrow-btn:hover .arrow-btn-arrow
+{
+    color: crimson;
+}
+
+.arrow-btn-span
+{
+    font-size: .4em;
+    font-weight: bold;
+}
+
+.arrow-btn-arrow
+{
+    -webkit-transform: translateY(-5%);
+        -ms-transform: translateY(-5%);
+            transform: translateY(-5%); 
+    margin-left: .1em;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+
+/* ---------------------------------------------------------- NEWSLETTER CONTAINER */
+
+.newsletter-cont
+{
+    position: relative;
+    width: 400px;
+    height: 140px;
+    border-radius: 5px;
+    background: crimson;
+    margin-bottom: 11em;
+}
+
+/* BUTTON - Back to Newsletter Cover (activates clip art effect) */
+.back-to-cover-arrow-btn
+{
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    font-size: 1.8em;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+/* HOVER - Back to Newsletter Cover Button */
+.back-to-cover-arrow-btn:hover
+{
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+}
+
+.newsletter-input-headline
+{
+    position: relative;
+    font-size: 1.01em;
+    -webkit-transform: translateY(-80%);
+        -ms-transform: translateY(-80%);
+            transform: translateY(-80%);
+    margin-top: .5em;
+    font-weight: bold;
+    cursor: default;
+    color: #fff;
+}
+
+/* Email Input */
+#subscribe-input
+{
+    background: #f3f3f3;
+    color: #000;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    padding-left: .6em;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+/* HOVER - Email Input */
+#subscribe-input:hover 
+{
+    -webkit-box-shadow: inset 1px 2px 8px rgba(0, 0, 0, .3);
+            box-shadow: inset 1px 2px 8px rgba(0, 0, 0, .3);
+    background: #fff;
+}
+
+/* FOCUS - Email Input */
+#subscribe-input:focus 
+{
+    color: #4b515d;
+    -webkit-box-shadow: inset 1px 2px 4px rgba(0, 0, 0, .02),
+                0px 0px 8px rgba(0, 0, 0, .3);
+            box-shadow: inset 1px 2px 4px rgba(0, 0, 0, .02),
+                0px 0px 8px rgba(0, 0, 0, .3);
+}
+
+/* ANIMATION - Email Input (when input invalid email adress -> shakes) */
+.wrong-input-animation
+{
+    -webkit-animation: shake .1s infinite;
+            animation: shake .1s infinite;
+}
+
+@-webkit-keyframes shake
+{
+    from
+    {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+    to
+    {
+        -webkit-transform: translateX(-5px);
+                transform: translateX(-5px);
+    }
+}
+
+@keyframes shake
+{
+    from
+    {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+    to
+    {
+        -webkit-transform: translateX(-5px);
+                transform: translateX(-5px);
+    }
+}
+
+
+/* BUTTON - Submit Email */
+#newsletter-submit-btn
+{
+    border-radius: 3px;
+    border: none;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+/* HOVER - Submit Email Button */
+#newsletter-submit-btn:hover
+{
+    background: #fafafa;
+    color: #333;
+}
+
+
+/*---------------------------------------------------------- MEDIA QUERIES */
+
+/* Tablet */
+@media only screen and (max-width: 768px)
+{
+    .visible-on-tablet
+    {
+        display: contents;
+    }
+    
+    .parr-card
+    {
+        margin-bottom: 2em;
+    }
+    
+    .about-txt
+    {
+        width: 65% !important;
+    }
+    
+    #second-parr-headline
+    {
+        -webkit-transform: translateY(-200%);
+            -ms-transform: translateY(-200%);
+                transform: translateY(-200%);
+    }
+    
+    .parr-double-cont
+    {
+        margin-left: 10%
+    }
+    
+    .white-section
+    {
+        margin-top: 15em;
+    }
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 600px) 
+{
+    /* invisible */
+    .not-visible-mobile
+    {
+        display: none !important;
+    }
+    
+    #social-media-btn
+    {
+        -webkit-transform: scale(.6);
+            -ms-transform: scale(.6);
+                transform: scale(.6);
+        opacity: .3;
+        bottom: 1%;
+        left: 1%;
+    }
+    
+    /* HOVER & ACTIVE - Social Media Side Btn */
+    #social-media-btn:hover,
+    #social-media-btn.active
+    {
+        opacity: 1;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+    }
+    
+    /* Navigation */
+    .nav-three-btns ul 
+    {
+        height: 8em;
+        margin-left: 1em;
+        padding: 0;
+        font-size: .8em;
+    }
+    
+    .logo
+    {
+        width: 2em;
+        height: 2em;
+    }
+    
+    /* Parallax Images (different position, scale down) */  
+    #fly-hooh
+    {
+        -webkit-transform: translate(-25%, -50%) scale(.5);
+            -ms-transform: translate(-25%, -50%) scale(.5);
+                transform: translate(-25%, -50%) scale(.5);
+    }
+    
+    #ash-ketchum 
+    {
+        -webkit-transform: scale(.8) translateY(130px);
+            -ms-transform: scale(.8) translateY(130px);
+                transform: scale(.8) translateY(130px);
+    }
+
+    .parallax-headline 
+    {
+        font-size: 4em;
+    }
+    
+    /*  Text */
+    .about-txt
+    {
+        font-size: 1.1em;
+        width: 75% !important;
+    }
+    
+    /* Double Container */
+    .parr-double-cont
+    {
+        font-size: .95em;
+        margin: 0 6em;
+        margin-top: 6em;
+        padding: .5em;
+    }
+    
+    .about-btn
+    {
+        font-weight: bold;
+    }
+    
+    /* Newsletter Container */
+    .newsletter-cont
+    {
+        width: 100vw;
+        font-size: .9em;
+    }
+    
+    /* Footer */
+    
+    footer
+    {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    
+    .footer-nav-cont
+    {
+        margin-top: 20%;
+    }
+    
+    .footer-nav-cont ul
+    {
+        margin: 0;
+    }
+    
+    .footer-nav-cont ul li a
+    {
+        margin: 0 .3em;
+        cursor: pointer;
+        font-weight: 700;
+        text-shadow: .5px .5px 5px rgba(0,0,0,.2);
+    }
+    
+    .footer-nav-cont ul li a:hover
+    {
+        color: #0a2a43;
+        text-shadow: .5px .5px 5px rgba(255,255,255,.5);
+    }
+    
+    .footer-line-mobile
+    {
+        width: 85%; 
+        height: 2px; 
+        background: #fff;
+        -webkit-transform: translateY(-.5em);
+            -ms-transform: translateY(-.5em);
+                transform: translateY(-.5em); 
+    }
+    
+    .social-contact-cont
+    {
+        margin-bottom: 10%;
+        width: 100%;
+    }
+}
+
+
+/* Iphone 5se */
+@media only screen and (max-width: 350px)
+{
+    .nav-three-btns
+    {
+        font-size: .8em;
+    }
+    
+    .parallax-headline
+    {
+        font-size: 4em;
+    }
+    
+    #fly-hooh
+    {
+        -webkit-transform: translate(-25%, -70%) scale(.5);
+            -ms-transform: translate(-25%, -70%) scale(.5);
+                transform: translate(-25%, -70%) scale(.5);
+    }
+    
+    #ash-ketchum 
+    {
+        -webkit-transform: scale(.7) translateY(200px);
+            -ms-transform: scale(.7) translateY(200px);
+                transform: scale(.7) translateY(200px);
+    }
+    
+    .white-section-headline
+    {
+        font-size: 1.6em;
+    }
+    
+    .social-contact
+    {
+        width: 40px;
+        height: 40px;
+        margin-left: .3em;
+        margin-bottom: .3em;
+    }
+    
+    .social-media-side-cont
+    {
+        top: -630%;
+    }
+}

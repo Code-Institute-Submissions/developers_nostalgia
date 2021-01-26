@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
-    <link rel="stylesheet" href="pokemory.css">
+    <link rel="stylesheet" href="assets/css/pokemory.css">
     <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
-    <title>Developers Nostalgia</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>Pokemory Game</title>
 </head>
 
 <body>
@@ -23,30 +23,30 @@
             <nav class="nav-three-btns flex-center not-visible-mobile">
                 <ul class="flex-center" style="margin: 0">
                     <div class="logo flex-center">
-                        <a href="pokemile_about.html" class="logo-home-link"></a>
+                        <a href="index.html" class="logo-home-link"></a>
                         <span class="logo-span" style="z-index: 3">&#128187DN</span>
                     </div>
-                    <li class="nav"><a href="#">Home</a></li>
-                    <li class="nav"><a href="#">Pokedex</a></li>
-                    <li class="nav"><a href="#">Games</a></li>
+                    <li class="nav"><a href="index.html">Home</a></li>
+                    <li class="nav"><a href="pdex_selection.html">Pokedex</a></li>
+                    <li class="nav"><a href="game_selection.html">Games</a></li>
                 </ul>
                 <!-- Games Navigation -->
                 <ul class="flex-center games-nav" style="margin: 0">
-                    <li class="nav"><a href="#">PokeTacToe</a></li>
-                    <li class="nav"><a href="#">PokeLights</a></li>
-                    <li class="nav"><a href="#">PokeQuiz</a></li>
+                    <li class="nav"><a href="poketactoe.html">PokeTacToe</a></li>
+                    <li class="nav"><a href="pokelights.html">PokeLights</a></li>
+                    <li class="nav"><a href="pokequiz.html">PokeQuiz</a></li>
                 </ul>
             </nav>
             <!-- Mobile Navigation (invisible if not Mobile) -->
             <nav class="nav-three-btns just-visible-mobile flex-center">
                 <ul class="flex-center" style="margin: 0; padding-left: 0; margin-left: 5%">
                     <div class="logo flex-center">
-                        <a href="pokemile_about.html" class="logo-home-link"></a>
+                        <a href="index.html" class="logo-home-link"></a>
                         <span class="logo-span" style="z-index: 3">&#128187DN</span>
                     </div>
-                    <li class="nav"><a href="#">Home</a></li>
-                    <li class="nav"><a href="#">Pokedex</a></li>
-                    <li class="nav"><a href="#">Games</a></li>
+                    <li class="nav"><a href="index.html">Home</a></li>
+                    <li class="nav"><a href="pdex_selection.html">Pokedex</a></li>
+                    <li class="nav"><a href="game_selection.html">Games</a></li>
                 </ul>
                 <!-- BUTTON - Toggles Mobile Menu -->
                 <div onclick="toggleMobileMenu()" class="mobile-menu-btn">
@@ -56,14 +56,15 @@
             <!-- Mobile Menu (slides down) -->
             <div class="mobile-menu-slider just-visible-mobile">
                 <div class="flex-center games-nav" style="margin: 0; height: 100%">
-                    <div class="mobile-nav"><a href="#">PokeTacToe</a></div>
-                    <div class="mobile-nav"><a href="#">PokeLights</a></div>
-                    <div class="mobile-nav"><a href="#">PokeQuiz</a></div>
+                    <div class="mobile-nav"><a href="poketactoe.html">PokeTacToe</a></div>
+                    <div class="mobile-nav"><a href="pokelights.html">PokeLights</a></div>
+                    <div class="mobile-nav"><a href="pokequiz.html">PokeQuiz</a></div>
                 </div>
             </div>
         </header>
         <!-- Score/Time/Flips Section -->
         <div class="pokemory-score-section flex-center">
+           <!-- Reload Site BUTTON -->
            <div onclick="reloadSite()" class="reload-btn"><i class="fas fa-sync-alt"></i></div>
             <div class="game-info restart-cont flex-center">
                 <div class="score-section-txt">Flips</div>
@@ -82,7 +83,7 @@
             <h1 class="start-headline">Pokemory</h1>
                 <input type="checkbox" id="timer-toggle" checked>
                 <label for="timer-toggle">Timer on/off</label>
-                <!--                <div class="change-time-btn">100sec - Change</div>-->
+                <!-- <div class="change-time-btn">100sec - Change</div>-->
                 <input type="radio" id="card-amount-16" name="card-amount" aria-label="card-amount-16" value="16" checked>
                 <label for="card-amount-16">16 Cards</label>
                 <input type="radio" id="card-amount-32" name="card-amount" aria-label="card-amount-32" value="32">
@@ -132,7 +133,7 @@
         </div>
     </div> 
     
-    <script src="pokemory.js"></script>
+    <script src="assets/js/pokemory.js"></script>
 
 </body>
 </html>

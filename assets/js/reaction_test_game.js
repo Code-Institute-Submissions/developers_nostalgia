@@ -45,7 +45,7 @@ if (localStorage.getItem("reactionHighscore") === null) {
     localStorage.setItem("reactionHighscore", JSON.stringify( { name: "Computer", score: [0,59] } ));
 }
 
-// 
+// Call
 updateHscoreStartScreen();
 
 
@@ -110,7 +110,6 @@ const runTimer = () => {
         s++;
     }
     if (s >= 5) {
-        // evtl. text - to slow...
         finishRound();
     }
 }

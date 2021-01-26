@@ -41,7 +41,6 @@ const allWordsHard = [
 ];
 
 
-
 // ------------------------------------------------------------------- STARTING/PREPARING GAME FUNCTIONS
 
 // Restarts - Ampel Game
@@ -207,10 +206,6 @@ const correctAnimation = () => document.querySelectorAll(".letter-box").forEach(
 const wrongAnimation = () => document.querySelectorAll(".letter-box").forEach(lb => lb.classList.add("red-bars"));
 
 
-    // Animates all letters to show word is correct and complete
-//        const correctWordAnimation = () => 
-
-
 // Checks if all elements are invisible, if yes - returns player to Menu screen
 const checkIfPlayerLost = () => {
     if (wrongLettersIndex === pokemanElements.length) {
@@ -250,6 +245,7 @@ const createHint = () => {
     hintBox.classList.add("active");
     hintBox.innerText = shuffledWords[level][wordIndex];
 }
+
 
 // Changes Difficulty Mode
 const changeMode = () => {

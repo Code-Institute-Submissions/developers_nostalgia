@@ -60,7 +60,6 @@ function setMark(e) {
         // takes all empty squares and selects a random one
         let allEmptySquares = [...allSquares].filter(s => s.innerHTML === "");
         let targetedEmptySquare = allEmptySquares[Math.floor(Math.random() * allEmptySquares.length)];
-        // checkIfAllSquaresActive(allSquaresArray);
         
         if (checkForWin("p1")) {
                 winner = "p1";

@@ -1,6 +1,11 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
 
-
-/*------------------------------------------------------ GENERAL  */
+/* ------------------------------------------------------ GENERAL  */
 
 html
 {
@@ -12,9 +17,11 @@ button
 {
     padding: 10px 15px;
     border-radius: 25px;
-    outline: none;
+    outline: none !important;
     border: none;
     cursor: pointer;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
 }
 
@@ -31,30 +38,38 @@ button
 
 .flex-center
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .flex-column
 {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 /* Avoids text marking */
 .noselect 
 {
     -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+     user-select: none; /* Non-prefixed version, currently
+                           supported by Chrome, Edge, Opera and Firefox */
 }
 
 
-/*------------------------------------------------------ TOGGLE CLASSES  */
+/* ------------------------------------------------------ TOGGLE CLASSES  */
 
 .invisible
 {
@@ -65,16 +80,20 @@ button
 {
     background-color: green !important;
     color: #fff !important;
-    box-shadow: none;
-    box-shadow: inset 0 0 0 3px #fff !important;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-box-shadow: inset 0 0 0 3px #fff !important;
+            box-shadow: inset 0 0 0 3px #fff !important;
 }     
 
 .wrong-answer
 {
     background-color: red !important;
     color: #fff !important;
-    box-shadow: none;
-    box-shadow: inset 0 0 0 3px #fff !important;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-box-shadow: inset 0 0 0 3px #fff !important;
+            box-shadow: inset 0 0 0 3px #fff !important;
 }
 
 .easy
@@ -93,9 +112,7 @@ button
 }
 
 
-
-/*------------------------------------------------------ MAIN CONTAINER  */
-
+/* ------------------------------------------------------ MAIN CONTAINER  */
 
 .api-quiz-main-cont
 {
@@ -104,10 +121,10 @@ button
     background: #333;
 }
 
-/*------------------------------------------------------ BUTTONS  */
 
-/*        START/RESTART QUIZ BUTTONS */
+/* ------------------------------------------------------ BUTTONS  */
 
+/* START/RESTART QUIZ BUTTONS */
 .start-quiz-btn
 {
     background: none;
@@ -120,6 +137,8 @@ button
     font-size: 2em;
     font-weight: 600;
     color: #fff;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
     outline: none;
 }
@@ -142,12 +161,12 @@ button
 .restart-api-quiz-btn:hover
 {
     background-color: #fafafa;
-    box-shadow: 0 0 0 3px #000;
+    -webkit-box-shadow: 0 0 0 3px #000;
+            box-shadow: 0 0 0 3px #000;
     color: #000;
 }
 
-
-/*        COIN FLIP BUTTONS */
+/* COIN FLIP BUTTONS */
 .coin-flip-btn
 {
     width: 8em;
@@ -160,26 +179,27 @@ button
 
 .coin-flip-btn:hover
 {
-    transform: translateY(-5%);
+    -webkit-transform: translateY(-5%);
+        -ms-transform: translateY(-5%);
+            transform: translateY(-5%);
 }
 
 .head
 {
-    background-image: url(coinhead.png);
+    background-image: url("../img/coinhead.png");
 }
 
 .tails
 {
-    background-image: url(cointails.png);
+    background-image: url("../img/cointails.png");
 }
 
 
-
-/*------------------------------------------------------ START SCREEN  */
+/* ------------------------------------------------------ START SCREEN  */
 
 .start-screen-apiquiz
 {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -212,7 +232,7 @@ button
 }
 
 
-/*        DIFFICULTY COLORS */      
+/* DIFFICULTY COLORS */      
 .difficulty-colors span
 {
     border-radius: 10px;
@@ -225,6 +245,8 @@ button
     color: red;
     font-size: smaller;
     font-weight: bold;
+    -webkit-transition: .1s;
+    -o-transition: .1s;
     transition: .1s;
 }
 
@@ -233,7 +255,8 @@ button
     color: #fff;
 }
 
-/*------------------------------------------------------ API QUIZ CONTAINER  */
+
+/* ------------------------------------------------------ API QUIZ CONTAINER  */
 
 #api-quiz
 {
@@ -248,12 +271,9 @@ button
     border-radius: 10px;
     width: 600px;
     height: 650px;
-/*            min-height: 700px;*/
     z-index: 5;
-    background: darkorange;
     background: #c04848;
 }
-
 
 .api-quiz-diffs
 {
@@ -266,7 +286,7 @@ button
     margin: .5em .3em;
 }
 
-/*        CURRENT SCORE */
+/* CURRENT SCORE */
 .api-curr-score
 {
     margin: .5em 0;
@@ -278,12 +298,7 @@ button
     border-radius: 25px
 }
 
-
-/*        QUIZ LETTER */
-
-
-
-/*        API QUESTION CONTAINER */
+/* API QUESTION CONTAINER */
 .api-quiz-question-cont
 {
     padding: 1em;
@@ -303,13 +318,12 @@ button
 }
 
 
-/*        API ANSWERS CONTAINER */
+/* API ANSWERS CONTAINER */
 .api-answers-cont
 {
     position: relative;
     width: 80%;
 }
-
 
 .question-letter-span
 {
@@ -321,7 +335,6 @@ button
     margin-right: .3em;
 }
 
-
 .api-answer
 {
     position: relative;
@@ -330,21 +343,22 @@ button
     height: 65px;
     font-size: 1.2em;
     font-weight: bold;
-/*            background-color: #ED4264;*/
     background-color: #39CBD1;
-/*            background-color: #F18BA8;*/
     border-radius: 5px;
     color: #fff;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+    text-shadow: 2px 2px 2px rgba(0,0,0,.5);
 }
 
 .api-answer:hover
 {
     background-color: #fafafa;
     color: #ED4264;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
 }
 
-/*------------------------------------------------------ COIN FLIP CONTAINER */
 
+/* ------------------------------------------------------ COIN FLIP CONTAINER */
 
 .coin-flip-cont
 {
@@ -359,31 +373,42 @@ button
 }
 
 
-/*------------------------------------------------------ PLAYERS LIFE & JOKERS  */
+/* ------------------------------------------------------ PLAYERS LIFE & JOKERS  */
 
-/*        SLIDER TOGGLE CLASS */
+/* SLIDER TOGGLE CLASS */
 .quiz-slidera
 {
-    transform: translateY(0) !important;
-    transition-delay: .5s;
+    -webkit-transform: translateY(0) !important;
+        -ms-transform: translateY(0) !important;
+            transform: translateY(0) !important;
+    -webkit-transition-delay: .5s;
+         -o-transition-delay: .5s;
+            transition-delay: .5s;
 }
 
 .quiz-sliderb 
 {
-    transform: translate(-50%, 50%) !important;
+    -webkit-transform: translate(-50%, 50%) !important;
+        -ms-transform: translate(-50%, 50%) !important;
+            transform: translate(-50%, 50%) !important;
     
 }
 
-/*        PLAYERS LIFE CONTAINER */
+/* PLAYERS LIFE CONTAINER */
 .player-lifes-cont
 {
     margin-bottom: 1em;
     z-index: 4;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
-    transform: translateY(150%);
+    -webkit-transform: translateY(150%);
+        -ms-transform: translateY(150%);
+            transform: translateY(150%);
 }
-
 
 .players-life
 {
@@ -394,19 +419,25 @@ button
     background-color: #000;
     font-weight: 500;
     color: #fff;
-    background-image: url(upmushroom.png);
+    background-image: url("../img/upmushroom.png");
     background-size: cover;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
 }
 
-/*        PLAYERS JOKERS CONTAINER */
+/* PLAYERS JOKERS CONTAINER */
 .api-joker-cont
 {
     position: absolute;
     bottom: -2.3em;
     left: 50%;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
-    transform: translate(-50%, -180%);
+    -webkit-transform: translate(-50%, -180%);
+        -ms-transform: translate(-50%, -180%);
+            transform: translate(-50%, -180%);
     z-index: 4;
     width: 100%;
 }
@@ -427,7 +458,8 @@ button
     color: #fff;
 }
 
-/*------------------------------------------------------ SCORE SCREEN  */ 
+
+/* ------------------------------------------------------ SCORE SCREEN  */ 
 
 .api-quiz-score-screen
 {
@@ -476,7 +508,6 @@ button
     margin-bottom: 1.5em;
 }
 
-
 .score-diff
 {
     color: #fff;
@@ -493,20 +524,24 @@ button
 }
 
 
-/*------------------------------------------------------ PROGRESS BAR  */ 
-
+/* ------------------------------------------------------ PROGRESS BAR  */ 
 
 .api-quiz-progress-bar
 {
-    box-shadow: 0 0 0 2px rgba(0,0,0,.8);
+    -webkit-box-shadow: 0 0 0 2px rgba(0,0,0,.8);
+            box-shadow: 0 0 0 2px rgba(0,0,0,.8);
     position: relative;
     border-radius: 25px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
     margin-bottom: 1em;
     margin-top: 1.5em;
     overflow: hidden;
     background: #333;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 30px;
     width: 80%; 
@@ -516,11 +551,12 @@ button
 { 
     width: 0%;
     height: 100%;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
     transition: 1s;
     border-radius: 25px;
     background-color: #fff;
 }
-
 
 .api-current-qstn
 {
@@ -536,13 +572,48 @@ button
     left: 105%;
 }
 
+.stop-quiz-btn
+{
+    position: absolute;
+    top: 1%;
+    left: 3%;
+    font-size: 1.5em;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+    padding: .5em;
+}
 
+.reload-quiz-btn
+{
+    position: absolute;
+    top: 1%;
+    right: 3%;
+    font-size: 1.3em;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+    padding: .5em;
+}
+
+.reload-quiz-btn:hover,
+.stop-quiz-btn:hover
+{
+    color: #fff;
+}
+
+
+/* ------------------------------------------------------  MEDIA QUERIES  */ 
 
 @media only screen and (max-width: 600px) 
 {
     .api-quiz-main-cont
     {
-        align-items: flex-start;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
     }
     
     .start-screen-apiquiz
@@ -558,7 +629,9 @@ button
     
     .players-life
     {
-        transform: scale(.7);
+        -webkit-transform: scale(.7);
+            -ms-transform: scale(.7);
+                transform: scale(.7);
         margin: 0;
     }
 
@@ -573,7 +646,9 @@ button
     
     .api-quiz-diffs
     {
-        transform: scale(.8);
+        -webkit-transform: scale(.8);
+            -ms-transform: scale(.8);
+                transform: scale(.8);
         margin: 0 .1em;
     }
     
@@ -581,14 +656,13 @@ button
     {
         font-size: .8em;
         height: 8em;
-/*                width: 90%;*/
     }
     
     .api-answer
     {
         height: 4em;
-        box-shadow: 0 0 10px rgba(0,0,0,.2);
-/*                width*/
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.2);
+                box-shadow: 0 0 10px rgba(0,0,0,.2);
     }
     
     .api-joker-cont
@@ -607,32 +681,4 @@ button
         top: 0%;
         padding-bottom: .5em;
     }
-}
-
-.stop-quiz-btn
-{
-    position: absolute;
-    top: 1%;
-    left: 3%;
-    font-size: 1.5em;
-    transition: .3s;
-    cursor: pointer;
-    padding: .5em;
-}
-
-.reload-quiz-btn
-{
-    position: absolute;
-    top: 1%;
-    right: 3%;
-    font-size: 1.3em;
-    transition: .3s;
-    cursor: pointer;
-    padding: .5em;
-}
-
-.reload-quiz-btn:hover,
-.stop-quiz-btn:hover
-{
-    color: #fff;
 }

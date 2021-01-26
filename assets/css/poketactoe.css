@@ -64,7 +64,6 @@ button
     min-height: 80px;
     background: #fafafa;
     transition: .3s;
-/*            z-index: -1;*/
 }
 
 /* Mobile Menu - slides in */
@@ -105,7 +104,6 @@ button
 }
 
 /* LOGO */
-
 .logo-home-link
 {
     position: absolute;
@@ -115,6 +113,7 @@ button
     z-index: 999999999;
 }
 
+/* Logo */
 .logo
 {
     position: relative;
@@ -136,7 +135,6 @@ button
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: darkred;
     background: rgba(139,0,0,.6);
     z-index: 1;
 }
@@ -147,7 +145,6 @@ button
     position: relative;
     margin: .5em;
     padding: .1em;
-    color: #fafafa;
     color: rgba(255,255,255,.8);
     font-weight: bold;
 }
@@ -240,7 +237,6 @@ button
 {
     width: calc(500px/3 * .98);
     height: calc(500px/3 * .98);
-    background: lightblue;
     background: black;
     cursor: pointer;
     transition: .3s;
@@ -336,7 +332,6 @@ button
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    background: #333;
     background: #000;
     width: 500px;
     height: 500px;
@@ -465,7 +460,6 @@ input[type="checkbox"]
     top: 50%;
     transform: translateY(-50%);
     font-weight: 700;
-    font-size: 1.3em;
     font-size: 1.1em;
     color: #000;
     cursor: default;
@@ -481,7 +475,6 @@ input[type="checkbox"]
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #8B0000;
     background: rgba(139,0,0,.2);
     cursor: pointer;
     transition: .3s;
@@ -552,6 +545,7 @@ footer .social-contact .social-link .fa-github
 {
     opacity: 1;
     font-size: 1.4em;
+    transform: translateX(-50%) rotate(180deg);
 }
 
 

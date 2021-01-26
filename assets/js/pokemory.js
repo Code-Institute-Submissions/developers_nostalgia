@@ -37,82 +37,82 @@ let totalCards = [
     {
         name: 'Gardevoir',
         id: 1,
-        background: 'mega_gardevoir.png'
+        background: 'assets/img/mega_gardevoir.png'
     },
     {
         name: 'Absol',
         id: 2,
-        background: 'mega_absol.png'
+        background: 'assets/img/mega_absol.png'
     },
     {
         name: 'Alakazam',
         id: 3,
-        background: 'mega_alakazam.png'
+        background: 'assets/img/mega_alakazam.png'
     },
     {
         name: 'Ampharos',
         id: 4,
-        background: 'mega_ampharos.png'
+        background: 'assets/img/mega_ampharos.png'
     },
     {
         name: 'Beedrill',
         id: 5,
-        background: 'mega_beedrill.png'
+        background: 'assets/img/mega_beedrill.png'
     },
     {
         name: 'Blaziken',
         id: 6,
-        background: 'mega_blaziken.png'
+        background: 'assets/img/mega_blaziken.png'
     },
     {
         name: 'Charizard',
         id: 7,
-        background: 'mega_charizard.png'
+        background: 'assets/img/mega_charizard.png'
     },
     {
         name: 'Greninja',
         id: 8,
-        background: 'mega_greninja.png'
+        background: 'assets/img/mega_greninja.png'
     },
     {
         name: 'Houndoom',
         id: 9,
-        background: 'mega_houndoom.png'
+        background: 'assets/img/mega_houndoom.png'
     },
     {
         name: 'Rayquaza',
         id: 10,
-        background: 'mega_rayquaza.png'
+        background: 'assets/img/mega_rayquaza.png'
     },
     {
         name: 'Heracross',
         id: 11,
-        background: 'mega_heracross.png'
+        background: 'assets/img/mega_heracross.png'
     },
     {
         name: 'Lucario',
         id: 12,
-        background: 'mega_lucario.png'
+        background: 'assets/img/mega_lucario.png'
     },
     {
         name: 'Metagross',
         id: 13,
-        background: 'mega_metagross.png'
+        background: 'assets/img/mega_metagross.png'
     },
     {
         name: 'Mewtwo',
         id: 14,
-        background: 'mega_mewtwoy.png'
+        background: 'assets/img/mega_mewtwoy.png'
     },
     {
         name: 'Scizor',
         id: 15,
-        background: 'mega_scizor.png'
+        background: 'assets/img/mega_scizor.png'
     },
     {
         name: 'Mawile',
         id: 16,
-        background: 'mega_mawile.png'
+        background: 'assets/img/mega_mawile.png'
     }
 ];
 
@@ -154,7 +154,6 @@ function startGame() {
 // Checks Players input (timer on/off, 16 or 32 cards)
 function takePlayersInput() {
     let allInputs = document.querySelectorAll('input');
-    //            timerOn = allInputs[0].checked;
 
     allInputs.forEach((inp, i) => {
         if (i > 0 && inp.checked) {

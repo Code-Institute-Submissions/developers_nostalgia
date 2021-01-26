@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
-    <link rel="stylesheet" href="pokedex_retro.css">
+    <link rel="stylesheet" href="assets/css/pokedex_retro.css">
     <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
     <title>Pokedex Retro Version</title>
 </head>
@@ -15,46 +15,47 @@
 <body>
     <!-- Main Container -->
    <div class="p-dex-main-cont flex-center">
-        <!-- Navigation -->
+        <!-- Header -->
         <header>
            <!-- Navigation -->
            <nav class="nav-three-btns flex-center not-visible-mobile">
             <ul class="flex-center" style="margin: 0">
                 <div class="logo flex-center">
-                    <a href="pokemile_about.html" class="logo-home-link"></a>
+                    <a href="index.html" class="logo-home-link"></a>
                     <span class="logo-span" style="z-index: 3">&#128187DN</span>
                 </div>
-                <li class="nav"><a href="#">Home</a></li>
-                <li class="nav"><a href="#">Pokedex</a></li>
-                <li class="nav"><a href="#">Games</a></li>
+                <li class="nav"><a href="index.html">Home</a></li>
+                <li class="nav"><a href="pdex_selection.html">Pokedex</a></li>
+                <li class="nav"><a href="game_selection.html">Games</a></li>
             </ul>
             <!-- Games Navigation -->
             <ul class="flex-center games-nav" style="margin: 0">                
-                <li class="nav"><a href="#">PokeTacToe</a></li>
-                <li class="nav"><a href="#">PokeLights</a></li>
-                <li class="nav"><a href="#">PokeQuiz</a></li>
+                <li class="nav"><a href="poketactoe.html">PokeTacToe</a></li>
+                <li class="nav"><a href="pokelights.html">PokeLights</a></li>
+                <li class="nav"><a href="pokequiz.html">PokeQuiz</a></li>
             </ul>
         </nav> 
        <!-- Mobile Navigation (invisible if not Mobile) -->
            <nav class="nav-three-btns just-visible-mobile flex-center">
               <ul class="flex-center" style="margin: 0; padding-left: 0; margin-left: 5%">
                     <div class="logo flex-center">
-                        <a href="pokemile_about.html" class="logo-home-link"></a>
+                        <a href="index.html" class="logo-home-link"></a>
                         <span class="logo-span" style="z-index: 3">&#128187DN</span>
                     </div>
-                    <li class="nav"><a href="#">Home</a></li>
-                    <li class="nav"><a href="#">Pokedex</a></li>
-                    <li class="nav"><a href="#">Games</a></li>
+                    <li class="nav"><a href="index.html">Home</a></li>
+                    <li class="nav"><a href="pdex_selection.html">Pokedex</a></li>
+                    <li class="nav"><a href="game_selection.html">Games</a></li>
                 </ul>
                 <div onclick="toggleMobileMenu()" class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>
            </nav>
+           <!-- Mobile Menu (Slider) -->
            <div class="mobile-menu-slider just-visible-mobile">
                 <div class="flex-center games-nav" style="margin: 0; height: 100%">
-                    <div class="mobile-nav"><a href="#">PokeTacToe</a></div>
-                    <div class="mobile-nav"><a href="#">PokeLights</a></div>
-                    <div class="mobile-nav"><a href="#">PokeQuiz</a></div>
+                    <div class="mobile-nav"><a href="poketactoe.html">PokeTacToe</a></div>
+                    <div class="mobile-nav"><a href="pokelights.html">PokeLights</a></div>
+                    <div class="mobile-nav"><a href="pokequiz.html">PokeQuiz</a></div>
                 </div>
             </div>
        </header>
@@ -118,10 +119,13 @@
                <div class="p-dex-middle-middle-joint flex-center">
                    <!-- Main Control Buttons -->
                    <div onclick="displayAllTypesBtns()" class="main-ctrl-btn flex-center btf-btn opacity disabl"><i class="fas fa-arrow-left"></i></div>
+                   <!-- Turn On/Off BUTTONS -->
                    <div onclick="turnOnDex()" class="main-ctrl-btn flex-center on-btn"><i class="fas fa-power-off"></i></div>
                    <div onclick="turnOffDex()" class="main-ctrl-btn flex-center off-btn hidden"><i class="fas fa-power-off"></i></div>
+                   <!-- Back To Pokedex Menu BUTTON -->
                    <div onclick="displayMenuScr()" class="main-ctrl-btn flex-center menu-btn opacity"><i class="fas fa-bars"></i></div>
                </div>
+               <!-- Middle Outer JOINT -->
                <div class="p-dex-middle-outer-joint-r"></div>
            </div>
           <!-- Pokedex Bottom Part -->
@@ -204,7 +208,7 @@
         </div>
    </div>
    
-   <script src="pokedex_retro.js"></script>
+   <script src="assets/js/pokedex_retro.js"></script>
     
 </body>
 </html>

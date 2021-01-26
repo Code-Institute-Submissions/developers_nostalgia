@@ -28,11 +28,6 @@ let round = 0;
 
 // --------------------------------------------------------------- TOGGLE FUNCTIONS
 
-// CHECKBOX - Toggles Animation (Circle)
-//        function toggleAnimationBall() {
-//            animatiionCheckBox.checked ? pokeBall.classList.add("animate") : pokeBall.classList.remove("animate");
-//        }
-
 
 // CHECKBOX - Toggles Players Choices Container
 function togglePlayersChoices() {
@@ -115,7 +110,6 @@ function displayCombination() {
     if (counter >= combination.length) {
         clearInterval(display);
         setTimeout(() => playersField.classList.remove('disabled-btns'), 1200);
-//                setTimeout(removeAllLights, 1500);
     }
 }   
 

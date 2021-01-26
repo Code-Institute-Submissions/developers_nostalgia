@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/pdex_selection.css">
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <title>Games Selection</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="pdex-menu-main-cont flex-center">
+        <!-- Go To Previous Site BUTTON -->
+        <div onclick="goBack()" class="go-to-prev-site-btn"><span>&larr;</span>Back</div>
+        <!-- Background Container (Img) -->
+        <div class="pdex-menu-bg-cont">
+            <img src="assets/img/jokerholdingcharizardcard.jpg" alt="the joker holding pkmn card">
+        </div>
+        <!-- Pokedex Selection Container -->
+        <div class="pdex-selection-cont">
+            <div class="pdex-selection-headline">Choose a Pokedex</div>
+            <!-- Pokedex Cards/Links -->
+            <div class="pdex first">
+               <a href="pokedex_retro.html"></a>
+                Retro Pokedex
+            </div>
+            <div class="pdex scnd">
+                <a href="pokedex_v2.html"></a>
+                Pokedex 2.0
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        // Goes to previous page
+        const goBack = () => window.history.back();
+        
+    </script>
+
+</body>
+
+</html>

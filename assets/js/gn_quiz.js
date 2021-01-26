@@ -49,8 +49,6 @@ const fetchApiQuestions = () => {
 }
 
 
-// ---------------------------------------------------------------------------------------------------- FUNCTIONS
-
 // ----------------------------------------------------- Preparing Quiz (sort and display questions)
 
 // Reloads Game/Site
@@ -85,7 +83,6 @@ const toggleInvisibilityClasses = () => {
 
 // Returns array width all questions sorted (easy,medium,hard)
 const prepareQuestions = allQuestions => {
-//            const allDiffQstns = document.querySelectorAll(".api-quiz-diffs");
     
     let allDifficulties = [];
     let easyQuestions = [];
@@ -120,7 +117,6 @@ const prepareQuestions = allQuestions => {
 }
 
 
-// diff circles
 // Displays a question
 const displayApiQuestion = () => {
     apiQuizContainer.innerHTML = "";
@@ -141,10 +137,10 @@ const displayApiQuestion = () => {
                 <button onclick="coinFlipForJoker(event)" class="coin-flip-btn head"></button>
                 <button onclick="coinFlipForJoker(event)" class="coin-flip-btn tails"></button>
             </div>
-            <button class="api-answer"><span class="question-letter-span"></span> ${sortedQuestions[currentQuestion].answers[0]}</button>
-            <button class="api-answer"><span class="question-letter-span">B.</span> ${sortedQuestions[currentQuestion].answers[1]}</button>
-            <button class="api-answer"><span class="question-letter-span">C.</span> ${sortedQuestions[currentQuestion].answers[2]}</button>
-            <button class="api-answer"><span class="question-letter-span">D.</span> ${sortedQuestions[currentQuestion].answers[3]}</button>
+            <button class="api-answer">${sortedQuestions[currentQuestion].answers[0]}</button>
+            <button class="api-answer">${sortedQuestions[currentQuestion].answers[1]}</button>
+            <button class="api-answer">${sortedQuestions[currentQuestion].answers[2]}</button>
+            <button class="api-answer">${sortedQuestions[currentQuestion].answers[3]}</button>
         </div>
         <div class="api-quiz-progress-bar">
             <div class="api-current-qstn api-current-question-index flex-center">${currentQuestion + 1}</div>
@@ -204,9 +200,7 @@ const correctOrWrongAnswer = bool => {
     bool ? changePlayersLifes(true) : changePlayersLifes(false);
     // increase score
     bool ? endScore += sortedQuestions[currentQuestion].score : endScore -= 50;
-    
-//            bool ? endScore += sortedQuestions[currentQuestion].score : endScore -= sortedQuestions[currentQuestion].score / 5;
-    
+        
     // next question
     setTimeout(displayApiQuestion, 1000);
 }
@@ -244,6 +238,7 @@ const removeOneLife = lifes => {
     }
 }
 
+
 // ----------------------------------------------------- Game Over
 
 // Finishes Quiz
@@ -256,10 +251,7 @@ const gameOver = () => {
 }
 
 
-// ----------------------------------------------------- Score Screen, Reset Quiz
-
 // ------------------------------------ Score Section
-
 
 // Displays and Fills the Score Screen
 const displayFillScoreScreen = () => {
@@ -377,10 +369,7 @@ const resetApiQuiz = () => {
     // restore both
     restoreLifes();
     restoreJokers();
-    // creates new All Api Question Array
-//            sortedQuestions = prepareQuestions(sortedQuestions);
 }
-
 
 
 // ---------------------------------------------------------------------------------------------------- JOKERS AND RESTORATION
@@ -458,7 +447,7 @@ const coinFlipForJoker = (e) => {
         const coinToKeep = [...bothCoinSides].filter(coin => coin.classList.contains(`${randomSide}`))[0];
         
         coinToKeep.style.transform = "translateY(-15%)";
-        // your win text
+        // you win - text
         coinToRemove.classList.add("invisible");
     }
     
@@ -479,7 +468,6 @@ const coinFlipForJoker = (e) => {
                 <button onclick="coinFlipForJoker(event)" class="coin-flip-btn head"></button>
                 <button onclick="coinFlipForJoker(event)" class="coin-flip-btn tails"></button>
             `;
-//                    apiCoinFlipJokerContainer.insertAdjacentHTML("beforeend", ;
         }, 1000);
     }
     // Main Coin Flip Function

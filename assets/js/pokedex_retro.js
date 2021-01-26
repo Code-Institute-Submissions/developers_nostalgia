@@ -1,3 +1,5 @@
+// ------------------------------------------------------------------------------ VARIABLES
+
 // All types colors
 const allColors = {
     fire: '#FB6C6C',
@@ -56,7 +58,7 @@ let loaded = false;
 let allPkmn = [];
 
 
-//------------------------------------------------------------------------------ FETCHES & MODIFIES ALL 150 PKMN
+// ------------------------------------------------------------------------------ FETCHES & MODIFIES ALL 150 PKMN
 
 // Gets all Pokemon (API) and modifies data
 const getAndModifyPkmn = () => {
@@ -93,7 +95,6 @@ const getAndModifyPkmn = () => {
 const turnOnDex = () => {
     turnOnAnimation();
     allPkmn.sort((a, b) => a.id - b.id);
-//           displayFirstOrLastNames(true);
 }
 
 
@@ -106,7 +107,7 @@ const turnOnAnimation = () => {
 }
 
 
-//------------------------------------------------------------------------------ TOGGLE FUNCTIONS
+// ------------------------------------------------------------------------------ TOGGLE FUNCTIONS
 
 // Removes Start Screen
 const toggleStartScreen = () => topDisplay.classList.toggle("opacity");
@@ -155,7 +156,7 @@ const toggleMobileMenu = () => {
 }
 
 
-//------------------------------------------------------------------------------ (BOTTOM SCREEN) CHOOSE MODE
+// ------------------------------------------------------------------------------ (BOTTOM SCREEN) CHOOSE MODE
 
 // Displays selected Mode (depending on boolean)
 const selectOptionMode = (bool) => {
@@ -174,7 +175,7 @@ const selectOptionMode = (bool) => {
 }
 
 
-//------------------------------------------------------------------------------ (BOTTOM SCREEN) FILTER BY TYPE MODE
+// ------------------------------------------------------------------------------ (BOTTOM SCREEN) FILTER BY TYPE MODE
 
 // Diplays all filter by types Btns and headline
 const displayAllTypesBtns = () => {
@@ -218,7 +219,6 @@ const filterViaType = (e) => {
             </div>`);
     });
 }
-
 
 
 // ------------------------------------------------------------------------------ PAGINATION BUTTONS (PREV/NEXT) & FILL PKMN NAMES BOTTOM SCREEN
@@ -332,6 +332,7 @@ const removeSelectedClass = () => {
     currPkmnNames.forEach(cpn => cpn.classList.remove("selected"));
     typeFinderNames.forEach(tfn => tfn.classList.remove("selected"));
 }
+
 
 // ------------------------------------------------------------------------------ TOP SCREEN FUNCITONS FOR DISPLAYED PKMN DATA
 

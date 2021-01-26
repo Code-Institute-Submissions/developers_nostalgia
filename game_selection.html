@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/game_selection.css">
+    <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>Games Selection</title>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="games-menu-main-cont flex-center">
+        <!-- Go To Previous Site BUTTON -->
+        <div onclick="goBack()" class="go-to-prev-site-btn"><span>&larr;</span>Back</div>
+        <!-- Background Container (Img) -->
+        <div class="games-menu-bg-cont">
+            <img src="assets/img/jokerholdingvenosaurcard.jpg" alt="the joker holding pkmn card">
+        </div>
+        <!-- Games Selection Container -->
+        <div class="games-selection-cont">
+            <div class="games-selection-headline">Choose a Game</div>
+            <!-- Games BUTTONS/Links -->
+            <div class="game">
+                <a href="poketactoe.html"></a>
+                PokeTacToe
+            </div>
+            <div class="game">
+                <a href="pokelights.html"></a>
+                PokeLights
+            </div>
+            <div class="game">
+                <a href="pokequiz.html"></a>
+                PokeQuiz
+            </div>
+            <div class="game">
+                <a href="gn_quiz.html" target="_blank"></a>
+                General Quiz
+            </div>
+            <div class="game">
+                <a href="pokemory.html" target="_blank"></a>
+                Pokemory
+            </div>
+            <div class="game">
+                <a href="pokeman.html" target="_blank"></a>
+                PokeMan
+            </div>
+            <div class="game">
+                <a href="reaction_test_game.html" target="_blank"></a>
+                Reaction Game
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        // Goes to previous page
+        const goBack = () => window.history.back();
+        
+    </script>
+
+</body>
+
+</html>

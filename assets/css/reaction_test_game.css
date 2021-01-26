@@ -1,15 +1,38 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* ------------------------------------------------------ GENERAL */
 
 .flex-center
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .flex-column
 {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .invisible
@@ -37,7 +60,8 @@
 .reaction-start-screen
 {
     position: relative;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     border-radius: 10px;
     background-color: midnightblue;
     background-color: #620404;
@@ -103,6 +127,7 @@
     margin-left: .3em;
 }
 
+
 /* ------------------------------------------------------ BUTTONS */
 
 button
@@ -117,6 +142,8 @@ button
     border-radius: 25px;
     font-size: 1.2em;
     font-weight: bold;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
     outline: none;
     cursor: pointer;
@@ -143,9 +170,12 @@ button
     position: absolute;
     top: 10%;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
     width: 50px;
     height: 50px;
+    -webkit-transition: .1s;
+    -o-transition: .1s;
     transition: .1s;
     opacity: 0;
 }
@@ -160,7 +190,22 @@ button
 .reaction-exit-btn.slide-up
 {
     opacity: 1;
-    animation: slideup .3s ease-out forwards;
+    -webkit-animation: slideup .3s ease-out forwards;
+            animation: slideup .3s ease-out forwards;
+}
+
+@-webkit-keyframes slideup
+{
+    from
+    {
+        top: 10%;
+        opacity: 0;
+    }
+    to
+    {
+        top: -16%;
+        opacity: 1;
+    }
 }
 
 @keyframes slideup
@@ -189,12 +234,16 @@ button
     width: 60%;
     height: 3px;
     background-color: #000;
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .line:nth-child(2) 
 {
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
 }
 
 
@@ -209,7 +258,8 @@ button
 /* HOVER - Highscore Btn */
 .reaction-highscore-btn:hover
 {
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+            box-shadow: 0 0 10px rgba(0,0,0,.3);
     background-color: #fafafa;
     color: #000;
 }
@@ -240,7 +290,8 @@ button
     border-radius: 50%;
     border: solid 20px #000;
     background-color: darkred;
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+            box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 
 
@@ -255,7 +306,8 @@ button
     height: 100%;
     border-radius: 10px;
     background-color: darkorange;
-    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 
 .players-reaction-score
@@ -280,7 +332,6 @@ button
 {
     font-weight: bold;
     margin-bottom: 1.5em;
-/*            margin-bottom: 2em;*/
 }
 
 /* INPUT - Insert players highscore */
@@ -291,7 +342,8 @@ button
     border-radius: 5px;
     padding: .5em;
     margin: .5em 0;
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.2);
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
 
 

@@ -124,7 +124,7 @@ const copyColor = code => {
     /* copies text inside  text field */
     document.execCommand("copy");
     
-    // call animaiton
+    // calls animaiton
     copiedAnimation(code);
 }
 

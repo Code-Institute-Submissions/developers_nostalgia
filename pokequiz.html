@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
-    <link rel="stylesheet" href="pokequiz.css">
+    <link rel="stylesheet" href="assets/css/pokequiz.css">
     <script src="https://kit.fontawesome.com/7443d15568.js" crossorigin="anonymous"></script>
-    <title>PokeQuiz</title>
+    <title>PokeQuiz Game</title>
 </head>
 
 <body>
@@ -17,6 +17,12 @@
     <div class="main-cont flex-center">
         <!-- Start Screen -->
         <div class="start-screen-quiz flex-center visible">
+            <!-- Navigation -->
+            <div class="nav-btn-cont">
+                <span onclick="goBack()"><i class="fas fa-long-arrow-alt-left"></i></span>
+                <a href="index.html"><i class="fas fa-home"></i></a>
+                <a href="game_selection.html"><i class="fas fa-gamepad"></i></a>
+            </div>
             <!-- Rules/Game Info -->
             <div class="quiz-info-screen flex-center flex-column invisible">
                 <!-- Close Info Screen - BUTTON -->
@@ -45,7 +51,7 @@
             <!-- BUTTON - Opens Info Screen -->
             <i onclick="toggleInfoScreen()" class="fas fa-question-circle"></i>
             
-            <a href="#" class="link-to-other-quiz">To General Knowledge Quiz &rarr;</a>
+            <a href="gn_quiz.html" class="link-to-other-quiz">To General Knowledge Quiz &rarr;</a>
             <!-- BUTTON - Start Quiz -->
             <button class="start-quiz-btn">Start Quiz</button>
         </div>
@@ -100,7 +106,7 @@
         </div>
     </div>
 
-    <script src="pokequiz.js"></script>
+    <script src="assets/js/pokequiz.js"></script>
 
 </body>
 </html>
