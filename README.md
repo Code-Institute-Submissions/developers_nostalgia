@@ -2,9 +2,9 @@
   :computer: Developer's Nostalgia
 </h1>
 
-  Note: This project became a little bigger than I've planned... I had so much fun to experiment around, learning new ways of problem solving, gaining new skills etc. that I couldn't stop. 
+  Note: This project became a little bigger than I've planned... I had so much fun to experiment around, learning new ways of problem solving, gaining new skills etc. that I couldn't stop. I've learned a lot and improved myself every single day I've worked on it.
 
-  This is a little blog called "Developer's Nostalgia". This blog shows my current html/css/js skills and is a bouquet of beginner projects (most of them in a pokemon theme). I chose the form of a blog to fit all these little project to one biggrt one and since a lot of people in my generation become nostalgic when they see pokemmon the I found the name appealing. Visitors can see how much fun they can have creating games or thigs like a pokedex. This project 
+  This is a little blog called "Developer's Nostalgia". This blog shows my current Html/Css/Js skills and is a bouquet of beginner projects (most of them in a pokemon theme). I chose the form of a blog to fit all these little projects to one main project. Including Games, Online Pokedexes (Main Project), Quizes etc. Since I know a lot of people who don't really know what coding actually is (& what they can do with it) and a lot of people in my generation become nostalgic when they see pokemmon I thought - maybe I can trigger this emotion and inspire them and others (younger people) and show that coding can be fun and creative. Visitors can see how cool it is creating games or things they like.
 
 <p align="center">
   <a href="https://robertmachamud.github.io/developers_nostalgia/">
@@ -27,20 +27,20 @@
       1. As a first time visitor, I want to have a good overview of the content and I want to quickly understand the main purpose of the site.
       2. As a first time visitor, I want to be motivated to click through the different sections/pages.
       3. As a first time visitor, I want to be able to navigate easily through all the different sections/pages without any complications .
-      4. As a first time visitor, I want to be able to navigate easily to the 'authors' social media or github accounts (/subscribe/follow/like/see github repository/see other projects).
-      5. As a first time visitor I want to have some nice visual effects like parallax, hover, little animation effects etc.
+      4. As a first time visitor, I want to be able to navigate easily to the 'authors' social media or github accounts (subscribe/follow/like/see github repository/see other projects).
+      5. As a first time visitor I want to have some nice visual effects like parallax, hover, little animation effects etc. also I want to be able to interact with the content.
       6. As a first time visitor, I want to be entertained with some games for example.
-      6. As a first time visitor, I want to be able to sign up for a newsletter to get more information and upcomming projects.
-      7. As a first time visitor, I want to see some poroject or getting inspired to start/try coding by myself and see what I can do or which ideas I can turn into code.
+      6. As a first time visitor, I want to be able to sign up for a newsletter to get more information and upcomming projects or eventually get in touch with the author.
+      7. As a first time visitor, I want to or get inspired to start/try out coding by myself and see what I can do or which ideas I can turn into code (eventually).
 
   - Returning Visitor Goals
       1. As a returning visitor, I want to play some games or compete with a friend (like 'PokeTacToe' or the Reaction Game)
       2. As a returning visitor, I want to get in contact with the programmer and/or follow him on social media or maybe even code with him together.
       3. As a returning visitor, I want to easily reread all the information I want/need.
       4. As a returning visitor, I want to be able to easily look up some necessary information about pokemon (Pokedexes).
-      5. As a returning visitor, I want to eventually use some projects as a little help or purely for entertaiment.
-      5. As a returning visitor, I might want to sign up for the newsletter if I didn't do so on the first time I've visited this blog
-      5. As a returning visitor, I might want to rethink my decision if I didn't follow/subscribed the programmer :-) 
+      5. As a returning visitor, I want to eventually use some projects as a little help or purely for inspiration.
+      6. As a returning visitor, I might want to sign up for the newsletter if I didn't do so on the first time I've visited this blog
+      7. As a returning visitor, I might want to rethink my decision if I didn't follow/subscribed the programmer :-) 
 
   - Frequent User Goals
       1. As a frequent user, I want to play some games or compete with a friend (like 'PokeTacToe' or the Reaction Game)
@@ -55,38 +55,39 @@
   - Color Scheme
     - It has a lot of different colors to not bore the user with just one color scheme.
     - The color #333 is often for a nice dark but not too dark background (since dark/night mode is liked by many people nowadays).
-    - An .
+    - Red (crimson) was used often because red/white is a typical Pokemon color combination.
+    - The design is intentionally different/as less repetetive as possible.
     - Font colors are normally either #fafafa (white) or simply #000 (black) to have a contrast to the colorful of dark backgrounds.
     - Font awesome icons and buttons are dark orange to make them pop out a little and keep them visible on colorful and on dark backgrounds (and for a nice contrast).
 
   - Typography
-    - The - Helvetica Neue - is the font family of the blog with Arial and Sans Serif as the fallback fonts in case for any reason the font isn't being imported into the site correctly. Helvetica Neue is the default font when using bootstrap. It is frequently used and recognizable and looks very clean and appropriate.
+    - The - Helvetica Neue - is the font family of the blog with Arial and Sans Serif as the fallback fonts in case for any reason the font isn't being imported into the site correctly. Helvetica Neue is the default font when using bootstrap. It is frequently used and recognizable and looks clean and appropriate.
 
   - Imagery
-    - Immages are used for a parallax effect
+    - Immages are (mostly) used for a parallax effect
     - PNGs are used to display Pokemon or Pokemon Items
 
 
 - Wireframes
-  - Home/Landing Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/landing_page.pdf">- here</a>
-  - Ampel Game Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/courses.pdf">- here</a>
-  - Locations Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/locations.pdf">- here</a>
-  - Membership Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/member.pdf">- here</a>
-  - About Us Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/about.pdf">- here</a>
-  - Contact Us Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/contact.pdf">- here</a>
-  - Login Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/login.pdf">- here</a>
-  - Booking Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/booking.pdf">- here</a>
-  - 404 Page Wireframe <a href="https://github.com/RobertMachamud/brand_gym/blob/master/assets/wireframes/err.pdf">- here</a>
+  - Home/Landing Page Wireframe <a href="https://github.com/RobertMachamud/developers_nostalgia/blob/master/assets/wireframes/landing_page.pdf">- here</a>
+  - Ampel Game Page Wireframe <a href="https://github.com/RobertMachamud/developers_nostalgia/blob/master/assets/wireframes/courses.pdf">- here</a>
+  - Locations Page Wireframe <a href="https://github.com/RobertMachamud/developers_nostalgia/blob/master/assets/wireframes/locations.pdf">- here</a>
+  - Membership Page Wireframe <a href="https://github.com/RobertMachamud/developers_nostalgia/blob/master/assets/wireframes/member.pdf">- here</a>
+  - About Us Page Wireframe <a href="https://github.com/RobertMachamud/developers_nostalgia/blob/master/assets/wireframes/about.pdf">- here</a>
+  - Contact Us Page Wireframe <a href="https://github.com/RobertMachamud/developers_nostalgia/blob/master/assets/wireframes/contact.pdf">- here</a>
+  - Login Page Wireframe <a href="https://github.com/RobertMachamud/developers_nostalgia/blob/master/assets/wireframes/login.pdf">- here</a>
+  - Booking Page Wireframe <a href="https://github.com/RobertMachamud/developers_nostalgia/blob/master/assets/wireframes/booking.pdf">- here</a>
 
 
 ## Features
 
-- Responsive on all device sizes (except 'Pokeman Game')
+- Responsive on all device sizes I tested 
 - Interactive elements (e.g. hover, click, etc.)
 - Effects like parallax of scrollmagic
 - Links to social media
 - Expanding content for more information by clicking
 - Interactive Games
+- Apis for Quiz and Pokedexes
 
 
 ### Technologies Used
@@ -95,6 +96,7 @@
 - <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</a>
 - <a href="https://en.wikipedia.org/wiki/JavaScript">Javascript</a>
 - <a href="https://en.wikipedia.org/wiki/Jquery">JQuery</a>
+
 
 ### Frameworks, Libraries & Programs Used
 
@@ -135,62 +137,90 @@ The Freeformatter, W3C CSS Validator Services, and Autoprefixer and were used to
 
     1. As a first time visitor, I want to have a good overview of the content and I want to quickly understand the main purpose of the site.
 
-        1. When the users are entering the site, they're getting greeted by a little animation which reveals a short and understandable text that describes the purpose of the site - also there is a button which brings the users directly to the membership section/page - 3-click buy system (click button -> choose package -> buy) (could be in the returning visitor goals section - if the users already checked out the website and just needed some time to think or whatever reason - the goal is to give potential customers a quick and uncomplicated buying process (just 3 clicks needed)).
-        2. The background picture (and the headline) implies and makes clear that it's a gym website without even having to read any content.
-        3. The users have multiple and intuitive (/obvious) options to go further and discover the website.
-        4. Icons (Font Awesome) are simplifying the reading process so it's easier and quicker to read through the content - Also the content (text)
-            is kept as short, simple, and understandable as possible to improving the user experience and reading speed.      
-        5. Scrolling is kept to a minimum (or completely avoided in the desktop version) to give the users a good overview and to improve the user experience.
-        6. Virtual tour available - improves first time experience.
+        1. When the users are entering the landing page they will be welcomed with a parallax effect and different intuitive interactions. Since the main purpouse is to show the users a variety of different things you can do with js - they will hopefully have fun interacting and discovering. 
+        1. When the users are entering the main project, they're getting greeted by a little animation which reveals a short and understandable text that describes the purpose of the site (and provides them with instructions how to use the site) - also there is a button which brings the users directly to the membership section/page so they can subscribe/like etc. (secondary purpouse).
+        2. The background picture of the landing page (fans will know) shows the beginning of one of the best friendships in the world:) - hopefully some users will be kicked back in time - 1997 where the journey started...right after the legendary bird "HO-OH" flew over the heads of our favorite heros:)
+        4. Icons (Font Awesome) are used to make interactions quicker to understand and more intuitive. 
+        5. The user is getting motivated to scroll and click around and having the best user experience I can currently give them.
 
 
     2. As a first time visitor, I want to be able to navigate easily through all the different sections/pages without any complications as simple as possible. also, I want to have more than one option to navigate.
 
-        1. The site has been designed to be fluid and never to entrap the user. There is a fixed sidebar which is visible on every single section/page (except the 404 section/page) to always keep the users informed about the navigational options. The navigation links are in a logical order so the users can go from top to bottom (vertical) to get all the information. There is also another reason for the fixed sidebar and the logical order -> the navigation arrows at the bottom. These arrows are another (quick, intuitive, and comfortable) way to navigate through the site. These arrows are becoming much handier on mobile devices - so the users don't always have to open the sidebar while i.e. "discovering" or just clicking through.
-        for making the navigation links more intuitive there are icons next to them. These icons are also at the bottom (footer) to make it easier for the user to know where they currently "are".
+        1. The site has been designed to be fluid and never to entrap the users. There are different options to navigate (navbar, footer, links, buttons, etc.) 
+        2. If there is no navbar (in some games) then the page is getting opened in a new tab so users can simply close it or open it up for later
+        3. To have a better overview there is a "Games" nav link where the user can see all games and select whichever they want.
 
-    3. As a first time visitor, I want to be able to see all important contact details (like phone number, email or address) and easily get in touch with the team for eventual questions (contact section/page).
 
-        1. Relevant content is always visible - e.g. contact details, booking section, schedule, and the downloadable app (footer) or the sign-in/up button.
-        2. The contact section/page is easy to get to and the user has an understandable form to easily get in touch with the gym. By choosing a topic the service team can respond more quickly for example.
+    3.  As a first time visitor, I want to be able to navigate easily to the 'authors' social media or github accounts (subscribe/follow/like/see github repository/see other projects).
+
+        1. There are buttons/links to my social media accounts (like facebook, twitter, pinterest, youtube) and to my github page.
+        2. The "contact" section/buttons is/are easy to spot (mostly footer section)
+        3. On the landing page (no real header and footer is far down) there is a trasparent button which doesn't distract the users but is always available (left bottom corner) - once they are clicking it - all buttons/links are getting revealed.
+
+
+    6. As a first time visitor, I want to be entertained with some games for example.
+
+        1. The user has a little variety of mini games - some of them (like "PokeTacToe") they can play with a friend.
+
+
+    6. As a first time visitor, I want to be able to sign up for a newsletter to get more information and upcomming projects or eventually get in touch with the author.
+
+        1. There is a box where the users can insert their email adress to stay updated or they cand simply click on the social media / github buttons/links.
+
+    7. As a first time visitor, I want to or get inspired to start/try out coding by myself and see what I can do or which ideas I can turn into code (eventually).
+
+        1. Seeing that there are much more (awesome) possibilities in coding than the users might have thought could inspire/motivate them to at least try it out or even develop a new passion. Building games with code could be the first (motivating) step... 
+
 
   - Returning Visitor Goals
 
-    1. As a returning visitor, I want to quickly see or download the gym schedule.
-        1. There is a button in the footer where the users can easily download the schedule.
+    1. As a returning visitor, I want to play some games or compete with a friend (like 'PokeTacToe' or the Reaction Game)
+        1. The games can be played over and over again also competetive. Users can always break a record or finally beat whoever is sitting in front of them.
 
-    2. As a returning visitor, I want to get in contact with the gym for asking questions or expressing my ideas (i.e. - for improving the user experience).
-        1. There is a contact section/page where the users can ask questions or even bring in their own ideas which might have the potential to improve services or other benefits.
-        2. Using/implementing good ideas from the users like i.e. new recipes can improve the relationship between the gym and their customers. For example -> my name is Peter and I've created a new healthy and tasty drink - now I simply can share it with the gym and voila - "Pete's Vitamin Vortex Deluxe" just got added to the meal/drink plan of the Brand Bar:)
-        3. There is a lot of potential for improving the website/gym/courses/services/user experience. 
+    2. As a returning visitor, I want to get in contact with the programmer and/or follow him on social media or maybe even code with him together.
+        1. There are social media/github links on every site - users can always get the contact they need.
+        2. Thre is also the possibility to see the current projects of the author on GitHub.
 
-    3. As a returning visitor, I want to book a service of my choice.
-        1. There is a button in the footer which directs the users to the booking section/page
-        2. The users are getting motivated/reminded to download the app to make the booking process quicker and more comfortable (among other services).
+    4. As a returning visitor, I want to be able to easily look up some necessary information about pokemon (Pokedexes).
+        1. If the user needs some info/data about Pokemon they can use the Pokedexes. Either they need some basic info (Retro Pokedex) or they need some more (Pokedex 2.0).
+  
+    5. As a returning visitor, I want to eventually use some projects as a little help or purely for inspiration.
+        1. The source code is always visible so the users can always look for some inspiration if they want to build some apps by themselves or solve one of their evetual problems for example.
 
 
   - Frequent User Goals
     
-    1. As a frequent user, I want to quickly check if the gym schedule changed or got optimized (I want to stay up to date).
-      1. Plans, schedules even services, etc. are always being updated -  A simple way to never miss any changes or discounts, special offers, and so on, is to subscribe to the newsletter (in the booking section) or to download the app.
-      2. The same goes for eventual events or group activities etc.
+    1. As a frequent user, I want to be informed about new or upcomming projects as this blog might getting more content or links to other projects.
+      1. This site might be updated with new games or features so frequent users don't get bored:)
+      2. That's why it could be a motivation for some users to subscribe or visit the site more frequent.
+      3. 
 
-    2. As a frequent user, I want to be motivated to use the full spectrum of the site - i.e. by downloading the app (or other services - updates might come as well).
-      1. By keeping the content short easy to understand (also by using icons) and the navigation intuitive - the users are more motivated to click through the website.
-      2. Mentioning to download the app for benefits on multiple sections/pages might motivate the users to do so. Downloading the app and eventually getting relevant push messages brings the users closer (creates a better relationship) to the gym. 
+    5. As a frequent user, I want to be able to contact the programmer as uncomplicated and easy as possible.
+      1. There is the possibility to text the author on social media.
+
+    6. As a frequent user, I might want to use the random background generator for my own projects for example.
+        1. Users can use some of the code for themselves or use the app for their needs.
 
 
 ## Further Testing
 
   - The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge, and Safari browsers.
-  - The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
+  - The website was viewed on a variety of devices such as Desktop, Laptop, iPad, iPad mini, iPhone5se, iPhone6, iPhone7, iPhone8 & iPhoneX, different Samsung/Nokia/Pixels devices
   - A lot of testing was done to ensure that all pages were linking correctly.
-  - Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+  - Friends, coworkers and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 
 ## Known Bugs
 
-  - Pokedex Version 2 is slow
+  - Landing Page
+    - Images size a little big - couldn't use Squoosh on them (PNGs)
+
+  - Pokedex Version 2
+    - is a little slow
+    - function 'fetchMissingSprite' is not working - hours of Tutor support and days of trying didn't help. (Result: Some images in the Evoltion secton (Pokedex 2.0) don't get loaded)
+
+  - iPhone
+    - Looks good on my Chrome dev tools but on real iPhones (friends, colleagues) css behaves weird (hovers didn't work or some traslates etc.)
 
 
 # Deployment
@@ -199,26 +229,26 @@ The Freeformatter, W3C CSS Validator Services, and Autoprefixer and were used to
 
 The project was deployed to GitHub Pages using the following steps:
 
-  1. Log in to GitHub and locate the <a href="https://github.com/RobertMachamud/brand_gym">GitHub Repository</a>
+  1. Log in to GitHub and locate the <a href="https://github.com/RobertMachamud/developers_nostalgia">GitHub Repository</a>
   2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
   3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
   4. Under "Source", click the dropdown called "None" and select "Master Branch".
   5. The page will automatically refresh.
-  6. Scroll back down through the page to locate the now published site <a href="https://robertmachamud.github.io/brand_gym/">link</a> in the "GitHub Pages" section.
+  6. Scroll back down through the page to locate the now published site <a href="https://github.com/RobertMachamud/developers_nostalgia">link</a> in the "GitHub Pages" section.
 
 
 ## Forking the GitHub Repository
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps:
 
-  1. Log in to GitHub and locate the <a href="https://github.com/RobertMachamud/brand_gym">GitHub Repository</a>
+  1. Log in to GitHub and locate the <a href="https://github.com/RobertMachamud/developers_nostalgia">GitHub Repository</a>
   2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
   3. You should now have a copy of the original repository in your GitHub account.
 
 
 ## Making a Local Clone
 
-  1. Log in to <a href="https://github.com/">GitHub</a>  and locate the <a href="https://github.com/RobertMachamud/brand_gym">GitHub Repository</a>
+  1. Log in to <a href="https://github.com/">GitHub</a>  and locate the <a href="https://github.com/RobertMachamud/developers_nostalgia">GitHub Repository</a>
   2. Under the repository name, click "Clone or download".
   3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
   4. Open Git Bash
@@ -254,6 +284,12 @@ Click <a href="https://help.github.com/en/github/creating-cloning-and-archiving-
 
 ## Media
   - Images downloaded from <a href="https://www.pexels.com/">Pexels</a>
+  - Images downloaded from <a href="https://www.pinclipart.com/">Pinclipart</a>
+  - Images downloaded from <a href="https://www.kindpng.com/">Kindpng</a>
+  - Images downloaded from <a href="https://www.pngkit.com/">Pngkit</a>
+  - Images downloaded from <a href="https://www.clipartmax.com/">Clipartmax</a>
+  - Images downloaded from <a href="https://www.pngitem.com/">Pngitem</a>
+  - Images downloaded from <a href="https://www.pngfind.com/">Pngfind</a>
 
 ## Acknowledgements
   - Michael from Tutor support at Code Institute for his help and for answering to my many questions!
